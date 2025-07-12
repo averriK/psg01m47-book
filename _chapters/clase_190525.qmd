@@ -1,0 +1,148 @@
+## Compound Poisson Processes
+
+### Conceptual Introduction
+
+In advanced applications of probability—such as actuarial science, financial mathematics, reliability engineering, and quantitative risk management—it is often necessary to model not only the number of random events over time, but also the random magnitude associated with each event. For instance, in insurance mathematics, each claim is characterized by its random claim size (or severity), and in reliability, each failure event incurs a random repair cost. To capture this dual randomness, the **compound Poisson process** is fundamental.
+
+A compound Poisson process combines two sources of uncertainty: the number of events within a time interval, modeled by a Poisson process, and the random size or severity of each event, modeled by an independent sequence of identically distributed random variables.
+
+### Formal Definition and Fundamental Properties
+
+Let $(\Omega, \mathcal{F}, \mathbb{P})$ be a probability space. Define the following objects:
+
+* Let ${N(t) : t \geq 0}$ denote a Poisson process of rate $\lambda > 0$, i.e., $N(t)$ counts the number of events occurring in $[0,t]$ with $N(0) = 0$, stationary and independent increments, and $N(t) - N(s) \sim \mathrm{Poisson}(\lambda (t-s))$ for $0 \leq s < t$ [@Billingsley1995].
+* Let ${Y_i}_{i=1}^{\infty}$ be a sequence of independent and identically distributed (i.i.d.) random variables, independent of $N(t)$, with $E[|Y_1|] < \infty$ and $E[Y_1^2] < \infty$.
+
+The **compound Poisson process** ${X(t) : t \geq 0}$ is defined by
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0,
+$$
+
+with the convention $X(t) = 0$ if $N(t) = 0$. Here,
+
+* $N(t)$ is the number of events by time $t$,
+* $Y_i$ is the claim size (or event severity) for the $i$-th event.
+
+#### Independent Increments and Stationarity
+
+**Proposition:** For any $0 \leq s < t$, the increment $X(t) - X(s)$ is independent of the past ${X(u) : u \leq s}$, and is distributed as a compound Poisson process with parameters $\lambda (t-s)$ and the same $Y_i$ distribution.
+
+**Proof:**
+Let $M = N(t) - N(s)$, which is independent of $N(s)$ and $M \sim \mathrm{Poisson}(\lambda (t-s))$. The collection ${Y_{N(s)+1},\dots, Y_{N(t)}}$ are independent of both $N(s)$ and all previous $Y_i$, due to independence. Thus,
+
+$$
+X(t) - X(s) = \sum_{i=N(s)+1}^{N(t)} Y_i
+$$
+
+is a sum of $M$ i.i.d. variables, independent of the process before $s$, satisfying the compound Poisson structure [@Sato1999].
+$\hfill\Box$
+
+### Moments of the Compound Poisson Process
+
+#### Expectation
+
+The expected value of $X(t)$ follows by linearity of expectation and independence:
+
+$$
+E[X(t)] = E\left( \sum_{i=1}^{N(t)} Y_i \right ) = E[N(t)] E[Y_1] = \lambda t \cdot E[Y_1]
+$$
+
+since $N(t) \sim \mathrm{Poisson}(\lambda t)$ and $Y_i$ are i.i.d. [@Durrett2019].
+
+#### Variance
+
+Applying the law of total variance and Wald’s second identity:
+
+$$
+\mathrm{Var}(X(t)) = E[\mathrm{Var}(X(t)\mid N(t))] + \mathrm{Var}(E[X(t)\mid N(t)]).
+$$
+
+Given $N(t)=n$, $X(t) \mid N(t) = n$ is a sum of $n$ i.i.d. $Y_i$, so
+
+$$
+E[X(t)\mid N(t)=n] = n E[Y_1], \quad \mathrm{Var}(X(t)\mid N(t)=n) = n \mathrm{Var}(Y_1).
+$$
+
+Thus,
+\begin{align*}
+E[\mathrm{Var}(X(t)\mid N(t))] &= E[N(t)] \cdot \mathrm{Var}(Y_1) = \lambda t \cdot \mathrm{Var}(Y_1), \\
+\mathrm{Var}(E[X(t)\mid N(t)]) &= \mathrm{Var}(N(t) \cdot E[Y_1]) = \mathrm{Var}(N(t)) \cdot (E[Y_1])^2 = \lambda t (E[Y_1])^2.
+\end{align*}
+Therefore,
+
+$$
+\mathrm{Var}(X(t)) = \lambda t \left( \mathrm{Var}(Y_1) + (E[Y_1])^2 \right ) = \lambda t E[Y_1^2].
+$$
+
+where $E[Y_1^2] = \mathrm{Var}(Y_1) + (E[Y_1])^2$.
+
+### Distributional Representation and Transform Methods
+
+The probability law of $X(t)$ is that of a random sum:
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i
+$$
+
+with $N(t) \sim \mathrm{Poisson}(\lambda t)$. The distribution function is
+
+$$
+P(X(t) \leq x) = \sum_{n=0}^\infty P(N(t) = n) \cdot P\left( \sum_{i=1}^n Y_i \leq x \right ),
+$$
+
+where the $n=0$ term is interpreted as $P(0 \leq x) = 1$ if $x \geq 0$, 0 otherwise.
+
+Direct computation is intractable for general $Y_i$, but analytic tools are available:
+
+* The **characteristic function** (Fourier transform) of $X(t)$ is
+
+$$
+\phi_{X(t)}(u) = E[e^{iu X(t)}] = \exp\left( \lambda t ( \phi_Y(u) - 1 ) \right ),
+$$
+
+where $\phi_Y(u) = E[e^{iu Y_1}]$ is the characteristic function of $Y_1$.
+
+* Similarly, the **Laplace transform** is
+
+$$
+E[e^{-s X(t)}] = \exp\left( \lambda t ( E[e^{-s Y_1}] - 1 ) \right ),
+$$
+
+which enables numerical inversion and saddlepoint approximation methods [@Sato1999; @Asmussen2000]. Monte Carlo simulation is also frequently used for complex $Y_i$.
+
+### Advanced Illustrative Example
+
+**Example:** Suppose claims arrive to an insurer as a Poisson process of rate $\lambda = 3$ per week. The claim sizes ${Y_i}$ are i.i.d. with a Pareto distribution: for $y \geq y_m > 0$,
+
+$$
+F_{Y}(y) = 1 - \left( \frac{y_m}{y} \right )^{\alpha}, \quad \alpha > 1.
+$$
+
+Let $y_m = 1000$, $\alpha = 2$. Compute the mean and variance of aggregate claims in one week, and comment on the impact of heavy tails.
+
+* The mean is
+
+$$
+E[Y_1] = \frac{\alpha y_m}{\alpha - 1} = \frac{2 \times 1000}{2-1} = 2000.
+$$
+
+* The second moment is
+
+$$
+E[Y_1^2] = 
+\begin{cases}
+\frac{\alpha y_m^2}{\alpha - 2}, & \alpha > 2 \\
+\infty, & 1 < \alpha \leq 2
+\end{cases}
+$$
+
+Since $\alpha=2$, $E[Y_1^2] = \infty$; thus, the weekly aggregate has finite mean $E[X(1)] = 6000$, but **infinite variance**. This demonstrates the impact of heavy-tailed claims: the mean remains well-defined, but risk measures such as variance are not.
+
+### Exercises
+
+1. **Compound Poisson Simulation and Analysis:**
+   Let $\lambda = 2$ events per hour, and $Y_i \sim \mathrm{Exp}(1/500)$ independently.
+   (a) Simulate $X(1)$ (aggregate claims in one hour) 10,000 times and estimate the mean and variance.
+   (b) Compare your empirical estimates to the analytic formulas.
+   (c) Discuss how the results would change if $Y_i$ were heavy-tailed.

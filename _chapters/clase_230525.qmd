@@ -1,0 +1,177 @@
+## Time Series
+
+### Fundamental Definitions
+
+A **time series** is a collection of random variables ${Y_t : t \in T}$, where $T \subseteq \mathbb{Z}$, representing sequential observations indexed by discrete time. Formally, these variables are defined on a probability space $(\Omega, \mathcal{F}, P)$, with each $Y_t : \Omega \rightarrow \mathbb{R}$ measurable. The central aim of time series analysis is to model, infer, and predict the temporal structure and dynamics embedded in such stochastic processes, leveraging the temporal dependence typically absent in classical statistical settings [@Hamilton1994].
+
+### Time Series Decomposition
+
+A foundational step in time series modeling is the decomposition of the observed process into interpretable components, each capturing different sources of variation. The observed value $Y_t$ is typically expressed as a combination of:
+
+* **Trend ($T_t$):** A stochastic or deterministic component representing the long-term progression of the process. $T_t$ may be modeled as a deterministic function (e.g., linear, quadratic) or as a random process to capture persistent changes.
+* **Seasonality ($S_t$):** Captures cyclic or periodic effects with known, fixed frequencies (e.g., annual or weekly), which can also be modeled as deterministic or stochastic processes.
+* **Irregular Component ($I_t$):** Represents unpredictable, random fluctuations not explained by the trend or seasonality, modeled as a stochastic process.
+
+Formally, two standard decomposition schemes are used [@Hyndman2021]:
+
+* **Additive model:** $Y_t = T_t + S_t + I_t$
+* **Multiplicative model:** $Y_t = T_t \times S_t \times I_t$
+
+The additive form is appropriate when the variance of $Y_t$ is approximately constant over time, while the multiplicative form is preferable when variance increases with the level. Advanced decomposition techniques such as STL (Seasonal-Trend decomposition using Loess) and X-13ARIMA-SEATS are commonly employed in practice [@Cleveland1990].
+
+### Stationarity
+
+**Stationarity** is a central property in the theory and application of time series. There are two principal forms:
+
+* **Strict (strong) stationarity:** A process ${Y_t}$ is strictly stationary if the joint distribution of any finite set $(Y_{t_1}, \ldots, Y_{t_n})$ is invariant to shifts in time. That is, for all $n$, $t_1,\dots,t_n$, and $h$,
+
+  $$
+  F_{Y_{t_1},\ldots,Y_{t_n}}(y_1,\ldots,y_n) = F_{Y_{t_1+h},\ldots,Y_{t_n+h}}(y_1,\ldots,y_n).
+  $$
+
+* **Weak (second-order) stationarity:** ${Y_t}$ is weakly stationary if:
+
+  1. $E[Y_t]=\mu$ is constant for all $t$,
+  2. $Var(Y_t) = \sigma^2$ is constant for all $t$,
+  3. $Cov(Y_t, Y_{t+h}) = \gamma(h)$ depends only on the lag $h$, not on $t$.
+
+In practice, weak stationarity is far easier to verify and is sufficient for most linear modeling approaches. Ergodicity, which ensures time averages converge to ensemble averages, is a stricter condition but is not required for most statistical inference [@Billingsley1995].
+
+#### Example: Strict vs. Weak Stationarity
+
+Let ${Y_t}$ be a sequence where $Y_t = Z$ for all $t$ and $Z \sim \mathcal{N}(0,1)$. This process is strictly stationary since all finite-dimensional distributions are invariant under time shift. By contrast, a process with $Y_t = e^{i\omega t}X$ for $X$ random and fixed $\omega$ is weakly stationary (constant mean, autocovariance depends only on $h$), but its joint distribution varies with $t$, so it is not strictly stationary [@Durrett2019].
+
+### White Noise
+
+A **white noise** process ${e_t}$ is a sequence of independent and identically distributed (iid) random variables with zero mean and constant variance, typically assumed Gaussian:
+
+$$
+E[e_t] = 0, \quad Var(e_t) = \sigma^2, \quad Cov(e_t, e_s) = 0 \;\; \text{for } t \neq s.
+$$
+
+White noise is strictly stationary (since all finite-dimensional distributions are invariant under time shift), and trivially weakly stationary [@BoxJenkins1970]. For non-Gaussian iid sequences, white noise is still strictly stationary, but some authors reserve "white noise" for the Gaussian case.
+
+#### Proof: White Noise is Weakly Stationary
+
+Given ${e_t}$ iid with $E[e_t]=0$ and $Var(e_t)=\sigma^2$:
+
+* $E[e_t]=0$ for all $t$,
+* $Var(e_t)=\sigma^2$ for all $t$,
+* $Cov(e_t,e_{t+h}) = 0$ for all $h \ne 0$.
+  Therefore, all conditions for weak stationarity are satisfied.
+
+### Preprocessing Methods
+
+Transforming a non-stationary time series into a stationary one is often a prerequisite for effective modeling. Two core methods are:
+
+* **Moving Averages:** Smooth short-term fluctuations via
+
+  $$
+  T_t = \frac{1}{2k+1} \sum_{j=-k}^k Y_{t+j}.
+  $$
+
+  This operation helps isolate longer-term trends and periodicity [@Hyndman2021].
+
+* **Differencing:** The difference operator $\nabla$ or $\Delta$ is used to remove trends:
+
+  $$
+  \Delta Y_t = Y_t - Y_{t-1}, \quad \Delta^p Y_t = Y_t - Y_{t-p}.
+  $$
+
+  Higher-order differences can remove polynomial trends of increasing degree. The general backshift operator $B$ is defined by $B Y_t = Y_{t-1}$, so $\Delta = 1 - B$. Variance-stabilizing transformations, such as the Box-Cox transform, are also commonly used [@BoxCox1964].
+
+#### Example: Differencing a Random Walk
+
+Let $Y_t = Y_{t-1} + e_t$ with $Y_0=0$ and $e_t \sim \text{iid}(0,\sigma^2)$. Differencing yields $\Delta Y_t = Y_t - Y_{t-1} = e_t$, which is stationary white noise.
+
+### Random Walk
+
+A **random walk** is defined by $Y_t = Y_{t-1} + e_t$ for $e_t \sim \text{iid}(0,\sigma^2)$. Its mean is constant, but its variance grows linearly with $t$:
+
+$$
+Var(Y_t) = t \sigma^2.
+$$
+
+Hence, the process is non-stationary, with infinite memory—each innovation $e_t$ permanently affects all future values, making long-term prediction highly uncertain [@Hamilton1994].
+
+### ARIMA Models
+
+An **ARIMA$(p,d,q)$** model (Autoregressive Integrated Moving Average) generalizes both autoregressive and moving average processes, accommodating non-stationarity via differencing [@BoxJenkins1970]. The general model is written as:
+
+$$
+\Phi(B)\nabla^d Y_t = \Theta(B) e_t, \quad e_t \sim \text{iid}(0,\sigma^2)
+$$
+
+where
+
+* $B$ is the backshift operator ($B Y_t = Y_{t-1}$),
+* $\nabla^d = (1 - B)^d$ is the $d$-th difference operator,
+* $\Phi(B) = 1 - \phi_1 B - \ldots - \phi_p B^p$,
+* $\Theta(B) = 1 + \theta_1 B + \ldots + \theta_q B^q$.
+
+Here, $p$ is the autoregressive order, $d$ is the number of differences for stationarity, and $q$ is the moving average order. Model identification typically relies on analysis of the autocorrelation function (ACF), partial autocorrelation function (PACF), and information criteria such as AIC and BIC [@Hyndman2021].
+
+#### Terminology
+
+Replace “number of differentiations” with “number of differences,” in line with standard usage.
+
+### Autoregressive Process (AR)
+
+An **autoregressive process of order $p$ (AR($p$))** is defined by:
+
+$$
+Y_t = \mu + \sum_{i=1}^p \phi_i Y_{t-i} + e_t, \quad e_t \sim \text{iid}(0,\sigma^2).
+$$
+
+The process is stationary if and only if the roots of the characteristic polynomial $\Phi(z) = 1 - \phi_1 z - \ldots - \phi_p z^p$ lie outside the unit circle ($|z|>1$).
+
+#### Proof: Stationarity Condition
+
+The AR($p$) process can be written as $\Phi(B)Y_t = e_t$. Stationarity requires that the homogeneous difference equation's solutions decay to zero, which occurs if and only if all roots of $\Phi(z)=0$ have modulus greater than one [@Hamilton1994].
+
+#### Example: AR(2) Model
+
+Consider $Y_t = 0.5 Y_{t-1} - 0.3 Y_{t-2} + e_t$, $e_t \sim \mathcal{N}(0,1)$. Simulated data from this model will have an ACF that cuts off after lag 2 and a PACF that tails off, characteristic of AR(2) behavior [@Hyndman2021].
+
+### Moving Average Process (MA)
+
+A **moving average process of order $q$ (MA($q$))** is defined as:
+
+$$
+Y_t = \mu + \sum_{i=1}^q \theta_i e_{t-i} + e_t, \quad e_t \sim \text{iid}(0,\sigma^2).
+$$
+
+Invertibility holds if the roots of the polynomial $\Theta(z) = 1 + \theta_1 z + \ldots + \theta_q z^q$ lie inside the unit circle ($|z|<1$). MA($q$) processes are always stationary by construction.
+
+#### Proof: Autocovariance of MA($q$)
+
+The autocovariance function is:
+
+$$
+\gamma(h) = \begin{cases}
+\sigma^2 \left(1 + \sum_{i=1}^q \theta_i^2\right), & h = 0 \\
+\sigma^2 \sum_{i=1}^{q-h} \theta_i \theta_{i+h}, & 1 \leq h \leq q \\
+0, & h > q
+\end{cases}
+$$
+
+#### Example: MA(1) Model Fit
+
+Suppose $Y_t = e_t + 0.6 e_{t-1}$, $e_t \sim \mathcal{N}(0,1)$. Fitting this model to real data (e.g., daily returns of a financial index) produces an ACF that drops to zero after lag 1, indicating the appropriateness of the MA(1) specification.
+
+### ARIMA Model Extensions
+
+Several advanced extensions of ARIMA models address specific phenomena:
+
+* **SARIMA:** Incorporates seasonal autoregressive and moving average terms to model periodicities.
+* **ARFIMA:** Allows fractional differencing ($d$ non-integer) to capture long memory processes [@Beran1994].
+* **ARIMAX:** Adds exogenous covariates to explain variation not accounted for by the autoregressive/moving average structure [@Hyndman2021].
+
+### Exercises
+
+1. *Decomposition*: Given a monthly series with strong seasonality, describe the STL decomposition and compute the trend, seasonal, and irregular components.
+2. *Stationarity*: Prove that the first-difference of a random walk yields a stationary process.
+3. *AR Identification*: Simulate an AR(2) process, plot its ACF and PACF, and verify the stationarity condition.
+4. *MA Model*: For an MA(1) process, derive and plot the autocorrelation function.
+5. *Model Selection*: Given empirical ACF/PACF plots, select and justify an appropriate ARIMA$(p,d,q)$ model.
+

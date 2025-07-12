@@ -1,0 +1,164 @@
+## The Bernoulli Process: Definition, Properties, and Applications
+
+### Formal Definition of Stochastic Processes
+
+Let $(\Omega, \mathcal{F}, P)$ be a probability space, where $\Omega$ is the sample space, $\mathcal{F}$ is a $\sigma$-algebra of events, and $P$ is a probability measure. A **stochastic process** is a collection ${X_t : t \in T}$ of random variables $X_t: \Omega \to S$, indexed by a set $T$ (often $\mathbb{N}$ or $\mathbb{R}_+$), where $S$ is a measurable space. For each fixed $t \in T$, $X_t$ is a measurable function, and for each fixed $\omega \in \Omega$, the mapping $t \mapsto X_t(\omega)$ is called a *sample path* or *trajectory* of the process [@Billingsley1995; @Durrett2019].
+
+### The Bernoulli Process
+
+A **Bernoulli process** is a prototypical discrete-time stochastic process that models sequences of independent binary (success/failure) trials.
+
+#### Rigorous Construction
+
+Let $(\Omega, \mathcal{F}, P)$ be a probability space. A Bernoulli process with parameter $p \in (0,1)$ is an infinite sequence of independent identically distributed random variables ${X_n}_{n \in \mathbb{N}}$, where for each $n$,
+
+$$
+P(X_n = 1) = p, \qquad P(X_n = 0) = 1-p,
+$$
+
+and all $X_n$ are independent.
+
+* **Sample space**: $\Omega = {0,1}^{\mathbb{N}}$, each $\omega \in \Omega$ is an infinite binary sequence.
+* **Sigma-algebra**: $\mathcal{F}$ is the product $\sigma$-algebra on $\Omega$.
+* **Probability measure**: $P$ is the product measure assigning $P(X_n=1)=p$, $P(X_n=0)=1-p$ independently for all $n$.
+
+#### Joint Distribution
+
+For any $n\in\mathbb{N}$ and any $(x_1,\ldots,x_n)\in{0,1}^n$,
+
+$$
+P(X_1=x_1,\ldots,X_n=x_n) = p^{\sum_{i=1}^n x_i}(1-p)^{n-\sum_{i=1}^n x_i}.
+$$
+
+**Proof**: By independence and identical distribution, $P(X_i = x_i) = p$ if $x_i=1$, $1-p$ if $x_i=0$; the product over $i$ yields the result [@Durrett2019].
+
+### Associated Random Variables
+
+#### Total Number of Successes in $n$ Trials
+
+Define
+
+$$
+S_n = \sum_{i=1}^n X_i.
+$$
+
+Then $S_n$ is the total number of successes in the first $n$ trials.
+
+**Theorem:** $S_n \sim \operatorname{Binomial}(n,p)$.
+
+**Proof:** $S_n$ is the sum of $n$ independent Bernoulli$(p)$ random variables. For $k=0,1,\ldots,n$,
+
+$$
+P(S_n = k) = \binom{n}{k} p^k (1-p)^{n-k}.
+$$
+
+This follows from combinatorial enumeration of sequences with $k$ successes and $n-k$ failures [@Billingsley1995].
+
+#### Waiting Time for the First Success
+
+Let
+
+$$
+T = \min { n \geq 1 : X_n = 1 }
+$$
+
+be the waiting time until the first success.
+
+**Proposition:** $T$ is a geometric random variable with parameter $p$:
+
+$$
+P(T = n) = (1-p)^{n-1}p, \quad n=1,2,\ldots
+$$
+
+**Proof:** The first $n-1$ trials are failures ($X_1=0,\ldots,X_{n-1}=0$), the $n$th trial is a success ($X_n=1$). By independence,
+
+$$
+P(T = n) = (1-p)^{n-1}p.
+$$
+
+[@Durrett2019]
+
+**Memoryless Property:** For $m, n \in \mathbb{N}$,
+
+$$
+P(T > m + n \mid T > n) = P(T > m).
+$$
+
+**Proof:** By the definition of independence,
+
+$$
+P(T > n) = (1-p)^n.
+$$
+
+Therefore,
+
+$$
+P(T > m + n \mid T > n) = \frac{P(T > m + n)}{P(T > n)} = \frac{(1-p)^{m+n}}{(1-p)^n} = (1-p)^m = P(T > m).
+$$
+
+#### Waiting Time for the $k$-th Success
+
+Let $T_k$ denote the trial at which the $k$th success occurs.
+
+**Theorem:** $T_k$ follows the negative binomial distribution:
+
+$$
+P(T_k = t) = \binom{t-1}{k-1} p^k (1-p)^{t-k}, \quad t = k, k+1, \ldots
+$$
+
+**Proof:** This is the probability that in $t-1$ trials, there are exactly $k-1$ successes (in any order), and the $t$th trial is a success. See [@Billingsley1995].
+
+Moreover, $T_k$ is the sum of $k$ independent geometric$(p)$ random variables [@Durrett2019].
+
+### Key Properties
+
+* **Independence:** The sequence ${X_n}$ is independent by construction.
+* **Stationarity of the Process:** The increments $S_{n+m} - S_n$ are binomial with parameters $(m,p)$ and are independent of $S_n$, reflecting the lack of memory in the process.
+* **Memoryless Property:** The geometric waiting time $T$ for the first success satisfies $P(T > m + n \mid T > n) = P(T > m)$.
+* **Standard Terminology:** The property is universally called the *memoryless property*, not "short memory" [@Durrett2019].
+
+### Connections with Other Distributions
+
+#### Poisson Approximation to the Binomial
+
+When $n$ is large and $p$ is small with $\lambda = np$ fixed, the binomial distribution approaches the Poisson distribution:
+
+$$
+\lim_{n \to \infty,\,p \to 0,\,np=\lambda} \binom{n}{k} p^k (1-p)^{n-k} = \frac{e^{-\lambda} \lambda^k}{k!}.
+$$
+
+This is the *law of rare events* [@Billingsley1995, §19].
+
+**Note:** Error bounds and convergence rates can be found in [@LeCam1960].
+
+#### Multinomial Generalization
+
+If each trial admits $r>2$ possible outcomes with constant probabilities $p_1, \ldots, p_r$, the vector $(N_1,\ldots,N_r)$, where $N_i$ counts the occurrences of outcome $i$ in $n$ trials, follows the multinomial distribution:
+
+$$
+P(N_1 = n_1, \ldots, N_r = n_r) = \frac{n!}{n_1! \cdots n_r!} p_1^{n_1} \cdots p_r^{n_r}, \qquad \sum_{i=1}^r n_i = n.
+$$
+
+This is a direct generalization of the binomial model [@Durrett2019].
+
+### Example
+
+**Example:** Suppose a production line produces items with independent defect probability $p=0.02$. If $n=100$ items are checked:
+
+* The probability of exactly $k=3$ defective items is
+
+  $$
+  P(S_{100} = 3) = \binom{100}{3} (0.02)^3 (0.98)^{97} \approx 0.180.
+  $$
+* The probability the first defect appears at item 15:
+
+  $$
+  P(T = 15) = (0.98)^{14} (0.02) \approx 0.0148.
+  $$
+
+### Exercises
+
+1. (**Rigorous Construction**) Explicitly construct a probability space and define the coordinate random variables to model a Bernoulli process with parameter $p$.
+2. (**Negative Binomial**) Prove that the sum of $k$ independent geometric$(p)$ random variables has the negative binomial distribution with parameters $(k, p)$.
+3. (**Poisson Approximation**) For $n=500$, $p=0.006$, compute $P(S_{n}=3)$ exactly and approximate with Poisson; discuss the accuracy.
+

@@ -1,0 +1,153 @@
+## Law of Large Numbers and Central Limit Theorem
+
+### Law of Large Numbers
+
+The Law of Large Numbers (LLN) is a foundational result in probability theory, capturing the stabilization of sample averages around the expected value as the number of trials increases. To proceed rigorously, we clarify the underlying terminology and establish precise definitions of convergence modes.
+
+**Definition (Independent and Identically Distributed Random Variables)**
+A sequence ${X_i}_{i \in \mathbb{N}}$ is independent and identically distributed (iid) if:
+
+1. Each $X_i$ is a random variable defined on the same probability space $(\Omega, \mathcal{F}, P)$.
+2. $P(X_i \leq x) = F(x)$ for all $i$ and all $x \in \mathbb{R}$ (identical distribution).
+3. For any finite subset ${i_1,\dots,i_k}$, the variables $X_{i_1},\dots,X_{i_k}$ are independent.
+
+**Definition (Convergence in Probability)**
+A sequence of random variables $Y_n$ converges in probability to $Y$ if for every $\varepsilon > 0$,
+
+$$
+\lim_{n \to \infty} P(|Y_n - Y| > \varepsilon) = 0.
+$$
+
+**Definition (Almost Sure Convergence)**
+$Y_n$ converges almost surely (a.s.) to $Y$ if
+
+$$
+P\left(\lim_{n \to \infty} Y_n = Y\right) = 1.
+$$
+
+Let ${X_i}_{i \in \mathbb{N}}$ be iid random variables with mean $\mu = E[X_1]$ and finite variance $\sigma^2 = \operatorname{Var}(X_1) < \infty$. The sample mean is
+
+$$
+\bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i.
+$$
+
+**Theorem (Weak Law of Large Numbers)**
+$\bar{X}_n$ converges in probability to $\mu$:
+
+$$
+\bar{X}_n \xrightarrow{p} \mu.
+$$
+
+*Proof.*
+By Chebyshev's inequality:
+
+* $E[\bar{X}_n] = \mu$
+* $\operatorname{Var}(\bar{X}_n) = \frac{\sigma^2}{n}$
+  Thus, for $\varepsilon > 0$,
+
+$$
+P(|\bar{X}_n - \mu| > \varepsilon) \leq \frac{\operatorname{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \to 0 \text{ as } n \to \infty.
+$$
+
+Hence, $\bar{X}_n$ converges in probability to $\mu$.
+$\hfill\square$
+
+**Theorem (Strong Law of Large Numbers)**
+$\bar{X}_n$ converges almost surely to $\mu$:
+
+$$
+P\left(\lim_{n \to \infty} \bar{X}_n = \mu\right) = 1.
+$$
+
+*Proof Sketch.*
+The proof, due to Kolmogorov, leverages the Borel-Cantelli lemma and properties of iid sequences with finite variance. The almost sure convergence is strictly stronger than convergence in probability; see [@Billingsley1995, §22] for a detailed exposition.
+$\hfill\square$
+
+**Example**
+Let $X_i$ denote the outcome of the $i$-th toss of a fair coin ($X_i = 1$ for heads, $0$ for tails). Then $E[X_i] = 0.5$, $\operatorname{Var}(X_i) = 0.25$. By the Strong Law of Large Numbers,
+
+$$
+P\left(\lim_{n \to \infty} \bar{X}_n = 0.5\right) = 1,
+$$
+
+where $\bar{X}_n$ is the fraction of heads in $n$ tosses.
+
+### Central Limit Theorem
+
+The Central Limit Theorem (CLT) describes the universal emergence of the normal distribution in sums of iid random variables, regardless of the original distribution (under mild conditions).
+
+**Definition (Standardization)**
+Given iid random variables ${X_i}_{i \in \mathbb{N}}$ with mean $\mu$ and variance $\sigma^2 > 0$, define
+
+$$
+Z_n = \frac{\sum_{i=1}^n X_i - n\mu}{\sigma \sqrt{n}}.
+$$
+
+**Theorem (Central Limit Theorem)**
+As $n \to \infty$, $Z_n$ converges in distribution to a standard normal random variable:
+
+$$
+Z_n \xrightarrow{d} N(0,1),
+$$
+
+that is,
+
+$$
+\lim_{n \to \infty} P(Z_n \leq z) = \Phi(z),
+$$
+
+where $\Phi(z)$ is the cumulative distribution function of $N(0,1)$.
+
+*Proof (Characteristic Function Approach).*
+Let $\varphi_{X}(t) = E[e^{itX}]$ denote the characteristic function of $X_i$. The characteristic function of $Z_n$ is
+
+$$
+\varphi_{Z_n}(t) = \left[\varphi_X\left(\frac{t}{\sigma \sqrt{n}}\right)\right]^n e^{-it\frac{n\mu}{\sigma \sqrt{n}}}.
+$$
+
+A Taylor expansion and independence yield
+
+$$
+\lim_{n \to \infty} \varphi_{Z_n}(t) = e^{-t^2/2},
+$$
+
+which is the characteristic function of $N(0,1)$. Thus, by Lévy’s continuity theorem, $Z_n \xrightarrow{d} N(0,1)$. For a full proof, see [@Durrett2019, §2.5].
+$\hfill\square$
+
+**Example**
+Suppose $X_i$ are iid with $E[X_i]=2$, $\operatorname{Var}(X_i)=9$. For $n=100$,
+
+$$
+Z_{100} = \frac{\sum_{i=1}^{100} X_i - 200}{30}.
+$$
+
+According to the CLT, $Z_{100}$ is approximately $N(0,1)$ distributed, even if the $X_i$ are not normal. A simulation with non-normal $X_i$ (e.g., Bernoulli or Poisson) will empirically show convergence to the bell curve as $n$ increases.
+
+### Approximations from the Central Limit Theorem
+
+The CLT provides rigorous justification for normal approximations to discrete distributions under appropriate parameter regimes. The following results are widely used in statistical inference and combinatorial probability.
+
+**Binomial-to-Normal Approximation**
+Let $X \sim \operatorname{Bin}(n, p)$. If $n$ is large, $np > 5$, and $n(1-p) > 5$:
+
+$$
+X \approx N\left(np, np(1-p)\right).
+$$
+
+*Support:* These criteria ensure that the skewness is sufficiently small and the discrete distribution is well-approximated by the continuous normal [@Feller1968, §7.1].
+
+**Poisson-to-Normal Approximation**
+If $X \sim \operatorname{Poisson}(\lambda)$, then for $\lambda$ large (e.g., $\lambda > 10$),
+
+$$
+X \approx N(\lambda, \lambda).
+$$
+
+*Support:* As $\lambda$ increases, the Poisson distribution becomes increasingly symmetric and normal-like [@Durrett2019, §2.7].
+
+**Exercise**
+
+1. *Normal Approximation:*
+   Let $X \sim \operatorname{Bin}(200, 0.1)$.
+   (a) Use the CLT to approximate $P(15 \leq X \leq 25)$.
+   (b) Compare the result to the exact binomial probability.

@@ -1,0 +1,214 @@
+## ARIMA Models: Foundations, Theory, and Application
+
+### Stationarity
+
+A stochastic process ${X_t}*{t\in\mathbb{Z}}$ is **strictly stationary** if for every $n \in \mathbb{N}$ and every set of time indices $t_1, \ldots, t_n$ and $k \in \mathbb{Z}$, the joint distribution of $(X*{t_1}, \ldots, X_{t_n})$ equals that of $(X_{t_1+k}, \ldots, X_{t_n+k})$ [@Billingsley1995].
+
+**Weak (covariance) stationarity** requires that:
+
+* $\mathrm{E}[X_t]=\mu$ (constant mean for all $t$),
+* $\mathrm{Var}[X_t]=\sigma^2 < \infty$ (constant variance for all $t$),
+* $\mathrm{Cov}(X_t, X_{t+h}) = \gamma(h)$ (autocovariance depends only on lag $h$).
+
+**Example:**
+Consider the process $X_t = \epsilon_t$ with $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. This process is strictly and weakly stationary.
+In contrast, $Y_t = t + \epsilon_t$ is non-stationary in both senses, as its mean depends on $t$.
+
+**Exercise:**
+Let $Z_t = 0.5 Z_{t-1} + \epsilon_t$ with $Z_0=0$ and $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. Is ${Z_t}$ weakly stationary? Justify analytically.
+
+### White Noise
+
+A **white noise** process ${e_t}$ is a sequence of uncorrelated random variables satisfying:
+
+* $\mathrm{E}[e_t]=0$,
+* $\mathrm{Var}[e_t]=\sigma^2_e$,
+* $\mathrm{Cov}(e_t, e_s)=0$ for all $t \neq s$.
+
+If $e_t \sim \mathcal{N}(0,\sigma^2_e)$ i.i.d., it is called **Gaussian white noise**.
+
+**Proof:**
+A white noise process with i.i.d. innovations is strictly stationary:
+For any collection $(e_{t_1},...,e_{t_n})$, their joint distribution is invariant to time shifts, since all $e_t$ are i.i.d. [@Durrett2019].
+
+**Example:**
+Simulate $e_t \sim \mathcal{N}(0,1)$ for $t=1,...,100$. The sequence is white noise; empirical autocorrelations are approximately zero for $h\ne0$.
+
+**Exercise:**
+Given a residual sequence from a fitted ARIMA model, propose and justify a statistical test for white noise.
+
+### Random Walks and Unit Roots
+
+A **random walk** ${Y_t}$ is defined by $Y_t = Y_{t-1} + e_t$, with $e_t$ as white noise. Its variance grows without bound:
+
+$$
+\mathrm{Var}(Y_t) = t \cdot \sigma^2_e,
+$$
+
+which is a hallmark of non-stationarity.
+
+The presence of a **unit root** (the root at $z=1$ in the AR polynomial) means differencing is required for stationarity.
+
+**Example:**
+Let $Y_0=0$, $e_t \sim \mathcal{N}(0,1)$. Simulate $Y_t$ for $t=1,\ldots,100$; $\mathrm{Var}(Y_{100}) = 100$.
+
+**Exercise:**
+Given $W_t = W_{t-1} + \epsilon_t$ with $W_0=0$, compute $\mathrm{Cov}(W_t, W_s)$ and discuss stationarity.
+
+### Preprocessing and Smoothing
+
+Let ${y_t}_{t=1}^N$ be a time series.
+
+**Simple Moving Average (SMA):**
+
+$$
+S_t = \frac{1}{2k+1} \sum_{j=-k}^{k} y_{t+j}, \quad k \in \mathbb{N},\; k < t \leq N-k
+$$
+
+**Moving Median:**
+
+$$
+M_t = \operatorname{median}(y_{t-k}, \ldots, y_{t+k})
+$$
+
+The moving median is robust to outliers, whereas the SMA is not.
+
+**Coherence Note:**
+Use consistent notation $y_t$ for the observed time series.
+
+**Example:**
+Suppose $y_t$ is daily temperature. Smoothing with $k=3$ produces $S_t$ and $M_t$ that reduce short-term fluctuations.
+Below is a demonstration with simulated $y_t = 20 + \sin(2\pi t/30) + \epsilon_t$, $\epsilon_t \sim \mathcal{N}(0,1)$.
+
+**Exercise:**
+Apply both SMA and moving median to a noisy dataset. Compare and interpret the results.
+
+### Differencing for Stationarity
+
+The **first difference** operator is defined as
+
+$$
+\Delta y_t = y_t - y_{t-1}
+$$
+
+The **seasonal difference** (for period $p$) is
+
+$$
+\Delta_p y_t = y_t - y_{t-p}
+$$
+
+**Proof:**
+For a random walk $Y_t = Y_{t-1} + e_t$,
+
+$$
+\Delta Y_t = Y_t - Y_{t-1} = e_t
+$$
+
+Since ${e_t}$ is white noise (stationary), differencing the random walk yields a stationary process.
+
+### Additive and Multiplicative Decomposition
+
+A time series can be decomposed as:
+
+**Additive Model:** $y_t = T_t + S_t + I_t$
+
+**Multiplicative Model:** $y_t = T_t \cdot S_t \cdot I_t$
+
+Where $T_t$ is trend, $S_t$ is seasonal, $I_t$ is irregular.
+
+**Criteria:**
+Use the additive model when seasonal fluctuations are roughly constant; use the multiplicative model if seasonal variation grows with trend [@Hyndman2021]. A log transform can convert multiplicative to additive.
+
+**Example:**
+Given monthly sales with clear upward trend and increasing seasonal amplitude, the multiplicative model is appropriate. Decompose a simulated $y_t = (10 + 0.5t) \times (1 + 0.2\sin(2\pi t/12)) + \epsilon_t$.
+
+**Exercise:**
+Decompose a provided time series using both additive and multiplicative approaches. Justify the appropriate model.
+
+### The ARIMA Model: Definition and Properties
+
+Let $B$ denote the **backshift operator**: $By_t = y_{t-1}$, $B^k y_t = y_{t-k}$.
+
+An **ARIMA($p,d,q$)** model is given by
+
+$$
+\Phi(B)(1-B)^d y_t = \mu + \Theta(B) e_t,
+$$
+
+where
+
+* $\Phi(B) = 1 - \phi_1 B - \cdots - \phi_p B^p$ is the autoregressive (AR) polynomial,
+* $(1-B)^d$ is the $d$-th order difference operator,
+* $\Theta(B) = 1 + \theta_1 B + \cdots + \theta_q B^q$ is the moving average (MA) polynomial,
+* $\mu$ is a constant, and
+* $e_t$ is white noise.
+
+**Model Identification and Estimation**
+Standard procedure follows the Box-Jenkins methodology:
+
+1. Model identification via ACF/PACF and unit root testing (e.g., Augmented Dickey-Fuller, Phillips-Perron) [@Hamilton1994].
+2. Parameter estimation, typically via maximum likelihood.
+3. Model diagnostics (residual analysis).
+
+**Stationarity and Invertibility:**
+
+* **Stationarity**: All roots of $\Phi(B)$ must lie outside the unit circle in the complex plane [@Durrett2019].
+* **Invertibility**: All roots of $\Theta(B)$ must also lie outside the unit circle.
+
+### Autoregressive Models (AR)
+
+An **AR($p$)** process satisfies
+
+$$
+y_t = \mu + \sum_{i=1}^{p} \phi_i y_{t-i} + e_t
+$$
+
+**Yule-Walker Equations Proof:**
+Let $\gamma(h)$ denote autocovariance at lag $h$.
+
+$$
+\gamma(h) = \sum_{i=1}^{p} \phi_i \gamma(h-i) + \sigma^2_e \delta_{h,0}
+$$
+
+for $h \ge 0$, where $\delta_{h,0}$ is the Kronecker delta.
+
+**Example:**
+Simulate AR(2): $y_t = 0.5 y_{t-1} - 0.3 y_{t-2} + e_t$. Analyze sample ACF and PACF.
+
+**Exercise:**
+Estimate parameters for an AR(2) process given a sample. Test the stationarity condition.
+
+### Moving Average Models (MA)
+
+An **MA($q$)** process is
+
+$$
+y_t = \mu + e_t + \sum_{j=1}^{q} \theta_j e_{t-j}
+$$
+
+**Invertibility:**
+The roots of $\Theta(B)$ must lie outside the unit circle to guarantee a unique representation in terms of past $y_t$'s [@Hamilton1994].
+
+**Autocorrelation Structure Proof:**
+$\mathrm{ACF}$ of MA($q$) is zero beyond lag $q$.
+
+**Exercise:**
+Given a sample from an MA(1) process, estimate $\theta_1$ and test for invertibility.
+
+### Integrated Processes
+
+A series is **integrated of order $d$** ($I(d)$) if $(1-B)^d y_t$ is stationary but $(1-B)^{d-1} y_t$ is not.
+
+**ADF/PP Tests:**
+The Augmented Dickey-Fuller and Phillips-Perron tests are used to determine the minimum number of differences required for stationarity [@Hamilton1994].
+
+**Terminology Note:**
+Use "differences" or "differencing"—not "differentiations"—for discrete time series.
+
+### Exercises
+
+1. Prove that differencing a random walk yields a stationary process.
+2. Given time series data, test for unit roots and determine the integration order using the ADF test.
+3. Simulate and plot an AR(2) and MA(1) process. Analyze the sample ACF and PACF.
+4. For a given residual series, conduct a Ljung-Box test for white noise.
+

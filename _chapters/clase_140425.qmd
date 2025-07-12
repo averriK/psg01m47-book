@@ -1,0 +1,137 @@
+## Conditional Distributions and Prediction
+
+### Conditional Distributions
+
+Let $(\Omega, \mathcal{F}, P)$ be a probability space. Consider a random vector $(X, Y)$ defined on this space, where $X : \Omega \to \mathbb{R}$ and $Y : \Omega \to \mathbb{R}$ are random variables. The **conditional distribution** of $Y$ given $X$ is a family of probability measures ${P_{Y|X=x} : x \in \mathbb{R}}$ such that, for any Borel set $B \subseteq \mathbb{R}$,
+
+$$
+P_{Y|X=x}(B) = P(Y \in B \mid X = x), \quad \text{whenever } P(X = x) > 0.
+$$
+
+More generally, for arbitrary random variables and $\sigma$-algebras, the conditional distribution is defined via the Radon–Nikodym derivative as the unique (up to $P$-null sets) regular version $P_{Y|X}(\cdot \mid X)$ [@Billingsley1995].
+
+For **discrete** random variables,
+
+$$
+P(Y = y \mid X = x) = \frac{P(X = x, Y = y)}{P(X = x)}, \quad \text{provided } P(X = x) > 0.
+$$
+
+For **absolutely continuous** random variables, with joint density $f_{X,Y}$ and marginal $f_X$,
+
+$$
+f_{Y|X}(y|x) = \frac{f_{X,Y}(x, y)}{f_X(x)}, \quad \text{where } f_X(x) > 0.
+$$
+
+#### Properties
+
+* **Tower Property:** $\mathbb{E}\left[,\mathbb{E}[Y \mid X],\right] = \mathbb{E}[Y]$.
+* **Jensen’s Inequality:** For any convex function $\varphi$, $\varphi(\mathbb{E}[Y|X]) \leq \mathbb{E}[\varphi(Y)|X]$ [@Durrett2019].
+
+#### Example: Conditional Distribution in the Bivariate Normal Case
+
+Let $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$ denote a bivariate normal random vector, where $|\rho| < 1$. The conditional distribution of $Y$ given $X = x$ is normal:
+
+$$
+Y|X = x \sim N\left(\mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X),\; \sigma_Y^2(1 - \rho^2)\right).
+$$
+
+**Proof:**
+Let $\Sigma = \begin{pmatrix} \sigma_X^2 & \rho \sigma_X \sigma_Y \ \rho \sigma_X \sigma_Y & \sigma_Y^2 \end{pmatrix}$. Standard properties of the multivariate normal yield the conditional mean and variance as above; see [@Billingsley1995, p. 186].
+
+### Prediction Theory
+
+Let $(X, Y)$ be as above. Suppose one seeks a function $g(X)$ to predict $Y$ such that the **mean squared error** $\mathbb{E}[(Y - g(X))^2]$ is minimized. The optimal predictor in this sense is the **conditional expectation**:
+
+$$
+\hat{Y} = \mathbb{E}[Y \mid X].
+$$
+
+#### Properties
+
+Let $\mathcal{G} = \sigma(X)$. Then:
+
+1. **Unbiasedness:** $\mathbb{E}[\hat{Y}] = \mathbb{E}[Y]$.
+
+2. **Orthogonality:** $\mathbb{E}[(Y - \hat{Y}) h(X)] = 0$ for any integrable function $h$ measurable with respect to $\mathcal{G}$.
+
+3. **Minimum Variance:** For any other predictor $g(X)$,
+
+   $$
+   \mathbb{E}[(Y - \hat{Y})^2] \leq \mathbb{E}[(Y - g(X))^2].
+   $$
+
+**Proofs:**
+
+* *Unbiasedness*: By the tower property, $\mathbb{E}[\mathbb{E}[Y|X]] = \mathbb{E}[Y]$.
+* *Orthogonality*: For any measurable $h$, $\mathbb{E}[(Y - \mathbb{E}[Y|X])h(X)] = 0$ [@Durrett2019, Theorem 5.5.3].
+* *Minimum Variance*: For any $g(X)$,
+
+  $$
+  \mathbb{E}\left[(Y - g(X))^2\right] = \mathbb{E}\left[(Y - \mathbb{E}[Y|X])^2\right] + \mathbb{E}\left[(\mathbb{E}[Y|X] - g(X))^2\right],
+  $$
+
+  so the minimum is achieved at $g = \mathbb{E}[Y|X]$.
+
+### Linear Prediction
+
+Suppose we restrict attention to **linear predictors** of the form $g(X) = a + b X$. The coefficients $a, b$ minimizing the mean squared error are:
+
+$$
+b^* = \frac{\text{Cov}(X, Y)}{\text{Var}(X)}, \quad a^* = \mathbb{E}[Y] - b^* \mathbb{E}[X],
+$$
+
+provided $\text{Var}(X) > 0$. Thus, the **best linear predictor** is
+
+$$
+\hat{Y}_L = \mathbb{E}[Y] + \frac{\text{Cov}(X, Y)}{\text{Var}(X)} (X - \mathbb{E}[X]).
+$$
+
+**Proof:**
+Let $g(X) = a + bX$; expand $\mathbb{E}[(Y - (a + bX))^2]$, set derivatives with respect to $a$ and $b$ to zero, and solve for the minimizing $a$ and $b$.
+
+#### Special Case: Bivariate Normal
+
+If $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$, then $\mathbb{E}[Y|X]$ is affine in $X$, so the best linear predictor equals the conditional expectation:
+
+$$
+\mathbb{E}[Y|X] = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(X - \mu_X).
+$$
+
+Thus, the best linear and the best overall (unrestricted) predictor coincide for the bivariate normal [@LehmannCasella1998].
+
+### Applications
+
+#### Regression Analysis
+
+Regression studies the relationship between a dependent variable $Y$ and independent variables $X$, with the conditional expectation $\mathbb{E}[Y|X]$ as the target of estimation.
+**Example:**
+Suppose $Y = \beta_0 + \beta_1 X + \varepsilon$ with $\varepsilon \sim N(0, \sigma^2)$, independent of $X$. Given observations $(X_1, Y_1), \ldots, (X_n, Y_n)$, the ordinary least squares estimator $\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i$ provides predictions for $Y$ given $X$. Prediction intervals follow from the conditional normal distribution [@Hamilton1994].
+
+#### Time Series Forecasting
+
+For a stationary time series ${X_t}$, the prediction of $X_{t+h}$ given $\mathcal{F}*t = \sigma(X_1, \ldots, X_t)$ is $\mathbb{E}[X*{t+h} | \mathcal{F}*t]$.
+**Example:**
+In the AR(1) model, $X*{t+1} = \phi X_t + \varepsilon_{t+1}$ with $\varepsilon_{t+1} \sim N(0, \sigma^2)$,
+
+$$
+\mathbb{E}[X_{t+1}|X_t] = \phi X_t.
+$$
+
+The forecast-error variance is $\text{Var}(X_{t+1} - \phi X_t) = \sigma^2$. Prediction intervals derive from the conditional normal distribution [@Hamilton1994].
+
+#### Machine Learning
+
+In supervised learning, algorithms seek to approximate $\mathbb{E}[Y|X]$ using data.
+**Example:**
+A feedforward neural network $f_\theta(X)$ is trained by minimizing empirical mean squared error over samples $(X_i, Y_i)$. After training, $f_\theta(X)$ approximates the conditional expectation $\mathbb{E}[Y|X]$. Ensemble methods, such as random forests, combine multiple predictors to improve estimation accuracy [@HastieTibshiraniFriedman2009].
+
+### Exercises
+
+1. **Conditional Expectation (Proof):**
+   Prove that $\mathbb{E}[(Y - \mathbb{E}[Y|X]) h(X)] = 0$ for any integrable function $h(X)$.
+2. **Linear Predictor (Computation):**
+   Let $X$ and $Y$ have joint distribution: $\mathbb{E}[X] = 2$, $\mathbb{E}[Y] = 5$, $\text{Cov}(X, Y) = 3$, $\text{Var}(X) = 4$. Compute the best linear predictor of $Y$ given $X$.
+3. **Time Series (Application):**
+   For the AR(1) model $X_{t+1} = 0.7 X_t + \varepsilon_{t+1}$, $\varepsilon_{t+1} \sim N(0, 1)$, calculate $\mathbb{E}[X_{t+2} | X_t]$.
+4. **Machine Learning (Interpretation):**
+   Suppose a neural network yields $\hat{Y} = f_\theta(X)$. Explain under what conditions $f_\theta(X)$ approximates $\mathbb{E}[Y|X]$ and how this relates to prediction optimality.

@@ -1,0 +1,45 @@
+---
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+    self-contained: true
+    css: _build/styles.css
+bibliography: _bib/references.bib
+---
+
+
+{{< include _chapters/clase_170325.qmd >}}
+
+{{< include _chapters/clase_210325.qmd >}}
+
+{{< include _chapters/clase_280325.qmd >}}
+
+{{< include _chapters/clase_310325.qmd >}}
+
+{{< include _chapters/clase_040425.qmd >}}
+
+{{< include _chapters/clase_140425.qmd >}}
+
+{{< include _chapters/clase_210425.qmd >}}
+
+{{< include _chapters/clase_250425.qmd >}}
+
+{{< include _chapters/clase_280425.qmd >}}
+
+{{< include _chapters/clase_120525.qmd >}}
+
+{{< include _chapters/clase_190525.qmd >}}
+
+{{< include _chapters/clase_230525.qmd >}}
+
+{{< include _chapters/clase_300525.qmd >}}
+
+
+
+## References
+
+::: {.refs}
+::: 

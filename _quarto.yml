@@ -1,0 +1,55 @@
+project:
+  type: default
+  output-dir: _publish
+engine: knitr
+jupyter: python3
+bibliography: ./_bib/references.bib
+link-citations: true
+colorlinks: true
+fontsize: 12pt
+citation: false
+appendix-cite-as: display
+google-scholar: false
+execute:
+  eval: true
+  echo: false
+  include: false
+  keep-md: false
+  freeze: false
+format:
+  html:
+    output-file: index.html
+    self-contained: false
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    link-citations: true
+    code-fold: true
+    code-summary: Show code
+    code-line-numbers: false
+    code-copy: true
+    code-overflow: scroll
+    fig-width: 7
+    fig-height: 5
+    math: true
+    math-output: mathjax
+    page-layout: article
+    margin-header: 1em
+    margin-footer: 1em
+    margin-left: 1em
+    margin-right: 1em
+    css: _build/styles.css
+toc-title: Table of Contents
+crossref:
+  fig-title: Fig.
+  tbl-title: Table
+  eq-title: Equation
+  eq-prefix: eq.
+  tbl-prefix: tbl.
+  fig-prefix: fig.
+params:
+  background: white
+  render: none
+  ext: png
+  lang: EN
+

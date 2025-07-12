@@ -1,0 +1,272 @@
+## Random Variables and Vectors: Transformations and Applications
+
+### Mixture Distributions
+
+A **mixture distribution** describes the probability law of a random variable $X$ that depends on which event occurs among a partition ${A_1, A_2, \dots, A_n}$ of the underlying probability space $(\Omega, \mathcal{A}, P)$ [@Billingsley1995]. For each $i$, let $F_{X|A_i}(x)$ denote the conditional cumulative distribution function (CDF) of $X$ given $A_i$, and $P(A_i)$ the probability of $A_i$. The law of total probability yields:
+
+$$
+F_X(x) = \sum_{i=1}^{n} F_{X|A_i}(x) P(A_i).
+$$
+
+**Proof**.
+Let $F_X(x) = P(X \leq x)$. Since the $A_i$ are mutually exclusive and exhaustive,
+
+$$
+P(X \leq x) = \sum_{i=1}^n P(X \leq x, A_i) = \sum_{i=1}^n P(X \leq x | A_i)P(A_i).
+$$
+
+By definition, $P(X \leq x | A_i) = F_{X|A_i}(x)$. $\quad\blacksquare$
+
+**Advanced Example**.
+Suppose $X$ is a **finite Gaussian mixture**:
+
+* With probability $p_1$, $X \sim N(\mu_1, \sigma_1^2)$
+* With probability $p_2=1-p_1$, $X \sim N(\mu_2, \sigma_2^2)$
+
+Then
+
+$$
+f_X(x) = p_1 \frac{1}{\sqrt{2\pi}\sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}
++ p_2 \frac{1}{\sqrt{2\pi}\sigma_2} e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}.
+$$
+
+### Transformations of Random Variables
+
+Let $X$ be a real-valued random variable with density $f_X(x)$, and $h:\mathbb{R}\to\mathbb{R}$ a **differentiable bijection** (i.e., $h$ is invertible and $h^{-1}$ is differentiable). Define $Y = h(X)$. The distribution of $Y$ is determined as follows.
+
+**Definition (Change of Variable Formula).**
+If $h$ is strictly monotonic and differentiable, then for $y$ in the range of $h$,
+
+$$
+f_Y(y) = f_X(h^{-1}(y)) \left|\frac{d}{dy} h^{-1}(y)\right|.
+$$
+
+**Proof.**
+Let $h$ be strictly increasing. The CDF of $Y$ is $F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))$. Differentiating both sides gives
+
+$$
+f_Y(y) = f_X(h^{-1}(y)) \frac{d}{dy} h^{-1}(y).
+$$
+
+If $h$ is decreasing, $\frac{d}{dy} h^{-1}(y)$ is negative; thus, we use the absolute value [@CasellaBerger2002].
+
+**Support for Non-Monotonic Cases.**
+If $h$ is not monotonic, $h^{-1}(y)$ is multi-valued. Then,
+
+$$
+f_Y(y) = \sum_{x\in h^{-1}(y)} \frac{f_X(x)}{|h'(x)|}.
+$$
+
+**Example.**
+Let $Z \sim N(0,1)$. Find the distribution of $X = Z^2$.
+
+* $h(z) = z^2$, so $X$ is supported on $x>0$.
+* $h^{-1}(x) = \pm \sqrt{x}$.
+* $f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$.
+
+Thus,
+
+$$
+f_X(x) = \frac{f_Z(\sqrt{x})}{|2\sqrt{x}|} + \frac{f_Z(-\sqrt{x})}{|2\sqrt{x}|}
+= \frac{1}{\sqrt{2\pi}} \frac{e^{-x/2}}{2\sqrt{x}}, \quad x>0.
+$$
+
+$X$ follows a chi-squared distribution with 1 degree of freedom.
+
+#### Transformation Theorem
+
+**Theorem.**
+Let $X$ have CDF $F_X$ and $Y = h(X)$, where $h$ is strictly increasing and continuously differentiable. Then,
+
+$$
+F_Y(y) = F_X(h^{-1}(y)), \qquad
+f_Y(y) = f_X(h^{-1}(y)) \frac{1}{h'(h^{-1}(y))}, \quad \text{for } y \in h(\mathbb{R}).
+$$
+
+**Proof.**
+Immediate from the chain rule and change of variable arguments above [@Durrett2019].
+
+**Terminology Note.**
+Use "differentiable transformation" (not "continuous transformation") per standard terminology.
+
+### Simulation via Inverse Transform
+
+Suppose $F$ is the CDF of $X$, strictly increasing and continuous. If $U \sim \text{Uniform}(0,1)$, then
+
+$$
+X = F^{-1}(U)
+$$
+
+has CDF $F$ [@Devroye1986].
+
+**Support and Caveats**:
+
+* $F$ must be invertible; for discrete or non-invertible $F$, this method requires adaptation.
+* In practice, $F^{-1}$ may be computed numerically; care is required for accuracy.
+
+### Random Vectors
+
+A **random vector** $\bar{X} = (X_1,\dots,X_k)$ is a measurable function from $(\Omega, \mathcal{A}, P)$ to $(\mathbb{R}^k, \mathcal{B}^k)$, where $\mathcal{B}^k$ is the Borel $\sigma$-algebra on $\mathbb{R}^k$. Its joint CDF is:
+
+$$
+F_{\bar{X}}(\bar{x}) = P(X_1 \leq x_1, \dots, X_k \leq x_k).
+$$
+
+**Discrete and Continuous Case.**
+If $(X,Y)$ is discrete:
+
+$$
+p_{X,Y}(x,y) = P(X=x, Y=y).
+$$
+
+Marginals: $p_X(x) = \sum_y p_{X,Y}(x,y)$, $p_Y(y) = \sum_x p_{X,Y}(x,y)$.
+
+If continuous:
+
+$$
+f_{X,Y}(x,y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x,y).
+$$
+
+**Coherence**.
+The indicator function $\mathbf{1}_{{\cdot}}$ denotes $1$ if its argument is true, $0$ otherwise. The function $\Phi(x)$ is the standard normal CDF.
+
+### Independence
+
+**Definition.**
+Random variables $X$ and $Y$ are independent if for all $x, y$,
+
+$$
+P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y).
+$$
+
+Equivalently, their joint density (if it exists) factors:
+
+$$
+f_{X,Y}(x,y) = f_X(x)f_Y(y).
+$$
+
+### Transformations of Random Vectors
+
+#### Linear Transformations
+
+Let $\bar{X} = (X_1,\dots,X_n)^T$ have mean vector $\mu$ and covariance matrix $\Sigma$. For $A \in \mathbb{R}^{m \times n}$, define $\bar{Y} = A\bar{X}$.
+
+**Theorem.**
+
+* $\mathbb{E}[\bar{Y}] = A \mathbb{E}[\bar{X}]$
+* $\text{Cov}(\bar{Y}) = A , \text{Cov}(\bar{X}) , A^T$
+
+**Proof.**
+By linearity of expectation,
+$\mathbb{E}[\bar{Y}] = \mathbb{E}[A\bar{X}] = A\mathbb{E}[\bar{X}]$.
+
+For the covariance,
+
+$$
+\text{Cov}(\bar{Y}) = \mathbb{E}[(\bar{Y} - \mathbb{E}[\bar{Y}])(\bar{Y} - \mathbb{E}[\bar{Y}])^T]
+= A\mathbb{E}[(\bar{X} - \mu)(\bar{X} - \mu)^T]A^T = A\Sigma A^T.
+$$
+
+**Example.**
+Let $\bar{X} \sim N_2(\mu, \Sigma)$ and
+
+$$
+\bar{Y} = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \bar{X}.
+$$
+
+If $\mu = (\mu_1, \mu_2)^T$, and $\Sigma = \begin{pmatrix} \sigma_1^2 & \rho \sigma_1 \sigma_2 \ \rho \sigma_1 \sigma_2 & \sigma_2^2 \end{pmatrix}$, then
+
+$$
+\mathbb{E}[\bar{Y}] = \begin{pmatrix} \mu_1 + \mu_2 \\ \mu_1 - \mu_2 \end{pmatrix},
+$$
+
+$$
+\text{Cov}(\bar{Y}) = \begin{pmatrix} \sigma_1^2 + \sigma_2^2 + 2\rho \sigma_1 \sigma_2 & \sigma_1^2 - \sigma_2^2 \\ \sigma_1^2 - \sigma_2^2 & \sigma_1^2 + \sigma_2^2 - 2\rho \sigma_1 \sigma_2 \end{pmatrix}.
+$$
+
+#### Nonlinear Transformations
+
+Suppose $\bar{Y} = h(\bar{X})$ is a differentiable bijection from $\mathbb{R}^n$ to $\mathbb{R}^n$. Let $J = \det \left( \frac{\partial h}{\partial \bar{x}} \right)$ denote the Jacobian determinant.
+
+**Theorem (Multivariate Change of Variables).**
+Let $f_{\bar{X}}$ be the density of $\bar{X}$, and suppose $h$ and $h^{-1}$ are differentiable, with nonzero $J$ everywhere. Then the density of $\bar{Y}$ is
+
+$$
+f_{\bar{Y}}(\bar{y}) = f_{\bar{X}}(h^{-1}(\bar{y})) \left| \det D h^{-1}(\bar{y}) \right|,
+$$
+
+where $D h^{-1}$ is the Jacobian of $h^{-1}$ [@Billingsley1995].
+
+**Proof.**
+See [@Billingsley1995, §16] for rigorous justification. The formula arises from the substitution rule in multidimensional integrals.
+
+**Example (Advanced).**
+Let $X_1, X_2$ be independent, each $\sim \text{Exp}(\lambda)$. Define:
+
+$$
+Y_1 = X_1 + X_2, \qquad Y_2 = \frac{X_1}{X_1 + X_2}.
+$$
+
+Compute the joint density $f_{Y_1, Y_2}(y_1, y_2)$.
+
+* The inverse transformation:
+
+  * $X_1 = y_1 y_2$
+  * $X_2 = y_1 (1 - y_2)$
+* Jacobian determinant:
+
+  $$
+  J = \begin{vmatrix}
+  \frac{\partial X_1}{\partial y_1} & \frac{\partial X_1}{\partial y_2} \\
+  \frac{\partial X_2}{\partial y_1} & \frac{\partial X_2}{\partial y_2}
+  \end{vmatrix}
+  = \begin{vmatrix}
+  y_2 & y_1 \\
+  1 - y_2 & -y_1
+  \end{vmatrix} = -y_1
+  $$
+* The joint density:
+
+  $$
+  f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \cdot |J| = \lambda^2 y_1 e^{-\lambda y_1} \mathbf{1}_{{y_1 > 0, 0 < y_2 < 1}}.
+  $$
+
+**Advanced Example.**
+Consider the mapping from polar to Cartesian coordinates: $X = R \cos \Theta$, $Y = R \sin \Theta$, with $R, \Theta$ independent, $R>0$, $\Theta \in (0,2\pi)$. The Jacobian is $r$, giving the joint density $f_{X,Y}(x,y) = f_{R,\Theta}(\sqrt{x^2 + y^2}, \arctan(y/x)) \cdot \frac{1}{\sqrt{x^2 + y^2}}$.
+
+### Applications in Multivariate Analysis
+
+#### Principal Component Analysis (PCA)
+
+PCA transforms correlated random variables into uncorrelated components by an orthogonal linear transformation [@Jolliffe2016].
+Let $\bar{X}$ have covariance matrix $\Sigma$. The first principal component is the linear combination maximizing variance, i.e., maximize $\text{Var}(a^T\bar{X})$ under $||a||=1$. The eigenvectors of $\Sigma$ provide the transformation; the corresponding eigenvalues quantify explained variance.
+
+**Numerical Example.**
+Let $\Sigma = \begin{pmatrix} 2 & 1 \ 1 & 2 \end{pmatrix}$.
+Eigenvalues: $3, 1$.
+First principal component: $a_1 = (1/\sqrt{2}, 1/\sqrt{2})$, variance $3$.
+
+#### Canonical Correlation Analysis
+
+Given two random vectors $(\bar{X}, \bar{Y})$, CCA seeks linear combinations maximizing correlation [@MardiaKentBibby1979].
+Let $a, b$ maximize $\text{corr}(a^T\bar{X}, b^T\bar{Y})$. This requires both covariance and cross-covariance matrices.
+
+#### Factor Analysis
+
+Factor analysis models the covariance matrix $\Sigma$ as $\Sigma = \Lambda \Lambda^T + \Psi$, where $\Lambda$ captures common factors and $\Psi$ is diagonal (specific variance). Assumes normality and independence of factors [@MardiaKentBibby1979].
+
+### Exercises
+
+1. **Mixture Distribution.**
+   Let $X$ have a mixture distribution: with probability $p$, $X\sim N(0,1)$; with $1-p$, $X\sim N(\mu,1)$.
+   (a) Write the PDF and CDF of $X$.
+   (b) Show all steps.
+
+2. **Transformation Proof.**
+   Let $X$ have PDF $f_X(x)$, $h$ strictly increasing and differentiable. Prove the formula for $f_Y(y)$.
+
+3. **Multivariate Change of Variables.**
+   Let $X_1, X_2$ be independent, $\sim \text{Exp}(1)$. Find the joint density of $(Y_1, Y_2) = (X_1 + X_2, X_1/X_2)$.
+
+4. **PCA Calculation.**
+   Given $\Sigma = \begin{pmatrix} 4 & 2 \ 2 & 3 \end{pmatrix}$, find the principal components and proportion of total variance explained.

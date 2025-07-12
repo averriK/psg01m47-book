@@ -1,0 +1,1226 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Feller",
+                    "given": "William"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Feller1970",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "An introduction to probability theory and its applications, vol. 1",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Stanley",
+                    "given": "Richard P."
+                }
+            ],
+            "edition": "2nd",
+            "id": "Stanley2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Enumerative combinatorics, vol. 1",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "publisher-place": "New York",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bernardo",
+                    "given": "José M."
+                },
+                {
+                    "family": "Smith",
+                    "given": "Adrian F. M."
+                }
+            ],
+            "id": "BernardoSmith1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Bayesian theory",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "publisher-place": "New York",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Devroye",
+                    "given": "Luc"
+                }
+            ],
+            "id": "Devroye1986",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "publisher-place": "New York",
+            "title": "Non-uniform random variate generation",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Casella",
+                    "given": "George"
+                },
+                {
+                    "family": "Berger",
+                    "given": "Roger L."
+                }
+            ],
+            "edition": "2nd",
+            "id": "CasellaBerger2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "publisher": "Duxbury",
+            "title": "Statistical inference",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Devroye",
+                    "given": "Luc"
+                }
+            ],
+            "id": "Devroye1986",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "Non-uniform random variate generation",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Jolliffe",
+                    "given": "Ian T."
+                },
+                {
+                    "family": "Cadima",
+                    "given": "Jorge"
+                }
+            ],
+            "collection-number": "2065",
+            "container-title": "Philosophical Transactions of the Royal Society A",
+            "id": "Jolliffe2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "20150202",
+            "title": "Principal component analysis: A review and recent developments",
+            "title-short": "Principal component analysis",
+            "type": "book",
+            "volume": "374"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mardia",
+                    "given": "K. V."
+                },
+                {
+                    "family": "Kent",
+                    "given": "J. T."
+                },
+                {
+                    "family": "Bibby",
+                    "given": "J. M."
+                }
+            ],
+            "id": "MardiaKentBibby1979",
+            "issued": {
+                "date-parts": [
+                    [
+                        1979
+                    ]
+                ]
+            },
+            "publisher": "Academic Press",
+            "title": "Multivariate analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "publisher-place": "New York",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lehmann",
+                    "given": "E. L."
+                },
+                {
+                    "family": "Casella",
+                    "given": "George"
+                }
+            ],
+            "edition": "2nd",
+            "id": "LehmannCasella1998",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "Theory of point estimation",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hamilton",
+                    "given": "James D."
+                }
+            ],
+            "id": "Hamilton1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "title": "Time series analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hastie",
+                    "given": "Trevor"
+                },
+                {
+                    "family": "Tibshirani",
+                    "given": "Robert"
+                },
+                {
+                    "family": "Friedman",
+                    "given": "Jerome"
+                }
+            ],
+            "edition": "2nd",
+            "id": "HastieTibshiraniFriedman2009",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "title": "The elements of statistical learning: Data mining, inference, and prediction",
+            "title-short": "The elements of statistical learning",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-471-00710-4",
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1-108-47228-9",
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-0-471-25708-0",
+            "author": [
+                {
+                    "family": "Feller",
+                    "given": "William"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Feller1968",
+            "issued": {
+                "date-parts": [
+                    [
+                        1968
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "An introduction to probability theory and its applications, vol. 1",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "John Wiley; Sons",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Richard"
+                }
+            ],
+            "edition": "5",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Le Cam",
+                    "given": "Lucien"
+                }
+            ],
+            "container-title": "Pacific Journal of Mathematics",
+            "id": "LeCam1960",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960
+                    ]
+                ]
+            },
+            "page": "1181-1197",
+            "title": "An approximation theorem for the poisson binomial distribution",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "publisher-place": "New York",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "publisher-place": "Cambridge",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Le Cam",
+                    "given": "Lucien"
+                }
+            ],
+            "container-title": "Pacific Journal of Mathematics",
+            "id": "LeCam1960",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960
+                    ]
+                ]
+            },
+            "page": "1181-1197",
+            "title": "An approximation theorem for the poisson binomial distribution",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kingman",
+                    "given": "J. F. C."
+                }
+            ],
+            "id": "Kingman1993",
+            "issued": {
+                "date-parts": [
+                    [
+                        1993
+                    ]
+                ]
+            },
+            "publisher": "Oxford University Press",
+            "title": "Poisson processes",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ross",
+                    "given": "Sheldon M."
+                }
+            ],
+            "edition": "12th",
+            "id": "Ross2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Academic Press",
+            "title": "Introduction to probability models",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Gross",
+                    "given": "Donald"
+                },
+                {
+                    "family": "Harris",
+                    "given": "Carl M."
+                }
+            ],
+            "edition": "3rd",
+            "id": "GrossHarris1998",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Fundamentals of queueing theory",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Levin",
+                    "given": "David A."
+                },
+                {
+                    "family": "Peres",
+                    "given": "Yuval"
+                },
+                {
+                    "family": "Wilmer",
+                    "given": "Elizabeth L."
+                }
+            ],
+            "edition": "2nd",
+            "id": "LevinPeres2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "American Mathematical Society",
+            "title": "Markov chains and mixing times",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "John Wiley & Sons",
+            "publisher-place": "New York",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sato",
+                    "given": "Ken-iti"
+                }
+            ],
+            "id": "Sato1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Lévy processes and infinitely divisible distributions",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Asmussen",
+                    "given": "Søren"
+                }
+            ],
+            "id": "Asmussen2000",
+            "issued": {
+                "date-parts": [
+                    [
+                        2000
+                    ]
+                ]
+            },
+            "publisher": "World Scientific",
+            "title": "Ruin probabilities",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hamilton",
+                    "given": "James D."
+                }
+            ],
+            "id": "Hamilton1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "title": "Time series analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Box",
+                    "given": "George E. P."
+                },
+                {
+                    "family": "Jenkins",
+                    "given": "Gwilym M."
+                }
+            ],
+            "id": "BoxJenkins1970",
+            "issued": {
+                "date-parts": [
+                    [
+                        1970
+                    ]
+                ]
+            },
+            "publisher": "Holden-Day",
+            "title": "Time series analysis: Forecasting and control",
+            "title-short": "Time series analysis",
+            "type": "book"
+        },
+        {
+            "URL": "https://otexts.com/fpp3/",
+            "author": [
+                {
+                    "family": "Hyndman",
+                    "given": "Rob J."
+                },
+                {
+                    "family": "Athanasopoulos",
+                    "given": "George"
+                }
+            ],
+            "edition": "3",
+            "id": "Hyndman2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "OTexts",
+            "title": "Forecasting: Principles and practice",
+            "title-short": "Forecasting",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cleveland",
+                    "given": "Robert B."
+                },
+                {
+                    "family": "Cleveland",
+                    "given": "William S."
+                },
+                {
+                    "family": "McRae",
+                    "given": "Jean E."
+                },
+                {
+                    "family": "Terpenning",
+                    "given": "Irma"
+                }
+            ],
+            "container-title": "Journal of Official Statistics",
+            "id": "Cleveland1990",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1990
+                    ]
+                ]
+            },
+            "page": "3-73",
+            "title": "STL: A seasonal-trend decomposition procedure based on loess",
+            "title-short": "STL",
+            "type": "article-journal",
+            "volume": "6"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "Patrick"
+                }
+            ],
+            "edition": "3",
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "Rick"
+                }
+            ],
+            "edition": "5",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Box",
+                    "given": "G. E. P."
+                },
+                {
+                    "family": "Cox",
+                    "given": "D. R."
+                }
+            ],
+            "container-title": "Journal of the Royal Statistical Society. Series B (Methodological)",
+            "id": "BoxCox1964",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1964
+                    ]
+                ]
+            },
+            "page": "211-252",
+            "title": "An analysis of transformations",
+            "type": "article-journal",
+            "volume": "26"
+        },
+        {
+            "author": [
+                {
+                    "family": "Beran",
+                    "given": "Jan"
+                }
+            ],
+            "id": "Beran1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Statistics for long-memory processes",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Billingsley",
+                    "given": "P."
+                }
+            ],
+            "id": "Billingsley1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "John Wiley & Sons",
+            "title": "Probability and measure",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Durrett",
+                    "given": "R."
+                }
+            ],
+            "edition": "5th",
+            "id": "Durrett2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "Cambridge University Press",
+            "title": "Probability: Theory and examples",
+            "title-short": "Probability",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hamilton",
+                    "given": "J. D."
+                }
+            ],
+            "id": "Hamilton1994",
+            "issued": {
+                "date-parts": [
+                    [
+                        1994
+                    ]
+                ]
+            },
+            "publisher": "Princeton University Press",
+            "title": "Time series analysis",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hyndman",
+                    "given": "R. J."
+                },
+                {
+                    "family": "Athanasopoulos",
+                    "given": "G."
+                }
+            ],
+            "id": "Hyndman2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "3rd edition, OTexts",
+            "title": "Forecasting: Principles and practice",
+            "title-short": "Forecasting",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "./_bib/references.bib"
+    ]
+}
