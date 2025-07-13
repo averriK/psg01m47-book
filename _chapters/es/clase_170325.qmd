@@ -51,7 +51,7 @@ Una función $X$ es **medible** si, para todo conjunto de Borel $B$, la imagen i
 
 La **distribución** de una variable aleatoria $X$ se define como la medida imagen $P_X(B) = P(X^{-1}(B))$ para $B \in \mathcal{B}(\mathbb{R})$.
 
-#### Función de Distribución Acumulada (FDA)
+#### Función de Distribución Acumulada (CDF)
 
 La **función de distribución acumulada** de $X$ es
 
@@ -61,7 +61,7 @@ $$
 
 #### Distribuciones Discretas y Continuas
 
-* **Discreta:** Si $X$ toma a lo sumo valores numerables, definimos la **función de masa de probabilidad (fmp)**
+* **Discreta:** Si $X$ toma a lo sumo valores numerables, definimos la **función de masa de probabilidad (pmf)**
 
   $$
   p_X(x) = P(X = x), \quad \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1.
@@ -72,7 +72,7 @@ $$
   P(X \in B) = \int_B f_X(x)\,dx
   $$
 
-  para todos los conjuntos de Borel $B$, entonces $f_X$ es la **función de densidad de probabilidad (fdp)** de $X$. Debe satisfacer $f_X(x) \geq 0$ y
+  para todos los conjuntos de Borel $B$, entonces $f_X$ es la **función de densidad de probabilidad (pdf)** de $X$. Debe satisfacer $f_X(x) \geq 0$ y
 
   $$
   \int_{-\infty}^{\infty} f_X(x)\,dx = 1.
@@ -184,7 +184,7 @@ $$
 
 **Ejemplo Continuo: Distribución Exponencial**
 
-Sea $X$ con fdp $f_X(x) = \lambda e^{-\lambda x}$ para $x \geq 0$ ($\lambda > 0$).
+Sea $X$ con pdf $f_X(x) = \lambda e^{-\lambda x}$ para $x \geq 0$ ($\lambda > 0$).
 
 * $F_X(x) = 1 - e^{-\lambda x}$ para $x \geq 0$,
 * $E[X] = \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = 1/\lambda$,

@@ -5,13 +5,13 @@
 Sea $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad, donde $\Omega$ es el espacio muestral, $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$, y $P$ es una medida de probabilidad en $\mathcal{F}$.
 Una **variable aleatoria** es una función medible $X: \Omega \to \mathbb{R}$, lo que significa que para todo $x \in \mathbb{R}$, el conjunto ${\omega \in \Omega : X(\omega) \leq x}$ pertenece a $\mathcal{F}$ [@Billingsley1995].
 
-La **función de distribución acumulativa (FDA)** de $X$ se define por
+La **función de distribución acumulativa (CDF)** de $X$ se define por
 
 $$
 F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
 $$
 
-#### Propiedades de la FDA
+#### Propiedades de la CDF
 
 1. $F_X$ es monótonamente no decreciente: Si $x_1 < x_2$, entonces $F_X(x_1) \leq F_X(x_2)$.
 2. $F_X$ es continua por la derecha: $\lim_{h \to 0^+} F_X(x+h) = F_X(x)$ para todo $x$.
@@ -23,7 +23,7 @@ Los límites en $\pm\infty$ se siguen de la aditividad numerable de $P$ y el ago
 
 ### Variables Aleatorias Discretas
 
-Una variable aleatoria $X$ es **discreta** si su rango es un conjunto finito o numerable $S \subset \mathbb{R}$. La **función de masa de probabilidad (fmp)** es
+Una variable aleatoria $X$ es **discreta** si su rango es un conjunto finito o numerable $S \subset \mathbb{R}$. La **función de masa de probabilidad (pmf)** es
 
 $$
 p_X(x) = P(X = x), \quad x \in S
@@ -42,18 +42,18 @@ $$
 
 ### Variables Aleatorias Continuas
 
-Una variable aleatoria $X$ es **continua** si existe una **función de densidad de probabilidad (fdp)** $f_X:\mathbb{R}\to[0,\infty)$ tal que, para todo $a < b$,
+Una variable aleatoria $X$ es **continua** si existe una **función de densidad de probabilidad (pdf)** $f_X:\mathbb{R}\to[0,\infty)$ tal que, para todo $a < b$,
 
 $$
 P(a < X \leq b) = \int_a^b f_X(x)\,dx.
 $$
 
-La fdp satisface
+La pdf satisface
 
 1. $f_X(x) \geq 0$ para todo $x \in \mathbb{R}$
 2. $\int_{-\infty}^{\infty} f_X(x)\,dx = 1$
 
-**Observación**: La existencia de una fdp requiere que $F_X$ sea absolutamente continua [@Durrett2019, Sec. 1.3].
+**Observación**: La existencia de una pdf requiere que $F_X$ sea absolutamente continua [@Durrett2019, Sec. 1.3].
 
 **Ejemplo: Distribución Normal Estándar:** Sea $X$ con distribución normal estándar:
 
@@ -69,7 +69,7 @@ $$
 
 ### Transformaciones de Variables Aleatorias
 
-Dada una variable aleatoria $X$ con fdp $f_X$ y una función $h:\mathbb{R}\to\mathbb{R}$ medible, invertible y diferenciable, definamos $Y = h(X)$. La fdp de $Y$ es
+Dada una variable aleatoria $X$ con pdf $f_X$ y una función $h:\mathbb{R}\to\mathbb{R}$ medible, invertible y diferenciable, definamos $Y = h(X)$. La pdf de $Y$ es
 
 $$
 f_Y(y) = f_X(h^{-1}(y)) \left| \frac{d}{dy} h^{-1}(y) \right|, \quad y \in h(\mathbb{R})
@@ -99,7 +99,7 @@ $$
 F_{\mathbf{X}}(x_1, \dots, x_n) = P(X_1 \leq x_1, \dots, X_n \leq x_n)
 $$
 
-Si existe una fdp conjunta $f_{\mathbf{X}}$, entonces
+Si existe una pdf conjunta $f_{\mathbf{X}}$, entonces
 
 $$
 P((X_1, \dots, X_n) \in B) = \int_{B} f_{\mathbf{X}}(x_1, \dots, x_n)\,dx_1 \cdots dx_n
@@ -107,7 +107,7 @@ $$
 
 para todos los conjuntos de Borel $B \subset \mathbb{R}^n$.
 
-**Marginales y Condicionales**: La fdp marginal de $X_1$ es
+**Marginales y Condicionales**: La pdf marginal de $X_1$ es
 
 $$
 f_{X_1}(x_1) = \int_{\mathbb{R}^{n-1}} f_{\mathbf{X}}(x_1, x_2, \dots, x_n)\,dx_2 \cdots dx_n
@@ -115,7 +115,7 @@ $$
 
 Las distribuciones condicionales se definen de manera análoga [@Durrett2019, Sec. 1.5].
 
-**Ejemplo: Normal Bivariada.** Sea $(X_1, X_2)$ conjuntamente normal con media cero, varianzas $1$, y covarianza $\rho$. La fdp conjunta es
+**Ejemplo: Normal Bivariada.** Sea $(X_1, X_2)$ conjuntamente normal con media cero, varianzas $1$, y covarianza $\rho$. La pdf conjunta es
 
 $$
 f_{\mathbf{X}}(x_1, x_2) = \frac{1}{2\pi\sqrt{1-\rho^2}} \exp\left( -\frac{x_1^2 - 2\rho x_1 x_2 + x_2^2}{2(1-\rho^2)} \right)
@@ -169,6 +169,6 @@ Si $U \sim \text{Uniforme}(0,1)$ y $F_X$ es continua y estrictamente creciente, 
 
 ### Ejercicios
 
-1. Demostrar que para cualquier FDA $F$, la función es continua por la derecha y satisface los límites establecidos en $\pm\infty$.
+1. Demostrar que para cualquier CDF $F$, la función es continua por la derecha y satisface los límites establecidos en $\pm\infty$.
 2. Sea $X$ uniforme en $[0,1]$, y $Y = -\ln(1-X)$. Mostrar que $Y$ es exponencial con parámetro $1$.
-3. Dadas las variables aleatorias $X$ e $Y$ con fdp conjunta $f(x,y) = 6xy$ para $0 < x < 1$, $0 < y < 1$, $x+y < 1$, calcular $P(X < Y)$ y verificar si $X$ e $Y$ son independientes.
+3. Dadas las variables aleatorias $X$ e $Y$ con pdf conjunta $f(x,y) = 6xy$ para $0 < x < 1$, $0 < y < 1$, $x+y < 1$, calcular $P(X < Y)$ y verificar si $X$ e $Y$ son independientes.

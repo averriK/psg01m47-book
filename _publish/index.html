@@ -2725,8 +2725,8 @@ X^{-1}(B) \in \mathcal{F}.
 <section id="distribuciones-de-probabilidad-de-variables-aleatorias" class="level3" data-number="1.1.5">
 <h3 data-number="1.1.5" class="anchored" data-anchor-id="distribuciones-de-probabilidad-de-variables-aleatorias"><span class="header-section-number">1.1.5</span> Distribuciones de Probabilidad de Variables Aleatorias</h3>
 <p>La <strong>distribución</strong> de una variable aleatoria <span class="math inline">\(X\)</span> se define como la medida imagen <span class="math inline">\(P_X(B) = P(X^{-1}(B))\)</span> para <span class="math inline">\(B \in \mathcal{B}(\mathbb{R})\)</span>.</p>
-<section id="función-de-distribución-acumulada-fda" class="level4" data-number="1.1.5.1">
-<h4 data-number="1.1.5.1" class="anchored" data-anchor-id="función-de-distribución-acumulada-fda"><span class="header-section-number">1.1.5.1</span> Función de Distribución Acumulada (FDA)</h4>
+<section id="función-de-distribución-acumulada-cdf" class="level4" data-number="1.1.5.1">
+<h4 data-number="1.1.5.1" class="anchored" data-anchor-id="función-de-distribución-acumulada-cdf"><span class="header-section-number">1.1.5.1</span> Función de Distribución Acumulada (CDF)</h4>
 <p>La <strong>función de distribución acumulada</strong> de <span class="math inline">\(X\)</span> es</p>
 <p><span class="math display">\[
 F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
@@ -2735,7 +2735,7 @@ F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
 <section id="distribuciones-discretas-y-continuas" class="level4" data-number="1.1.5.2">
 <h4 data-number="1.1.5.2" class="anchored" data-anchor-id="distribuciones-discretas-y-continuas"><span class="header-section-number">1.1.5.2</span> Distribuciones Discretas y Continuas</h4>
 <ul>
-<li><p><strong>Discreta:</strong> Si <span class="math inline">\(X\)</span> toma a lo sumo valores numerables, definimos la <strong>función de masa de probabilidad (fmp)</strong></p>
+<li><p><strong>Discreta:</strong> Si <span class="math inline">\(X\)</span> toma a lo sumo valores numerables, definimos la <strong>función de masa de probabilidad (pmf)</strong></p>
 <p><span class="math display">\[
 p_X(x) = P(X = x), \quad \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1.
 \]</span></p></li>
@@ -2743,7 +2743,7 @@ p_X(x) = P(X = x), \quad \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1.
 <p><span class="math display">\[
 P(X \in B) = \int_B f_X(x)\,dx
 \]</span></p>
-<p>para todos los conjuntos de Borel <span class="math inline">\(B\)</span>, entonces <span class="math inline">\(f_X\)</span> es la <strong>función de densidad de probabilidad (fdp)</strong> de <span class="math inline">\(X\)</span>. Debe satisfacer <span class="math inline">\(f_X(x) \geq 0\)</span> y</p>
+<p>para todos los conjuntos de Borel <span class="math inline">\(B\)</span>, entonces <span class="math inline">\(f_X\)</span> es la <strong>función de densidad de probabilidad (pdf)</strong> de <span class="math inline">\(X\)</span>. Debe satisfacer <span class="math inline">\(f_X(x) \geq 0\)</span> y</p>
 <p><span class="math display">\[
 \int_{-\infty}^{\infty} f_X(x)\,dx = 1.
 \]</span></p></li>
@@ -2831,7 +2831,7 @@ E[X] = \sum_{x=2}^{12} x \cdot p_X(x) = 7.
 \operatorname{Var}(X) = \sum_{x=2}^{12} (x-7)^2 p_X(x) = \frac{35}{6}.
 \]</span></p>
 <p><strong>Ejemplo Continuo: Distribución Exponencial</strong></p>
-<p>Sea <span class="math inline">\(X\)</span> con fdp <span class="math inline">\(f_X(x) = \lambda e^{-\lambda x}\)</span> para <span class="math inline">\(x \geq 0\)</span> (<span class="math inline">\(\lambda &gt; 0\)</span>).</p>
+<p>Sea <span class="math inline">\(X\)</span> con pdf <span class="math inline">\(f_X(x) = \lambda e^{-\lambda x}\)</span> para <span class="math inline">\(x \geq 0\)</span> (<span class="math inline">\(\lambda &gt; 0\)</span>).</p>
 <ul>
 <li><span class="math inline">\(F_X(x) = 1 - e^{-\lambda x}\)</span> para <span class="math inline">\(x \geq 0\)</span>,</li>
 <li><span class="math inline">\(E[X] = \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = 1/\lambda\)</span>,</li>
@@ -3196,12 +3196,12 @@ P(A \cap B) = 0.01 = 0.1 \cdot 0.1 = P(A)P(B),
 <section id="definición-y-propiedades" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="definición-y-propiedades"><span class="header-section-number">1.4.1</span> Definición y Propiedades</h3>
 <p>Sea <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> un espacio de probabilidad, donde <span class="math inline">\(\Omega\)</span> es el espacio muestral, <span class="math inline">\(\mathcal{F}\)</span> es una <span class="math inline">\(\sigma\)</span>-álgebra de subconjuntos de <span class="math inline">\(\Omega\)</span>, y <span class="math inline">\(P\)</span> es una medida de probabilidad en <span class="math inline">\(\mathcal{F}\)</span>. Una <strong>variable aleatoria</strong> es una función medible <span class="math inline">\(X: \Omega \to \mathbb{R}\)</span>, lo que significa que para todo <span class="math inline">\(x \in \mathbb{R}\)</span>, el conjunto <span class="math inline">\({\omega \in \Omega : X(\omega) \leq x}\)</span> pertenece a <span class="math inline">\(\mathcal{F}\)</span> <span class="citation" data-cites="Billingsley1995">(<a href="#ref-Billingsley1995" role="doc-biblioref">Billingsley 1995</a>)</span>.</p>
-<p>La <strong>función de distribución acumulativa (FDA)</strong> de <span class="math inline">\(X\)</span> se define por</p>
+<p>La <strong>función de distribución acumulativa (CDF)</strong> de <span class="math inline">\(X\)</span> se define por</p>
 <p><span class="math display">\[
 F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
 \]</span></p>
-<section id="propiedades-de-la-fda" class="level4" data-number="1.4.1.1">
-<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="propiedades-de-la-fda"><span class="header-section-number">1.4.1.1</span> Propiedades de la FDA</h4>
+<section id="propiedades-de-la-cdf" class="level4" data-number="1.4.1.1">
+<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="propiedades-de-la-cdf"><span class="header-section-number">1.4.1.1</span> Propiedades de la CDF</h4>
 <ol type="1">
 <li><span class="math inline">\(F_X\)</span> es monótonamente no decreciente: Si <span class="math inline">\(x_1 &lt; x_2\)</span>, entonces <span class="math inline">\(F_X(x_1) \leq F_X(x_2)\)</span>.</li>
 <li><span class="math inline">\(F_X\)</span> es continua por la derecha: <span class="math inline">\(\lim_{h \to 0^+} F_X(x+h) = F_X(x)\)</span> para todo <span class="math inline">\(x\)</span>.</li>
@@ -3212,7 +3212,7 @@ F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
 </section>
 <section id="variables-aleatorias-discretas" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="variables-aleatorias-discretas"><span class="header-section-number">1.4.2</span> Variables Aleatorias Discretas</h3>
-<p>Una variable aleatoria <span class="math inline">\(X\)</span> es <strong>discreta</strong> si su rango es un conjunto finito o numerable <span class="math inline">\(S \subset \mathbb{R}\)</span>. La <strong>función de masa de probabilidad (fmp)</strong> es</p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> es <strong>discreta</strong> si su rango es un conjunto finito o numerable <span class="math inline">\(S \subset \mathbb{R}\)</span>. La <strong>función de masa de probabilidad (pmf)</strong> es</p>
 <p><span class="math display">\[
 p_X(x) = P(X = x), \quad x \in S
 \]</span></p>
@@ -3225,16 +3225,16 @@ p_X(x) = \frac{n(x)}{36}, \quad n(x) = 6 - |7 - x|, \quad x \in {2,3,\dots,12}.
 </section>
 <section id="variables-aleatorias-continuas" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="variables-aleatorias-continuas"><span class="header-section-number">1.4.3</span> Variables Aleatorias Continuas</h3>
-<p>Una variable aleatoria <span class="math inline">\(X\)</span> es <strong>continua</strong> si existe una <strong>función de densidad de probabilidad (fdp)</strong> <span class="math inline">\(f_X:\mathbb{R}\to[0,\infty)\)</span> tal que, para todo <span class="math inline">\(a &lt; b\)</span>,</p>
+<p>Una variable aleatoria <span class="math inline">\(X\)</span> es <strong>continua</strong> si existe una <strong>función de densidad de probabilidad (pdf)</strong> <span class="math inline">\(f_X:\mathbb{R}\to[0,\infty)\)</span> tal que, para todo <span class="math inline">\(a &lt; b\)</span>,</p>
 <p><span class="math display">\[
 P(a &lt; X \leq b) = \int_a^b f_X(x)\,dx.
 \]</span></p>
-<p>La fdp satisface</p>
+<p>La pdf satisface</p>
 <ol type="1">
 <li><span class="math inline">\(f_X(x) \geq 0\)</span> para todo <span class="math inline">\(x \in \mathbb{R}\)</span></li>
 <li><span class="math inline">\(\int_{-\infty}^{\infty} f_X(x)\,dx = 1\)</span></li>
 </ol>
-<p><strong>Observación</strong>: La existencia de una fdp requiere que <span class="math inline">\(F_X\)</span> sea absolutamente continua <span class="citation" data-cites="Durrett2019">(<a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019, sec. 1.3</a>)</span>.</p>
+<p><strong>Observación</strong>: La existencia de una pdf requiere que <span class="math inline">\(F_X\)</span> sea absolutamente continua <span class="citation" data-cites="Durrett2019">(<a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019, sec. 1.3</a>)</span>.</p>
 <p><strong>Ejemplo: Distribución Normal Estándar:</strong> Sea <span class="math inline">\(X\)</span> con distribución normal estándar:</p>
 <p><span class="math display">\[
 f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}, \quad x \in \mathbb{R}
@@ -3246,7 +3246,7 @@ P(a &lt; X \leq b) = \int_a^b f_X(x)\,dx.
 </section>
 <section id="transformaciones-de-variables-aleatorias" class="level3" data-number="1.4.4">
 <h3 data-number="1.4.4" class="anchored" data-anchor-id="transformaciones-de-variables-aleatorias"><span class="header-section-number">1.4.4</span> Transformaciones de Variables Aleatorias</h3>
-<p>Dada una variable aleatoria <span class="math inline">\(X\)</span> con fdp <span class="math inline">\(f_X\)</span> y una función <span class="math inline">\(h:\mathbb{R}\to\mathbb{R}\)</span> medible, invertible y diferenciable, definamos <span class="math inline">\(Y = h(X)\)</span>. La fdp de <span class="math inline">\(Y\)</span> es</p>
+<p>Dada una variable aleatoria <span class="math inline">\(X\)</span> con pdf <span class="math inline">\(f_X\)</span> y una función <span class="math inline">\(h:\mathbb{R}\to\mathbb{R}\)</span> medible, invertible y diferenciable, definamos <span class="math inline">\(Y = h(X)\)</span>. La pdf de <span class="math inline">\(Y\)</span> es</p>
 <p><span class="math display">\[
 f_Y(y) = f_X(h^{-1}(y)) \left| \frac{d}{dy} h^{-1}(y) \right|, \quad y \in h(\mathbb{R})
 \]</span></p>
@@ -3269,17 +3269,17 @@ f_Y(y) = f_X(\sqrt{y})\frac{1}{2\sqrt{y}} + f_X(-\sqrt{y})\frac{1}{2\sqrt{y}} = 
 <p><span class="math display">\[
 F_{\mathbf{X}}(x_1, \dots, x_n) = P(X_1 \leq x_1, \dots, X_n \leq x_n)
 \]</span></p>
-<p>Si existe una fdp conjunta <span class="math inline">\(f_{\mathbf{X}}\)</span>, entonces</p>
+<p>Si existe una pdf conjunta <span class="math inline">\(f_{\mathbf{X}}\)</span>, entonces</p>
 <p><span class="math display">\[
 P((X_1, \dots, X_n) \in B) = \int_{B} f_{\mathbf{X}}(x_1, \dots, x_n)\,dx_1 \cdots dx_n
 \]</span></p>
 <p>para todos los conjuntos de Borel <span class="math inline">\(B \subset \mathbb{R}^n\)</span>.</p>
-<p><strong>Marginales y Condicionales</strong>: La fdp marginal de <span class="math inline">\(X_1\)</span> es</p>
+<p><strong>Marginales y Condicionales</strong>: La pdf marginal de <span class="math inline">\(X_1\)</span> es</p>
 <p><span class="math display">\[
 f_{X_1}(x_1) = \int_{\mathbb{R}^{n-1}} f_{\mathbf{X}}(x_1, x_2, \dots, x_n)\,dx_2 \cdots dx_n
 \]</span></p>
 <p>Las distribuciones condicionales se definen de manera análoga <span class="citation" data-cites="Durrett2019">(<a href="#ref-Durrett2019" role="doc-biblioref">Durrett 2019, sec. 1.5</a>)</span>.</p>
-<p><strong>Ejemplo: Normal Bivariada.</strong> Sea <span class="math inline">\((X_1, X_2)\)</span> conjuntamente normal con media cero, varianzas <span class="math inline">\(1\)</span>, y covarianza <span class="math inline">\(\rho\)</span>. La fdp conjunta es</p>
+<p><strong>Ejemplo: Normal Bivariada.</strong> Sea <span class="math inline">\((X_1, X_2)\)</span> conjuntamente normal con media cero, varianzas <span class="math inline">\(1\)</span>, y covarianza <span class="math inline">\(\rho\)</span>. La pdf conjunta es</p>
 <p><span class="math display">\[
 f_{\mathbf{X}}(x_1, x_2) = \frac{1}{2\pi\sqrt{1-\rho^2}} \exp\left( -\frac{x_1^2 - 2\rho x_1 x_2 + x_2^2}{2(1-\rho^2)} \right)
 \]</span></p>
@@ -3327,9 +3327,9 @@ P(X \leq x, Y \leq y) = P(X \leq x) P(Y \leq y)
 <section id="ejercicios-3" class="level3" data-number="1.4.9">
 <h3 data-number="1.4.9" class="anchored" data-anchor-id="ejercicios-3"><span class="header-section-number">1.4.9</span> Ejercicios</h3>
 <ol type="1">
-<li>Demostrar que para cualquier FDA <span class="math inline">\(F\)</span>, la función es continua por la derecha y satisface los límites establecidos en <span class="math inline">\(\pm\infty\)</span>.</li>
+<li>Demostrar que para cualquier CDF <span class="math inline">\(F\)</span>, la función es continua por la derecha y satisface los límites establecidos en <span class="math inline">\(\pm\infty\)</span>.</li>
 <li>Sea <span class="math inline">\(X\)</span> uniforme en <span class="math inline">\([0,1]\)</span>, y <span class="math inline">\(Y = -\ln(1-X)\)</span>. Mostrar que <span class="math inline">\(Y\)</span> es exponencial con parámetro <span class="math inline">\(1\)</span>.</li>
-<li>Dadas las variables aleatorias <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> con fdp conjunta <span class="math inline">\(f(x,y) = 6xy\)</span> para <span class="math inline">\(0 &lt; x &lt; 1\)</span>, <span class="math inline">\(0 &lt; y &lt; 1\)</span>, <span class="math inline">\(x+y &lt; 1\)</span>, calcular <span class="math inline">\(P(X &lt; Y)\)</span> y verificar si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes.</li>
+<li>Dadas las variables aleatorias <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> con pdf conjunta <span class="math inline">\(f(x,y) = 6xy\)</span> para <span class="math inline">\(0 &lt; x &lt; 1\)</span>, <span class="math inline">\(0 &lt; y &lt; 1\)</span>, <span class="math inline">\(x+y &lt; 1\)</span>, calcular <span class="math inline">\(P(X &lt; Y)\)</span> y verificar si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> son independientes.</li>
 </ol>
 </section>
 </section>
@@ -3337,7 +3337,7 @@ P(X \leq x, Y \leq y) = P(X \leq x) P(Y \leq y)
 <h2 data-number="1.5" class="anchored" data-anchor-id="variables-aleatorias-y-vectores-transformaciones-y-aplicaciones"><span class="header-section-number">1.5</span> Variables Aleatorias y Vectores: Transformaciones y Aplicaciones</h2>
 <section id="distribuciones-de-mezcla" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="distribuciones-de-mezcla"><span class="header-section-number">1.5.1</span> Distribuciones de Mezcla</h3>
-<p>Una <strong>distribución de mezcla</strong> describe la ley de probabilidad de una variable aleatoria <span class="math inline">\(X\)</span> que depende de cuál evento ocurre entre una partición <span class="math inline">\({A_1, A_2, \dots, A_n}\)</span> del espacio de probabilidad subyacente <span class="math inline">\((\Omega, \mathcal{A}, P)\)</span> <span class="citation" data-cites="Billingsley1995">(<a href="#ref-Billingsley1995" role="doc-biblioref">Billingsley 1995</a>)</span>. Para cada <span class="math inline">\(i\)</span>, sea <span class="math inline">\(F_{X|A_i}(x)\)</span> la función de distribución acumulativa (FDA) condicional de <span class="math inline">\(X\)</span> dado <span class="math inline">\(A_i\)</span>, y <span class="math inline">\(P(A_i)\)</span> la probabilidad de <span class="math inline">\(A_i\)</span>. La ley de probabilidad total produce:</p>
+<p>Una <strong>distribución de mezcla</strong> describe la ley de probabilidad de una variable aleatoria <span class="math inline">\(X\)</span> que depende de cuál evento ocurre entre una partición <span class="math inline">\({A_1, A_2, \dots, A_n}\)</span> del espacio de probabilidad subyacente <span class="math inline">\((\Omega, \mathcal{A}, P)\)</span> <span class="citation" data-cites="Billingsley1995">(<a href="#ref-Billingsley1995" role="doc-biblioref">Billingsley 1995</a>)</span>. Para cada <span class="math inline">\(i\)</span>, sea <span class="math inline">\(F_{X|A_i}(x)\)</span> la función de distribución acumulativa (CDF) condicional de <span class="math inline">\(X\)</span> dado <span class="math inline">\(A_i\)</span>, y <span class="math inline">\(P(A_i)\)</span> la probabilidad de <span class="math inline">\(A_i\)</span>. La ley de probabilidad total produce:</p>
 <p><span class="math display">\[
 F_X(x) = \sum_{i=1}^{n} F_{X|A_i}(x) P(A_i).
 \]</span></p>
@@ -3364,7 +3364,7 @@ f_X(x) = p_1 \frac{1}{\sqrt{2\pi}\sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}
 <p><span class="math display">\[
 f_Y(y) = f_X(h^{-1}(y)) \left|\frac{d}{dy} h^{-1}(y)\right|.
 \]</span></p>
-<p><strong>Demostración.</strong> Sea <span class="math inline">\(h\)</span> estrictamente creciente. La FDA de <span class="math inline">\(Y\)</span> es <span class="math inline">\(F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))\)</span>. Diferenciando ambos lados da</p>
+<p><strong>Demostración.</strong> Sea <span class="math inline">\(h\)</span> estrictamente creciente. La CDF de <span class="math inline">\(Y\)</span> es <span class="math inline">\(F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))\)</span>. Diferenciando ambos lados da</p>
 <p><span class="math display">\[
 f_Y(y) = f_X(h^{-1}(y)) \frac{d}{dy} h^{-1}(y).
 \]</span></p>
@@ -3387,7 +3387,7 @@ f_X(x) = \frac{f_Z(\sqrt{x})}{|2\sqrt{x}|} + \frac{f_Z(-\sqrt{x})}{|2\sqrt{x}|}
 <p><span class="math inline">\(X\)</span> sigue una distribución chi-cuadrada con 1 grado de libertad.</p>
 <section id="teorema-de-transformación" class="level4" data-number="1.5.2.1">
 <h4 data-number="1.5.2.1" class="anchored" data-anchor-id="teorema-de-transformación"><span class="header-section-number">1.5.2.1</span> Teorema de Transformación</h4>
-<p><strong>Teorema.</strong> Sea <span class="math inline">\(X\)</span> con FDA <span class="math inline">\(F_X\)</span> e <span class="math inline">\(Y = h(X)\)</span>, donde <span class="math inline">\(h\)</span> es estrictamente creciente y continuamente diferenciable. Entonces,</p>
+<p><strong>Teorema.</strong> Sea <span class="math inline">\(X\)</span> con CDF <span class="math inline">\(F_X\)</span> e <span class="math inline">\(Y = h(X)\)</span>, donde <span class="math inline">\(h\)</span> es estrictamente creciente y continuamente diferenciable. Entonces,</p>
 <p><span class="math display">\[
 F_Y(y) = F_X(h^{-1}(y)), \qquad
 f_Y(y) = f_X(h^{-1}(y)) \frac{1}{h&#39;(h^{-1}(y))}, \quad \text{para } y \in h(\mathbb{R}).
@@ -3398,11 +3398,11 @@ f_Y(y) = f_X(h^{-1}(y)) \frac{1}{h&#39;(h^{-1}(y))}, \quad \text{para } y \in h(
 </section>
 <section id="simulación-vía-transformación-inversa" class="level3" data-number="1.5.3">
 <h3 data-number="1.5.3" class="anchored" data-anchor-id="simulación-vía-transformación-inversa"><span class="header-section-number">1.5.3</span> Simulación vía Transformación Inversa</h3>
-<p>Supongamos que <span class="math inline">\(F\)</span> es la FDA de <span class="math inline">\(X\)</span>, estrictamente creciente y continua. Si <span class="math inline">\(U \sim \text{Uniforme}(0,1)\)</span>, entonces</p>
+<p>Supongamos que <span class="math inline">\(F\)</span> es la CDF de <span class="math inline">\(X\)</span>, estrictamente creciente y continua. Si <span class="math inline">\(U \sim \text{Uniforme}(0,1)\)</span>, entonces</p>
 <p><span class="math display">\[
 X = F^{-1}(U)
 \]</span></p>
-<p>tiene FDA <span class="math inline">\(F\)</span> <span class="citation" data-cites="Devroye1986">(<a href="#ref-Devroye1986" role="doc-biblioref">Devroye 1986</a>)</span>.</p>
+<p>tiene CDF <span class="math inline">\(F\)</span> <span class="citation" data-cites="Devroye1986">(<a href="#ref-Devroye1986" role="doc-biblioref">Devroye 1986</a>)</span>.</p>
 <p><strong>Soporte y Advertencias</strong>:</p>
 <ul>
 <li><span class="math inline">\(F\)</span> debe ser invertible; para <span class="math inline">\(F\)</span> discreta o no invertible, este método requiere adaptación.</li>
@@ -3411,7 +3411,7 @@ X = F^{-1}(U)
 </section>
 <section id="vectores-aleatorios-1" class="level3" data-number="1.5.4">
 <h3 data-number="1.5.4" class="anchored" data-anchor-id="vectores-aleatorios-1"><span class="header-section-number">1.5.4</span> Vectores Aleatorios</h3>
-<p>Un <strong>vector aleatorio</strong> <span class="math inline">\(\bar{X} = (X_1,\dots,X_k)\)</span> es una función medible de <span class="math inline">\((\Omega, \mathcal{A}, P)\)</span> a <span class="math inline">\((\mathbb{R}^k, \mathcal{B}^k)\)</span>, donde <span class="math inline">\(\mathcal{B}^k\)</span> es la <span class="math inline">\(\sigma\)</span>-álgebra de Borel en <span class="math inline">\(\mathbb{R}^k\)</span>. Su FDA conjunta es:</p>
+<p>Un <strong>vector aleatorio</strong> <span class="math inline">\(\bar{X} = (X_1,\dots,X_k)\)</span> es una función medible de <span class="math inline">\((\Omega, \mathcal{A}, P)\)</span> a <span class="math inline">\((\mathbb{R}^k, \mathcal{B}^k)\)</span>, donde <span class="math inline">\(\mathcal{B}^k\)</span> es la <span class="math inline">\(\sigma\)</span>-álgebra de Borel en <span class="math inline">\(\mathbb{R}^k\)</span>. Su CDF conjunta es:</p>
 <p><span class="math display">\[
 F_{\bar{X}}(\bar{x}) = P(X_1 \leq x_1, \dots, X_k \leq x_k).
 \]</span></p>
@@ -3424,7 +3424,7 @@ p_{X,Y}(x,y) = P(X=x, Y=y).
 <p><span class="math display">\[
 f_{X,Y}(x,y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x,y).
 \]</span></p>
-<p><strong>Coherencia</strong>. La función indicadora <span class="math inline">\(\mathbf{1}_{{\cdot}}\)</span> denota <span class="math inline">\(1\)</span> si su argumento es verdadero, <span class="math inline">\(0\)</span> en caso contrario. La función <span class="math inline">\(\Phi(x)\)</span> es la FDA normal estándar.</p>
+<p><strong>Coherencia</strong>. La función indicadora <span class="math inline">\(\mathbf{1}_{{\cdot}}\)</span> denota <span class="math inline">\(1\)</span> si su argumento es verdadero, <span class="math inline">\(0\)</span> en caso contrario. La función <span class="math inline">\(\Phi(x)\)</span> es la CDF normal estándar.</p>
 </section>
 <section id="independencia" class="level3" data-number="1.5.5">
 <h3 data-number="1.5.5" class="anchored" data-anchor-id="independencia"><span class="header-section-number">1.5.5</span> Independencia</h3>
@@ -3506,14 +3506,14 @@ f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \cdot |J| = \lambd
 </section>
 <section id="aplicaciones-en-análisis-multivariado" class="level3" data-number="1.5.7">
 <h3 data-number="1.5.7" class="anchored" data-anchor-id="aplicaciones-en-análisis-multivariado"><span class="header-section-number">1.5.7</span> Aplicaciones en Análisis Multivariado</h3>
-<section id="análisis-de-componentes-principales-acp" class="level4" data-number="1.5.7.1">
-<h4 data-number="1.5.7.1" class="anchored" data-anchor-id="análisis-de-componentes-principales-acp"><span class="header-section-number">1.5.7.1</span> Análisis de Componentes Principales (ACP)</h4>
-<p>ACP transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal <span class="citation" data-cites="Jolliffe2016">(<a href="#ref-Jolliffe2016" role="doc-biblioref">Jolliffe and Cadima 2016</a>)</span>. Sea <span class="math inline">\(\bar{X}\)</span> con matriz de covarianza <span class="math inline">\(\Sigma\)</span>. El primer componente principal es la combinación lineal que maximiza la varianza, es decir, maximizar <span class="math inline">\(\text{Var}(a^T\bar{X})\)</span> bajo <span class="math inline">\(||a||=1\)</span>. Los vectores propios de <span class="math inline">\(\Sigma\)</span> proporcionan la transformación; los valores propios correspondientes cuantifican la varianza explicada.</p>
+<section id="análisis-de-componentes-principales-pca" class="level4" data-number="1.5.7.1">
+<h4 data-number="1.5.7.1" class="anchored" data-anchor-id="análisis-de-componentes-principales-pca"><span class="header-section-number">1.5.7.1</span> Análisis de Componentes Principales (PCA)</h4>
+<p>PCA transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal <span class="citation" data-cites="Jolliffe2016">(<a href="#ref-Jolliffe2016" role="doc-biblioref">Jolliffe and Cadima 2016</a>)</span>. Sea <span class="math inline">\(\bar{X}\)</span> con matriz de covarianza <span class="math inline">\(\Sigma\)</span>. El primer componente principal es la combinación lineal que maximiza la varianza, es decir, maximizar <span class="math inline">\(\text{Var}(a^T\bar{X})\)</span> bajo <span class="math inline">\(||a||=1\)</span>. Los vectores propios de <span class="math inline">\(\Sigma\)</span> proporcionan la transformación; los valores propios correspondientes cuantifican la varianza explicada.</p>
 <p><strong>Ejemplo Numérico.</strong> Sea <span class="math inline">\(\Sigma = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>. Valores propios: <span class="math inline">\(3, 1\)</span>. Primer componente principal: <span class="math inline">\(a_1 = (1/\sqrt{2}, 1/\sqrt{2})\)</span>, varianza <span class="math inline">\(3\)</span>.</p>
 </section>
 <section id="análisis-de-correlación-canónica" class="level4" data-number="1.5.7.2">
 <h4 data-number="1.5.7.2" class="anchored" data-anchor-id="análisis-de-correlación-canónica"><span class="header-section-number">1.5.7.2</span> Análisis de Correlación Canónica</h4>
-<p>Dados dos vectores aleatorios <span class="math inline">\((\bar{X}, \bar{Y})\)</span>, ACC busca combinaciones lineales que maximizan la correlación <span class="citation" data-cites="MardiaKentBibby1979">(<a href="#ref-MardiaKentBibby1979" role="doc-biblioref">Mardia, Kent, and Bibby 1979</a>)</span>. Sean <span class="math inline">\(a, b\)</span> que maximizan <span class="math inline">\(\text{corr}(a^T\bar{X}, b^T\bar{Y})\)</span>. Esto requiere tanto matrices de covarianza como de covarianza cruzada.</p>
+<p>Dados dos vectores aleatorios <span class="math inline">\((\bar{X}, \bar{Y})\)</span>, CCA busca combinaciones lineales que maximizan la correlación <span class="citation" data-cites="MardiaKentBibby1979">(<a href="#ref-MardiaKentBibby1979" role="doc-biblioref">Mardia, Kent, and Bibby 1979</a>)</span>. Sean <span class="math inline">\(a, b\)</span> que maximizan <span class="math inline">\(\text{corr}(a^T\bar{X}, b^T\bar{Y})\)</span>. Esto requiere tanto matrices de covarianza como de covarianza cruzada.</p>
 </section>
 <section id="análisis-factorial" class="level4" data-number="1.5.7.3">
 <h4 data-number="1.5.7.3" class="anchored" data-anchor-id="análisis-factorial"><span class="header-section-number">1.5.7.3</span> Análisis Factorial</h4>
@@ -3525,12 +3525,12 @@ f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \cdot |J| = \lambd
 <ol type="1">
 <li><p><strong>Distribución de Mezcla.</strong> Sea <span class="math inline">\(X\)</span> con distribución de mezcla: con probabilidad <span class="math inline">\(p\)</span>, <span class="math inline">\(X\sim N(0,1)\)</span>; con <span class="math inline">\(1-p\)</span>, <span class="math inline">\(X\sim N(\mu,1)\)</span>.</p>
 <ol type="a">
-<li>Escribir la FDP y FDA de <span class="math inline">\(X\)</span>.</li>
+<li>Escribir la FDP y CDF de <span class="math inline">\(X\)</span>.</li>
 <li>Mostrar todos los pasos.</li>
 </ol></li>
 <li><p><strong>Demostración de Transformación.</strong> Sea <span class="math inline">\(X\)</span> con FDP <span class="math inline">\(f_X(x)\)</span>, <span class="math inline">\(h\)</span> estrictamente creciente y diferenciable. Demostrar la fórmula para <span class="math inline">\(f_Y(y)\)</span>.</p></li>
 <li><p><strong>Cambio de Variables Multivariado.</strong> Sean <span class="math inline">\(X_1, X_2\)</span> independientes, <span class="math inline">\(\sim \text{Exp}(1)\)</span>. Encontrar la densidad conjunta de <span class="math inline">\((Y_1, Y_2) = (X_1 + X_2, X_1/X_2)\)</span>.</p></li>
-<li><p><strong>Cálculo de ACP.</strong> Dada <span class="math inline">\(\Sigma = \begin{pmatrix} 4 &amp; 2 \\ 2 &amp; 3 \end{pmatrix}\)</span>, encontrar los componentes principales y la proporción de varianza total explicada.</p></li>
+<li><p><strong>Cálculo de PCA.</strong> Dada <span class="math inline">\(\Sigma = \begin{pmatrix} 4 &amp; 2 \\ 2 &amp; 3 \end{pmatrix}\)</span>, encontrar los componentes principales y la proporción de varianza total explicada.</p></li>
 </ol>
 </section>
 </section>

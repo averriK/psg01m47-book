@@ -2,7 +2,7 @@
 
 ### Distribuciones de Mezcla
 
-Una **distribución de mezcla** describe la ley de probabilidad de una variable aleatoria $X$ que depende de cuál evento ocurre entre una partición ${A_1, A_2, \dots, A_n}$ del espacio de probabilidad subyacente $(\Omega, \mathcal{A}, P)$ [@Billingsley1995]. Para cada $i$, sea $F_{X|A_i}(x)$ la función de distribución acumulativa (FDA) condicional de $X$ dado $A_i$, y $P(A_i)$ la probabilidad de $A_i$. La ley de probabilidad total produce:
+Una **distribución de mezcla** describe la ley de probabilidad de una variable aleatoria $X$ que depende de cuál evento ocurre entre una partición ${A_1, A_2, \dots, A_n}$ del espacio de probabilidad subyacente $(\Omega, \mathcal{A}, P)$ [@Billingsley1995]. Para cada $i$, sea $F_{X|A_i}(x)$ la función de distribución acumulativa (CDF) condicional de $X$ dado $A_i$, y $P(A_i)$ la probabilidad de $A_i$. La ley de probabilidad total produce:
 
 $$
 F_X(x) = \sum_{i=1}^{n} F_{X|A_i}(x) P(A_i).
@@ -42,7 +42,7 @@ f_Y(y) = f_X(h^{-1}(y)) \left|\frac{d}{dy} h^{-1}(y)\right|.
 $$
 
 **Demostración.**
-Sea $h$ estrictamente creciente. La FDA de $Y$ es $F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))$. Diferenciando ambos lados da
+Sea $h$ estrictamente creciente. La CDF de $Y$ es $F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))$. Diferenciando ambos lados da
 
 $$
 f_Y(y) = f_X(h^{-1}(y)) \frac{d}{dy} h^{-1}(y).
@@ -76,7 +76,7 @@ $X$ sigue una distribución chi-cuadrada con 1 grado de libertad.
 #### Teorema de Transformación
 
 **Teorema.**
-Sea $X$ con FDA $F_X$ e $Y = h(X)$, donde $h$ es estrictamente creciente y continuamente diferenciable. Entonces,
+Sea $X$ con CDF $F_X$ e $Y = h(X)$, donde $h$ es estrictamente creciente y continuamente diferenciable. Entonces,
 
 $$
 F_Y(y) = F_X(h^{-1}(y)), \qquad
@@ -91,13 +91,13 @@ Usar "transformación diferenciable" (no "transformación continua") según la t
 
 ### Simulación vía Transformación Inversa
 
-Supongamos que $F$ es la FDA de $X$, estrictamente creciente y continua. Si $U \sim \text{Uniforme}(0,1)$, entonces
+Supongamos que $F$ es la CDF de $X$, estrictamente creciente y continua. Si $U \sim \text{Uniforme}(0,1)$, entonces
 
 $$
 X = F^{-1}(U)
 $$
 
-tiene FDA $F$ [@Devroye1986].
+tiene CDF $F$ [@Devroye1986].
 
 **Soporte y Advertencias**:
 
@@ -106,7 +106,7 @@ tiene FDA $F$ [@Devroye1986].
 
 ### Vectores Aleatorios
 
-Un **vector aleatorio** $\bar{X} = (X_1,\dots,X_k)$ es una función medible de $(\Omega, \mathcal{A}, P)$ a $(\mathbb{R}^k, \mathcal{B}^k)$, donde $\mathcal{B}^k$ es la $\sigma$-álgebra de Borel en $\mathbb{R}^k$. Su FDA conjunta es:
+Un **vector aleatorio** $\bar{X} = (X_1,\dots,X_k)$ es una función medible de $(\Omega, \mathcal{A}, P)$ a $(\mathbb{R}^k, \mathcal{B}^k)$, donde $\mathcal{B}^k$ es la $\sigma$-álgebra de Borel en $\mathbb{R}^k$. Su CDF conjunta es:
 
 $$
 F_{\bar{X}}(\bar{x}) = P(X_1 \leq x_1, \dots, X_k \leq x_k).
@@ -128,7 +128,7 @@ f_{X,Y}(x,y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x,y).
 $$
 
 **Coherencia**.
-La función indicadora $\mathbf{1}_{{\cdot}}$ denota $1$ si su argumento es verdadero, $0$ en caso contrario. La función $\Phi(x)$ es la FDA normal estándar.
+La función indicadora $\mathbf{1}_{{\cdot}}$ denota $1$ si su argumento es verdadero, $0$ en caso contrario. La función $\Phi(x)$ es la CDF normal estándar.
 
 ### Independencia
 
@@ -236,9 +236,9 @@ Considerar el mapeo de coordenadas polares a cartesianas: $X = R \cos \Theta$, $
 
 ### Aplicaciones en Análisis Multivariado
 
-#### Análisis de Componentes Principales (ACP)
+#### Análisis de Componentes Principales (PCA)
 
-ACP transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal [@Jolliffe2016].
+PCA transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal [@Jolliffe2016].
 Sea $\bar{X}$ con matriz de covarianza $\Sigma$. El primer componente principal es la combinación lineal que maximiza la varianza, es decir, maximizar $\text{Var}(a^T\bar{X})$ bajo $||a||=1$. Los vectores propios de $\Sigma$ proporcionan la transformación; los valores propios correspondientes cuantifican la varianza explicada.
 
 **Ejemplo Numérico.**
@@ -248,7 +248,7 @@ Primer componente principal: $a_1 = (1/\sqrt{2}, 1/\sqrt{2})$, varianza $3$.
 
 #### Análisis de Correlación Canónica
 
-Dados dos vectores aleatorios $(\bar{X}, \bar{Y})$, ACC busca combinaciones lineales que maximizan la correlación [@MardiaKentBibby1979].
+Dados dos vectores aleatorios $(\bar{X}, \bar{Y})$, CCA busca combinaciones lineales que maximizan la correlación [@MardiaKentBibby1979].
 Sean $a, b$ que maximizan $\text{corr}(a^T\bar{X}, b^T\bar{Y})$. Esto requiere tanto matrices de covarianza como de covarianza cruzada.
 
 #### Análisis Factorial
@@ -259,7 +259,7 @@ El análisis factorial modela la matriz de covarianza $\Sigma$ como $\Sigma = \L
 
 1. **Distribución de Mezcla.**
    Sea $X$ con distribución de mezcla: con probabilidad $p$, $X\sim N(0,1)$; con $1-p$, $X\sim N(\mu,1)$.
-   (a) Escribir la FDP y FDA de $X$.
+   (a) Escribir la FDP y CDF de $X$.
    (b) Mostrar todos los pasos.
 
 2. **Demostración de Transformación.**
@@ -268,5 +268,5 @@ El análisis factorial modela la matriz de covarianza $\Sigma$ como $\Sigma = \L
 3. **Cambio de Variables Multivariado.**
    Sean $X_1, X_2$ independientes, $\sim \text{Exp}(1)$. Encontrar la densidad conjunta de $(Y_1, Y_2) = (X_1 + X_2, X_1/X_2)$.
 
-4. **Cálculo de ACP.**
+4. **Cálculo de PCA.**
    Dada $\Sigma = \begin{pmatrix} 4 & 2 \\ 2 & 3 \end{pmatrix}$, encontrar los componentes principales y la proporción de varianza total explicada.
