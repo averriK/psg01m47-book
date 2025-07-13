@@ -27,7 +27,7 @@ $$
 * **Tower Property:** $\mathbb{E}\left[,\mathbb{E}[Y \mid X],\right] = \mathbb{E}[Y]$.
 * **Jensen’s Inequality:** For any convex function $\varphi$, $\varphi(\mathbb{E}[Y|X]) \leq \mathbb{E}[\varphi(Y)|X]$ [@Durrett2019].
 
-#### Example: Conditional Distribution in the Bivariate Normal Case
+**Example:** Conditional Distribution in the Bivariate Normal Case
 
 Let $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$ denote a bivariate normal random vector, where $|\rho| < 1$. The conditional distribution of $Y$ given $X = x$ is normal:
 

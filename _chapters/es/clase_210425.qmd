@@ -1,0 +1,153 @@
+## Ley de los Grandes Números y Teorema Central del Límite
+
+### Ley de los Grandes Números
+
+La Ley de los Grandes Números (LGN) es un resultado fundamental en la teoría de probabilidades, que captura la estabilización de las medias muestrales alrededor del valor esperado a medida que aumenta el número de ensayos. Para proceder rigurosamente, clarificamos la terminología subyacente y establecemos definiciones precisas de los modos de convergencia.
+
+**Definición (Variables Aleatorias Independientes e Idénticamente Distribuidas)**
+Una sucesión ${X_i}_{i \in \mathbb{N}}$ es independiente e idénticamente distribuida (iid) si:
+
+1. Cada $X_i$ es una variable aleatoria definida en el mismo espacio de probabilidad $(\Omega, \mathcal{F}, P)$.
+2. $P(X_i \leq x) = F(x)$ para todo $i$ y todo $x \in \mathbb{R}$ (distribución idéntica).
+3. Para cualquier subconjunto finito ${i_1,\dots,i_k}$, las variables $X_{i_1},\dots,X_{i_k}$ son independientes.
+
+**Definición (Convergencia en Probabilidad)**
+Una sucesión de variables aleatorias $Y_n$ converge en probabilidad a $Y$ si para todo $\varepsilon > 0$,
+
+$$
+\lim_{n \to \infty} P(|Y_n - Y| > \varepsilon) = 0.
+$$
+
+**Definición (Convergencia Casi Segura)**
+$Y_n$ converge casi seguramente (c.s.) a $Y$ si
+
+$$
+P\left(\lim_{n \to \infty} Y_n = Y\right) = 1.
+$$
+
+Sea ${X_i}_{i \in \mathbb{N}}$ variables aleatorias iid con media $\mu = E[X_1]$ y varianza finita $\sigma^2 = \operatorname{Var}(X_1) < \infty$. La media muestral es
+
+$$
+\bar{X}_n = \frac{1}{n} \sum_{i=1}^{n} X_i.
+$$
+
+**Teorema (Ley Débil de los Grandes Números)**
+$\bar{X}_n$ converge en probabilidad a $\mu$:
+
+$$
+\bar{X}_n \xrightarrow{p} \mu.
+$$
+
+*Demostración.*
+Por la desigualdad de Chebyshev:
+
+* $E[\bar{X}_n] = \mu$
+* $\operatorname{Var}(\bar{X}_n) = \frac{\sigma^2}{n}$
+  Así, para $\varepsilon > 0$,
+
+$$
+P(|\bar{X}_n - \mu| > \varepsilon) \leq \frac{\operatorname{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \to 0 \text{ cuando } n \to \infty.
+$$
+
+Por tanto, $\bar{X}_n$ converge en probabilidad a $\mu$.
+$\quad\blacksquare$
+
+**Teorema (Ley Fuerte de los Grandes Números)**
+$\bar{X}_n$ converge casi seguramente a $\mu$:
+
+$$
+P\left(\lim_{n \to \infty} \bar{X}_n = \mu\right) = 1.
+$$
+
+*Esbozo de Demostración.*
+La demostración, debida a Kolmogorov, aprovecha el lema de Borel-Cantelli y las propiedades de secuencias iid con varianza finita. La convergencia casi segura es estrictamente más fuerte que la convergencia en probabilidad; véase [@Billingsley1995, §22] para una exposición detallada.
+$\quad\blacksquare$
+
+**Ejemplo**
+Sea $X_i$ el resultado del $i$-ésimo lanzamiento de una moneda equilibrada ($X_i = 1$ para cara, $0$ para cruz). Entonces $E[X_i] = 0.5$, $\operatorname{Var}(X_i) = 0.25$. Por la Ley Fuerte de los Grandes Números,
+
+$$
+P\left(\lim_{n \to \infty} \bar{X}_n = 0.5\right) = 1,
+$$
+
+donde $\bar{X}_n$ es la fracción de caras en $n$ lanzamientos.
+
+### Teorema Central del Límite
+
+El Teorema Central del Límite (TCL) describe la emergencia universal de la distribución normal en sumas de variables aleatorias iid, independientemente de la distribución original (bajo condiciones suaves).
+
+**Definición (Estandarización)**
+Dadas variables aleatorias iid ${X_i}_{i \in \mathbb{N}}$ con media $\mu$ y varianza $\sigma^2 > 0$, definimos
+
+$$
+Z_n = \frac{\sum_{i=1}^n X_i - n\mu}{\sigma \sqrt{n}}.
+$$
+
+**Teorema (Teorema Central del Límite)**
+Cuando $n \to \infty$, $Z_n$ converge en distribución a una variable aleatoria normal estándar:
+
+$$
+Z_n \xrightarrow{d} N(0,1),
+$$
+
+es decir,
+
+$$
+\lim_{n \to \infty} P(Z_n \leq z) = \Phi(z),
+$$
+
+donde $\Phi(z)$ es la función de distribución acumulada de $N(0,1)$.
+
+*Demostración (Enfoque de Función Característica).*
+Sea $\varphi_{X}(t) = E[e^{itX}]$ la función característica de $X_i$. La función característica de $Z_n$ es
+
+$$
+\varphi_{Z_n}(t) = \left[\varphi_X\left(\frac{t}{\sigma \sqrt{n}}\right)\right]^n e^{-it\frac{n\mu}{\sigma \sqrt{n}}}.
+$$
+
+Una expansión de Taylor y la independencia producen
+
+$$
+\lim_{n \to \infty} \varphi_{Z_n}(t) = e^{-t^2/2},
+$$
+
+que es la función característica de $N(0,1)$. Así, por el teorema de continuidad de Lévy, $Z_n \xrightarrow{d} N(0,1)$. Para una demostración completa, véase [@Durrett2019, §2.5].
+$\quad\blacksquare$
+
+**Ejemplo**
+Supongamos que $X_i$ son iid con $E[X_i]=2$, $\operatorname{Var}(X_i)=9$. Para $n=100$,
+
+$$
+Z_{100} = \frac{\sum_{i=1}^{100} X_i - 200}{30}.
+$$
+
+Según el TCL, $Z_{100}$ está aproximadamente distribuida como $N(0,1)$, incluso si las $X_i$ no son normales. Una simulación con $X_i$ no normales (por ejemplo, Bernoulli o Poisson) mostrará empíricamente la convergencia a la curva de campana a medida que $n$ aumenta.
+
+### Aproximaciones del Teorema Central del Límite
+
+El TCL proporciona justificación rigurosa para aproximaciones normales a distribuciones discretas bajo regímenes de parámetros apropiados. Los siguientes resultados se usan ampliamente en inferencia estadística y probabilidad combinatoria.
+
+**Aproximación Binomial-a-Normal**
+Sea $X \sim \operatorname{Bin}(n, p)$. Si $n$ es grande, $np > 5$, y $n(1-p) > 5$:
+
+$$
+X \approx N\left(np, np(1-p)\right).
+$$
+
+*Justificación:* Estos criterios aseguran que la asimetría es suficientemente pequeña y que la distribución discreta está bien aproximada por la normal continua [@Feller1968, §7.1].
+
+**Aproximación Poisson-a-Normal**
+Si $X \sim \operatorname{Poisson}(\lambda)$, entonces para $\lambda$ grande (por ejemplo, $\lambda > 10$),
+
+$$
+X \approx N(\lambda, \lambda).
+$$
+
+*Justificación:* A medida que $\lambda$ aumenta, la distribución de Poisson se vuelve cada vez más simétrica y similar a la normal [@Durrett2019, §2.7].
+
+**Ejercicio**
+
+1. *Aproximación Normal:*
+   Sea $X \sim \operatorname{Bin}(200, 0.1)$.
+   (a) Use el TCL para aproximar $P(15 \leq X \leq 25)$.
+   (b) Compare el resultado con la probabilidad binomial exacta.

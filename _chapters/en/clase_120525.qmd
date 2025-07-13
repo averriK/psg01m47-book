@@ -120,10 +120,7 @@ If such a $\nu$ exists, it is stationary, but not every stationary distribution 
 **Remark:**
 To verify reversibility, solve the detailed balance equations. For general methods, see [@LevinPeres2017].
 
-### Advanced Example
-
-**Example:**
-Consider a Markov chain with state space $S = {1,2,3,4}$ and transition matrix
+**Example:** Consider a Markov chain with state space $S = {1,2,3,4}$ and transition matrix
 
 $$
 P = \begin{pmatrix}

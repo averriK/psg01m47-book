@@ -91,9 +91,7 @@ $$
 P(N(2) = n) = \frac{(6)^n}{n!}e^{-6}.
 $$
 
-#### Advanced Example: Waiting-Time Distribution
-
-Let $S_n$ denote the waiting time until the $n$th arrival. The sum of $n$ i.i.d. exponential random variables is gamma distributed:
+**Example:** Waiting-Time Distribution. Let $S_n$ denote the waiting time until the $n$th arrival. The sum of $n$ i.i.d. exponential random variables is gamma distributed:
 
 $$
 P(S_n \leq t) = 1 - \sum_{k=0}^{n-1} \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad t \geq 0.

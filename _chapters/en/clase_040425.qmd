@@ -17,8 +17,7 @@ $$
 
 By definition, $P(X \leq x | A_i) = F_{X|A_i}(x)$. $\quad\blacksquare$
 
-**Advanced Example**.
-Suppose $X$ is a **finite Gaussian mixture**:
+**Example**.Suppose $X$ is a **finite Gaussian mixture**:
 
 * With probability $p_1$, $X \sim N(\mu_1, \sigma_1^2)$
 * With probability $p_2=1-p_1$, $X \sim N(\mu_2, \sigma_2^2)$
@@ -57,8 +56,7 @@ $$
 f_Y(y) = \sum_{x\in h^{-1}(y)} \frac{f_X(x)}{|h'(x)|}.
 $$
 
-**Example.**
-Let $Z \sim N(0,1)$. Find the distribution of $X = Z^2$.
+**Example.** Let $Z \sim N(0,1)$. Find the distribution of $X = Z^2$.
 
 * $h(z) = z^2$, so $X$ is supported on $x>0$.
 * $h^{-1}(x) = \pm \sqrt{x}$.
@@ -167,8 +165,7 @@ $$
 = A\mathbb{E}[(\bar{X} - \mu)(\bar{X} - \mu)^T]A^T = A\Sigma A^T.
 $$
 
-**Example.**
-Let $\bar{X} \sim N_2(\mu, \Sigma)$ and
+**Example.** Let $\bar{X} \sim N_2(\mu, \Sigma)$ and
 
 $$
 \bar{Y} = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \bar{X}.
@@ -231,8 +228,7 @@ Compute the joint density $f_{Y_1, Y_2}(y_1, y_2)$.
   f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \cdot |J| = \lambda^2 y_1 e^{-\lambda y_1} \mathbf{1}_{{y_1 > 0, 0 < y_2 < 1}}.
   $$
 
-**Advanced Example.**
-Consider the mapping from polar to Cartesian coordinates: $X = R \cos \Theta$, $Y = R \sin \Theta$, with $R, \Theta$ independent, $R>0$, $\Theta \in (0,2\pi)$. The Jacobian is $r$, giving the joint density $f_{X,Y}(x,y) = f_{R,\Theta}(\sqrt{x^2 + y^2}, \arctan(y/x)) \cdot \frac{1}{\sqrt{x^2 + y^2}}$.
+**Example.** Consider the mapping from polar to Cartesian coordinates: $X = R \cos \Theta$, $Y = R \sin \Theta$, with $R, \Theta$ independent, $R>0$, $\Theta \in (0,2\pi)$. The Jacobian is $r$, giving the joint density $f_{X,Y}(x,y) = f_{R,\Theta}(\sqrt{x^2 + y^2}, \arctan(y/x)) \cdot \frac{1}{\sqrt{x^2 + y^2}}$.
 
 ### Applications in Multivariate Analysis
 
@@ -241,12 +237,11 @@ Consider the mapping from polar to Cartesian coordinates: $X = R \cos \Theta$, $
 PCA transforms correlated random variables into uncorrelated components by an orthogonal linear transformation [@Jolliffe2016].
 Let $\bar{X}$ have covariance matrix $\Sigma$. The first principal component is the linear combination maximizing variance, i.e., maximize $\text{Var}(a^T\bar{X})$ under $||a||=1$. The eigenvectors of $\Sigma$ provide the transformation; the corresponding eigenvalues quantify explained variance.
 
-**Numerical Example.**
-Let $\Sigma = \begin{pmatrix} 2 & 1 \ 1 & 2 \end{pmatrix}$.
+**Example.** Let $\Sigma = \begin{pmatrix} 2 & 1 \ 1 & 2 \end{pmatrix}$.
 Eigenvalues: $3, 1$.
 First principal component: $a_1 = (1/\sqrt{2}, 1/\sqrt{2})$, variance $3$.
 
-#### Canonical Correlation Analysis
+#### Canonical Correlation Analysis (CCA)
 
 Given two random vectors $(\bar{X}, \bar{Y})$, CCA seeks linear combinations maximizing correlation [@MardiaKentBibby1979].
 Let $a, b$ maximize $\text{corr}(a^T\bar{X}, b^T\bar{Y})$. This requires both covariance and cross-covariance matrices.

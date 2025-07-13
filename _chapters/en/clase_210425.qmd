@@ -50,7 +50,7 @@ P(|\bar{X}_n - \mu| > \varepsilon) \leq \frac{\operatorname{Var}(\bar{X}_n)}{\va
 $$
 
 Hence, $\bar{X}_n$ converges in probability to $\mu$.
-$\hfill\square$
+$\quad\blacksquare$
 
 **Theorem (Strong Law of Large Numbers)**
 $\bar{X}_n$ converges almost surely to $\mu$:
@@ -61,7 +61,7 @@ $$
 
 *Proof Sketch.*
 The proof, due to Kolmogorov, leverages the Borel-Cantelli lemma and properties of iid sequences with finite variance. The almost sure convergence is strictly stronger than convergence in probability; see [@Billingsley1995, §22] for a detailed exposition.
-$\hfill\square$
+$\quad\blacksquare$
 
 **Example**
 Let $X_i$ denote the outcome of the $i$-th toss of a fair coin ($X_i = 1$ for heads, $0$ for tails). Then $E[X_i] = 0.5$, $\operatorname{Var}(X_i) = 0.25$. By the Strong Law of Large Numbers,
@@ -112,7 +112,7 @@ $$
 $$
 
 which is the characteristic function of $N(0,1)$. Thus, by Lévy’s continuity theorem, $Z_n \xrightarrow{d} N(0,1)$. For a full proof, see [@Durrett2019, §2.5].
-$\hfill\square$
+$\quad\blacksquare$
 
 **Example**
 Suppose $X_i$ are iid with $E[X_i]=2$, $\operatorname{Var}(X_i)=9$. For $n=100$,

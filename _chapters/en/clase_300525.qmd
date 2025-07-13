@@ -14,8 +14,7 @@ A stochastic process ${X_t}*{t\in\mathbb{Z}}$ is **strictly stationary** if for 
 Consider the process $X_t = \epsilon_t$ with $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. This process is strictly and weakly stationary.
 In contrast, $Y_t = t + \epsilon_t$ is non-stationary in both senses, as its mean depends on $t$.
 
-**Exercise:**
-Let $Z_t = 0.5 Z_{t-1} + \epsilon_t$ with $Z_0=0$ and $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. Is ${Z_t}$ weakly stationary? Justify analytically.
+**Exercise:** Let $Z_t = 0.5 Z_{t-1} + \epsilon_t$ with $Z_0=0$ and $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. Is ${Z_t}$ weakly stationary? Justify analytically.
 
 ### White Noise
 
@@ -31,11 +30,9 @@ If $e_t \sim \mathcal{N}(0,\sigma^2_e)$ i.i.d., it is called **Gaussian white no
 A white noise process with i.i.d. innovations is strictly stationary:
 For any collection $(e_{t_1},...,e_{t_n})$, their joint distribution is invariant to time shifts, since all $e_t$ are i.i.d. [@Durrett2019].
 
-**Example:**
-Simulate $e_t \sim \mathcal{N}(0,1)$ for $t=1,...,100$. The sequence is white noise; empirical autocorrelations are approximately zero for $h\ne0$.
+**Example:** Simulate $e_t \sim \mathcal{N}(0,1)$ for $t=1,...,100$. The sequence is white noise; empirical autocorrelations are approximately zero for $h\ne0$.
 
-**Exercise:**
-Given a residual sequence from a fitted ARIMA model, propose and justify a statistical test for white noise.
+**Exercise:** Given a residual sequence from a fitted ARIMA model, propose and justify a statistical test for white noise.
 
 ### Random Walks and Unit Roots
 
@@ -52,8 +49,7 @@ The presence of a **unit root** (the root at $z=1$ in the AR polynomial) means d
 **Example:**
 Let $Y_0=0$, $e_t \sim \mathcal{N}(0,1)$. Simulate $Y_t$ for $t=1,\ldots,100$; $\mathrm{Var}(Y_{100}) = 100$.
 
-**Exercise:**
-Given $W_t = W_{t-1} + \epsilon_t$ with $W_0=0$, compute $\mathrm{Cov}(W_t, W_s)$ and discuss stationarity.
+**Exercise:** Given $W_t = W_{t-1} + \epsilon_t$ with $W_0=0$, compute $\mathrm{Cov}(W_t, W_s)$ and discuss stationarity.
 
 ### Preprocessing and Smoothing
 
@@ -80,8 +76,7 @@ Use consistent notation $y_t$ for the observed time series.
 Suppose $y_t$ is daily temperature. Smoothing with $k=3$ produces $S_t$ and $M_t$ that reduce short-term fluctuations.
 Below is a demonstration with simulated $y_t = 20 + \sin(2\pi t/30) + \epsilon_t$, $\epsilon_t \sim \mathcal{N}(0,1)$.
 
-**Exercise:**
-Apply both SMA and moving median to a noisy dataset. Compare and interpret the results.
+**Exercise:** Apply both SMA and moving median to a noisy dataset. Compare and interpret the results.
 
 ### Differencing for Stationarity
 
@@ -122,8 +117,7 @@ Use the additive model when seasonal fluctuations are roughly constant; use the 
 **Example:**
 Given monthly sales with clear upward trend and increasing seasonal amplitude, the multiplicative model is appropriate. Decompose a simulated $y_t = (10 + 0.5t) \times (1 + 0.2\sin(2\pi t/12)) + \epsilon_t$.
 
-**Exercise:**
-Decompose a provided time series using both additive and multiplicative approaches. Justify the appropriate model.
+**Exercise:** Decompose a provided time series using both additive and multiplicative approaches. Justify the appropriate model.
 
 ### The ARIMA Model: Definition and Properties
 
@@ -172,11 +166,9 @@ $$
 
 for $h \ge 0$, where $\delta_{h,0}$ is the Kronecker delta.
 
-**Example:**
-Simulate AR(2): $y_t = 0.5 y_{t-1} - 0.3 y_{t-2} + e_t$. Analyze sample ACF and PACF.
+**Example:** Simulate AR(2): $y_t = 0.5 y_{t-1} - 0.3 y_{t-2} + e_t$. Analyze sample ACF and PACF.
 
-**Exercise:**
-Estimate parameters for an AR(2) process given a sample. Test the stationarity condition.
+**Exercise:** Estimate parameters for an AR(2) process given a sample. Test the stationarity condition.
 
 ### Moving Average Models (MA)
 
@@ -192,8 +184,7 @@ The roots of $\Theta(B)$ must lie outside the unit circle to guarantee a unique 
 **Autocorrelation Structure Proof:**
 $\mathrm{ACF}$ of MA($q$) is zero beyond lag $q$.
 
-**Exercise:**
-Given a sample from an MA(1) process, estimate $\theta_1$ and test for invertibility.
+**Exercise:** Given a sample from an MA(1) process, estimate $\theta_1$ and test for invertibility.
 
 ### Integrated Processes
 

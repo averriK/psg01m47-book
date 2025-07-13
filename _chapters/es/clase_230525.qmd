@@ -1,0 +1,168 @@
+## Series de Tiempo
+
+### Definiciones Fundamentales
+
+Una **serie de tiempo** es una colección de variables aleatorias ${Y_t : t \in T}$, donde $T \subseteq \mathbb{Z}$, representando observaciones secuenciales indexadas por tiempo discreto. Formalmente, estas variables están definidas en un espacio de probabilidad $(\Omega, \mathcal{F}, P)$, con cada $Y_t : \Omega \rightarrow \mathbb{R}$ medible. El objetivo central del análisis de series de tiempo es modelar, inferir y predecir la estructura temporal y dinámica incrustada en tales procesos estocásticos, aprovechando la dependencia temporal típicamente ausente en contextos estadísticos clásicos [@Hamilton1994].
+
+### Descomposición de Series de Tiempo
+
+Un paso fundamental en el modelado de series de tiempo es la descomposición del proceso observado en componentes interpretables, cada uno capturando diferentes fuentes de variación. El valor observado $Y_t$ se expresa típicamente como una combinación de:
+
+* **Tendencia ($T_t$):** Un componente estocástico o determinístico que representa la progresión a largo plazo del proceso. $T_t$ puede modelarse como una función determinística (ej., lineal, cuadrática) o como un proceso aleatorio para capturar cambios persistentes.
+* **Estacionalidad ($S_t$):** Captura efectos cíclicos o periódicos con frecuencias conocidas y fijas (ej., anual o semanal), que también pueden modelarse como procesos determinísticos o estocásticos.
+* **Componente Irregular ($I_t$):** Representa fluctuaciones aleatorias impredecibles no explicadas por la tendencia o estacionalidad, modelado como un proceso estocástico.
+
+Formalmente, se usan dos esquemas de descomposición estándar [@Hyndman2021]:
+
+* **Modelo aditivo:** $Y_t = T_t + S_t + I_t$
+* **Modelo multiplicativo:** $Y_t = T_t \times S_t \times I_t$
+
+La forma aditiva es apropiada cuando la varianza de $Y_t$ es aproximadamente constante en el tiempo, mientras que la forma multiplicativa es preferible cuando la varianza aumenta con el nivel. Técnicas avanzadas de descomposición como STL (descomposición Estacional-Tendencia usando Loess) y X-13ARIMA-SEATS se emplean comúnmente en la práctica [@Cleveland1990].
+
+### Estacionaridad
+
+La **estacionaridad** es una propiedad central en la teoría y aplicación de series de tiempo. Hay dos formas principales:
+
+* **Estacionaridad estricta (fuerte):** Un proceso ${Y_t}$ es estrictamente estacionario si la distribución conjunta de cualquier conjunto finito $(Y_{t_1}, \ldots, Y_{t_n})$ es invariante a desplazamientos en el tiempo. Es decir, para todo $n$, $t_1,\dots,t_n$, y $h$,
+
+  $$
+  F_{Y_{t_1},\ldots,Y_{t_n}}(y_1,\ldots,y_n) = F_{Y_{t_1+h},\ldots,Y_{t_n+h}}(y_1,\ldots,y_n).
+  $$
+
+* **Estacionaridad débil (de segundo orden):** ${Y_t}$ es débilmente estacionario si:
+
+  1. $E[Y_t]=\mu$ es constante para todo $t$,
+  2. $Var(Y_t) = \sigma^2$ es constante para todo $t$,
+  3. $Cov(Y_t, Y_{t+h}) = \gamma(h)$ depende solo del rezago $h$, no de $t$.
+
+En la práctica, la estacionaridad débil es mucho más fácil de verificar y es suficiente para la mayoría de enfoques de modelado lineal. La ergodicidad, que asegura que los promedios temporales converjan a promedios de ensamble, es una condición más estricta pero no se requiere para la mayoría de inferencias estadísticas [@Billingsley1995].
+
+**Ejemplo: Estacionaridad Estricta vs. Débil.**
+
+Sea ${Y_t}$ una secuencia donde $Y_t = Z$ para todo $t$ y $Z \sim \mathcal{N}(0,1)$. Este proceso es estrictamente estacionario puesto que todas las distribuciones de dimensión finita son invariantes bajo desplazamiento temporal. En contraste, un proceso con $Y_t = e^{i\omega t}X$ para $X$ aleatorio y $\omega$ fijo es débilmente estacionario (media constante, autocovarianza depende solo de $h$), pero su distribución conjunta varía con $t$, por lo que no es estrictamente estacionario [@Durrett2019].
+
+### Ruido Blanco
+
+Un proceso de **ruido blanco** ${e_t}$ es una secuencia de variables aleatorias independientes e idénticamente distribuidas (iid) con media cero y varianza constante, típicamente asumidas gaussianas:
+
+$$
+E[e_t] = 0, \quad Var(e_t) = \sigma^2, \quad Cov(e_t, e_s) = 0 \;\; \text{para } t \neq s.
+$$
+
+El ruido blanco es estrictamente estacionario (puesto que todas las distribuciones de dimensión finita son invariantes bajo desplazamiento temporal), y trivialmente débilmente estacionario [@BoxJenkins1970]. Para secuencias iid no gaussianas, el ruido blanco sigue siendo estrictamente estacionario, pero algunos autores reservan "ruido blanco" para el caso gaussiano.
+
+#### Demostración: El Ruido Blanco es Débilmente Estacionario
+
+Dado ${e_t}$ iid con $E[e_t]=0$ y $Var(e_t)=\sigma^2$:
+
+* $E[e_t]=0$ para todo $t$,
+* $Var(e_t)=\sigma^2$ para todo $t$,
+* $Cov(e_t,e_{t+h}) = 0$ para todo $h \ne 0$.
+  Por tanto, todas las condiciones para estacionaridad débil se satisfacen.
+
+### Métodos de Preprocesamiento
+
+Transformar una serie de tiempo no estacionaria en una estacionaria es frecuentemente un prerrequisito para modelado efectivo. Dos métodos centrales son:
+
+* **Promedios Móviles:** Suavizan fluctuaciones a corto plazo vía
+
+  $$
+  T_t = \frac{1}{2k+1} \sum_{j=-k}^k Y_{t+j}.
+  $$
+
+  Esta operación ayuda a aislar tendencias a más largo plazo y periodicidad [@Hyndman2021].
+
+* **Diferenciación:** El operador de diferencia $\nabla$ o $\Delta$ se usa para remover tendencias:
+
+  $$
+  \Delta Y_t = Y_t - Y_{t-1}, \quad \Delta^p Y_t = Y_t - Y_{t-p}.
+  $$
+
+  Diferencias de orden superior pueden remover tendencias polinomiales de grado creciente. El operador de retroceso general $B$ se define por $B Y_t = Y_{t-1}$, por lo que $\Delta = 1 - B$. Transformaciones estabilizadoras de varianza, como la transformada de Box-Cox, también se usan comúnmente [@BoxCox1964].
+
+**Ejemplo: Diferenciando una Caminata Aleatoria.** Sea $Y_t = Y_{t-1} + e_t$ con $Y_0=0$ y $e_t \sim \text{iid}(0,\sigma^2)$. La diferenciación produce $\Delta Y_t = Y_t - Y_{t-1} = e_t$, que es ruido blanco estacionario.
+
+### Caminata Aleatoria
+
+Una **caminata aleatoria** se define por $Y_t = Y_{t-1} + e_t$ para $e_t \sim \text{iid}(0,\sigma^2)$. Su media es constante, pero su varianza crece linealmente con $t$:
+
+$$
+Var(Y_t) = t \sigma^2.
+$$
+
+Por tanto, el proceso es no estacionario, con memoria infinita—cada innovación $e_t$ afecta permanentemente todos los valores futuros, haciendo la predicción a largo plazo altamente incierta [@Hamilton1994].
+
+### Modelos ARIMA
+
+Un modelo **ARIMA$(p,d,q)$** (Autoregresivo Integrado de Promedio Móvil) generaliza tanto procesos autoregresivos como de promedio móvil, acomodando no estacionaridad vía diferenciación [@BoxJenkins1970]. El modelo general se escribe como:
+
+$$
+\Phi(B)\nabla^d Y_t = \Theta(B) e_t, \quad e_t \sim \text{iid}(0,\sigma^2)
+$$
+
+donde
+
+* $B$ es el operador de retroceso ($B Y_t = Y_{t-1}$),
+* $\nabla^d = (1 - B)^d$ es el operador de diferencia $d$-ésima,
+* $\Phi(B) = 1 - \phi_1 B - \ldots - \phi_p B^p$,
+* $\Theta(B) = 1 + \theta_1 B + \ldots + \theta_q B^q$.
+
+Aquí, $p$ es el orden autoregresivo, $d$ es el número de diferencias para estacionaridad, y $q$ es el orden de promedio móvil. La identificación del modelo típicamente se basa en análisis de la función de autocorrelación (ACF), función de autocorrelación parcial (PACF), y criterios de información como AIC y BIC [@Hyndman2021].
+
+### Proceso Autoregresivo (AR)
+
+Un **proceso autoregresivo de orden $p$ (AR($p$))** se define por:
+
+$$
+Y_t = \mu + \sum_{i=1}^p \phi_i Y_{t-i} + e_t, \quad e_t \sim \text{iid}(0,\sigma^2).
+$$
+
+El proceso es estacionario si y solo si las raíces del polinomio característico $\Phi(z) = 1 - \phi_1 z - \ldots - \phi_p z^p$ yacen fuera del círculo unitario ($|z|>1$).
+
+#### Demostración: Condición de Estacionaridad
+
+El proceso AR($p$) puede escribirse como $\Phi(B)Y_t = e_t$. La estacionaridad requiere que las soluciones de la ecuación en diferencias homogénea decaigan a cero, lo que ocurre si y solo si todas las raíces de $\Phi(z)=0$ tienen módulo mayor que uno [@Hamilton1994].
+
+**Ejemplo: Modelo AR(2)** Considerar $Y_t = 0.5 Y_{t-1} - 0.3 Y_{t-2} + e_t$, $e_t \sim \mathcal{N}(0,1)$. Datos simulados de este modelo tendrán una ACF que se corta después del rezago 2 y una PACF que se desvanece, característico del comportamiento AR(2) [@Hyndman2021].
+
+### Proceso de Promedio Móvil (MA)
+
+Un **proceso de promedio móvil de orden $q$ (MA($q$))** se define como:
+
+$$
+Y_t = \mu + \sum_{i=1}^q \theta_i e_{t-i} + e_t, \quad e_t \sim \text{iid}(0,\sigma^2).
+$$
+
+La invertibilidad se cumple si las raíces del polinomio $\Theta(z) = 1 + \theta_1 z + \ldots + \theta_q z^q$ yacen dentro del círculo unitario ($|z|<1$). Los procesos MA($q$) son siempre estacionarios por construcción.
+
+#### Demostración: Autocovarianza de MA($q$)
+
+La función de autocovarianza es:
+
+$$
+\gamma(h) = \begin{cases}
+\sigma^2 \left(1 + \sum_{i=1}^q \theta_i^2\right), & h = 0 \\
+\sigma^2 \sum_{i=1}^{q-h} \theta_i \theta_{i+h}, & 1 \leq h \leq q \\
+0, & h > q
+\end{cases}
+$$
+
+#### Ejemplo: Ajuste de Modelo MA(1)
+
+Suponer $Y_t = e_t + 0.6 e_{t-1}$, $e_t \sim \mathcal{N}(0,1)$. Ajustar este modelo a datos reales (ej., retornos diarios de un índice financiero) produce una ACF que cae a cero después del rezago 1, indicando la apropiabilidad de la especificación MA(1).
+
+### Extensiones de Modelos ARIMA
+
+Varias extensiones avanzadas de modelos ARIMA abordan fenómenos específicos:
+
+* **SARIMA:** Incorpora términos autoregresivos y de promedio móvil estacionales para modelar periodicidades.
+* **ARFIMA:** Permite diferenciación fraccionaria ($d$ no entero) para capturar procesos de memoria larga [@Beran1994].
+* **ARIMAX:** Añade covariables exógenas para explicar variación no explicada por la estructura autoregresiva/promedio móvil [@Hyndman2021].
+
+### Ejercicios
+
+1. *Descomposición*: Dada una serie mensual con fuerte estacionalidad, describir la descomposición STL y calcular los componentes de tendencia, estacional e irregular.
+2. *Estacionaridad*: Demostrar que la primera diferencia de una caminata aleatoria produce un proceso estacionario.
+3. *Identificación AR*: Simular un proceso AR(2), graficar su ACF y PACF, y verificar la condición de estacionaridad.
+4. *Modelo MA*: Para un proceso MA(1), derivar y graficar la función de autocorrelación.
+5. *Selección de Modelo*: Dados gráficos empíricos de ACF/PACF, seleccionar y justificar un modelo ARIMA$(p,d,q)$ apropiado.

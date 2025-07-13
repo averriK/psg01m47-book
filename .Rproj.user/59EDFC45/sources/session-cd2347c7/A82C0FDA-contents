@@ -7,35 +7,37 @@ format:
     embed-resources: true
     self-contained: true
     css: _build/styles.css
+    math: mathjax
 bibliography: _bib/references.bib
 ---
 
+# Modelos Probabilísticos
 
-{{< include _chapters/clase_170325.qmd >}}
+{{< include _chapters/es/clase_170325.qmd >}}
 
-{{< include _chapters/clase_210325.qmd >}}
+{{< include _chapters/es/clase_210325.qmd >}}
 
-{{< include _chapters/clase_280325.qmd >}}
+{{< include _chapters/es/clase_280325.qmd >}}
 
-{{< include _chapters/clase_310325.qmd >}}
+{{< include _chapters/es/clase_310325.qmd >}}
 
-{{< include _chapters/clase_040425.qmd >}}
+{{< include _chapters/es/clase_040425.qmd >}}
 
-{{< include _chapters/clase_140425.qmd >}}
+{{< include _chapters/es/clase_140425.qmd >}}
 
-{{< include _chapters/clase_210425.qmd >}}
+{{< include _chapters/es/clase_210425.qmd >}}
 
-{{< include _chapters/clase_250425.qmd >}}
+{{< include _chapters/es/clase_250425.qmd >}}
 
-{{< include _chapters/clase_280425.qmd >}}
+{{< include _chapters/es/clase_280425.qmd >}}
 
-{{< include _chapters/clase_120525.qmd >}}
+{{< include _chapters/es/clase_120525.qmd >}}
 
-{{< include _chapters/clase_190525.qmd >}}
+{{< include _chapters/es/clase_190525.qmd >}}
 
-{{< include _chapters/clase_230525.qmd >}}
+{{< include _chapters/es/clase_230525.qmd >}}
 
-{{< include _chapters/clase_300525.qmd >}}
+{{< include _chapters/es/clase_300525.qmd >}}
 
 
 

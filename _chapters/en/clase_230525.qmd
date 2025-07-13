@@ -37,7 +37,7 @@ The additive form is appropriate when the variance of $Y_t$ is approximately con
 
 In practice, weak stationarity is far easier to verify and is sufficient for most linear modeling approaches. Ergodicity, which ensures time averages converge to ensemble averages, is a stricter condition but is not required for most statistical inference [@Billingsley1995].
 
-#### Example: Strict vs. Weak Stationarity
+**Example:** Strict vs. Weak Stationarity
 
 Let ${Y_t}$ be a sequence where $Y_t = Z$ for all $t$ and $Z \sim \mathcal{N}(0,1)$. This process is strictly stationary since all finite-dimensional distributions are invariant under time shift. By contrast, a process with $Y_t = e^{i\omega t}X$ for $X$ random and fixed $\omega$ is weakly stationary (constant mean, autocovariance depends only on $h$), but its joint distribution varies with $t$, so it is not strictly stationary [@Durrett2019].
 
@@ -80,7 +80,7 @@ Transforming a non-stationary time series into a stationary one is often a prere
 
   Higher-order differences can remove polynomial trends of increasing degree. The general backshift operator $B$ is defined by $B Y_t = Y_{t-1}$, so $\Delta = 1 - B$. Variance-stabilizing transformations, such as the Box-Cox transform, are also commonly used [@BoxCox1964].
 
-#### Example: Differencing a Random Walk
+**Example:** Differencing a Random Walk
 
 Let $Y_t = Y_{t-1} + e_t$ with $Y_0=0$ and $e_t \sim \text{iid}(0,\sigma^2)$. Differencing yields $\Delta Y_t = Y_t - Y_{t-1} = e_t$, which is stationary white noise.
 
@@ -129,7 +129,7 @@ The process is stationary if and only if the roots of the characteristic polynom
 
 The AR($p$) process can be written as $\Phi(B)Y_t = e_t$. Stationarity requires that the homogeneous difference equation's solutions decay to zero, which occurs if and only if all roots of $\Phi(z)=0$ have modulus greater than one [@Hamilton1994].
 
-#### Example: AR(2) Model
+**Example:** AR(2) Model
 
 Consider $Y_t = 0.5 Y_{t-1} - 0.3 Y_{t-2} + e_t$, $e_t \sim \mathcal{N}(0,1)$. Simulated data from this model will have an ACF that cuts off after lag 2 and a PACF that tails off, characteristic of AR(2) behavior [@Hyndman2021].
 
@@ -155,7 +155,7 @@ $$
 \end{cases}
 $$
 
-#### Example: MA(1) Model Fit
+**Example:** MA(1) Model Fit
 
 Suppose $Y_t = e_t + 0.6 e_{t-1}$, $e_t \sim \mathcal{N}(0,1)$. Fitting this model to real data (e.g., daily returns of a financial index) produces an ACF that drops to zero after lag 1, indicating the appropriateness of the MA(1) specification.
 

@@ -1,0 +1,148 @@
+## Probabilidad Condicional e Independencia
+
+### Probabilidad Condicional
+
+Sea $(\Omega, \mathcal{A}, P)$ un espacio de probabilidad. Para eventos $A, B \in \mathcal{A}$ con $P(A) > 0$, la **probabilidad condicional** de $B$ dado $A$ se define por
+
+$$
+P(B \mid A) = \frac{P(B \cap A)}{P(A)}.
+$$
+
+Esta fórmula expresa cómo la probabilidad de $B$ cambia cuando se restringe a la ocurrencia de $A$.
+
+#### Extensión: Probabilidad Condicional con Respecto a una $\sigma$-Álgebra
+
+Dada una sub-$\sigma$-álgebra $\mathcal{G} \subseteq \mathcal{A}$, la **probabilidad condicional de $B$ dado $\mathcal{G}$** es una variable aleatoria $\mathcal{G}$-medible $P(B \mid \mathcal{G})$ tal que, para todo $G \in \mathcal{G}$,
+
+$$
+\int_G P(B \mid \mathcal{G}) \, dP = P(B \cap G).
+$$
+
+Esta formulación generaliza la probabilidad condicional a contextos que involucran variables aleatorias y estructuras de información [ @Billingsley1995 ].
+
+#### Medida de Probabilidad Condicional
+
+Para $A$ fijo con $P(A) > 0$, definamos la **medida de probabilidad condicional** $P_A(\cdot)$ en $(\Omega, \mathcal{A})$ por
+
+$$
+P_A(B) = P(B \mid A).
+$$
+
+$P_A$ satisface:
+
+* No negatividad: $P_A(B) \geq 0$ para todo $B \in \mathcal{A}$,
+* Normalización: $P_A(\Omega) = 1$,
+* Aditividad numerable: $P_A\left( \bigcup_{n=1}^\infty B_n \right) = \sum_{n=1}^\infty P_A(B_n)$ para cualquier secuencia de conjuntos disjuntos $B_n \in \mathcal{A}$.
+
+##### Existencia (Teorema de Radon–Nikodym)
+
+Para una medida de probabilidad $P$ y $A \in \mathcal{A}$ con $P(A) > 0$, el teorema de Radon–Nikodym asegura la existencia de una medida de probabilidad condicional y, más generalmente, esperanzas condicionales dada una $\sigma$-álgebra [ @Durrett2019 ].
+
+#### Demostración: Propiedades de la Probabilidad Condicional
+
+La *no negatividad* y la *normalización* se siguen directamente de la definición. La *aditividad numerable* se verifica:
+Sea $(B_n)$ disjunta. Entonces
+
+$$
+P\left( \bigcup_{n=1}^\infty B_n \mid A \right) = \frac{P\left( \bigcup_{n=1}^\infty (B_n \cap A) \right)}{P(A)} = \frac{\sum_{n=1}^\infty P(B_n \cap A)}{P(A)} = \sum_{n=1}^\infty \frac{P(B_n \cap A)}{P(A)} = \sum_{n=1}^\infty P(B_n \mid A).
+$$
+
+### Ley de Probabilidad Total
+
+Sea ${A_i}_{i=1}^n$ una partición de $\Omega$ (es decir, $A_i \in \mathcal{A}$, $A_i \cap A_j = \emptyset$ para $i \ne j$, y $\bigcup_{i=1}^n A_i = \Omega$) con $P(A_i) > 0$ para todo $i$. Para cualquier $B \in \mathcal{A}$,
+
+$$
+P(B) = \sum_{i=1}^n P(B \mid A_i) P(A_i).
+$$
+
+#### Demostración
+
+Por la definición de una partición,
+
+$$
+P(B) = P\left( B \cap \Omega \right) = P\left( B \cap \bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n P(B \cap A_i) = \sum_{i=1}^n P(B \mid A_i) P(A_i).
+$$
+
+### Teorema de Bayes
+
+Para ${A_i}_{i=1}^n$ una partición de $\Omega$ con $P(A_i) > 0$, y $B$ tal que $P(B) > 0$,
+
+$$
+P(A_j \mid B) = \frac{P(B \mid A_j) P(A_j)}{\sum_{i=1}^n P(B \mid A_i) P(A_i)}.
+$$
+
+#### Demostración
+
+Por la definición de probabilidad condicional y la ley de probabilidad total,
+
+$$
+P(A_j \mid B) = \frac{P(A_j \cap B)}{P(B)} = \frac{P(B \mid A_j) P(A_j)}{\sum_{i=1}^n P(B \mid A_i) P(A_i)}.
+$$
+
+#### Interpretación Bayesiana
+
+El teorema de Bayes permite la actualización de una **probabilidad a priori** $P(A_j)$ a una **probabilidad a posteriori** $P(A_j \mid B)$ después de observar $B$. En estadística bayesiana, este mecanismo sustenta la inferencia estadística, con **distribuciones conjugadas a priori** frecuentemente utilizadas para asegurar tractabilidad analítica [ @BernardoSmith1994 ].
+
+### Independencia de Eventos y Variables Aleatorias
+
+#### Independencia de Eventos
+
+Los eventos $A_1, \dots, A_n$ son **mutuamente independientes** si para todo subconjunto ${i_1, \dots, i_k} \subseteq {1,\dots, n}$,
+
+$$
+P\left( \bigcap_{j=1}^k A_{i_j} \right) = \prod_{j=1}^k P(A_{i_j}).
+$$
+
+**Independencia por pares** significa $P(A_i \cap A_j) = P(A_i) P(A_j)$ para todo $i \neq j$, pero esto **no** garantiza independencia mutua.
+
+#### Independencia de Variables Aleatorias
+
+Las variables aleatorias $X_1, \dots, X_n$ son **independientes** si para todos los conjuntos de Borel $B_1, \dots, B_n \subseteq \mathbb{R}$,
+
+$$
+P\left( X_1 \in B_1, \dots, X_n \in B_n \right) = \prod_{j=1}^n P(X_j \in B_j).
+$$
+
+#### Independencia con Respecto a $\sigma$-Álgebras
+
+Las sub-$\sigma$-álgebras $\mathcal{G}_1, \dots, \mathcal{G}_n \subseteq \mathcal{A}$ son **independientes** si para todo $G_j \in \mathcal{G}_j$,
+
+$$
+P\left( \bigcap_{j=1}^n G_j \right) = \prod_{j=1}^n P(G_j).
+$$
+
+**Ejemplo: Independencia por Pares pero No Mutua.** Sea $(\Omega, \mathcal{A}, P)$ el espacio generado por tres lanzamientos independientes de moneda justa. Definamos los siguientes eventos:
+
+* $A$: El primer lanzamiento es cara.
+* $B$: El segundo lanzamiento es cara.
+* $C$: El número de caras es par.
+
+Cada par $(A,B)$, $(A,C)$, y $(B,C)$ es independiente, pero $A, B, C$ no son mutuamente independientes.
+
+**Ejemplo: Independencia en un Espacio de Probabilidad Continuo.** Sea $(\Omega, \mathcal{A}, P)$ igual a $([0,1], \mathcal{B}, \lambda)$, donde $\lambda$ es la medida de Lebesgue. Definamos los eventos:
+
+* $A = [0.1, 0.2)$ (el primer dígito decimal es 1).
+* $B = \bigcup_{k=0}^8 [0.01 + 0.1k, 0.02 + 0.1k)$ (el segundo dígito decimal es 1).
+
+Calculamos:
+
+* $P(A) = 0.1$ (longitud del intervalo $A$),
+* $P(B) = 0.1$ (suma de longitudes de intervalos en $B$),
+* $P(A \cap B) = 0.01$ (medida de la intersección).
+
+Por tanto,
+
+$$
+P(A \cap B) = 0.01 = 0.1 \cdot 0.1 = P(A)P(B),
+$$
+
+verificando la independencia. Más generalmente, la independencia en espacios continuos puede justificarse rigurosamente usando medidas producto e integración [ @Billingsley1995 ].
+
+### Ejercicios
+
+1. **Probabilidad Condicional como Variable Aleatoria**
+   Sea $X$ una variable aleatoria en $(\Omega, \mathcal{A}, P)$ y $\mathcal{G} \subseteq \mathcal{A}$ una sub-$\sigma$-álgebra. Demostrar que existe una función $\mathcal{G}$-medible $f$ tal que, para cualquier $G \in \mathcal{G}$, $\int_G X \, dP = \int_G f \, dP$.
+   *(Sugerencia: Teorema de Radon–Nikodym.)*
+
+2. **Independencia Mutua vs. por Pares**
+   Construir tres eventos que sean independientes por pares pero no mutuamente independientes. Demostrar la distinción explícitamente.

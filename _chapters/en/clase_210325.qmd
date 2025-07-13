@@ -29,9 +29,7 @@ Since the experiments are independent, for each choice $a_1 \in A_1$, there are 
 
 Thus, the rule holds for all $n \in \mathbb{N}$.
 
-#### Example
-
-Suppose an urn contains 6 red and 4 black balls ($10$ total). Two balls are drawn in sequence **without replacement**. Compute the total number of ordered outcomes:
+**Example:** Suppose an urn contains 6 red and 4 black balls ($10$ total). Two balls are drawn in sequence **without replacement**. Compute the total number of ordered outcomes:
 
 Let $A_1$ = set of balls for the first draw ($|A_1|=10$); $A_2$ = set of balls for the second draw ($|A_2|=9$ since one has been removed). The total number of ordered pairs is $10 \times 9 = 90$.
 
@@ -43,10 +41,7 @@ $$
 P(\text{both red}) = \frac{30}{90} = \frac{1}{3}
 $$
 
-#### Advanced Example
-
-**Link to Probability Spaces:**
-If instead balls were drawn **with replacement** (each draw independent), the total number of ordered pairs would be $10 \times 10 = 100$, illustrating the effect of independence.
+**Example:** Link to Probability Spaces. If instead balls were drawn **with replacement** (each draw independent), the total number of ordered pairs would be $10 \times 10 = 100$, illustrating the effect of independence.
 
 ### Permutations
 
@@ -62,14 +57,9 @@ $$
 
 Each position in the ordered arrangement has a unique element assigned, with $n$ choices for the first, $n-1$ for the second, ..., $1$ for the last.
 
-#### Example
+**Example:** Arrange $5$ distinct books on a shelf. The number of arrangements is $5! = 120$.
 
-Arrange $5$ distinct books on a shelf. The number of arrangements is $5! = 120$.
-
-#### Advanced Example
-
-**Permutation Parity:**
-For $n \geq 2$, half of all permutations are even and half are odd, a result crucial in the theory of determinants and algebraic structures [@Durrett2019].
+**Example:**Permutation Parity. For $n \geq 2$, half of all permutations are even and half are odd, a result crucial in the theory of determinants and algebraic structures [@Durrett2019].
 
 ### $k$-Permutations (formerly “Variations”)
 
@@ -89,7 +79,7 @@ $$
 n \cdot (n-1) \cdots (n-k+1) = \frac{n!}{(n-k)!}
 $$
 
-#### Example
+**Example:**
 
 Select and order $3$ out of $5$ books: $P(5,3) = 60$.
 
@@ -125,7 +115,7 @@ $$
 
 [@Feller1970]
 
-#### Example
+**Example:**
 
 From $50$ components ($4$ defective), select $10$ at random. The probability that **at least one** is defective:
 
@@ -155,7 +145,7 @@ $$
 
 There are $n!$ ways to permute all objects if they were distinguishable. For each group of indistinguishable elements, dividing by $n_i!$ corrects for the overcount due to repeated arrangements [@Stanley2012].
 
-#### Example
+**Example:**
 
 Number of distinct anagrams of “BANANA” ($3$ A’s, $2$ N’s, $1$ B):
 
@@ -177,7 +167,7 @@ $$
 N = n^r
 $$
 
-#### Example
+**Example:**
 
 Distribute $3$ labeled balls into $2$ boxes: $2^3 = 8$ configurations.
 
@@ -197,7 +187,7 @@ $$
 
 This follows from the “stars and bars” theorem.
 
-#### Example
+**Example:**
 
 Place $4$ indistinguishable balls in $3$ boxes:
 
@@ -227,7 +217,7 @@ $$
 
 This is the **Poisson distribution** [@Billingsley1995].
 
-#### Example
+**Example:**
 
 Suppose $r=10$, $n=100$, fixed urn: $p(0)=\left(1-\frac{1}{100}\right)^{10} \approx 0.904$.
 
@@ -245,7 +235,7 @@ $$
 
 The result follows from analytic combinatorics by considering the limit of multinomial occupancy [@Feller1970].
 
-#### Example
+**Example:**
 
 Let $\lambda = 2$, $k=3$:
 

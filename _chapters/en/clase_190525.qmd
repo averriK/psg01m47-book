@@ -36,7 +36,7 @@ X(t) - X(s) = \sum_{i=N(s)+1}^{N(t)} Y_i
 $$
 
 is a sum of $M$ i.i.d. variables, independent of the process before $s$, satisfying the compound Poisson structure [@Sato1999].
-$\hfill\Box$
+$\quad\blacksquare$
 
 ### Moments of the Compound Poisson Process
 
