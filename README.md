@@ -20,10 +20,10 @@ Para agregar un nuevo capítulo al libro, sigue estos pasos:
 
 ### 1. Crear el archivo del capítulo
 
-Crea un nuevo archivo `.qmd` en el directorio `psg01m47/es/` con el nombre de fecha correspondiente:
+Crea un nuevo archivo `.qmd` en el directorio `_chapters/es/` con el nombre de fecha correspondiente:
 
 ```bash
-touch psg01m47/es/YYYYMMDD.qmd
+touch _chapters/es/YYYYMMDD.qmd
 ```
 
 ### 2. Editar _quarto.yml
@@ -37,10 +37,10 @@ book:
   # ... otras configuraciones ...
   chapters:
     - index.qmd
-    - psg01m47/es/20250317.qmd
-    - psg01m47/es/20250321.qmd
+    - _chapters/es/20250317.qmd
+    - _chapters/es/20250321.qmd
     # ... capítulos existentes ...
-    - psg01m47/es/YYYYMMDD.qmd  # ← Agregar nueva línea aquí
+    - _chapters/es/YYYYMMDD.qmd  # ← Agregar nueva línea aquí
 ```
 
 ### 3. Estructura del archivo de capítulo
@@ -151,6 +151,44 @@ quarto render index.qmd
 quarto render --verbose
 ```
 
+## Archivos de Salida
+
+Después de renderizar, los archivos generados se encuentran en el directorio `_publish/`:
+
+### Encontrar el HTML
+- **Archivo principal**: `_publish/index.html`
+- **Capítulos individuales**: `_publish/_chapters/es/YYYYMMDD.html`
+- Abre `index.html` en tu navegador para ver el libro completo
+
+### Encontrar el PDF
+- **Archivo PDF**: `_publish/Introducción-a-los-Modelos-Probabilísticos--PSG-01M47-.pdf`
+- Este archivo contiene todo el libro en formato PDF
+
+### Estructura del directorio de salida
+```
+_publish/
+├── index.html                    # ← Página principal (abrir este archivo)
+├── Introducción-a-los-Modelos-Probabilísticos--PSG-01M47-.pdf  # ← PDF completo
+├── _chapters/
+│   └── es/
+│       ├── 20250317.html
+│       ├── 20250321.html
+│       └── ...                   # Capítulos individuales en HTML
+├── search.json                   # Índice de búsqueda
+└── site_libs/                    # Recursos del sitio (CSS, JS, etc.)
+```
+
+### Visualizar el libro
+```bash
+# Opción 1: Abrir HTML directamente
+open _publish/index.html          # macOS
+xdg-open _publish/index.html      # Linux
+start _publish/index.html         # Windows
+
+# Opción 2: Servidor local con vista previa
+quarto preview                    # Inicia servidor en http://localhost:4000
+```
+
 ## Estructura de Directorios
 
 ```
@@ -161,9 +199,9 @@ psg01m47-book/
 │   └── styles.css       # Estilos personalizados
 ├── _bib/                # Referencias bibliográficas
 │   └── references.bib
-├── psg01m47/            # Contenido del curso
+├── _chapters/           # Contenido del curso
 │   ├── es/              # Capítulos en español
-│   └── en/              # Capítulos en inglés (
+│   └── en/              # Capítulos en inglés (si existen)
 └── _publish/            # Archivos generados (HTML, PDF)
 ```
 
