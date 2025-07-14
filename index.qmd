@@ -1,4 +1,4 @@
-#### *Resumen* {.unnumbered}
+#### **Resumen** {.unnumbered}
 
 
 *Las siguientes páginas corresponden a las notas de clase del curso de [Introducción a los Modelos Probabilísticos (PSG-01M47)](https://campusposgrado.fi.uba.ar/course/view.php?id=421) dictado por la Dra. Verónica Estela Pastor, durante el primer semestre de 2025. Los contenidos se han organizado de acuerdo al orden cronológico de las clases.*
