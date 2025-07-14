@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Distribuciones Condicionales y Predicción – Introducción a los Modelos Probabilísticos (PSG-01M47)</title>
+<title>9&nbsp; Procesos de Poisson – Introducción a los Modelos Probabilísticos (PSG-01M47)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../psg01m47/es/20250421.html" rel="next">
-<link href="../../psg01m47/es/20250404.html" rel="prev">
+<link href="../../_chapters/es/20250512.html" rel="next">
+<link href="../../_chapters/es/20250425.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -78,9 +78,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fced259a1985fd972ecb57c7cd45153f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9ad2f6784ef7740f8923865819855fc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-667bf6aa307230ea1d03c4f3ea1eecdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-9ad2f6784ef7740f8923865819855fc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b891efac36962fbfea7741bb11530e21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d00da738faeeeb1c88d42756724c5feb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b891efac36962fbfea7741bb11530e21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,7 +139,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../_build/styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -313,7 +312,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../psg01m47/es/20250414.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones Condicionales y Predicción</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../_chapters/es/20250428.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Procesos de Poisson</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -349,113 +348,116 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250317.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250317.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Espacios de Probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250321.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250321.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Técnicas de Conteo en Probabilidad y Combinatoria</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250328.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250328.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probabilidad Condicional e Independencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250331.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250331.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Variables Aleatorias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250404.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250404.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variables Aleatorias y Vectores: Transformaciones y Aplicaciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250414.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../_chapters/es/20250414.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones Condicionales y Predicción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250421.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250421.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ley de los Grandes Números y Teorema Central del Límite</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250425.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250425.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250428.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250428.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Procesos de Poisson</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250512.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250512.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesos de Markov</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250519.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250519.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesos de Poisson Compuestos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250523.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250523.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series de Tiempo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../psg01m47/es/20250530.html" class="sidebar-item-text sidebar-link">
+  <a href="../../_chapters/es/20250530.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Modelos ARIMA: Fundamentos, Teoría y Aplicación</span></span></a>
   </div>
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">TOC</h2>
-   
-  <ul>
-  <li><a href="#distribuciones-condicionales" id="toc-distribuciones-condicionales" class="nav-link active" data-scroll-target="#distribuciones-condicionales"><span class="header-section-number">6.1</span> Distribuciones Condicionales</a>
-  <ul class="collapse">
-  <li><a href="#propiedades" id="toc-propiedades" class="nav-link" data-scroll-target="#propiedades"><span class="header-section-number">6.1.1</span> Propiedades</a></li>
-  </ul></li>
-  <li><a href="#teoría-de-predicción" id="toc-teoría-de-predicción" class="nav-link" data-scroll-target="#teoría-de-predicción"><span class="header-section-number">6.2</span> Teoría de Predicción</a>
-  <ul class="collapse">
-  <li><a href="#propiedades-1" id="toc-propiedades-1" class="nav-link" data-scroll-target="#propiedades-1"><span class="header-section-number">6.2.1</span> Propiedades</a></li>
-  </ul></li>
-  <li><a href="#predicción-lineal" id="toc-predicción-lineal" class="nav-link" data-scroll-target="#predicción-lineal"><span class="header-section-number">6.3</span> Predicción Lineal</a>
-  <ul class="collapse">
-  <li><a href="#caso-especial-normal-bivariado" id="toc-caso-especial-normal-bivariado" class="nav-link" data-scroll-target="#caso-especial-normal-bivariado"><span class="header-section-number">6.3.1</span> Caso Especial: Normal Bivariado</a></li>
-  </ul></li>
-  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones"><span class="header-section-number">6.4</span> Aplicaciones</a>
-  <ul class="collapse">
-  <li><a href="#análisis-de-regresión" id="toc-análisis-de-regresión" class="nav-link" data-scroll-target="#análisis-de-regresión"><span class="header-section-number">6.4.1</span> Análisis de Regresión</a></li>
-  <li><a href="#pronóstico-de-series-de-tiempo" id="toc-pronóstico-de-series-de-tiempo" class="nav-link" data-scroll-target="#pronóstico-de-series-de-tiempo"><span class="header-section-number">6.4.2</span> Pronóstico de Series de Tiempo</a></li>
-  <li><a href="#aprendizaje-automático" id="toc-aprendizaje-automático" class="nav-link" data-scroll-target="#aprendizaje-automático"><span class="header-section-number">6.4.3</span> Aprendizaje Automático</a></li>
-  </ul></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">6.5</span> Ejercicios</a></li>
-  </ul>
-</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenidos</h2>
+   
+  <ul>
+  <li><a href="#definición-y-propiedades-fundamentales" id="toc-definición-y-propiedades-fundamentales" class="nav-link active" data-scroll-target="#definición-y-propiedades-fundamentales"><span class="header-section-number">9.1</span> Definición y Propiedades Fundamentales</a>
+  <ul class="collapse">
+  <li><a href="#demostración-formal-de-la-ley-de-distribución-de-poisson" id="toc-demostración-formal-de-la-ley-de-distribución-de-poisson" class="nav-link" data-scroll-target="#demostración-formal-de-la-ley-de-distribución-de-poisson"><span class="header-section-number">9.1.1</span> Demostración Formal de la Ley de Distribución de Poisson</a></li>
+  <li><a href="#valores-enteros" id="toc-valores-enteros" class="nav-link" data-scroll-target="#valores-enteros"><span class="header-section-number">9.1.2</span> Valores Enteros</a></li>
+  </ul></li>
+  <li><a href="#tiempos-entre-llegadas-y-la-ley-exponencial" id="toc-tiempos-entre-llegadas-y-la-ley-exponencial" class="nav-link" data-scroll-target="#tiempos-entre-llegadas-y-la-ley-exponencial"><span class="header-section-number">9.2</span> Tiempos entre Llegadas y la Ley Exponencial</a>
+  <ul class="collapse">
+  <li><a href="#demostración-de-la-propiedad-de-falta-de-memoria" id="toc-demostración-de-la-propiedad-de-falta-de-memoria" class="nav-link" data-scroll-target="#demostración-de-la-propiedad-de-falta-de-memoria"><span class="header-section-number">9.2.1</span> Demostración de la Propiedad de Falta de Memoria</a></li>
+  </ul></li>
+  <li><a href="#proceso-de-poisson-compuesto" id="toc-proceso-de-poisson-compuesto" class="nav-link" data-scroll-target="#proceso-de-poisson-compuesto"><span class="header-section-number">9.3</span> Proceso de Poisson Compuesto</a></li>
+  <li><a href="#aplicaciones" id="toc-aplicaciones" class="nav-link" data-scroll-target="#aplicaciones"><span class="header-section-number">9.4</span> Aplicaciones</a>
+  <ul class="collapse">
+  <li><a href="#teoría-de-colas" id="toc-teoría-de-colas" class="nav-link" data-scroll-target="#teoría-de-colas"><span class="header-section-number">9.4.1</span> Teoría de Colas</a></li>
+  <li><a href="#teoría-de-confiabilidad" id="toc-teoría-de-confiabilidad" class="nav-link" data-scroll-target="#teoría-de-confiabilidad"><span class="header-section-number">9.4.2</span> Teoría de Confiabilidad</a></li>
+  <li><a href="#seguros-y-riesgo" id="toc-seguros-y-riesgo" class="nav-link" data-scroll-target="#seguros-y-riesgo"><span class="header-section-number">9.4.3</span> Seguros y Riesgo</a></li>
+  </ul></li>
+  <li><a href="#propiedades-avanzadas" id="toc-propiedades-avanzadas" class="nav-link" data-scroll-target="#propiedades-avanzadas"><span class="header-section-number">9.5</span> Propiedades Avanzadas</a>
+  <ul class="collapse">
+  <li><a href="#teorema-de-superposición" id="toc-teorema-de-superposición" class="nav-link" data-scroll-target="#teorema-de-superposición"><span class="header-section-number">9.5.1</span> Teorema de Superposición</a></li>
+  <li><a href="#teorema-de-adelgazamiento" id="toc-teorema-de-adelgazamiento" class="nav-link" data-scroll-target="#teorema-de-adelgazamiento"><span class="header-section-number">9.5.2</span> Teorema de Adelgazamiento</a></li>
+  </ul></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.6</span> Ejercicios</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -463,7 +465,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones Condicionales y Predicción</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Procesos de Poisson</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -480,110 +482,127 @@ window.Quarto = {
 </header>
 
 
-<section id="distribuciones-condicionales" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="distribuciones-condicionales"><span class="header-section-number">6.1</span> Distribuciones Condicionales</h2>
-<p>Sea <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> un espacio de probabilidad. Consideremos un vector aleatorio <span class="math inline">\((X, Y)\)</span> definido en este espacio, donde <span class="math inline">\(X : \Omega \to \mathbb{R}\)</span> e <span class="math inline">\(Y : \Omega \to \mathbb{R}\)</span> son variables aleatorias. La <strong>distribución condicional</strong> de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> es una familia de medidas de probabilidad <span class="math inline">\({P_{Y|X=x} : x \in \mathbb{R}}\)</span> tal que, para cualquier conjunto de Borel <span class="math inline">\(B \subseteq \mathbb{R}\)</span>,</p>
-<p><span class="math display">\[
-P_{Y|X=x}(B) = P(Y \in B \mid X = x), \quad \text{siempre que } P(X = x) &gt; 0.
-\]</span></p>
-<p>Más generalmente, para variables aleatorias arbitrarias y <span class="math inline">\(\sigma\)</span>-álgebras, la distribución condicional se define vía la derivada de Radon–Nikodym como la versión regular única (salvo conjuntos <span class="math inline">\(P\)</span>-nulos) <span class="math inline">\(P_{Y|X}(\cdot \mid X)\)</span> <span class="citation" data-cites="Billingsley1995">[@Billingsley1995]</span>.</p>
-<p>Para variables aleatorias <strong>discretas</strong>,</p>
-<p><span class="math display">\[
-P(Y = y \mid X = x) = \frac{P(X = x, Y = y)}{P(X = x)}, \quad \text{siempre que } P(X = x) &gt; 0.
-\]</span></p>
-<p>Para variables aleatorias <strong>absolutamente continuas</strong>, con densidad conjunta <span class="math inline">\(f_{X,Y}\)</span> y marginal <span class="math inline">\(f_X\)</span>,</p>
-<p><span class="math display">\[
-f_{Y|X}(y|x) = \frac{f_{X,Y}(x, y)}{f_X(x)}, \quad \text{donde } f_X(x) &gt; 0.
-\]</span></p>
-<section id="propiedades" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="propiedades"><span class="header-section-number">6.1.1</span> Propiedades</h3>
-<ul>
-<li><strong>Propiedad de Torre:</strong> <span class="math inline">\(\mathbb{E}\left[\,\mathbb{E}[Y \mid X]\,\right] = \mathbb{E}[Y]\)</span>.</li>
-<li><strong>Desigualdad de Jensen:</strong> Para cualquier función convexa <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\varphi(\mathbb{E}[Y|X]) \leq \mathbb{E}[\varphi(Y)|X]\)</span> <span class="citation" data-cites="Durrett2019">[@Durrett2019]</span>.</li>
-</ul>
-<p><strong>Ejemplo.</strong></p>
-<p>Sea <span class="math inline">\((X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)\)</span> un vector aleatorio normal bivariado, donde <span class="math inline">\(|\rho| &lt; 1\)</span>. La distribución condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X = x\)</span> es normal:</p>
-<p><span class="math display">\[
-Y|X = x \sim N\left(\mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X),\; \sigma_Y^2(1 - \rho^2)\right).
-\]</span></p>
-<p><strong>Demostración:</strong> Sea <span class="math inline">\(\Sigma = \begin{pmatrix} \sigma_X^2 &amp; \rho \sigma_X \sigma_Y \\ \rho \sigma_X \sigma_Y &amp; \sigma_Y^2 \end{pmatrix}\)</span>. Las propiedades estándar de la normal multivariada producen la media y varianza condicional como arriba; ver <span class="citation" data-cites="Billingsley1995">[@Billingsley1995, p. 186]</span>.</p>
-</section>
-</section>
-<section id="teoría-de-predicción" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="teoría-de-predicción"><span class="header-section-number">6.2</span> Teoría de Predicción</h2>
-<p>Sea <span class="math inline">\((X, Y)\)</span> como arriba. Supongamos que se busca una función <span class="math inline">\(g(X)\)</span> para predecir <span class="math inline">\(Y\)</span> tal que el <strong>error cuadrático medio</strong> <span class="math inline">\(\mathbb{E}[(Y - g(X))^2]\)</span> se minimice. El predictor óptimo en este sentido es la <strong>esperanza condicional</strong>:</p>
-<p><span class="math display">\[
-\hat{Y} = \mathbb{E}[Y \mid X].
-\]</span></p>
-<section id="propiedades-1" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="propiedades-1"><span class="header-section-number">6.2.1</span> Propiedades</h3>
-<p>Sea <span class="math inline">\(\mathcal{G} = \sigma(X)\)</span>. Entonces:</p>
+<section id="definición-y-propiedades-fundamentales" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="definición-y-propiedades-fundamentales"><span class="header-section-number">9.1</span> Definición y Propiedades Fundamentales</h2>
+<p>Un <strong>proceso de Poisson</strong> <span class="math inline">\({N(t): t \geq 0}\)</span> con tasa <span class="math inline">\(\lambda &gt; 0\)</span> es un proceso estocástico con valores en <span class="math inline">\(\mathbb{Z}_{\geq 0}\)</span> que satisface los siguientes axiomas <span class="citation" data-cites="Kingman1993 Ross2019">[@Kingman1993; @Ross2019]</span>:</p>
 <ol type="1">
-<li><p><strong>Insesgadez:</strong> <span class="math inline">\(\mathbb{E}[\hat{Y}] = \mathbb{E}[Y]\)</span>.</p></li>
-<li><p><strong>Ortogonalidad:</strong> <span class="math inline">\(\mathbb{E}[(Y - \hat{Y}) h(X)] = 0\)</span> para cualquier función integrable <span class="math inline">\(h\)</span> medible con respecto a <span class="math inline">\(\mathcal{G}\)</span>.</p></li>
-<li><p><strong>Varianza Mínima:</strong> Para cualquier otro predictor <span class="math inline">\(g(X)\)</span>,</p>
+<li><p><strong>Valor inicial</strong>: <span class="math inline">\(N(0) = 0\)</span>.</p></li>
+<li><p><strong>Incrementos independientes</strong>: Para cualquier <span class="math inline">\(0 \leq t_0 &lt; t_1 &lt; \cdots &lt; t_k\)</span>, las variables aleatorias <span class="math inline">\(N(t_1) - N(t_0), \ldots, N(t_k) - N(t_{k-1})\)</span> son independientes.</p></li>
+<li><p><strong>Incrementos estacionarios</strong>: Para todo <span class="math inline">\(s, t \geq 0\)</span>, la distribución de <span class="math inline">\(N(t+s) - N(s)\)</span> depende solo de <span class="math inline">\(t\)</span>.</p></li>
+<li><p><strong>Distribución de incrementos</strong>: Para <span class="math inline">\(h &gt; 0\)</span> pequeño,</p>
 <p><span class="math display">\[
-\mathbb{E}[(Y - \hat{Y})^2] \leq \mathbb{E}[(Y - g(X))^2].
+P(N(h) = 1) = \lambda h + o(h), \quad P(N(h) \geq 2) = o(h)
+\]</span></p>
+<p>donde <span class="math inline">\(o(h)/h \to 0\)</span> cuando <span class="math inline">\(h \to 0\)</span>.</p></li>
+</ol>
+<p><strong>Observación.</strong> Estas condiciones implican que para todo <span class="math inline">\(t \geq 0\)</span>,</p>
+<p><span class="math display">\[
+P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n = 0, 1, 2, \ldots
+\]</span></p>
+<p>y que <span class="math inline">\(N(t)\)</span> tiene incrementos estacionarios e independientes.</p>
+<section id="demostración-formal-de-la-ley-de-distribución-de-poisson" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="demostración-formal-de-la-ley-de-distribución-de-poisson"><span class="header-section-number">9.1.1</span> Demostración Formal de la Ley de Distribución de Poisson</h3>
+<p><strong>Esbozo:</strong> Sea <span class="math inline">\(N(0) = 0\)</span>, y dividamos <span class="math inline">\([0, t]\)</span> en <span class="math inline">\(n\)</span> subintervalos de longitud <span class="math inline">\(h = t/n\)</span>. La probabilidad de que cada subintervalo contenga a lo más un evento y que <span class="math inline">\(k\)</span> intervalos contengan exactamente un evento puede mostrarse (usando el límite cuando <span class="math inline">\(n \to \infty\)</span> y las propiedades anteriores) que converge a la ley de Poisson. Ver <span class="citation" data-cites="Billingsley1995">[@Billingsley1995, Ch. 6]</span> para una demostración completa.</p>
+</section>
+<section id="valores-enteros" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="valores-enteros"><span class="header-section-number">9.1.2</span> Valores Enteros</h3>
+<p>Por construcción, <span class="math inline">\(N(t)\)</span> cuenta el número de eventos hasta el tiempo <span class="math inline">\(t\)</span> y es siempre un entero no negativo.</p>
+</section>
+</section>
+<section id="tiempos-entre-llegadas-y-la-ley-exponencial" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="tiempos-entre-llegadas-y-la-ley-exponencial"><span class="header-section-number">9.2</span> Tiempos entre Llegadas y la Ley Exponencial</h2>
+<p>Sea <span class="math inline">\(T_1\)</span> el tiempo hasta el primer evento. Para <span class="math inline">\(t \geq 0\)</span>:</p>
+<p><span class="math display">\[
+P(T_1 &gt; t) = P(N(t) = 0) = e^{-\lambda t}.
+\]</span></p>
+<p>Por tanto, el tiempo de espera <span class="math inline">\(T_1\)</span> está distribuido exponencialmente con parámetro <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[
+f_{T_1}(t) = \lambda e^{-\lambda t}, \quad t \geq 0.
+\]</span></p>
+<p>Esta propiedad se extiende a todos los tiempos entre llegadas <span class="math inline">\(T_{k+1} - T_k\)</span>, que son variables aleatorias exponenciales independientes e idénticamente distribuidas con media <span class="math inline">\(1/\lambda\)</span>.</p>
+<section id="demostración-de-la-propiedad-de-falta-de-memoria" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="demostración-de-la-propiedad-de-falta-de-memoria"><span class="header-section-number">9.2.1</span> Demostración de la Propiedad de Falta de Memoria</h3>
+<p>Para <span class="math inline">\(s, t \geq 0\)</span>,</p>
+<p><span class="math display">\[
+P(T_1 &gt; s + t \mid T_1 &gt; s) = \frac{P(T_1 &gt; s + t)}{P(T_1 &gt; s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(T_1 &gt; t),
+\]</span></p>
+<p>demostrando que la distribución exponencial carece de memoria <span class="citation" data-cites="Durrett2019">[@Durrett2019]</span>.</p>
+</section>
+</section>
+<section id="proceso-de-poisson-compuesto" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="proceso-de-poisson-compuesto"><span class="header-section-number">9.3</span> Proceso de Poisson Compuesto</h2>
+<p>Sea <span class="math inline">\({Y_i}_{i=1}^\infty\)</span> una secuencia de variables aleatorias independientes e idénticamente distribuidas, independiente del proceso de Poisson <span class="math inline">\({N(t)}\)</span>. El <strong>proceso de Poisson compuesto</strong> se define por</p>
+<p><span class="math display">\[
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0.
+\]</span></p>
+<p><strong>Supuestos:</strong></p>
+<ul>
+<li><span class="math inline">\(E|Y_1| &lt; \infty\)</span> para cálculos de media/varianza.</li>
+</ul>
+<p><strong>Propiedades:</strong></p>
+<ul>
+<li><span class="math inline">\(E[X(t)] = \lambda t \, E[Y_1]\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X(t)) = \lambda t \, E[Y_1^2]\)</span></li>
+</ul>
+<p><strong>Soporte:</strong> Para demostraciones y propiedades adicionales, ver <span class="citation" data-cites="Kingman1993">[@Kingman1993]</span>, <span class="citation" data-cites="Billingsley1995">[@Billingsley1995, Sec. 22]</span>.</p>
+</section>
+<section id="aplicaciones" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="aplicaciones"><span class="header-section-number">9.4</span> Aplicaciones</h2>
+<section id="teoría-de-colas" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="teoría-de-colas"><span class="header-section-number">9.4.1</span> Teoría de Colas</h3>
+<p>En la <strong>cola M/M/1</strong>, las llegadas se modelan como un proceso de Poisson con tasa <span class="math inline">\(\lambda\)</span> y los tiempos de servicio están distribuidos exponencialmente. El proceso modela los conteos de llegadas <span class="math inline">\(N(t)\)</span>, el tiempo de espera para el próximo cliente, y las probabilidades de estado del sistema. Ver <span class="citation" data-cites="GrossHarris1998">[@GrossHarris1998]</span>.</p>
+<p><strong>Ejemplo:</strong> Supongamos que las llegadas ocurren a tasa <span class="math inline">\(\lambda = 3\)</span> por minuto. La probabilidad de que exactamente <span class="math inline">\(n\)</span> llegadas ocurran en <span class="math inline">\(t = 2\)</span> minutos es</p>
+<p><span class="math display">\[
+P(N(2) = n) = \frac{(6)^n}{n!}e^{-6}.
+\]</span></p>
+<p><strong>Ejemplo: Distribución del Tiempo de Espera</strong>. Sea <span class="math inline">\(S_n\)</span> el tiempo de espera hasta la <span class="math inline">\(n\)</span>-ésima llegada. La suma de <span class="math inline">\(n\)</span> variables aleatorias exponenciales i.i.d. está distribuida gamma:</p>
+<p><span class="math display">\[
+P(S_n \leq t) = 1 - \sum_{k=0}^{n-1} \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad t \geq 0.
+\]</span></p>
+</section>
+<section id="teoría-de-confiabilidad" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="teoría-de-confiabilidad"><span class="header-section-number">9.4.2</span> Teoría de Confiabilidad</h3>
+<p>Para <strong>procesos de Poisson homogéneos</strong>, las fallas de componentes independientes en sistemas complejos se modelan como eventos de Poisson. Los procesos de Poisson no homogéneos, con función de tasa <span class="math inline">\(\lambda(t)\)</span>, se requieren para tasas de falla dependientes de la edad <span class="citation" data-cites="Ross2019">[@Ross2019, Ch. 5]</span>.</p>
+</section>
+<section id="seguros-y-riesgo" class="level3" data-number="9.4.3">
+<h3 data-number="9.4.3" class="anchored" data-anchor-id="seguros-y-riesgo"><span class="header-section-number">9.4.3</span> Seguros y Riesgo</h3>
+<p>En matemáticas de seguros, las <strong>llegadas de reclamos</strong> se modelan como un proceso de Poisson; el tamaño total de reclamos sobre <span class="math inline">\([0,t]\)</span> es una variable aleatoria de Poisson compuesta.</p>
+</section>
+</section>
+<section id="propiedades-avanzadas" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="propiedades-avanzadas"><span class="header-section-number">9.5</span> Propiedades Avanzadas</h2>
+<section id="teorema-de-superposición" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="teorema-de-superposición"><span class="header-section-number">9.5.1</span> Teorema de Superposición</h3>
+<p><strong>Enunciado:</strong> Si <span class="math inline">\(N_1(t)\)</span> y <span class="math inline">\(N_2(t)\)</span> son procesos de Poisson independientes con tasas <span class="math inline">\(\lambda_1\)</span> y <span class="math inline">\(\lambda_2\)</span>, entonces <span class="math inline">\(N(t) = N_1(t) + N_2(t)\)</span> es un proceso de Poisson con tasa <span class="math inline">\(\lambda_1 + \lambda_2\)</span> <span class="citation" data-cites="Kingman1993">[@Kingman1993]</span>.</p>
+<p><strong>Demostración:</strong> Se sigue de la convolución de distribuciones de Poisson independientes y la preservación de independencia y estacionaridad.</p>
+</section>
+<section id="teorema-de-adelgazamiento" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="teorema-de-adelgazamiento"><span class="header-section-number">9.5.2</span> Teorema de Adelgazamiento</h3>
+<p><strong>Enunciado:</strong> Si cada evento de un proceso de Poisson de tasa <span class="math inline">\(\lambda\)</span> se retiene independientemente con probabilidad <span class="math inline">\(p\)</span> (es decir, cada evento se asigna una marca Bernoulli<span class="math inline">\((p)\)</span> independiente), los eventos retenidos forman un proceso de Poisson con tasa <span class="math inline">\(\lambda p\)</span>.</p>
+<p><strong>Demostración:</strong> Para <span class="math inline">\(h \to 0\)</span>, la probabilidad de que un evento ocurra y sea retenido en <span class="math inline">\((t, t+h]\)</span> es <span class="math inline">\(\lambda h \cdot p + o(h)\)</span>; todas las propiedades del proceso de Poisson se preservan. Ver <span class="citation" data-cites="Kingman1993">[@Kingman1993, Sec. 2.3]</span>.</p>
+<p><strong>Ejemplo: Confiabilidad del Sistema.</strong> Supongamos que las fallas de componentes de un sistema siguen un proceso de Poisson con tasa <span class="math inline">\(\lambda = 0.1\)</span> fallas/hora.</p>
+<ol type="1">
+<li><p><strong>Probabilidad de 2 fallas en 24 horas:</strong></p>
+<p><span class="math display">\[
+P(N(24) = 2) = \frac{(0.1 \times 24)^2}{2!} e^{-0.1 \times 24} = \frac{2.4^2}{2} e^{-2.4} \approx 0.261
+\]</span></p></li>
+<li><p><strong>Tiempo esperado hasta la primera falla:</strong></p>
+<p><span class="math display">\[
+E[T_1] = 1/\lambda = 10 \text{ horas}
+\]</span></p></li>
+<li><p><strong>Ejemplo de Poisson Compuesto:</strong> Si el costo <span class="math inline">\(Y_i\)</span> de cada falla es i.i.d. con $E[Y_1] = <span class="math inline">\(500\)</span>, el costo total esperado en <span class="math inline">\(t = 24\)</span> horas es:</p>
+<p><span class="math display">\[
+E[X(24)] = E[N(24)] \, E[Y_1] = (0.1 \times 24) \times 500 = USD\ 1,200
 \]</span></p></li>
 </ol>
-<p><strong>Demostraciones:</strong></p>
-<ul>
-<li><p><em>Insesgadez</em>: Por la propiedad de torre, <span class="math inline">\(\mathbb{E}[\mathbb{E}[Y|X]] = \mathbb{E}[Y]\)</span>.</p></li>
-<li><p><em>Ortogonalidad</em>: Para cualquier <span class="math inline">\(h\)</span> medible, <span class="math inline">\(\mathbb{E}[(Y - \mathbb{E}[Y|X])h(X)] = 0\)</span> <span class="citation" data-cites="Durrett2019">[@Durrett2019, Theorem 5.5.3]</span>.</p></li>
-<li><p><em>Varianza Mínima</em>: Para cualquier <span class="math inline">\(g(X)\)</span>,</p>
-<p><span class="math display">\[
-\mathbb{E}\left[(Y - g(X))^2\right] = \mathbb{E}\left[(Y - \mathbb{E}[Y|X])^2\right] + \mathbb{E}\left[(\mathbb{E}[Y|X] - g(X))^2\right],
-\]</span></p>
-<p>por lo que el mínimo se alcanza en <span class="math inline">\(g = \mathbb{E}[Y|X]\)</span>.</p></li>
-</ul>
 </section>
 </section>
-<section id="predicción-lineal" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="predicción-lineal"><span class="header-section-number">6.3</span> Predicción Lineal</h2>
-<p>Supongamos que restringimos la atención a <strong>predictores lineales</strong> de la forma <span class="math inline">\(g(X) = a + b X\)</span>. Los coeficientes <span class="math inline">\(a, b\)</span> que minimizan el error cuadrático medio son:</p>
-<p><span class="math display">\[
-b^* = \frac{\text{Cov}(X, Y)}{\text{Var}(X)}, \quad a^* = \mathbb{E}[Y] - b^* \mathbb{E}[X],
-\]</span></p>
-<p>siempre que <span class="math inline">\(\text{Var}(X) &gt; 0\)</span>. Por tanto, el <strong>mejor predictor lineal</strong> es</p>
-<p><span class="math display">\[
-\hat{Y}_L = \mathbb{E}[Y] + \frac{\text{Cov}(X, Y)}{\text{Var}(X)} (X - \mathbb{E}[X]).
-\]</span></p>
-<p><strong>Demostración:</strong> Sea <span class="math inline">\(g(X) = a + bX\)</span>; expandir <span class="math inline">\(\mathbb{E}[(Y - (a + bX))^2]\)</span>, establecer las derivadas con respecto a <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> igual a cero, y resolver para los <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que minimizan.</p>
-<section id="caso-especial-normal-bivariado" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="caso-especial-normal-bivariado"><span class="header-section-number">6.3.1</span> Caso Especial: Normal Bivariado</h3>
-<p>Si <span class="math inline">\((X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)\)</span>, entonces <span class="math inline">\(\mathbb{E}[Y|X]\)</span> es afín en <span class="math inline">\(X\)</span>, por lo que el mejor predictor lineal iguala la esperanza condicional:</p>
-<p><span class="math display">\[
-\mathbb{E}[Y|X] = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(X - \mu_X).
-\]</span></p>
-<p>Por tanto, el mejor predictor lineal y el mejor predictor general (sin restricciones) coinciden para la normal bivariada <span class="citation" data-cites="LehmannCasella1998">[@LehmannCasella1998]</span>.</p>
-</section>
-</section>
-<section id="aplicaciones" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="aplicaciones"><span class="header-section-number">6.4</span> Aplicaciones</h2>
-<section id="análisis-de-regresión" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="análisis-de-regresión"><span class="header-section-number">6.4.1</span> Análisis de Regresión</h3>
-<p>La regresión estudia la relación entre una variable dependiente <span class="math inline">\(Y\)</span> y variables independientes <span class="math inline">\(X\)</span>, con la esperanza condicional <span class="math inline">\(\mathbb{E}[Y|X]\)</span> como objetivo de estimación. <strong>Ejemplo:</strong> Supongamos <span class="math inline">\(Y = \beta_0 + \beta_1 X + \varepsilon\)</span> con <span class="math inline">\(\varepsilon \sim N(0, \sigma^2)\)</span>, independiente de <span class="math inline">\(X\)</span>. Dadas las observaciones <span class="math inline">\((X_1, Y_1), \ldots, (X_n, Y_n)\)</span>, el estimador de mínimos cuadrados ordinarios <span class="math inline">\(\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i\)</span> proporciona predicciones para <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>. Los intervalos de predicción se siguen de la distribución normal condicional <span class="citation" data-cites="Hamilton1994">[@Hamilton1994]</span>.</p>
-</section>
-<section id="pronóstico-de-series-de-tiempo" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="pronóstico-de-series-de-tiempo"><span class="header-section-number">6.4.2</span> Pronóstico de Series de Tiempo</h3>
-<p>Para una serie de tiempo estacionaria <span class="math inline">\({X_t}\)</span>, la predicción de <span class="math inline">\(X_{t+h}\)</span> dado <span class="math inline">\(\mathcal{F}_t = \sigma(X_1, \ldots, X_t)\)</span> es <span class="math inline">\(\mathbb{E}[X_{t+h} | \mathcal{F}_t]\)</span>. <strong>Ejemplo:</strong> En el modelo AR(1), <span class="math inline">\(X_{t+1} = \phi X_t + \varepsilon_{t+1}\)</span> con <span class="math inline">\(\varepsilon_{t+1} \sim N(0, \sigma^2)\)</span>,</p>
-<p><span class="math display">\[
-\mathbb{E}[X_{t+1}|X_t] = \phi X_t.
-\]</span></p>
-<p>La varianza del error de pronóstico es <span class="math inline">\(\text{Var}(X_{t+1} - \phi X_t) = \sigma^2\)</span>. Los intervalos de predicción se derivan de la distribución normal condicional <span class="citation" data-cites="Hamilton1994">[@Hamilton1994]</span>.</p>
-</section>
-<section id="aprendizaje-automático" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="aprendizaje-automático"><span class="header-section-number">6.4.3</span> Aprendizaje Automático</h3>
-<p>En aprendizaje supervisado, los algoritmos buscan aproximar <span class="math inline">\(\mathbb{E}[Y|X]\)</span> usando datos. <strong>Ejemplo:</strong> Una red neuronal de alimentación hacia adelante <span class="math inline">\(f_\theta(X)\)</span> se entrena minimizando el error cuadrático medio empírico sobre muestras <span class="math inline">\((X_i, Y_i)\)</span>. Después del entrenamiento, <span class="math inline">\(f_\theta(X)\)</span> aproxima la esperanza condicional <span class="math inline">\(\mathbb{E}[Y|X]\)</span>. Los métodos de ensamble, como los bosques aleatorios, combinan múltiples predictores para mejorar la precisión de estimación <span class="citation" data-cites="HastieTibshiraniFriedman2009">[@HastieTibshiraniFriedman2009]</span>.</p>
-</section>
-</section>
-<section id="ejercicios" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">6.5</span> Ejercicios</h2>
+<section id="ejercicios" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.6</span> Ejercicios</h2>
 <ol type="1">
-<li><strong>Esperanza Condicional (Demostración):</strong> Demostrar que <span class="math inline">\(\mathbb{E}[(Y - \mathbb{E}[Y|X]) h(X)] = 0\)</span> para cualquier función integrable <span class="math inline">\(h(X)\)</span>.</li>
-<li><strong>Predictor Lineal (Cálculo):</strong> Sean <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> con distribución conjunta: <span class="math inline">\(\mathbb{E}[X] = 2\)</span>, <span class="math inline">\(\mathbb{E}[Y] = 5\)</span>, <span class="math inline">\(\text{Cov}(X, Y) = 3\)</span>, <span class="math inline">\(\text{Var}(X) = 4\)</span>. Calcular el mejor predictor lineal de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>.</li>
-<li><strong>Series de Tiempo (Aplicación):</strong> Para el modelo AR(1) <span class="math inline">\(X_{t+1} = 0.7 X_t + \varepsilon_{t+1}\)</span>, <span class="math inline">\(\varepsilon_{t+1} \sim N(0, 1)\)</span>, calcular <span class="math inline">\(\mathbb{E}[X_{t+2} | X_t]\)</span>.</li>
-<li><strong>Aprendizaje Automático (Interpretación):</strong> Supongamos que una red neuronal produce <span class="math inline">\(\hat{Y} = f_\theta(X)\)</span>. Explicar bajo qué condiciones <span class="math inline">\(f_\theta(X)\)</span> aproxima <span class="math inline">\(\mathbb{E}[Y|X]\)</span> y cómo esto se relaciona con la optimalidad de predicción.</li>
+<li><p><strong>Derivación de la Ley de Poisson:</strong> Demostrar que el único proceso de valores enteros con incrementos estacionarios e independientes, y <span class="math inline">\(P(N(h) = 1) = \lambda h + o(h)\)</span> cuando <span class="math inline">\(h \to 0\)</span>, es el proceso de Poisson homogéneo.</p></li>
+<li><p><strong>Simulación de Superposición:</strong> Simular dos procesos de Poisson independientes y verificar empíricamente el teorema de superposición.</p></li>
+<li><p><strong>Varianza de Poisson Compuesto:</strong> Mostrar que <span class="math inline">\(\operatorname{Var}(X(t)) = \lambda t \, E[Y_1^2]\)</span> para un proceso de Poisson compuesto.</p></li>
 </ol>
 
 
@@ -1063,153 +1082,172 @@ b^* = \frac{\text{Cov}(X, Y)}{\text{Var}(X)}, \quad a^* = \mathbb{E}[Y] - b^* \m
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../psg01m47/es/20250404.html" class="pagination-link" aria-label="Variables Aleatorias y Vectores: Transformaciones y Aplicaciones">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variables Aleatorias y Vectores: Transformaciones y Aplicaciones</span></span>
+      <a href="../../_chapters/es/20250425.html" class="pagination-link" aria-label="El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../psg01m47/es/20250421.html" class="pagination-link" aria-label="Ley de los Grandes Números y Teorema Central del Límite">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ley de los Grandes Números y Teorema Central del Límite</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../_chapters/es/20250512.html" class="pagination-link" aria-label="Procesos de Markov">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesos de Markov</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Distribuciones Condicionales y Predicción</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Procesos de Poisson</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distribuciones Condicionales</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definición y Propiedades Fundamentales</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Sea $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad. Consideremos un vector aleatorio $(X, Y)$ definido en este espacio, donde $X : \Omega \to \mathbb{R}$ e $Y : \Omega \to \mathbb{R}$ son variables aleatorias. La **distribución condicional** de $Y$ dado $X$ es una familia de medidas de probabilidad ${P_{Y|X=x} : x \in \mathbb{R}}$ tal que, para cualquier conjunto de Borel $B \subseteq \mathbb{R}$,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Un **proceso de Poisson** ${N(t): t \geq 0}$ con tasa $\lambda &gt; 0$ es un proceso estocástico con valores en $\mathbb{Z}_{\geq 0}$ que satisface los siguientes axiomas <span class="co">[</span><span class="ot">@Kingman1993; @Ross2019</span><span class="co">]</span>:</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>P_{Y|X=x}(B) = P(Y \in B \mid X = x), \quad \text{siempre que } P(X = x) &gt; 0.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Más generalmente, para variables aleatorias arbitrarias y $\sigma$-álgebras, la distribución condicional se define vía la derivada de Radon–Nikodym como la versión regular única (salvo conjuntos $P$-nulos) $P_{Y|X}(\cdot \mid X)$ <span class="co">[</span><span class="ot">@Billingsley1995</span><span class="co">]</span>.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Para variables aleatorias **discretas**,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>P(Y = y \mid X = x) = \frac{P(X = x, Y = y)}{P(X = x)}, \quad \text{siempre que } P(X = x) &gt; 0.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Para variables aleatorias **absolutamente continuas**, con densidad conjunta $f_{X,Y}$ y marginal $f_X$,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>f_{Y|X}(y|x) = \frac{f_{X,Y}(x, y)}{f_X(x)}, \quad \text{donde } f_X(x) &gt; 0.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Propiedades</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Propiedad de Torre:** $\mathbb{E}\left<span class="co">[</span><span class="ot">\,\mathbb{E}[Y \mid X]\,\right</span><span class="co">]</span> = \mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span>$.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Desigualdad de Jensen:** Para cualquier función convexa $\varphi$, $\varphi(\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>) \leq \mathbb{E}<span class="co">[</span><span class="ot">\varphi(Y)|X</span><span class="co">]</span>$ <span class="co">[</span><span class="ot">@Durrett2019</span><span class="co">]</span>.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Ejemplo.**</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Sea $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$ un vector aleatorio normal bivariado, donde $|\rho| &lt; 1$. La distribución condicional de $Y$ dado $X = x$ es normal:</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Y|X = x \sim N\left(\mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X),\; \sigma_Y^2(1 - \rho^2)\right).</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Demostración:**</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Sea $\Sigma = \begin{pmatrix} \sigma_X^2 &amp; \rho \sigma_X \sigma_Y <span class="sc">\\</span> \rho \sigma_X \sigma_Y &amp; \sigma_Y^2 \end{pmatrix}$. Las propiedades estándar de la normal multivariada producen la media y varianza condicional como arriba; ver <span class="co">[</span><span class="ot">@Billingsley1995, p. 186</span><span class="co">]</span>.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Teoría de Predicción</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Valor inicial**: $N(0) = 0$.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Incrementos independientes**: Para cualquier $0 \leq t_0 &lt; t_1 &lt; \cdots &lt; t_k$, las variables aleatorias $N(t_1) - N(t_0), \ldots, N(t_k) - N(t_{k-1})$ son independientes.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Incrementos estacionarios**: Para todo $s, t \geq 0$, la distribución de $N(t+s) - N(s)$ depende solo de $t$.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Distribución de incrementos**: Para $h &gt; 0$ pequeño,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   P(N(h) = 1) = \lambda h + o(h), \quad P(N(h) \geq 2) = o(h)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>   donde $o(h)/h \to 0$ cuando $h \to 0$.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**Observación.** Estas condiciones implican que para todo $t \geq 0$,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n = 0, 1, 2, \ldots</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>y que $N(t)$ tiene incrementos estacionarios e independientes.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Demostración Formal de la Ley de Distribución de Poisson</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>**Esbozo:**</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Sea $N(0) = 0$, y dividamos $<span class="co">[</span><span class="ot">0, t</span><span class="co">]</span>$ en $n$ subintervalos de longitud $h = t/n$. La probabilidad de que cada subintervalo contenga a lo más un evento y que $k$ intervalos contengan exactamente un evento puede mostrarse (usando el límite cuando $n \to \infty$ y las propiedades anteriores) que converge a la ley de Poisson. Ver <span class="co">[</span><span class="ot">@Billingsley1995, Ch. 6</span><span class="co">]</span> para una demostración completa.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Valores Enteros</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Por construcción, $N(t)$ cuenta el número de eventos hasta el tiempo $t$ y es siempre un entero no negativo.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tiempos entre Llegadas y la Ley Exponencial</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Sea $T_1$ el tiempo hasta el primer evento. Para $t \geq 0$:</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>P(T_1 &gt; t) = P(N(t) = 0) = e^{-\lambda t}.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Sea $(X, Y)$ como arriba. Supongamos que se busca una función $g(X)$ para predecir $Y$ tal que el **error cuadrático medio** $\mathbb{E}[(Y - g(X))^2]$ se minimice. El predictor óptimo en este sentido es la **esperanza condicional**:</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Por tanto, el tiempo de espera $T_1$ está distribuido exponencialmente con parámetro $\lambda$:</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>\hat{Y} = \mathbb{E}<span class="co">[</span><span class="ot">Y \mid X</span><span class="co">]</span>.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>f_{T_1}(t) = \lambda e^{-\lambda t}, \quad t \geq 0.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### Propiedades</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Esta propiedad se extiende a todos los tiempos entre llegadas $T_{k+1} - T_k$, que son variables aleatorias exponenciales independientes e idénticamente distribuidas con media $1/\lambda$.</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Sea $\mathcal{G} = \sigma(X)$. Entonces:</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Demostración de la Propiedad de Falta de Memoria</span></span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Insesgadez:** $\mathbb{E}<span class="co">[</span><span class="ot">\hat{Y}</span><span class="co">]</span> = \mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span>$.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Para $s, t \geq 0$,</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Ortogonalidad:** $\mathbb{E}<span class="co">[</span><span class="ot">(Y - \hat{Y}) h(X)</span><span class="co">]</span> = 0$ para cualquier función integrable $h$ medible con respecto a $\mathcal{G}$.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Varianza Mínima:** Para cualquier otro predictor $g(X)$,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>P(T_1 &gt; s + t \mid T_1 &gt; s) = \frac{P(T_1 &gt; s + t)}{P(T_1 &gt; s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(T_1 &gt; t),</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>   $$</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>   \mathbb{E}<span class="co">[</span><span class="ot">(Y - \hat{Y})^2</span><span class="co">]</span> \leq \mathbb{E}<span class="co">[</span><span class="ot">(Y - g(X))^2</span><span class="co">]</span>.</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>demostrando que la distribución exponencial carece de memoria <span class="co">[</span><span class="ot">@Durrett2019</span><span class="co">]</span>.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proceso de Poisson Compuesto</span></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>**Demostraciones:**</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Sea ${Y_i}_{i=1}^\infty$ una secuencia de variables aleatorias independientes e idénticamente distribuidas, independiente del proceso de Poisson ${N(t)}$. El **proceso de Poisson compuesto** se define por</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Insesgadez*: Por la propiedad de torre, $\mathbb{E}<span class="co">[</span><span class="ot">\mathbb{E}[Y|X]</span><span class="co">]</span> = \mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span>$.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Ortogonalidad*: Para cualquier $h$ medible, $\mathbb{E}<span class="co">[</span><span class="ot">(Y - \mathbb{E}[Y|X])h(X)</span><span class="co">]</span> = 0$ <span class="co">[</span><span class="ot">@Durrett2019, Theorem 5.5.3</span><span class="co">]</span>.</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Varianza Mínima*: Para cualquier $g(X)$,</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  $$</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  \mathbb{E}\left<span class="co">[</span><span class="ot">(Y - g(X))^2\right</span><span class="co">]</span> = \mathbb{E}\left<span class="co">[</span><span class="ot">(Y - \mathbb{E}[Y|X])^2\right</span><span class="co">]</span> + \mathbb{E}\left<span class="co">[</span><span class="ot">(\mathbb{E}[Y|X] - g(X))^2\right</span><span class="co">]</span>,</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  $$</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>**Supuestos:**</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$E|Y_1| &lt; \infty$ para cálculos de media/varianza.</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  por lo que el mínimo se alcanza en $g = \mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Propiedades:**</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Predicción Lineal</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Supongamos que restringimos la atención a **predictores lineales** de la forma $g(X) = a + b X$. Los coeficientes $a, b$ que minimizan el error cuadrático medio son:</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>b^* = \frac{\text{Cov}(X, Y)}{\text{Var}(X)}, \quad a^* = \mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span> - b^* \mathbb{E}<span class="co">[</span><span class="ot">X</span><span class="co">]</span>,</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$E<span class="co">[</span><span class="ot">X(t)</span><span class="co">]</span> = \lambda t \, E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>$</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$\operatorname{Var}(X(t)) = \lambda t \, E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span>$</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>**Soporte:**</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Para demostraciones y propiedades adicionales, ver <span class="co">[</span><span class="ot">@Kingman1993</span><span class="co">]</span>, <span class="co">[</span><span class="ot">@Billingsley1995, Sec. 22</span><span class="co">]</span>.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aplicaciones</span></span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>siempre que $\text{Var}(X) &gt; 0$. Por tanto, el **mejor predictor lineal** es</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teoría de Colas</span></span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>\hat{Y}_L = \mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span> + \frac{\text{Cov}(X, Y)}{\text{Var}(X)} (X - \mathbb{E}<span class="co">[</span><span class="ot">X</span><span class="co">]</span>).</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>**Demostración:**</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>Sea $g(X) = a + bX$; expandir $\mathbb{E}<span class="co">[</span><span class="ot">(Y - (a + bX))^2</span><span class="co">]</span>$, establecer las derivadas con respecto a $a$ y $b$ igual a cero, y resolver para los $a$ y $b$ que minimizan.</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### Caso Especial: Normal Bivariado</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>En la **cola M/M/1**, las llegadas se modelan como un proceso de Poisson con tasa $\lambda$ y los tiempos de servicio están distribuidos exponencialmente. El proceso modela los conteos de llegadas $N(t)$, el tiempo de espera para el próximo cliente, y las probabilidades de estado del sistema. Ver <span class="co">[</span><span class="ot">@GrossHarris1998</span><span class="co">]</span>.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>**Ejemplo:**</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Supongamos que las llegadas ocurren a tasa $\lambda = 3$ por minuto. La probabilidad de que exactamente $n$ llegadas ocurran en $t = 2$ minutos es</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>P(N(2) = n) = \frac{(6)^n}{n!}e^{-6}.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Si $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$, entonces $\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$ es afín en $X$, por lo que el mejor predictor lineal iguala la esperanza condicional:</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>**Ejemplo: Distribución del Tiempo de Espera**. Sea $S_n$ el tiempo de espera hasta la $n$-ésima llegada. La suma de $n$ variables aleatorias exponenciales i.i.d. está distribuida gamma:</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span> = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(X - \mu_X).</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>P(S_n \leq t) = 1 - \sum_{k=0}^{n-1} \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad t \geq 0.</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Por tanto, el mejor predictor lineal y el mejor predictor general (sin restricciones) coinciden para la normal bivariada <span class="co">[</span><span class="ot">@LehmannCasella1998</span><span class="co">]</span>.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teoría de Confiabilidad</span></span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Aplicaciones</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Para **procesos de Poisson homogéneos**, las fallas de componentes independientes en sistemas complejos se modelan como eventos de Poisson. Los procesos de Poisson no homogéneos, con función de tasa $\lambda(t)$, se requieren para tasas de falla dependientes de la edad <span class="co">[</span><span class="ot">@Ross2019, Ch. 5</span><span class="co">]</span>.</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Análisis de Regresión</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Seguros y Riesgo</span></span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>La regresión estudia la relación entre una variable dependiente $Y$ y variables independientes $X$, con la esperanza condicional $\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$ como objetivo de estimación.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>**Ejemplo:**</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>Supongamos $Y = \beta_0 + \beta_1 X + \varepsilon$ con $\varepsilon \sim N(0, \sigma^2)$, independiente de $X$. Dadas las observaciones $(X_1, Y_1), \ldots, (X_n, Y_n)$, el estimador de mínimos cuadrados ordinarios $\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i$ proporciona predicciones para $Y$ dado $X$. Los intervalos de predicción se siguen de la distribución normal condicional <span class="co">[</span><span class="ot">@Hamilton1994</span><span class="co">]</span>.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>En matemáticas de seguros, las **llegadas de reclamos** se modelan como un proceso de Poisson; el tamaño total de reclamos sobre $<span class="co">[</span><span class="ot">0,t</span><span class="co">]</span>$ es una variable aleatoria de Poisson compuesta.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Propiedades Avanzadas</span></span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pronóstico de Series de Tiempo</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teorema de Superposición</span></span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Para una serie de tiempo estacionaria ${X_t}$, la predicción de $X_{t+h}$ dado $\mathcal{F}_t = \sigma(X_1, \ldots, X_t)$ es $\mathbb{E}[X_{t+h} | \mathcal{F}_t]$.</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>**Ejemplo:**</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>En el modelo AR(1), $X_{t+1} = \phi X_t + \varepsilon_{t+1}$ con $\varepsilon_{t+1} \sim N(0, \sigma^2)$,</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>\mathbb{E}<span class="co">[</span><span class="ot">X_{t+1}|X_t</span><span class="co">]</span> = \phi X_t.</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**Enunciado:**</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Si $N_1(t)$ y $N_2(t)$ son procesos de Poisson independientes con tasas $\lambda_1$ y $\lambda_2$, entonces $N(t) = N_1(t) + N_2(t)$ es un proceso de Poisson con tasa $\lambda_1 + \lambda_2$ <span class="co">[</span><span class="ot">@Kingman1993</span><span class="co">]</span>.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>**Demostración:**</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>Se sigue de la convolución de distribuciones de Poisson independientes y la preservación de independencia y estacionaridad.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teorema de Adelgazamiento</span></span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>La varianza del error de pronóstico es $\text{Var}(X_{t+1} - \phi X_t) = \sigma^2$. Los intervalos de predicción se derivan de la distribución normal condicional <span class="co">[</span><span class="ot">@Hamilton1994</span><span class="co">]</span>.</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aprendizaje Automático</span></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>En aprendizaje supervisado, los algoritmos buscan aproximar $\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$ usando datos.</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>**Ejemplo:**</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>Una red neuronal de alimentación hacia adelante $f_\theta(X)$ se entrena minimizando el error cuadrático medio empírico sobre muestras $(X_i, Y_i)$. Después del entrenamiento, $f_\theta(X)$ aproxima la esperanza condicional $\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$. Los métodos de ensamble, como los bosques aleatorios, combinan múltiples predictores para mejorar la precisión de estimación <span class="co">[</span><span class="ot">@HastieTibshiraniFriedman2009</span><span class="co">]</span>.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>**Enunciado:**</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Si cada evento de un proceso de Poisson de tasa $\lambda$ se retiene independientemente con probabilidad $p$ (es decir, cada evento se asigna una marca Bernoulli$(p)$ independiente), los eventos retenidos forman un proceso de Poisson con tasa $\lambda p$.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>**Demostración:**</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Para $h \to 0$, la probabilidad de que un evento ocurra y sea retenido en $(t, t+h]$ es $\lambda h \cdot p + o(h)$; todas las propiedades del proceso de Poisson se preservan. Ver <span class="co">[</span><span class="ot">@Kingman1993, Sec. 2.3</span><span class="co">]</span>.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>**Ejemplo: Confiabilidad del Sistema.** Supongamos que las fallas de componentes de un sistema siguen un proceso de Poisson con tasa $\lambda = 0.1$ fallas/hora.</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Probabilidad de 2 fallas en 24 horas:**</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Esperanza Condicional (Demostración):**</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>   Demostrar que $\mathbb{E}<span class="co">[</span><span class="ot">(Y - \mathbb{E}[Y|X]) h(X)</span><span class="co">]</span> = 0$ para cualquier función integrable $h(X)$.</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Predictor Lineal (Cálculo):**</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>   Sean $X$ e $Y$ con distribución conjunta: $\mathbb{E}<span class="co">[</span><span class="ot">X</span><span class="co">]</span> = 2$, $\mathbb{E}<span class="co">[</span><span class="ot">Y</span><span class="co">]</span> = 5$, $\text{Cov}(X, Y) = 3$, $\text{Var}(X) = 4$. Calcular el mejor predictor lineal de $Y$ dado $X$.</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Series de Tiempo (Aplicación):**</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>   Para el modelo AR(1) $X_{t+1} = 0.7 X_t + \varepsilon_{t+1}$, $\varepsilon_{t+1} \sim N(0, 1)$, calcular $\mathbb{E}[X_{t+2} | X_t]$.</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Aprendizaje Automático (Interpretación):**</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>   Supongamos que una red neuronal produce $\hat{Y} = f_\theta(X)$. Explicar bajo qué condiciones $f_\theta(X)$ aproxima $\mathbb{E}<span class="co">[</span><span class="ot">Y|X</span><span class="co">]</span>$ y cómo esto se relaciona con la optimalidad de predicción.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>   P(N(24) = 2) = \frac{(0.1 \times 24)^2}{2!} e^{-0.1 \times 24} = \frac{2.4^2}{2} e^{-2.4} \approx 0.261</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Tiempo esperado hasta la primera falla:**</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>   E<span class="co">[</span><span class="ot">T_1</span><span class="co">]</span> = 1/\lambda = 10 \text{ horas}</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Ejemplo de Poisson Compuesto:**</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>   Si el costo $Y_i$ de cada falla es i.i.d. con $E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span> = $500$, el costo total esperado en $t = 24$ horas es:</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>   E<span class="co">[</span><span class="ot">X(24)</span><span class="co">]</span> = E<span class="co">[</span><span class="ot">N(24)</span><span class="co">]</span> \, E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span> = (0.1 \times 24) \times 500 = USD\ 1,200</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>   $$</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Derivación de la Ley de Poisson:**</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>   Demostrar que el único proceso de valores enteros con incrementos estacionarios e independientes, y $P(N(h) = 1) = \lambda h + o(h)$ cuando $h \to 0$, es el proceso de Poisson homogéneo.</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Simulación de Superposición:**</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>   Simular dos procesos de Poisson independientes y verificar empíricamente el teorema de superposición.</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Varianza de Poisson Compuesto:**</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>   Mostrar que $\operatorname{Var}(X(t)) = \lambda t \, E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span>$ para un proceso de Poisson compuesto.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -25,31 +25,31 @@ book:
   language: es
   chapters:
     - index.qmd
-    - psg01m47/es/20250317.qmd
-    - psg01m47/es/20250321.qmd
-    - psg01m47/es/20250328.qmd
-    - psg01m47/es/20250331.qmd
-    - psg01m47/es/20250404.qmd
-    - psg01m47/es/20250414.qmd
-    - psg01m47/es/20250421.qmd
-    - psg01m47/es/20250425.qmd
-    - psg01m47/es/20250428.qmd
-    - psg01m47/es/20250512.qmd
-    - psg01m47/es/20250519.qmd
-    - psg01m47/es/20250523.qmd
-    - psg01m47/es/20250530.qmd
+    - _chapters/es/20250317.qmd
+    - _chapters/es/20250321.qmd
+    - _chapters/es/20250328.qmd
+    - _chapters/es/20250331.qmd
+    - _chapters/es/20250404.qmd
+    - _chapters/es/20250414.qmd
+    - _chapters/es/20250421.qmd
+    - _chapters/es/20250425.qmd
+    - _chapters/es/20250428.qmd
+    - _chapters/es/20250512.qmd
+    - _chapters/es/20250519.qmd
+    - _chapters/es/20250523.qmd
+    - _chapters/es/20250530.qmd
   # appendices:
   #   - references.qmd
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: simplex # cosmo lumen litera lux materia minty morph pulse quartz sandstone simplex sketchy spacelab united yeti zephyr
+      dark: cyborg # darkly cyborg slate solar superhero vapor
     highlight-style: a11y
     toc: true
-    toc-location: left
-    toc-title: "TOC"
+    toc-location: right
+    toc-title: "Contenidos"
     toc-depth: 3
     number-sections: true
     search: true
@@ -69,7 +69,6 @@ format:
       toggle: true
     code-overflow: scroll
     self-contained: false
-    css: _build/styles.css
     math: mathjax
 
   pdf:

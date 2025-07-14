@@ -10,8 +10,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html",
-    "href": "psg01m47/es/20250317.html",
+    "objectID": "_chapters/es/20250317.html",
+    "href": "_chapters/es/20250317.html",
     "title": "1  Espacios de Probabilidad",
     "section": "",
     "text": "1.1 Introducción\nUn espacio de probabilidad proporciona la base matemática formal para modelar fenómenos aleatorios. Esta estructura permite el razonamiento riguroso sobre la incertidumbre al definir un marco consistente para eventos, resultados y sus probabilidades asociadas. Este capítulo presenta definiciones formales, propiedades esenciales y resultados fundamentales que subyacen a la teoría de probabilidades moderna.",
@@ -20,8 +20,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#sigma-álgebras-y-preliminares-de-teoría-de-la-medida",
-    "href": "psg01m47/es/20250317.html#sigma-álgebras-y-preliminares-de-teoría-de-la-medida",
+    "objectID": "_chapters/es/20250317.html#sigma-álgebras-y-preliminares-de-teoría-de-la-medida",
+    "href": "_chapters/es/20250317.html#sigma-álgebras-y-preliminares-de-teoría-de-la-medida",
     "title": "1  Espacios de Probabilidad",
     "section": "1.2 Sigma-Álgebras y Preliminares de Teoría de la Medida",
     "text": "1.2 Sigma-Álgebras y Preliminares de Teoría de la Medida\nSea \\(\\Omega\\) un conjunto no vacío llamado espacio muestral, que representa todos los posibles resultados de un experimento aleatorio. Una sigma-álgebra \\(\\mathcal{F}\\) en \\(\\Omega\\) es una colección de subconjuntos de \\(\\Omega\\) (llamados eventos) que satisface:\n\n\\(\\Omega \\in \\mathcal{F}\\),\nSi \\(A \\in \\mathcal{F}\\), entonces \\(A^{c} \\in \\mathcal{F}\\),\nSi \\({A_n}*{n=1}^\\infty \\subset \\mathcal{F}\\), entonces \\(\\bigcup*{n=1}^\\infty A_n \\in \\mathcal{F}\\).\n\nLa clausura bajo intersecciones numerables se sigue de las leyes de De Morgan y las propiedades 2–3.",
@@ -30,8 +30,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#espacio-de-probabilidad-definición-formal",
-    "href": "psg01m47/es/20250317.html#espacio-de-probabilidad-definición-formal",
+    "objectID": "_chapters/es/20250317.html#espacio-de-probabilidad-definición-formal",
+    "href": "_chapters/es/20250317.html#espacio-de-probabilidad-definición-formal",
     "title": "1  Espacios de Probabilidad",
     "section": "1.3 Espacio de Probabilidad (Definición Formal)",
     "text": "1.3 Espacio de Probabilidad (Definición Formal)\nUn espacio de probabilidad es una terna \\((\\Omega, \\mathcal{F}, P)\\), donde:\n\n\\(\\Omega\\) es el espacio muestral,\n\\(\\mathcal{F}\\) es una sigma-álgebra de subconjuntos de \\(\\Omega\\),\n\\(P: \\mathcal{F} \\to [0, 1]\\) es una medida de probabilidad, que satisface:\n\n\\(P(\\Omega) = 1\\),\n\\(P(\\emptyset) = 0\\),\n\\(P(A) \\geq 0\\) para todo \\(A \\in \\mathcal{F}\\),\nPara cualquier sucesión numerable de eventos disjuntos por pares \\({A_n}_{n=1}^{\\infty} \\subset \\mathcal{F}\\),\n\n\\[\nP\\left(\\bigcup_{n=1}^{\\infty} A_n\\right) = \\sum_{n=1}^{\\infty} P(A_n).\n\\]\n\nEste sistema axiomático es fundamental y generaliza las asignaciones intuitivas de probabilidad a espacios complejos, posiblemente no numerables [@Billingsley1995].",
@@ -40,8 +40,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#variables-aleatorias",
-    "href": "psg01m47/es/20250317.html#variables-aleatorias",
+    "objectID": "_chapters/es/20250317.html#variables-aleatorias",
+    "href": "_chapters/es/20250317.html#variables-aleatorias",
     "title": "1  Espacios de Probabilidad",
     "section": "1.4 Variables Aleatorias",
     "text": "1.4 Variables Aleatorias\nUna variable aleatoria es una función medible \\(X: (\\Omega, \\mathcal{F}) \\to (\\mathbb{R}, \\mathcal{B}(\\mathbb{R}))\\), donde \\(\\mathcal{B}(\\mathbb{R})\\) denota la sigma-álgebra de Borel de \\(\\mathbb{R}\\). Es decir, para todo conjunto de Borel \\(B \\subseteq \\mathbb{R}\\),\n\\[\nX^{-1}(B) \\in \\mathcal{F}.\n\\]\nEsta propiedad (medibilidad) asegura que la probabilidad de cualquier evento concerniente a \\(X\\) esté bien definida [@Durrett2019].\n\n1.4.1 Medibilidad e Imagen Inversa\nUna función \\(X\\) es medible si, para todo conjunto de Borel \\(B\\), la imagen inversa \\(X^{-1}(B) = {\\omega \\in \\Omega : X(\\omega) \\in B}\\) pertenece a \\(\\mathcal{F}\\).",
@@ -50,8 +50,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#distribuciones-de-probabilidad-de-variables-aleatorias",
-    "href": "psg01m47/es/20250317.html#distribuciones-de-probabilidad-de-variables-aleatorias",
+    "objectID": "_chapters/es/20250317.html#distribuciones-de-probabilidad-de-variables-aleatorias",
+    "href": "_chapters/es/20250317.html#distribuciones-de-probabilidad-de-variables-aleatorias",
     "title": "1  Espacios de Probabilidad",
     "section": "1.5 Distribuciones de Probabilidad de Variables Aleatorias",
     "text": "1.5 Distribuciones de Probabilidad de Variables Aleatorias\nLa distribución de una variable aleatoria \\(X\\) se define como la medida imagen \\(P_X(B) = P(X^{-1}(B))\\) para \\(B \\in \\mathcal{B}(\\mathbb{R})\\).\n\n1.5.1 Función de Distribución Acumulada (CDF)\nLa función de distribución acumulada de \\(X\\) es\n\\[\nF_X(x) = P(X \\leq x), \\quad x \\in \\mathbb{R}.\n\\]\n\n\n1.5.2 Distribuciones Discretas y Continuas\n\nDiscreta: Si \\(X\\) toma a lo sumo valores numerables, definimos la función de masa de probabilidad (pmf)\n\\[\np_X(x) = P(X = x), \\quad \\sum_{x \\in \\operatorname{Range}(X)} p_X(x) = 1.\n\\]\nContinua: Si existe una función \\(f_X\\) tal que\n\\[\nP(X \\in B) = \\int_B f_X(x)\\,dx\n\\]\npara todos los conjuntos de Borel \\(B\\), entonces \\(f_X\\) es la función de densidad de probabilidad (pdf) de \\(X\\). Debe satisfacer \\(f_X(x) \\geq 0\\) y\n\\[\n\\int_{-\\infty}^{\\infty} f_X(x)\\,dx = 1.\n\\]\n\n\n\n1.5.3 Distribuciones Mixtas\nLas variables aleatorias también pueden tener distribuciones mixtas que no son ni puramente discretas ni puramente continuas. Tales casos surgen, por ejemplo, en distribuciones con átomos y una componente absolutamente continua [@Billingsley1995].",
@@ -60,8 +60,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#esperanza-matemática",
-    "href": "psg01m47/es/20250317.html#esperanza-matemática",
+    "objectID": "_chapters/es/20250317.html#esperanza-matemática",
+    "href": "_chapters/es/20250317.html#esperanza-matemática",
     "title": "1  Espacios de Probabilidad",
     "section": "1.6 Esperanza Matemática",
     "text": "1.6 Esperanza Matemática\nSea \\(X\\) una variable aleatoria en \\((\\Omega, \\mathcal{F}, P)\\).\n\nLa esperanza matemática (valor esperado) se define como\n\\[\nE[X] =\n\\begin{cases}\n\\sum_{x \\in \\operatorname{Range}(X)} x\\,p_X(x), & \\text{si $X$ es discreta,} \\\\\n\\int_{-\\infty}^{\\infty} x\\,f_X(x)\\,dx, & \\text{si $X$ es continua.}\n\\end{cases}\n\\]\nsiempre que \\(E[|X|] &lt; \\infty\\).\n\n\n1.6.1 Linealidad y Convergencia Monótona\nLa esperanza es lineal: Para \\(X, Y\\) integrables y constantes \\(a, b\\),\n\\[\nE[aX + bY] = a E[X] + b E[Y].\n\\]\nSi \\(0 \\leq X_n \\uparrow X\\), entonces \\(E[X_n] \\uparrow E[X]\\) (Teorema de Convergencia Monótona) [@Durrett2019].",
@@ -70,8 +70,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#varianza-y-desviación-estándar",
-    "href": "psg01m47/es/20250317.html#varianza-y-desviación-estándar",
+    "objectID": "_chapters/es/20250317.html#varianza-y-desviación-estándar",
+    "href": "_chapters/es/20250317.html#varianza-y-desviación-estándar",
     "title": "1  Espacios de Probabilidad",
     "section": "1.7 Varianza y Desviación Estándar",
     "text": "1.7 Varianza y Desviación Estándar\nLa varianza de \\(X\\) (con \\(E[X^2] &lt; \\infty\\)) es\n\\[\n\\operatorname{Var}(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2.\n\\]\nLa desviación estándar es \\(\\sigma_X = \\sqrt{\\operatorname{Var}(X)}\\).",
@@ -80,8 +80,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#probabilidad-condicional",
-    "href": "psg01m47/es/20250317.html#probabilidad-condicional",
+    "objectID": "_chapters/es/20250317.html#probabilidad-condicional",
+    "href": "_chapters/es/20250317.html#probabilidad-condicional",
     "title": "1  Espacios de Probabilidad",
     "section": "1.8 Probabilidad Condicional",
     "text": "1.8 Probabilidad Condicional\nPara \\(A, B \\in \\mathcal{F}\\) con \\(P(B) &gt; 0\\), la probabilidad condicional de \\(A\\) dado \\(B\\) es\n\\[\nP(A|B) = \\frac{P(A \\cap B)}{P(B)}.\n\\]",
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#teoremas-fundamentales",
-    "href": "psg01m47/es/20250317.html#teoremas-fundamentales",
+    "objectID": "_chapters/es/20250317.html#teoremas-fundamentales",
+    "href": "_chapters/es/20250317.html#teoremas-fundamentales",
     "title": "1  Espacios de Probabilidad",
     "section": "1.9 Teoremas Fundamentales",
     "text": "1.9 Teoremas Fundamentales\n\n1.9.1 Ley de Probabilidad Total\nSea \\({A_i}_{i=1}^{n}\\) una partición finita o numerable de \\(\\Omega\\) con \\(P(A_i) &gt; 0\\) para todo \\(i\\). Para cualquier \\(B \\in \\mathcal{F}\\),\n\\[\nP(B) = \\sum_{i} P(B|A_i)P(A_i).\n\\]\nDemostración. Como los \\(A_i\\) son disjuntos y \\(\\bigcup_{i} A_i = \\Omega\\),\n\\[\nP(B) = P\\left(B \\cap \\Omega\\right) = P\\left(B \\cap \\bigcup_{i} A_i\\right) = \\sum_{i} P(B \\cap A_i) = \\sum_{i} P(B|A_i)P(A_i).\n\\]\n\n\n1.9.2 Teorema de Bayes\nPara eventos \\(A, B \\in \\mathcal{F}\\) con \\(P(B) &gt; 0\\),\n\\[\nP(A|B) = \\frac{P(B|A)P(A)}{P(B)}.\n\\]\nDemostración. Por la definición de probabilidad condicional,\n\\[\nP(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{P(B|A)P(A)}{P(B)}.\n\\]\nEjemplo Discreto: Suma de Dos Dados\nSea \\(\\Omega = {(i,j) : i, j \\in {1,\\ldots,6}}\\) y definamos \\(X(i,j) = i + j\\). Entonces \\(\\operatorname{Range}(X) = {2,3,\\ldots,12}\\).\nPara \\(x \\in \\operatorname{Range}(X)\\),\n\\[\np_X(x) = P(X = x) = \\frac{\\#\\text{ de pares con suma } x}{36}.\n\\]\nPara \\(x = 7\\), hay 6 pares; así \\(p_X(7) = 6/36 = 1/6\\).\nCalcular la esperanza:\n\\[\nE[X] = \\sum_{x=2}^{12} x \\cdot p_X(x) = 7.\n\\]\nCalcular la varianza:\n\\[\n\\operatorname{Var}(X) = \\sum_{x=2}^{12} (x-7)^2 p_X(x) = \\frac{35}{6}.\n\\]\nEjemplo Continuo: Distribución Exponencial\nSea \\(X\\) con pdf \\(f_X(x) = \\lambda e^{-\\lambda x}\\) para \\(x \\geq 0\\) (\\(\\lambda &gt; 0\\)).\n\n\\(F_X(x) = 1 - e^{-\\lambda x}\\) para \\(x \\geq 0\\),\n\\(E[X] = \\int_{0}^{\\infty} x \\lambda e^{-\\lambda x} dx = 1/\\lambda\\),\n\\(\\operatorname{Var}(X) = \\int_{0}^{\\infty} (x - 1/\\lambda)^2 \\lambda e^{-\\lambda x} dx = 1/\\lambda^2\\).",
@@ -100,8 +100,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250317.html#ejercicios",
-    "href": "psg01m47/es/20250317.html#ejercicios",
+    "objectID": "_chapters/es/20250317.html#ejercicios",
+    "href": "_chapters/es/20250317.html#ejercicios",
     "title": "1  Espacios de Probabilidad",
     "section": "1.10 Ejercicios",
     "text": "1.10 Ejercicios\n\nConstrucción de Espacio de Probabilidad: Dado \\(\\Omega = [0,1]\\), sea \\(\\mathcal{F}\\) la sigma-álgebra de Borel, y defina \\(P\\) como la medida de Lebesgue. Demuestre que \\((\\Omega, \\mathcal{F}, P)\\) es un espacio de probabilidad.\nVerificación de Sigma-Álgebra: Demuestre que la intersección de una colección numerable de sigma-álgebras en \\(\\Omega\\) es en sí misma una sigma-álgebra.\nAplicación del Teorema: Para \\(A_1, A_2, \\ldots, A_n\\) mutuamente excluyentes con \\(\\sum_{i=1}^{n} P(A_i) = 1\\) y un evento \\(B\\) con \\(P(B) &gt; 0\\), derive \\(P(A_j|B)\\) usando el teorema de Bayes.\nCálculo Avanzado: Sea \\(X \\sim \\text{Exp}(\\lambda)\\). Demuestre que \\(E[X^k] = k!/\\lambda^k\\) para entero \\(k \\geq 1\\).",
@@ -110,8 +110,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html",
-    "href": "psg01m47/es/20250321.html",
+    "objectID": "_chapters/es/20250321.html",
+    "href": "_chapters/es/20250321.html",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "",
     "text": "2.1 Introducción\nLas técnicas de conteo son herramientas fundamentales en la teoría de probabilidad y combinatoria, proporcionando métodos rigurosos para enumerar el número de formas en que pueden ocurrir eventos. Este capítulo desarrolla principios clave—reglas de producto, permutaciones (incluyendo elementos repetidos), \\(k\\)-permutaciones y combinaciones—enfatizando definiciones precisas, demostraciones formales y los fundamentos combinatorios de las distribuciones básicas de probabilidad. Toda la notación se introduce según sea necesario, y la terminología sigue convenciones matemáticas internacionales.",
@@ -120,8 +120,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#regla-del-producto",
-    "href": "psg01m47/es/20250321.html#regla-del-producto",
+    "objectID": "_chapters/es/20250321.html#regla-del-producto",
+    "href": "_chapters/es/20250321.html#regla-del-producto",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.2 Regla del Producto",
     "text": "2.2 Regla del Producto\n\n2.2.1 Definición Formal\nSean \\(A_1, A_2, \\dots, A_n\\) conjuntos finitos que representan los posibles resultados de \\(n\\) experimentos independientes. La regla del producto establece que el número de tuplas ordenadas \\((a_1, a_2, \\dots, a_n)\\) con \\(a_i \\in A_i\\) está dado por:\n\\[\n|A_1 \\times A_2 \\times \\cdots \\times A_n| = |A_1| \\cdot |A_2| \\cdots |A_n|\n\\]\ndonde \\(|A|\\) denota la cardinalidad del conjunto \\(A\\) [@Billingsley1995].\n\n\n2.2.2 Demostración\nPuesto que los experimentos son independientes, para cada elección \\(a_1 \\in A_1\\), hay \\(|A_2|\\) opciones para \\(a_2\\), y así sucesivamente. Por inducción:\n\nCaso base \\(n=1\\): \\(|A_1|\\).\nPaso inductivo: Asumamos que es verdadero para \\(n=k\\). Para \\(n=k+1\\),\n\\[\n|A_1 \\times \\cdots \\times A_k \\times A_{k+1}| = (|A_1| \\cdots |A_k|) \\cdot |A_{k+1}|.\n\\]\n\nPor tanto, la regla se cumple para todo \\(n \\in \\mathbb{N}\\).\nEjemplo: Supongamos que una urna contiene 6 bolas rojas y 4 negras (\\(10\\) en total). Se extraen dos bolas en secuencia sin reemplazo. Calculemos el número total de resultados ordenados:\nSea \\(A_1\\) = conjunto de bolas para la primera extracción (\\(|A_1|=10\\)); \\(A_2\\) = conjunto de bolas para la segunda extracción (\\(|A_2|=9\\) puesto que una ha sido removida). El número total de pares ordenados es \\(10 \\times 9 = 90\\).\nSupongamos que queremos el número de formas en que ambas bolas sean rojas. Hay 6 opciones para la primera bola roja y 5 para la segunda (puesto que no hay reemplazo). Por tanto, \\(6 \\times 5 = 30\\) resultados favorables ordenados.\nLa probabilidad de que ambas sean rojas:\n\\[\nP(\\text{ambas rojas}) = \\frac{30}{90} = \\frac{1}{3}\n\\]\nEjemplo Avanzado: Conexión con Espacios de Probabilidad: Si en cambio las bolas fueran extraídas con reemplazo (cada extracción independiente), el número total de pares ordenados sería \\(10 \\times 10 = 100\\), ilustrando el efecto de la independencia.",
@@ -130,8 +130,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#permutaciones",
-    "href": "psg01m47/es/20250321.html#permutaciones",
+    "objectID": "_chapters/es/20250321.html#permutaciones",
+    "href": "_chapters/es/20250321.html#permutaciones",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.3 Permutaciones",
     "text": "2.3 Permutaciones\n\n2.3.1 Definición\nUna permutación de un conjunto finito \\(S\\) con \\(|S|=n\\) es una biyección \\(\\pi: S \\to S\\), o equivalentemente, un arreglo ordenado de todos los \\(n\\) elementos [@Stanley2012]. El número de permutaciones es:\n\\[\nn! = n \\cdot (n-1) \\cdots 2 \\cdot 1\n\\]\n\n\n2.3.2 Demostración\nCada posición en el arreglo ordenado tiene un elemento único asignado, con \\(n\\) opciones para la primera, \\(n-1\\) para la segunda, …, \\(1\\) para la última.\nEjemplo. Arreglar \\(5\\) libros distintos en un estante. El número de arreglos es \\(5! = 120\\).\nEjemplo Avanzado:Paridad de Permutaciones: Para \\(n \\geq 2\\), la mitad de todas las permutaciones son pares y la mitad son impares, un resultado crucial en la teoría de determinantes y estructuras algebraicas [@Durrett2019].",
@@ -140,8 +140,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#k-permutaciones-anteriormente-variaciones",
-    "href": "psg01m47/es/20250321.html#k-permutaciones-anteriormente-variaciones",
+    "objectID": "_chapters/es/20250321.html#k-permutaciones-anteriormente-variaciones",
+    "href": "_chapters/es/20250321.html#k-permutaciones-anteriormente-variaciones",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.4 \\(k\\)-Permutaciones (anteriormente “Variaciones”)",
     "text": "2.4 \\(k\\)-Permutaciones (anteriormente “Variaciones”)\n\n2.4.1 Terminología y Definición\nUna \\(k\\)-permutación (inglés estándar) de un conjunto de \\(n\\) elementos es una selección ordenada de \\(k\\) elementos distintos (\\(0 \\leq k \\leq n\\)). El número es:\n\\[\nP(n,k) = \\frac{n!}{(n - k)!}\n\\]\n\n\n2.4.2 Demostración\nPara la primera posición, \\(n\\) opciones; segunda, \\(n-1\\); hasta \\(k\\) posiciones:\n\\[\nn \\cdot (n-1) \\cdots (n-k+1) = \\frac{n!}{(n-k)!}\n\\]\nEjemplo: Seleccionar y ordenar \\(3\\) de \\(5\\) libros: \\(P(5,3) = 60\\).\n\n\n2.4.3 Restricciones\nSi \\(k &gt; n\\), \\(P(n,k)=0\\) puesto que la selección sin repetición es imposible.\n\n\n2.4.4 Distinción Conceptual\n\nPermutaciones: Todos los \\(n\\) elementos, el orden importa.\n\\(k\\)-Permutaciones: Subconjunto de \\(k\\) elementos, el orden importa.\nCombinaciones: Subconjunto de \\(k\\) elementos, el orden no importa.",
@@ -150,8 +150,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#combinaciones",
-    "href": "psg01m47/es/20250321.html#combinaciones",
+    "objectID": "_chapters/es/20250321.html#combinaciones",
+    "href": "_chapters/es/20250321.html#combinaciones",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.5 Combinaciones",
     "text": "2.5 Combinaciones\n\n2.5.1 Definición\nUna combinación es una selección no ordenada de \\(k\\) elementos de un conjunto de \\(n\\) elementos:\n\\[\nC(n,k) = \\frac{n!}{k!(n - k)!} = \\binom{n}{k}\n\\]\nLa notación \\(\\binom{n}{k}\\) es estándar.\n\n\n2.5.2 Soporte: Probabilidad Hipergeométrica\nAl muestrear \\(k\\) elementos sin reemplazo de una población de \\(n\\) objetos, de los cuales \\(m\\) son “especiales” (ej., defectuosos), la probabilidad de que exactamente \\(s\\) sean especiales está dada por la distribución hipergeométrica:\n\\[\nP(\\text{$s$ especiales}) = \\frac{\\binom{m}{s} \\binom{n-m}{k-s}}{\\binom{n}{k}}\n\\]\n[@Feller1970]\nEjemplo: De \\(50\\) componentes (\\(4\\) defectuosos), seleccionar \\(10\\) al azar. La probabilidad de que al menos uno sea defectuoso:\n\\[\nP(\\geq 1 \\text{ defectuoso}) = 1 - \\frac{\\binom{46}{10}}{\\binom{50}{10}}\n\\]\nEjemplo (Escala Pequeña) De \\(6\\) objetos (\\(2\\) defectuosos), elegir \\(3\\):\n\nFormas totales: \\(\\binom{6}{3}=20\\)\nFormas sin defectuosos: \\(\\binom{4}{3}=4\\)\n\\(P(\\text{al menos uno defectuoso})=1-\\frac{4}{20}=0.8\\)",
@@ -160,8 +160,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#permutaciones-con-elementos-repetidos",
-    "href": "psg01m47/es/20250321.html#permutaciones-con-elementos-repetidos",
+    "objectID": "_chapters/es/20250321.html#permutaciones-con-elementos-repetidos",
+    "href": "_chapters/es/20250321.html#permutaciones-con-elementos-repetidos",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.6 Permutaciones con Elementos Repetidos",
     "text": "2.6 Permutaciones con Elementos Repetidos\n\n2.6.1 Definición\nDado un multiconjunto de \\(n\\) objetos donde \\(n_1\\) son del tipo \\(1\\), \\(n_2\\) del tipo \\(2\\), …, \\(n_k\\) del tipo \\(k\\) (con \\(n_1+\\cdots+n_k=n\\)), el número de permutaciones distintas es:\n\\[\n\\frac{n!}{n_1!n_2!\\cdots n_k!}\n\\]\n\n\n2.6.2 Demostración\nHay \\(n!\\) formas de permutar todos los objetos si fueran distinguibles. Para cada grupo de elementos indistinguibles, dividir por \\(n_i!\\) corrige el sobreconteo debido a arreglos repetidos [@Stanley2012].\nEjemplo: Número de anagramas distintos de “BANANA” (\\(3\\) A’s, \\(2\\) N’s, \\(1\\) B):\n\\[\n\\frac{6!}{3!2!1!} = \\frac{720}{12} = 60\n\\]",
@@ -170,8 +170,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#modelo-de-maxwellboltzmann",
-    "href": "psg01m47/es/20250321.html#modelo-de-maxwellboltzmann",
+    "objectID": "_chapters/es/20250321.html#modelo-de-maxwellboltzmann",
+    "href": "_chapters/es/20250321.html#modelo-de-maxwellboltzmann",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.7 Modelo de Maxwell–Boltzmann",
     "text": "2.7 Modelo de Maxwell–Boltzmann\n\n2.7.1 Contexto Físico y Supuestos\nEl modelo de Maxwell–Boltzmann describe el número de formas de distribuir \\(r\\) partículas distinguibles en \\(n\\) cajas distinguibles (“urnas”), sin restricción en la ocupación [@Feller1970]. Cada partícula se asigna independientemente a una caja.\n\n\n2.7.2 Fórmula y Derivación\nPara cada una de \\(r\\) partículas, hay \\(n\\) opciones de caja:\n\\[\nN = n^r\n\\]\nEjemplo. Distribuir \\(3\\) bolas etiquetadas en \\(2\\) cajas: \\(2^3 = 8\\) configuraciones.",
@@ -180,8 +180,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#modelo-de-boseeinstein",
-    "href": "psg01m47/es/20250321.html#modelo-de-boseeinstein",
+    "objectID": "_chapters/es/20250321.html#modelo-de-boseeinstein",
+    "href": "_chapters/es/20250321.html#modelo-de-boseeinstein",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.8 Modelo de Bose–Einstein",
     "text": "2.8 Modelo de Bose–Einstein\n\n2.8.1 Contexto Físico y Supuestos\nEl modelo de Bose–Einstein aborda la distribución de \\(r\\) partículas indistinguibles en \\(n\\) cajas distinguibles, permitiendo cualquier número de partículas por caja [@Feller1970].\n\n\n2.8.2 Fórmula y Demostración\nLas configuraciones corresponden a soluciones de \\(x_1 + x_2 + \\cdots + x_n = r\\) con \\(x_i \\geq 0\\), contadas por:\n\\[\nN = \\binom{r+n-1}{r}\n\\]\nEsto se sigue del teorema de “estrellas y barras”.\nEjemplo: Colocar \\(4\\) bolas indistinguibles en \\(3\\) cajas:\n\\[\n\\binom{4+3-1}{4} = \\binom{6}{4} = 15\n\\]",
@@ -190,8 +190,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#distribuciones-derivadas-de-maxwellboltzmann-binomial-y-poisson",
-    "href": "psg01m47/es/20250321.html#distribuciones-derivadas-de-maxwellboltzmann-binomial-y-poisson",
+    "objectID": "_chapters/es/20250321.html#distribuciones-derivadas-de-maxwellboltzmann-binomial-y-poisson",
+    "href": "_chapters/es/20250321.html#distribuciones-derivadas-de-maxwellboltzmann-binomial-y-poisson",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.9 Distribuciones Derivadas de Maxwell–Boltzmann: Binomial y Poisson",
     "text": "2.9 Distribuciones Derivadas de Maxwell–Boltzmann: Binomial y Poisson\n\n2.9.1 Derivación de la Distribución Binomial\nSi cada una de \\(r\\) partículas distinguibles entra independientemente a una de \\(n\\) urnas con probabilidad igual \\(1/n\\), la probabilidad de que una urna fija contenga exactamente \\(k\\) partículas:\n\\[\np(k) = \\binom{r}{k} \\left( \\frac{1}{n} \\right)^k \\left( 1-\\frac{1}{n} \\right)^{r-k}\n\\]\nEsta es la distribución binomial con parámetros \\(r\\) (ensayos), \\(p=1/n\\) (probabilidad de éxito).\n\n\n2.9.2 Límite de Poisson\nCuando \\(n \\to \\infty\\), \\(r \\to \\infty\\) con \\(\\lambda = r/n\\) fijo,\n\\[\np(k) \\to e^{-\\lambda} \\frac{\\lambda^k}{k!}\n\\]\nEsta es la distribución de Poisson [@Billingsley1995].\nEjemplo. Supongamos \\(r=10\\), \\(n=100\\), urna fija: \\(p(0)=\\left(1-\\frac{1}{100}\\right)^{10} \\approx 0.904\\).",
@@ -200,8 +200,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#distribuciones-derivadas-de-boseeinstein-geométrica",
-    "href": "psg01m47/es/20250321.html#distribuciones-derivadas-de-boseeinstein-geométrica",
+    "objectID": "_chapters/es/20250321.html#distribuciones-derivadas-de-boseeinstein-geométrica",
+    "href": "_chapters/es/20250321.html#distribuciones-derivadas-de-boseeinstein-geométrica",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.10 Distribuciones Derivadas de Bose–Einstein: Geométrica",
     "text": "2.10 Distribuciones Derivadas de Bose–Einstein: Geométrica\n\n2.10.1 Distribución Geométrica de Ocupación\nEn el modelo de Bose–Einstein, en el límite \\(n \\to \\infty\\), \\(r/n \\to \\lambda\\), la probabilidad de que una caja fija contenga exactamente \\(k\\) partículas indistinguibles es:\n\\[\np(k) = \\frac{\\lambda^k}{(1+\\lambda)^{k+1}}\n\\]\n\n\n2.10.2 Derivación\nEl resultado se sigue de la combinatoria analítica considerando el límite de ocupación multinomial [@Feller1970].\nEjemplo. Sea \\(\\lambda = 2\\), \\(k=3\\):\n\\[\np(3) = \\frac{2^3}{(1+2)^{4}} = \\frac{8}{81} \\approx 0.0988\n\\]",
@@ -210,8 +210,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250321.html#ejercicios",
-    "href": "psg01m47/es/20250321.html#ejercicios",
+    "objectID": "_chapters/es/20250321.html#ejercicios",
+    "href": "_chapters/es/20250321.html#ejercicios",
     "title": "2  Técnicas de Conteo en Probabilidad y Combinatoria",
     "section": "2.11 Ejercicios",
     "text": "2.11 Ejercicios\n\nRegla del Producto Sean \\(A\\), \\(B\\) y \\(C\\) conjuntos con \\(|A|=3\\), \\(|B|=4\\), \\(|C|=2\\). ¿Cuántas triples ordenadas \\((a,b,c)\\) hay con \\(a \\in A\\), \\(b \\in B\\), \\(c \\in C\\)? Respuesta: \\(3 \\times 4 \\times 2 = 24\\)\nPermutaciones con Elementos Repetidos ¿Cuántos arreglos únicos hay de las letras en “STATISTICS”?\n[Maxwell–Boltzmann/Binomial] Distribuir \\(r\\) bolas etiquetadas en \\(n\\) cajas. Derivar la probabilidad de que una caja fija contenga exactamente \\(k\\) bolas y analizar la distribución límite cuando \\(n \\to \\infty\\) con \\(\\lambda\\) fijo.\n[Bose–Einstein/Geométrica] Demostrar la fórmula para \\(p(k)\\) en el límite geométrico del modelo de Bose–Einstein y calcular \\(p(0)\\) para \\(\\lambda=1\\).",
@@ -220,8 +220,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html",
-    "href": "psg01m47/es/20250328.html",
+    "objectID": "_chapters/es/20250328.html",
+    "href": "_chapters/es/20250328.html",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "",
     "text": "3.1 Probabilidad Condicional\nSea \\((\\Omega, \\mathcal{A}, P)\\) un espacio de probabilidad. Para eventos \\(A, B \\in \\mathcal{A}\\) con \\(P(A) &gt; 0\\), la probabilidad condicional de \\(B\\) dado \\(A\\) se define por\n\\[\nP(B \\mid A) = \\frac{P(B \\cap A)}{P(A)}.\n\\]\nEsta fórmula expresa cómo la probabilidad de \\(B\\) cambia cuando se restringe a la ocurrencia de \\(A\\).",
@@ -230,8 +230,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html#probabilidad-condicional",
-    "href": "psg01m47/es/20250328.html#probabilidad-condicional",
+    "objectID": "_chapters/es/20250328.html#probabilidad-condicional",
+    "href": "_chapters/es/20250328.html#probabilidad-condicional",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "",
     "text": "3.1.1 Extensión: Probabilidad Condicional con Respecto a una \\(\\sigma\\)-Álgebra\nDada una sub-\\(\\sigma\\)-álgebra \\(\\mathcal{G} \\subseteq \\mathcal{A}\\), la probabilidad condicional de \\(B\\) dado \\(\\mathcal{G}\\) es una variable aleatoria \\(\\mathcal{G}\\)-medible \\(P(B \\mid \\mathcal{G})\\) tal que, para todo \\(G \\in \\mathcal{G}\\),\n\\[\n\\int_G P(B \\mid \\mathcal{G}) \\, dP = P(B \\cap G).\n\\]\nEsta formulación generaliza la probabilidad condicional a contextos que involucran variables aleatorias y estructuras de información [ @Billingsley1995 ].\n\n\n3.1.2 Medida de Probabilidad Condicional\nPara \\(A\\) fijo con \\(P(A) &gt; 0\\), definamos la medida de probabilidad condicional \\(P_A(\\cdot)\\) en \\((\\Omega, \\mathcal{A})\\) por\n\\[\nP_A(B) = P(B \\mid A).\n\\]\n\\(P_A\\) satisface:\n\nNo negatividad: \\(P_A(B) \\geq 0\\) para todo \\(B \\in \\mathcal{A}\\),\nNormalización: \\(P_A(\\Omega) = 1\\),\nAditividad numerable: \\(P_A\\left( \\bigcup_{n=1}^\\infty B_n \\right) = \\sum_{n=1}^\\infty P_A(B_n)\\) para cualquier secuencia de conjuntos disjuntos \\(B_n \\in \\mathcal{A}\\).\n\n\n3.1.2.1 Existencia (Teorema de Radon–Nikodym)\nPara una medida de probabilidad \\(P\\) y \\(A \\in \\mathcal{A}\\) con \\(P(A) &gt; 0\\), el teorema de Radon–Nikodym asegura la existencia de una medida de probabilidad condicional y, más generalmente, esperanzas condicionales dada una \\(\\sigma\\)-álgebra [ @Durrett2019 ].\n\n\n\n3.1.3 Demostración: Propiedades de la Probabilidad Condicional\nLa no negatividad y la normalización se siguen directamente de la definición. La aditividad numerable se verifica: Sea \\((B_n)\\) disjunta. Entonces\n\\[\nP\\left( \\bigcup_{n=1}^\\infty B_n \\mid A \\right) = \\frac{P\\left( \\bigcup_{n=1}^\\infty (B_n \\cap A) \\right)}{P(A)} = \\frac{\\sum_{n=1}^\\infty P(B_n \\cap A)}{P(A)} = \\sum_{n=1}^\\infty \\frac{P(B_n \\cap A)}{P(A)} = \\sum_{n=1}^\\infty P(B_n \\mid A).\n\\]",
@@ -240,8 +240,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html#ley-de-probabilidad-total",
-    "href": "psg01m47/es/20250328.html#ley-de-probabilidad-total",
+    "objectID": "_chapters/es/20250328.html#ley-de-probabilidad-total",
+    "href": "_chapters/es/20250328.html#ley-de-probabilidad-total",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "3.2 Ley de Probabilidad Total",
     "text": "3.2 Ley de Probabilidad Total\nSea \\({A_i}_{i=1}^n\\) una partición de \\(\\Omega\\) (es decir, \\(A_i \\in \\mathcal{A}\\), \\(A_i \\cap A_j = \\emptyset\\) para \\(i \\ne j\\), y \\(\\bigcup_{i=1}^n A_i = \\Omega\\)) con \\(P(A_i) &gt; 0\\) para todo \\(i\\). Para cualquier \\(B \\in \\mathcal{A}\\),\n\\[\nP(B) = \\sum_{i=1}^n P(B \\mid A_i) P(A_i).\n\\]\n\n3.2.1 Demostración\nPor la definición de una partición,\n\\[\nP(B) = P\\left( B \\cap \\Omega \\right) = P\\left( B \\cap \\bigcup_{i=1}^n A_i \\right) = \\sum_{i=1}^n P(B \\cap A_i) = \\sum_{i=1}^n P(B \\mid A_i) P(A_i).\n\\]",
@@ -250,8 +250,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html#teorema-de-bayes",
-    "href": "psg01m47/es/20250328.html#teorema-de-bayes",
+    "objectID": "_chapters/es/20250328.html#teorema-de-bayes",
+    "href": "_chapters/es/20250328.html#teorema-de-bayes",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "3.3 Teorema de Bayes",
     "text": "3.3 Teorema de Bayes\nPara \\({A_i}_{i=1}^n\\) una partición de \\(\\Omega\\) con \\(P(A_i) &gt; 0\\), y \\(B\\) tal que \\(P(B) &gt; 0\\),\n\\[\nP(A_j \\mid B) = \\frac{P(B \\mid A_j) P(A_j)}{\\sum_{i=1}^n P(B \\mid A_i) P(A_i)}.\n\\]\n\n3.3.1 Demostración\nPor la definición de probabilidad condicional y la ley de probabilidad total,\n\\[\nP(A_j \\mid B) = \\frac{P(A_j \\cap B)}{P(B)} = \\frac{P(B \\mid A_j) P(A_j)}{\\sum_{i=1}^n P(B \\mid A_i) P(A_i)}.\n\\]\n\n\n3.3.2 Interpretación Bayesiana\nEl teorema de Bayes permite la actualización de una probabilidad a priori \\(P(A_j)\\) a una probabilidad a posteriori \\(P(A_j \\mid B)\\) después de observar \\(B\\). En estadística bayesiana, este mecanismo sustenta la inferencia estadística, con distribuciones conjugadas a priori frecuentemente utilizadas para asegurar tractabilidad analítica [ @BernardoSmith1994 ].",
@@ -260,8 +260,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html#independencia-de-eventos-y-variables-aleatorias",
-    "href": "psg01m47/es/20250328.html#independencia-de-eventos-y-variables-aleatorias",
+    "objectID": "_chapters/es/20250328.html#independencia-de-eventos-y-variables-aleatorias",
+    "href": "_chapters/es/20250328.html#independencia-de-eventos-y-variables-aleatorias",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "3.4 Independencia de Eventos y Variables Aleatorias",
     "text": "3.4 Independencia de Eventos y Variables Aleatorias\n\n3.4.1 Independencia de Eventos\nLos eventos \\(A_1, \\dots, A_n\\) son mutuamente independientes si para todo subconjunto \\({i_1, \\dots, i_k} \\subseteq {1,\\dots, n}\\),\n\\[\nP\\left( \\bigcap_{j=1}^k A_{i_j} \\right) = \\prod_{j=1}^k P(A_{i_j}).\n\\]\nIndependencia por pares significa \\(P(A_i \\cap A_j) = P(A_i) P(A_j)\\) para todo \\(i \\neq j\\), pero esto no garantiza independencia mutua.\n\n\n3.4.2 Independencia de Variables Aleatorias\nLas variables aleatorias \\(X_1, \\dots, X_n\\) son independientes si para todos los conjuntos de Borel \\(B_1, \\dots, B_n \\subseteq \\mathbb{R}\\),\n\\[\nP\\left( X_1 \\in B_1, \\dots, X_n \\in B_n \\right) = \\prod_{j=1}^n P(X_j \\in B_j).\n\\]\n\n\n3.4.3 Independencia con Respecto a \\(\\sigma\\)-Álgebras\nLas sub-\\(\\sigma\\)-álgebras \\(\\mathcal{G}_1, \\dots, \\mathcal{G}_n \\subseteq \\mathcal{A}\\) son independientes si para todo \\(G_j \\in \\mathcal{G}_j\\),\n\\[\nP\\left( \\bigcap_{j=1}^n G_j \\right) = \\prod_{j=1}^n P(G_j).\n\\]\nEjemplo: Independencia por Pares pero No Mutua. Sea \\((\\Omega, \\mathcal{A}, P)\\) el espacio generado por tres lanzamientos independientes de moneda justa. Definamos los siguientes eventos:\n\n\\(A\\): El primer lanzamiento es cara.\n\\(B\\): El segundo lanzamiento es cara.\n\\(C\\): El número de caras es par.\n\nCada par \\((A,B)\\), \\((A,C)\\), y \\((B,C)\\) es independiente, pero \\(A, B, C\\) no son mutuamente independientes.\nEjemplo: Independencia en un Espacio de Probabilidad Continuo. Sea \\((\\Omega, \\mathcal{A}, P)\\) igual a \\(([0,1], \\mathcal{B}, \\lambda)\\), donde \\(\\lambda\\) es la medida de Lebesgue. Definamos los eventos:\n\n\\(A = [0.1, 0.2)\\) (el primer dígito decimal es 1).\n\\(B = \\bigcup_{k=0}^8 [0.01 + 0.1k, 0.02 + 0.1k)\\) (el segundo dígito decimal es 1).\n\nCalculamos:\n\n\\(P(A) = 0.1\\) (longitud del intervalo \\(A\\)),\n\\(P(B) = 0.1\\) (suma de longitudes de intervalos en \\(B\\)),\n\\(P(A \\cap B) = 0.01\\) (medida de la intersección).\n\nPor tanto,\n\\[\nP(A \\cap B) = 0.01 = 0.1 \\cdot 0.1 = P(A)P(B),\n\\]\nverificando la independencia. Más generalmente, la independencia en espacios continuos puede justificarse rigurosamente usando medidas producto e integración [ @Billingsley1995 ].",
@@ -270,8 +270,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250328.html#ejercicios",
-    "href": "psg01m47/es/20250328.html#ejercicios",
+    "objectID": "_chapters/es/20250328.html#ejercicios",
+    "href": "_chapters/es/20250328.html#ejercicios",
     "title": "3  Probabilidad Condicional e Independencia",
     "section": "3.5 Ejercicios",
     "text": "3.5 Ejercicios\n\nProbabilidad Condicional como Variable Aleatoria Sea \\(X\\) una variable aleatoria en \\((\\Omega, \\mathcal{A}, P)\\) y \\(\\mathcal{G} \\subseteq \\mathcal{A}\\) una sub-\\(\\sigma\\)-álgebra. Demostrar que existe una función \\(\\mathcal{G}\\)-medible \\(f\\) tal que, para cualquier \\(G \\in \\mathcal{G}\\), \\(\\int_G X \\, dP = \\int_G f \\, dP\\). (Sugerencia: Teorema de Radon–Nikodym.)\nIndependencia Mutua vs. por Pares Construir tres eventos que sean independientes por pares pero no mutuamente independientes. Demostrar la distinción explícitamente.",
@@ -280,8 +280,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html",
-    "href": "psg01m47/es/20250331.html",
+    "objectID": "_chapters/es/20250331.html",
+    "href": "_chapters/es/20250331.html",
     "title": "4  Variables Aleatorias",
     "section": "",
     "text": "4.1 Definición y Propiedades\nSea \\((\\Omega, \\mathcal{F}, P)\\) un espacio de probabilidad, donde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una \\(\\sigma\\)-álgebra de subconjuntos de \\(\\Omega\\), y \\(P\\) es una medida de probabilidad en \\(\\mathcal{F}\\). Una variable aleatoria es una función medible \\(X: \\Omega \\to \\mathbb{R}\\), lo que significa que para todo \\(x \\in \\mathbb{R}\\), el conjunto \\({\\omega \\in \\Omega : X(\\omega) \\leq x}\\) pertenece a \\(\\mathcal{F}\\) [@Billingsley1995].\nLa función de distribución acumulativa (CDF) de \\(X\\) se define por\n\\[\nF_X(x) = P(X \\leq x), \\quad x \\in \\mathbb{R}.\n\\]",
@@ -290,8 +290,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#definición-y-propiedades",
-    "href": "psg01m47/es/20250331.html#definición-y-propiedades",
+    "objectID": "_chapters/es/20250331.html#definición-y-propiedades",
+    "href": "_chapters/es/20250331.html#definición-y-propiedades",
     "title": "4  Variables Aleatorias",
     "section": "",
     "text": "4.1.1 Propiedades de la CDF\n\n\\(F_X\\) es monótonamente no decreciente: Si \\(x_1 &lt; x_2\\), entonces \\(F_X(x_1) \\leq F_X(x_2)\\).\n\\(F_X\\) es continua por la derecha: \\(\\lim_{h \\to 0^+} F_X(x+h) = F_X(x)\\) para todo \\(x\\).\nLímites: \\(\\lim_{x \\to -\\infty} F_X(x) = 0\\) y \\(\\lim_{x \\to \\infty} F_X(x) = 1\\).\n\nDemostración: La monotonicidad y la continuidad por la derecha se siguen directamente de la definición de la medida de probabilidad y las propiedades de las \\(\\sigma\\)-álgebras [@Billingsley1995, p.14]. Los límites en \\(\\pm\\infty\\) se siguen de la aditividad numerable de \\(P\\) y el agotamiento de la recta real.",
@@ -300,8 +300,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#variables-aleatorias-discretas",
-    "href": "psg01m47/es/20250331.html#variables-aleatorias-discretas",
+    "objectID": "_chapters/es/20250331.html#variables-aleatorias-discretas",
+    "href": "_chapters/es/20250331.html#variables-aleatorias-discretas",
     "title": "4  Variables Aleatorias",
     "section": "4.2 Variables Aleatorias Discretas",
     "text": "4.2 Variables Aleatorias Discretas\nUna variable aleatoria \\(X\\) es discreta si su rango es un conjunto finito o numerable \\(S \\subset \\mathbb{R}\\). La función de masa de probabilidad (pmf) es\n\\[\np_X(x) = P(X = x), \\quad x \\in S\n\\]\ncon \\(\\sum_{x \\in S} p_X(x) = 1\\).\nEjemplo: Suma de Dos Dados Justos: Sea \\(X\\) la suma de los resultados de lanzar dos dados justos independientes. Los valores posibles son \\(x \\in {2, 3, \\dots, 12}\\). Cada resultado \\((i, j)\\) con \\(i, j \\in {1,\\dots,6}\\) es igualmente probable. El número de pares \\((i,j)\\) que dan suma \\(x\\) es \\(n(x) = 6 - |7 - x|\\), por lo que\n\\[\np_X(x) = \\frac{n(x)}{36}, \\quad n(x) = 6 - |7 - x|, \\quad x \\in {2,3,\\dots,12}.\n\\]\nDerivación: Para \\(x=7\\), \\(n(7)=6\\); para \\(x=2\\), \\(n(2)=1\\); etc.",
@@ -310,8 +310,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#variables-aleatorias-continuas",
-    "href": "psg01m47/es/20250331.html#variables-aleatorias-continuas",
+    "objectID": "_chapters/es/20250331.html#variables-aleatorias-continuas",
+    "href": "_chapters/es/20250331.html#variables-aleatorias-continuas",
     "title": "4  Variables Aleatorias",
     "section": "4.3 Variables Aleatorias Continuas",
     "text": "4.3 Variables Aleatorias Continuas\nUna variable aleatoria \\(X\\) es continua si existe una función de densidad de probabilidad (pdf) \\(f_X:\\mathbb{R}\\to[0,\\infty)\\) tal que, para todo \\(a &lt; b\\),\n\\[\nP(a &lt; X \\leq b) = \\int_a^b f_X(x)\\,dx.\n\\]\nLa pdf satisface\n\n\\(f_X(x) \\geq 0\\) para todo \\(x \\in \\mathbb{R}\\)\n\\(\\int_{-\\infty}^{\\infty} f_X(x)\\,dx = 1\\)\n\nObservación: La existencia de una pdf requiere que \\(F_X\\) sea absolutamente continua [@Durrett2019, Sec. 1.3].\nEjemplo: Distribución Normal Estándar: Sea \\(X\\) con distribución normal estándar:\n\\[\nf_X(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-x^2/2}, \\quad x \\in \\mathbb{R}\n\\]\nEntonces, para cualquier \\(a &lt; b\\),\n\\[\nP(a &lt; X \\leq b) = \\int_a^b f_X(x)\\,dx.\n\\]",
@@ -320,8 +320,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#transformaciones-de-variables-aleatorias",
-    "href": "psg01m47/es/20250331.html#transformaciones-de-variables-aleatorias",
+    "objectID": "_chapters/es/20250331.html#transformaciones-de-variables-aleatorias",
+    "href": "_chapters/es/20250331.html#transformaciones-de-variables-aleatorias",
     "title": "4  Variables Aleatorias",
     "section": "4.4 Transformaciones de Variables Aleatorias",
     "text": "4.4 Transformaciones de Variables Aleatorias\nDada una variable aleatoria \\(X\\) con pdf \\(f_X\\) y una función \\(h:\\mathbb{R}\\to\\mathbb{R}\\) medible, invertible y diferenciable, definamos \\(Y = h(X)\\). La pdf de \\(Y\\) es\n\\[\nf_Y(y) = f_X(h^{-1}(y)) \\left| \\frac{d}{dy} h^{-1}(y) \\right|, \\quad y \\in h(\\mathbb{R})\n\\]\nSupuestos: \\(h\\) es estrictamente monótona y diferenciable con inversa \\(h^{-1}\\), y \\(f_X\\) es conocida.\n** Ejemplo: Normal Estándar al Cuadrado:** Sea \\(X \\sim N(0,1)\\), \\(Y = X^2\\). Entonces para \\(y \\geq 0\\),\n\n\\(h^{-1}(y) = \\pm \\sqrt{y}\\),\n\\(f_X(h^{-1}(y)) = \\frac{1}{\\sqrt{2\\pi}} e^{-y/2}\\) para ambas raíces,\n\\(\\left|\\frac{d}{dy} h^{-1}(y)\\right| = \\frac{1}{2\\sqrt{y}}\\).\n\nPor tanto,\n\\[\nf_Y(y) = f_X(\\sqrt{y})\\frac{1}{2\\sqrt{y}} + f_X(-\\sqrt{y})\\frac{1}{2\\sqrt{y}} = \\frac{1}{\\sqrt{2\\pi y}} e^{-y/2}, \\quad y &gt; 0,\n\\]\nque es la distribución chi-cuadrada con un grado de libertad [@Billingsley1995, Sec. 10].",
@@ -330,8 +330,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#vectores-aleatorios",
-    "href": "psg01m47/es/20250331.html#vectores-aleatorios",
+    "objectID": "_chapters/es/20250331.html#vectores-aleatorios",
+    "href": "_chapters/es/20250331.html#vectores-aleatorios",
     "title": "4  Variables Aleatorias",
     "section": "4.5 Vectores Aleatorios",
     "text": "4.5 Vectores Aleatorios\nUn vector aleatorio \\(\\mathbf{X} = (X_1, \\dots, X_n)\\) es una función medible \\(\\mathbf{X}:\\Omega \\to \\mathbb{R}^n\\). La función de distribución conjunta es\n\\[\nF_{\\mathbf{X}}(x_1, \\dots, x_n) = P(X_1 \\leq x_1, \\dots, X_n \\leq x_n)\n\\]\nSi existe una pdf conjunta \\(f_{\\mathbf{X}}\\), entonces\n\\[\nP((X_1, \\dots, X_n) \\in B) = \\int_{B} f_{\\mathbf{X}}(x_1, \\dots, x_n)\\,dx_1 \\cdots dx_n\n\\]\npara todos los conjuntos de Borel \\(B \\subset \\mathbb{R}^n\\).\nMarginales y Condicionales: La pdf marginal de \\(X_1\\) es\n\\[\nf_{X_1}(x_1) = \\int_{\\mathbb{R}^{n-1}} f_{\\mathbf{X}}(x_1, x_2, \\dots, x_n)\\,dx_2 \\cdots dx_n\n\\]\nLas distribuciones condicionales se definen de manera análoga [@Durrett2019, Sec. 1.5].\nEjemplo: Normal Bivariada. Sea \\((X_1, X_2)\\) conjuntamente normal con media cero, varianzas \\(1\\), y covarianza \\(\\rho\\). La pdf conjunta es\n\\[\nf_{\\mathbf{X}}(x_1, x_2) = \\frac{1}{2\\pi\\sqrt{1-\\rho^2}} \\exp\\left( -\\frac{x_1^2 - 2\\rho x_1 x_2 + x_2^2}{2(1-\\rho^2)} \\right)\n\\]",
@@ -340,8 +340,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#independencia-de-variables-aleatorias",
-    "href": "psg01m47/es/20250331.html#independencia-de-variables-aleatorias",
+    "objectID": "_chapters/es/20250331.html#independencia-de-variables-aleatorias",
+    "href": "_chapters/es/20250331.html#independencia-de-variables-aleatorias",
     "title": "4  Variables Aleatorias",
     "section": "4.6 Independencia de Variables Aleatorias",
     "text": "4.6 Independencia de Variables Aleatorias\nLas variables aleatorias \\(X\\) e \\(Y\\) son independientes si, para todo \\(x,y \\in \\mathbb{R}\\),\n\\[\nP(X \\leq x, Y \\leq y) = P(X \\leq x) P(Y \\leq y)\n\\]\nEquivalentemente, \\(F_{(X,Y)}(x,y) = F_X(x) F_Y(y)\\) para todo \\(x, y\\).\nCriterios Equivalentes: La independencia se cumple si y solo si \\(P(X \\in A, Y \\in B) = P(X \\in A)P(Y \\in B)\\) para todos los conjuntos de Borel \\(A, B \\subseteq \\mathbb{R}\\) [@Billingsley1995, Thm. 12.1].\nContraejemplo: Sea \\(X\\) uniforme en \\([-1,1]\\), \\(Y=X\\). \\(P(X \\leq x, Y \\leq y) = P(X \\leq \\min{x, y})\\) no es igual a \\(P(X \\leq x)P(Y \\leq y)\\) a menos que \\(x\\) o \\(y\\) sea \\(-\\infty\\) o \\(\\infty\\).",
@@ -350,8 +350,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#esperanza-y-varianza",
-    "href": "psg01m47/es/20250331.html#esperanza-y-varianza",
+    "objectID": "_chapters/es/20250331.html#esperanza-y-varianza",
+    "href": "_chapters/es/20250331.html#esperanza-y-varianza",
     "title": "4  Variables Aleatorias",
     "section": "4.7 Esperanza y Varianza",
     "text": "4.7 Esperanza y Varianza\nSea \\(X\\) una variable aleatoria.\n\nEsperanza:\n\nDiscreta: \\(E[X] = \\sum_{x} x p_X(x)\\), siempre que \\(\\sum_x |x| p_X(x) &lt; \\infty\\).\nContinua: \\(E[X] = \\int_{-\\infty}^\\infty x f_X(x)\\,dx\\) si \\(\\int |x| f_X(x)\\,dx &lt; \\infty\\).\n\nVarianza:\n\n\\[\n\\operatorname{Var}(X) = E\\left[(X - E[X])^2\\right] = E[X^2] - (E[X])^2\n\\]\nPropiedades: Para cualquier \\(a,b \\in \\mathbb{R}\\),\n\n\\(E[aX + b] = aE[X] + b\\)\n\\(\\operatorname{Var}(aX + b) = a^2 \\operatorname{Var}(X)\\)\n\nDemostraciones: Ver [@Durrett2019, Prop. 1.5.1].",
@@ -360,8 +360,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#simulación-de-variables-aleatorias",
-    "href": "psg01m47/es/20250331.html#simulación-de-variables-aleatorias",
+    "objectID": "_chapters/es/20250331.html#simulación-de-variables-aleatorias",
+    "href": "_chapters/es/20250331.html#simulación-de-variables-aleatorias",
     "title": "4  Variables Aleatorias",
     "section": "4.8 Simulación de Variables Aleatorias",
     "text": "4.8 Simulación de Variables Aleatorias\nEl método de transformación inversa es una técnica fundamental de simulación: Si \\(U \\sim \\text{Uniforme}(0,1)\\) y \\(F_X\\) es continua y estrictamente creciente, entonces \\(X = F_X^{-1}(U)\\) tiene función de distribución \\(F_X\\).\nSimulación avanzada:\n\nMétodo de aceptación-rechazo: Generar \\(Y\\) con densidad \\(g\\), aceptar con probabilidad \\(f_X(Y)/[c g(Y)]\\), donde \\(c\\) satisface \\(f_X(y) \\leq c g(y)\\) para todo \\(y\\) [@Devroye1986].\nMétodo de Box–Muller: Para \\(X\\) normal estándar, generar \\(U_1, U_2\\) independientes, uniformes en \\((0,1)\\). Entonces \\(X = \\sqrt{-2\\log U_1} \\cos(2\\pi U_2)\\).",
@@ -370,8 +370,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250331.html#ejercicios",
-    "href": "psg01m47/es/20250331.html#ejercicios",
+    "objectID": "_chapters/es/20250331.html#ejercicios",
+    "href": "_chapters/es/20250331.html#ejercicios",
     "title": "4  Variables Aleatorias",
     "section": "4.9 Ejercicios",
     "text": "4.9 Ejercicios\n\nDemostrar que para cualquier CDF \\(F\\), la función es continua por la derecha y satisface los límites establecidos en \\(\\pm\\infty\\).\nSea \\(X\\) uniforme en \\([0,1]\\), y \\(Y = -\\ln(1-X)\\). Mostrar que \\(Y\\) es exponencial con parámetro \\(1\\).\nDadas las variables aleatorias \\(X\\) e \\(Y\\) con pdf conjunta \\(f(x,y) = 6xy\\) para \\(0 &lt; x &lt; 1\\), \\(0 &lt; y &lt; 1\\), \\(x+y &lt; 1\\), calcular \\(P(X &lt; Y)\\) y verificar si \\(X\\) e \\(Y\\) son independientes.",
@@ -380,8 +380,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html",
-    "href": "psg01m47/es/20250404.html",
+    "objectID": "_chapters/es/20250404.html",
+    "href": "_chapters/es/20250404.html",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "",
     "text": "5.1 Distribuciones de Mezcla\nUna distribución de mezcla describe la ley de probabilidad de una variable aleatoria \\(X\\) que depende de cuál evento ocurre entre una partición \\({A_1, A_2, \\dots, A_n}\\) del espacio de probabilidad subyacente \\((\\Omega, \\mathcal{A}, P)\\) [@Billingsley1995]. Para cada \\(i\\), sea \\(F_{X|A_i}(x)\\) la función de distribución acumulativa (CDF) condicional de \\(X\\) dado \\(A_i\\), y \\(P(A_i)\\) la probabilidad de \\(A_i\\). La ley de probabilidad total produce:\n\\[\nF_X(x) = \\sum_{i=1}^{n} F_{X|A_i}(x) P(A_i).\n\\]\nDemostración. Sea \\(F_X(x) = P(X \\leq x)\\). Puesto que los \\(A_i\\) son mutuamente exclusivos y exhaustivos,\n\\[\nP(X \\leq x) = \\sum_{i=1}^n P(X \\leq x, A_i) = \\sum_{i=1}^n P(X \\leq x | A_i)P(A_i).\n\\]\nPor definición, \\(P(X \\leq x | A_i) = F_{X|A_i}(x)\\). \\(\\quad\\blacksquare\\)\nEjemplo Avanzado. Supongamos que \\(X\\) es una mezcla gaussiana finita:\nEntonces\n\\[\nf_X(x) = p_1 \\frac{1}{\\sqrt{2\\pi}\\sigma_1} e^{-\\frac{(x-\\mu_1)^2}{2\\sigma_1^2}}\n+ p_2 \\frac{1}{\\sqrt{2\\pi}\\sigma_2} e^{-\\frac{(x-\\mu_2)^2}{2\\sigma_2^2}}.\n\\]",
@@ -390,8 +390,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#distribuciones-de-mezcla",
-    "href": "psg01m47/es/20250404.html#distribuciones-de-mezcla",
+    "objectID": "_chapters/es/20250404.html#distribuciones-de-mezcla",
+    "href": "_chapters/es/20250404.html#distribuciones-de-mezcla",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "",
     "text": "Con probabilidad \\(p_1\\), \\(X \\sim N(\\mu_1, \\sigma_1^2)\\)\nCon probabilidad \\(p_2=1-p_1\\), \\(X \\sim N(\\mu_2, \\sigma_2^2)\\)",
@@ -400,8 +400,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#transformaciones-de-variables-aleatorias",
-    "href": "psg01m47/es/20250404.html#transformaciones-de-variables-aleatorias",
+    "objectID": "_chapters/es/20250404.html#transformaciones-de-variables-aleatorias",
+    "href": "_chapters/es/20250404.html#transformaciones-de-variables-aleatorias",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.2 Transformaciones de Variables Aleatorias",
     "text": "5.2 Transformaciones de Variables Aleatorias\nSea \\(X\\) una variable aleatoria de valor real con densidad \\(f_X(x)\\), y \\(h:\\mathbb{R}\\to\\mathbb{R}\\) una biyección diferenciable (es decir, \\(h\\) es invertible y \\(h^{-1}\\) es diferenciable). Definamos \\(Y = h(X)\\). La distribución de \\(Y\\) se determina como sigue.\nDefinición (Fórmula de Cambio de Variable). Si \\(h\\) es estrictamente monótona y diferenciable, entonces para \\(y\\) en el rango de \\(h\\),\n\\[\nf_Y(y) = f_X(h^{-1}(y)) \\left|\\frac{d}{dy} h^{-1}(y)\\right|.\n\\]\nDemostración. Sea \\(h\\) estrictamente creciente. La CDF de \\(Y\\) es \\(F_Y(y) = P(Y \\leq y) = P(X \\leq h^{-1}(y)) = F_X(h^{-1}(y))\\). Diferenciando ambos lados da\n\\[\nf_Y(y) = f_X(h^{-1}(y)) \\frac{d}{dy} h^{-1}(y).\n\\]\nSi \\(h\\) es decreciente, \\(\\frac{d}{dy} h^{-1}(y)\\) es negativo; por tanto, usamos el valor absoluto [@CasellaBerger2002].\nSoporte para Casos No Monótonos. Si \\(h\\) no es monótona, \\(h^{-1}(y)\\) es multivaluada. Entonces,\n\\[\nf_Y(y) = \\sum_{x\\in h^{-1}(y)} \\frac{f_X(x)}{|h'(x)|}.\n\\]\nEjemplo. Sea \\(Z \\sim N(0,1)\\). Encontrar la distribución de \\(X = Z^2\\).\n\n\\(h(z) = z^2\\), por lo que \\(X\\) tiene soporte en \\(x&gt;0\\).\n\\(h^{-1}(x) = \\pm \\sqrt{x}\\).\n\\(f_Z(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}\\).\n\nPor tanto,\n\\[\nf_X(x) = \\frac{f_Z(\\sqrt{x})}{|2\\sqrt{x}|} + \\frac{f_Z(-\\sqrt{x})}{|2\\sqrt{x}|}\n= \\frac{1}{\\sqrt{2\\pi}} \\frac{e^{-x/2}}{2\\sqrt{x}}, \\quad x&gt;0.\n\\]\n\\(X\\) sigue una distribución chi-cuadrada con 1 grado de libertad.\n\n5.2.1 Teorema de Transformación\nTeorema. Sea \\(X\\) con CDF \\(F_X\\) e \\(Y = h(X)\\), donde \\(h\\) es estrictamente creciente y continuamente diferenciable. Entonces,\n\\[\nF_Y(y) = F_X(h^{-1}(y)), \\qquad\nf_Y(y) = f_X(h^{-1}(y)) \\frac{1}{h'(h^{-1}(y))}, \\quad \\text{para } y \\in h(\\mathbb{R}).\n\\]\nDemostración. Inmediato por la regla de la cadena y argumentos de cambio de variable anteriores [@Durrett2019].\nNota Terminológica. Usar “transformación diferenciable” (no “transformación continua”) según la terminología estándar.",
@@ -410,8 +410,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#simulación-vía-transformación-inversa",
-    "href": "psg01m47/es/20250404.html#simulación-vía-transformación-inversa",
+    "objectID": "_chapters/es/20250404.html#simulación-vía-transformación-inversa",
+    "href": "_chapters/es/20250404.html#simulación-vía-transformación-inversa",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.3 Simulación vía Transformación Inversa",
     "text": "5.3 Simulación vía Transformación Inversa\nSupongamos que \\(F\\) es la CDF de \\(X\\), estrictamente creciente y continua. Si \\(U \\sim \\text{Uniforme}(0,1)\\), entonces\n\\[\nX = F^{-1}(U)\n\\]\ntiene CDF \\(F\\) [@Devroye1986].\nSoporte y Advertencias:\n\n\\(F\\) debe ser invertible; para \\(F\\) discreta o no invertible, este método requiere adaptación.\nEn la práctica, \\(F^{-1}\\) puede calcularse numéricamente; se requiere cuidado para la precisión.",
@@ -420,8 +420,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#vectores-aleatorios",
-    "href": "psg01m47/es/20250404.html#vectores-aleatorios",
+    "objectID": "_chapters/es/20250404.html#vectores-aleatorios",
+    "href": "_chapters/es/20250404.html#vectores-aleatorios",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.4 Vectores Aleatorios",
     "text": "5.4 Vectores Aleatorios\nUn vector aleatorio \\(\\bar{X} = (X_1,\\dots,X_k)\\) es una función medible de \\((\\Omega, \\mathcal{A}, P)\\) a \\((\\mathbb{R}^k, \\mathcal{B}^k)\\), donde \\(\\mathcal{B}^k\\) es la \\(\\sigma\\)-álgebra de Borel en \\(\\mathbb{R}^k\\). Su CDF conjunta es:\n\\[\nF_{\\bar{X}}(\\bar{x}) = P(X_1 \\leq x_1, \\dots, X_k \\leq x_k).\n\\]\nCaso Discreto y Continuo. Si \\((X,Y)\\) es discreto:\n\\[\np_{X,Y}(x,y) = P(X=x, Y=y).\n\\]\nMarginales: \\(p_X(x) = \\sum_y p_{X,Y}(x,y)\\), \\(p_Y(y) = \\sum_x p_{X,Y}(x,y)\\).\nSi continuo:\n\\[\nf_{X,Y}(x,y) = \\frac{\\partial^2}{\\partial x \\partial y} F_{X,Y}(x,y).\n\\]\nCoherencia. La función indicadora \\(\\mathbf{1}_{{\\cdot}}\\) denota \\(1\\) si su argumento es verdadero, \\(0\\) en caso contrario. La función \\(\\Phi(x)\\) es la CDF normal estándar.",
@@ -430,8 +430,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#independencia",
-    "href": "psg01m47/es/20250404.html#independencia",
+    "objectID": "_chapters/es/20250404.html#independencia",
+    "href": "_chapters/es/20250404.html#independencia",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.5 Independencia",
     "text": "5.5 Independencia\nDefinición. Las variables aleatorias \\(X\\) e \\(Y\\) son independientes si para todo \\(x, y\\),\n\\[\nP(X \\leq x, Y \\leq y) = P(X \\leq x)P(Y \\leq y).\n\\]\nEquivalentemente, su densidad conjunta (si existe) se factoriza:\n\\[\nf_{X,Y}(x,y) = f_X(x)f_Y(y).\n\\]",
@@ -440,8 +440,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#transformaciones-de-vectores-aleatorios",
-    "href": "psg01m47/es/20250404.html#transformaciones-de-vectores-aleatorios",
+    "objectID": "_chapters/es/20250404.html#transformaciones-de-vectores-aleatorios",
+    "href": "_chapters/es/20250404.html#transformaciones-de-vectores-aleatorios",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.6 Transformaciones de Vectores Aleatorios",
     "text": "5.6 Transformaciones de Vectores Aleatorios\n\n5.6.1 Transformaciones Lineales\nSea \\(\\bar{X} = (X_1,\\dots,X_n)^T\\) con vector de medias \\(\\mu\\) y matriz de covarianza \\(\\Sigma\\). Para \\(A \\in \\mathbb{R}^{m \\times n}\\), definamos \\(\\bar{Y} = A\\bar{X}\\).\nTeorema.\n\n\\(\\mathbb{E}[\\bar{Y}] = A \\mathbb{E}[\\bar{X}]\\)\n\\(\\text{Cov}(\\bar{Y}) = A \\, \\text{Cov}(\\bar{X}) \\, A^T\\)\n\nDemostración. Por la linealidad de la esperanza, \\(\\mathbb{E}[\\bar{Y}] = \\mathbb{E}[A\\bar{X}] = A\\mathbb{E}[\\bar{X}]\\).\nPara la covarianza,\n\\[\n\\text{Cov}(\\bar{Y}) = \\mathbb{E}[(\\bar{Y} - \\mathbb{E}[\\bar{Y}])(\\bar{Y} - \\mathbb{E}[\\bar{Y}])^T]\n= A\\mathbb{E}[(\\bar{X} - \\mu)(\\bar{X} - \\mu)^T]A^T = A\\Sigma A^T.\n\\]\nEjemplo. Sea \\(\\bar{X} \\sim N_2(\\mu, \\Sigma)\\) y\n\\[\n\\bar{Y} = \\begin{pmatrix} 1 & 1 \\\\ 1 & -1 \\end{pmatrix} \\bar{X}.\n\\]\nSi \\(\\mu = (\\mu_1, \\mu_2)^T\\), y \\(\\Sigma = \\begin{pmatrix} \\sigma_1^2 & \\rho \\sigma_1 \\sigma_2 \\\\ \\rho \\sigma_1 \\sigma_2 & \\sigma_2^2 \\end{pmatrix}\\), entonces\n\\[\n\\mathbb{E}[\\bar{Y}] = \\begin{pmatrix} \\mu_1 + \\mu_2 \\\\ \\mu_1 - \\mu_2 \\end{pmatrix},\n\\]\n\\[\n\\text{Cov}(\\bar{Y}) = \\begin{pmatrix} \\sigma_1^2 + \\sigma_2^2 + 2\\rho \\sigma_1 \\sigma_2 & \\sigma_1^2 - \\sigma_2^2 \\\\ \\sigma_1^2 - \\sigma_2^2 & \\sigma_1^2 + \\sigma_2^2 - 2\\rho \\sigma_1 \\sigma_2 \\end{pmatrix}.\n\\]\n\n\n5.6.2 Transformaciones No Lineales\nSupongamos que \\(\\bar{Y} = h(\\bar{X})\\) es una biyección diferenciable de \\(\\mathbb{R}^n\\) a \\(\\mathbb{R}^n\\). Sea \\(J = \\det \\left( \\frac{\\partial h}{\\partial \\bar{x}} \\right)\\) el determinante jacobiano.\nTeorema (Cambio de Variables Multivariado). Sea \\(f_{\\bar{X}}\\) la densidad de \\(\\bar{X}\\), y supongamos que \\(h\\) y \\(h^{-1}\\) son diferenciables, con \\(J\\) no cero en todas partes. Entonces la densidad de \\(\\bar{Y}\\) es\n\\[\nf_{\\bar{Y}}(\\bar{y}) = f_{\\bar{X}}(h^{-1}(\\bar{y})) \\left| \\det D h^{-1}(\\bar{y}) \\right|,\n\\]\ndonde \\(D h^{-1}\\) es el jacobiano de \\(h^{-1}\\) [@Billingsley1995].\nDemostración. Ver [@Billingsley1995, §16] para justificación rigurosa. La fórmula surge de la regla de sustitución en integrales multidimensionales.\nEjemplo (Avanzado). Sean \\(X_1, X_2\\) independientes, cada una \\(\\sim \\text{Exp}(\\lambda)\\). Definamos:\n\\[\nY_1 = X_1 + X_2, \\qquad Y_2 = \\frac{X_1}{X_1 + X_2}.\n\\]\nCalcular la densidad conjunta \\(f_{Y_1, Y_2}(y_1, y_2)\\).\n\nLa transformación inversa:\n\n\\(X_1 = y_1 y_2\\)\n\\(X_2 = y_1 (1 - y_2)\\)\n\nDeterminante jacobiano:\n\\[\nJ = \\begin{vmatrix}\n\\frac{\\partial X_1}{\\partial y_1} & \\frac{\\partial X_1}{\\partial y_2} \\\\\n\\frac{\\partial X_2}{\\partial y_1} & \\frac{\\partial X_2}{\\partial y_2}\n\\end{vmatrix}\n= \\begin{vmatrix}\ny_2 & y_1 \\\\\n1 - y_2 & -y_1\n\\end{vmatrix} = -y_1\n\\]\nLa densidad conjunta:\n\\[\nf_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \\cdot |J| = \\lambda^2 y_1 e^{-\\lambda y_1} \\mathbf{1}_{{y_1 &gt; 0, 0 &lt; y_2 &lt; 1}}.\n\\]\n\nEjemplo Avanzado. Considerar el mapeo de coordenadas polares a cartesianas: \\(X = R \\cos \\Theta\\), \\(Y = R \\sin \\Theta\\), con \\(R, \\Theta\\) independientes, \\(R&gt;0\\), \\(\\Theta \\in (0,2\\pi)\\). El jacobiano es \\(r\\), dando la densidad conjunta \\(f_{X,Y}(x,y) = f_{R,\\Theta}(\\sqrt{x^2 + y^2}, \\arctan(y/x)) \\cdot \\frac{1}{\\sqrt{x^2 + y^2}}\\).",
@@ -450,8 +450,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#aplicaciones-en-análisis-multivariado",
-    "href": "psg01m47/es/20250404.html#aplicaciones-en-análisis-multivariado",
+    "objectID": "_chapters/es/20250404.html#aplicaciones-en-análisis-multivariado",
+    "href": "_chapters/es/20250404.html#aplicaciones-en-análisis-multivariado",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.7 Aplicaciones en Análisis Multivariado",
     "text": "5.7 Aplicaciones en Análisis Multivariado\n\n5.7.1 Análisis de Componentes Principales (PCA)\nPCA transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal [@Jolliffe2016]. Sea \\(\\bar{X}\\) con matriz de covarianza \\(\\Sigma\\). El primer componente principal es la combinación lineal que maximiza la varianza, es decir, maximizar \\(\\text{Var}(a^T\\bar{X})\\) bajo \\(||a||=1\\). Los vectores propios de \\(\\Sigma\\) proporcionan la transformación; los valores propios correspondientes cuantifican la varianza explicada.\nEjemplo Numérico. Sea \\(\\Sigma = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}\\). Valores propios: \\(3, 1\\). Primer componente principal: \\(a_1 = (1/\\sqrt{2}, 1/\\sqrt{2})\\), varianza \\(3\\).\n\n\n5.7.2 Análisis de Correlación Canónica\nDados dos vectores aleatorios \\((\\bar{X}, \\bar{Y})\\), CCA busca combinaciones lineales que maximizan la correlación [@MardiaKentBibby1979]. Sean \\(a, b\\) que maximizan \\(\\text{corr}(a^T\\bar{X}, b^T\\bar{Y})\\). Esto requiere tanto matrices de covarianza como de covarianza cruzada.\n\n\n5.7.3 Análisis Factorial\nEl análisis factorial modela la matriz de covarianza \\(\\Sigma\\) como \\(\\Sigma = \\Lambda \\Lambda^T + \\Psi\\), donde \\(\\Lambda\\) captura factores comunes y \\(\\Psi\\) es diagonal (varianza específica). Asume normalidad e independencia de factores [@MardiaKentBibby1979].",
@@ -460,8 +460,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250404.html#ejercicios",
-    "href": "psg01m47/es/20250404.html#ejercicios",
+    "objectID": "_chapters/es/20250404.html#ejercicios",
+    "href": "_chapters/es/20250404.html#ejercicios",
     "title": "5  Variables Aleatorias y Vectores: Transformaciones y Aplicaciones",
     "section": "5.8 Ejercicios",
     "text": "5.8 Ejercicios\n\nDistribución de Mezcla. Sea \\(X\\) con distribución de mezcla: con probabilidad \\(p\\), \\(X\\sim N(0,1)\\); con \\(1-p\\), \\(X\\sim N(\\mu,1)\\).\n\nEscribir la FDP y CDF de \\(X\\).\nMostrar todos los pasos.\n\nDemostración de Transformación. Sea \\(X\\) con FDP \\(f_X(x)\\), \\(h\\) estrictamente creciente y diferenciable. Demostrar la fórmula para \\(f_Y(y)\\).\nCambio de Variables Multivariado. Sean \\(X_1, X_2\\) independientes, \\(\\sim \\text{Exp}(1)\\). Encontrar la densidad conjunta de \\((Y_1, Y_2) = (X_1 + X_2, X_1/X_2)\\).\nCálculo de PCA. Dada \\(\\Sigma = \\begin{pmatrix} 4 & 2 \\\\ 2 & 3 \\end{pmatrix}\\), encontrar los componentes principales y la proporción de varianza total explicada.",
@@ -470,8 +470,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html",
-    "href": "psg01m47/es/20250414.html",
+    "objectID": "_chapters/es/20250414.html",
+    "href": "_chapters/es/20250414.html",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "",
     "text": "6.1 Distribuciones Condicionales\nSea \\((\\Omega, \\mathcal{F}, P)\\) un espacio de probabilidad. Consideremos un vector aleatorio \\((X, Y)\\) definido en este espacio, donde \\(X : \\Omega \\to \\mathbb{R}\\) e \\(Y : \\Omega \\to \\mathbb{R}\\) son variables aleatorias. La distribución condicional de \\(Y\\) dado \\(X\\) es una familia de medidas de probabilidad \\({P_{Y|X=x} : x \\in \\mathbb{R}}\\) tal que, para cualquier conjunto de Borel \\(B \\subseteq \\mathbb{R}\\),\n\\[\nP_{Y|X=x}(B) = P(Y \\in B \\mid X = x), \\quad \\text{siempre que } P(X = x) &gt; 0.\n\\]\nMás generalmente, para variables aleatorias arbitrarias y \\(\\sigma\\)-álgebras, la distribución condicional se define vía la derivada de Radon–Nikodym como la versión regular única (salvo conjuntos \\(P\\)-nulos) \\(P_{Y|X}(\\cdot \\mid X)\\) [@Billingsley1995].\nPara variables aleatorias discretas,\n\\[\nP(Y = y \\mid X = x) = \\frac{P(X = x, Y = y)}{P(X = x)}, \\quad \\text{siempre que } P(X = x) &gt; 0.\n\\]\nPara variables aleatorias absolutamente continuas, con densidad conjunta \\(f_{X,Y}\\) y marginal \\(f_X\\),\n\\[\nf_{Y|X}(y|x) = \\frac{f_{X,Y}(x, y)}{f_X(x)}, \\quad \\text{donde } f_X(x) &gt; 0.\n\\]",
@@ -480,8 +480,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html#distribuciones-condicionales",
-    "href": "psg01m47/es/20250414.html#distribuciones-condicionales",
+    "objectID": "_chapters/es/20250414.html#distribuciones-condicionales",
+    "href": "_chapters/es/20250414.html#distribuciones-condicionales",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "",
     "text": "6.1.1 Propiedades\n\nPropiedad de Torre: \\(\\mathbb{E}\\left[\\,\\mathbb{E}[Y \\mid X]\\,\\right] = \\mathbb{E}[Y]\\).\nDesigualdad de Jensen: Para cualquier función convexa \\(\\varphi\\), \\(\\varphi(\\mathbb{E}[Y|X]) \\leq \\mathbb{E}[\\varphi(Y)|X]\\) [@Durrett2019].\n\nEjemplo.\nSea \\((X, Y) \\sim N_2(\\mu_X, \\mu_Y, \\sigma_X^2, \\sigma_Y^2, \\rho)\\) un vector aleatorio normal bivariado, donde \\(|\\rho| &lt; 1\\). La distribución condicional de \\(Y\\) dado \\(X = x\\) es normal:\n\\[\nY|X = x \\sim N\\left(\\mu_Y + \\rho \\frac{\\sigma_Y}{\\sigma_X}(x - \\mu_X),\\; \\sigma_Y^2(1 - \\rho^2)\\right).\n\\]\nDemostración: Sea \\(\\Sigma = \\begin{pmatrix} \\sigma_X^2 & \\rho \\sigma_X \\sigma_Y \\\\ \\rho \\sigma_X \\sigma_Y & \\sigma_Y^2 \\end{pmatrix}\\). Las propiedades estándar de la normal multivariada producen la media y varianza condicional como arriba; ver [@Billingsley1995, p. 186].",
@@ -490,8 +490,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html#teoría-de-predicción",
-    "href": "psg01m47/es/20250414.html#teoría-de-predicción",
+    "objectID": "_chapters/es/20250414.html#teoría-de-predicción",
+    "href": "_chapters/es/20250414.html#teoría-de-predicción",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "6.2 Teoría de Predicción",
     "text": "6.2 Teoría de Predicción\nSea \\((X, Y)\\) como arriba. Supongamos que se busca una función \\(g(X)\\) para predecir \\(Y\\) tal que el error cuadrático medio \\(\\mathbb{E}[(Y - g(X))^2]\\) se minimice. El predictor óptimo en este sentido es la esperanza condicional:\n\\[\n\\hat{Y} = \\mathbb{E}[Y \\mid X].\n\\]\n\n6.2.1 Propiedades\nSea \\(\\mathcal{G} = \\sigma(X)\\). Entonces:\n\nInsesgadez: \\(\\mathbb{E}[\\hat{Y}] = \\mathbb{E}[Y]\\).\nOrtogonalidad: \\(\\mathbb{E}[(Y - \\hat{Y}) h(X)] = 0\\) para cualquier función integrable \\(h\\) medible con respecto a \\(\\mathcal{G}\\).\nVarianza Mínima: Para cualquier otro predictor \\(g(X)\\),\n\\[\n\\mathbb{E}[(Y - \\hat{Y})^2] \\leq \\mathbb{E}[(Y - g(X))^2].\n\\]\n\nDemostraciones:\n\nInsesgadez: Por la propiedad de torre, \\(\\mathbb{E}[\\mathbb{E}[Y|X]] = \\mathbb{E}[Y]\\).\nOrtogonalidad: Para cualquier \\(h\\) medible, \\(\\mathbb{E}[(Y - \\mathbb{E}[Y|X])h(X)] = 0\\) [@Durrett2019, Theorem 5.5.3].\nVarianza Mínima: Para cualquier \\(g(X)\\),\n\\[\n\\mathbb{E}\\left[(Y - g(X))^2\\right] = \\mathbb{E}\\left[(Y - \\mathbb{E}[Y|X])^2\\right] + \\mathbb{E}\\left[(\\mathbb{E}[Y|X] - g(X))^2\\right],\n\\]\npor lo que el mínimo se alcanza en \\(g = \\mathbb{E}[Y|X]\\).",
@@ -500,8 +500,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html#predicción-lineal",
-    "href": "psg01m47/es/20250414.html#predicción-lineal",
+    "objectID": "_chapters/es/20250414.html#predicción-lineal",
+    "href": "_chapters/es/20250414.html#predicción-lineal",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "6.3 Predicción Lineal",
     "text": "6.3 Predicción Lineal\nSupongamos que restringimos la atención a predictores lineales de la forma \\(g(X) = a + b X\\). Los coeficientes \\(a, b\\) que minimizan el error cuadrático medio son:\n\\[\nb^* = \\frac{\\text{Cov}(X, Y)}{\\text{Var}(X)}, \\quad a^* = \\mathbb{E}[Y] - b^* \\mathbb{E}[X],\n\\]\nsiempre que \\(\\text{Var}(X) &gt; 0\\). Por tanto, el mejor predictor lineal es\n\\[\n\\hat{Y}_L = \\mathbb{E}[Y] + \\frac{\\text{Cov}(X, Y)}{\\text{Var}(X)} (X - \\mathbb{E}[X]).\n\\]\nDemostración: Sea \\(g(X) = a + bX\\); expandir \\(\\mathbb{E}[(Y - (a + bX))^2]\\), establecer las derivadas con respecto a \\(a\\) y \\(b\\) igual a cero, y resolver para los \\(a\\) y \\(b\\) que minimizan.\n\n6.3.1 Caso Especial: Normal Bivariado\nSi \\((X, Y) \\sim N_2(\\mu_X, \\mu_Y, \\sigma_X^2, \\sigma_Y^2, \\rho)\\), entonces \\(\\mathbb{E}[Y|X]\\) es afín en \\(X\\), por lo que el mejor predictor lineal iguala la esperanza condicional:\n\\[\n\\mathbb{E}[Y|X] = \\mu_Y + \\rho \\frac{\\sigma_Y}{\\sigma_X}(X - \\mu_X).\n\\]\nPor tanto, el mejor predictor lineal y el mejor predictor general (sin restricciones) coinciden para la normal bivariada [@LehmannCasella1998].",
@@ -510,8 +510,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html#aplicaciones",
-    "href": "psg01m47/es/20250414.html#aplicaciones",
+    "objectID": "_chapters/es/20250414.html#aplicaciones",
+    "href": "_chapters/es/20250414.html#aplicaciones",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "6.4 Aplicaciones",
     "text": "6.4 Aplicaciones\n\n6.4.1 Análisis de Regresión\nLa regresión estudia la relación entre una variable dependiente \\(Y\\) y variables independientes \\(X\\), con la esperanza condicional \\(\\mathbb{E}[Y|X]\\) como objetivo de estimación. Ejemplo: Supongamos \\(Y = \\beta_0 + \\beta_1 X + \\varepsilon\\) con \\(\\varepsilon \\sim N(0, \\sigma^2)\\), independiente de \\(X\\). Dadas las observaciones \\((X_1, Y_1), \\ldots, (X_n, Y_n)\\), el estimador de mínimos cuadrados ordinarios \\(\\hat{Y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_i\\) proporciona predicciones para \\(Y\\) dado \\(X\\). Los intervalos de predicción se siguen de la distribución normal condicional [@Hamilton1994].\n\n\n6.4.2 Pronóstico de Series de Tiempo\nPara una serie de tiempo estacionaria \\({X_t}\\), la predicción de \\(X_{t+h}\\) dado \\(\\mathcal{F}_t = \\sigma(X_1, \\ldots, X_t)\\) es \\(\\mathbb{E}[X_{t+h} | \\mathcal{F}_t]\\). Ejemplo: En el modelo AR(1), \\(X_{t+1} = \\phi X_t + \\varepsilon_{t+1}\\) con \\(\\varepsilon_{t+1} \\sim N(0, \\sigma^2)\\),\n\\[\n\\mathbb{E}[X_{t+1}|X_t] = \\phi X_t.\n\\]\nLa varianza del error de pronóstico es \\(\\text{Var}(X_{t+1} - \\phi X_t) = \\sigma^2\\). Los intervalos de predicción se derivan de la distribución normal condicional [@Hamilton1994].\n\n\n6.4.3 Aprendizaje Automático\nEn aprendizaje supervisado, los algoritmos buscan aproximar \\(\\mathbb{E}[Y|X]\\) usando datos. Ejemplo: Una red neuronal de alimentación hacia adelante \\(f_\\theta(X)\\) se entrena minimizando el error cuadrático medio empírico sobre muestras \\((X_i, Y_i)\\). Después del entrenamiento, \\(f_\\theta(X)\\) aproxima la esperanza condicional \\(\\mathbb{E}[Y|X]\\). Los métodos de ensamble, como los bosques aleatorios, combinan múltiples predictores para mejorar la precisión de estimación [@HastieTibshiraniFriedman2009].",
@@ -520,8 +520,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250414.html#ejercicios",
-    "href": "psg01m47/es/20250414.html#ejercicios",
+    "objectID": "_chapters/es/20250414.html#ejercicios",
+    "href": "_chapters/es/20250414.html#ejercicios",
     "title": "6  Distribuciones Condicionales y Predicción",
     "section": "6.5 Ejercicios",
     "text": "6.5 Ejercicios\n\nEsperanza Condicional (Demostración): Demostrar que \\(\\mathbb{E}[(Y - \\mathbb{E}[Y|X]) h(X)] = 0\\) para cualquier función integrable \\(h(X)\\).\nPredictor Lineal (Cálculo): Sean \\(X\\) e \\(Y\\) con distribución conjunta: \\(\\mathbb{E}[X] = 2\\), \\(\\mathbb{E}[Y] = 5\\), \\(\\text{Cov}(X, Y) = 3\\), \\(\\text{Var}(X) = 4\\). Calcular el mejor predictor lineal de \\(Y\\) dado \\(X\\).\nSeries de Tiempo (Aplicación): Para el modelo AR(1) \\(X_{t+1} = 0.7 X_t + \\varepsilon_{t+1}\\), \\(\\varepsilon_{t+1} \\sim N(0, 1)\\), calcular \\(\\mathbb{E}[X_{t+2} | X_t]\\).\nAprendizaje Automático (Interpretación): Supongamos que una red neuronal produce \\(\\hat{Y} = f_\\theta(X)\\). Explicar bajo qué condiciones \\(f_\\theta(X)\\) aproxima \\(\\mathbb{E}[Y|X]\\) y cómo esto se relaciona con la optimalidad de predicción.",
@@ -530,8 +530,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250421.html",
-    "href": "psg01m47/es/20250421.html",
+    "objectID": "_chapters/es/20250421.html",
+    "href": "_chapters/es/20250421.html",
     "title": "7  Ley de los Grandes Números y Teorema Central del Límite",
     "section": "",
     "text": "7.1 Ley de los Grandes Números\nLa Ley de los Grandes Números (LGN) es un resultado fundamental en la teoría de probabilidades, que captura la estabilización de las medias muestrales alrededor del valor esperado a medida que aumenta el número de ensayos. Para proceder rigurosamente, clarificamos la terminología subyacente y establecemos definiciones precisas de los modos de convergencia.\nDefinición (Variables Aleatorias Independientes e Idénticamente Distribuidas) Una sucesión \\({X_i}_{i \\in \\mathbb{N}}\\) es independiente e idénticamente distribuida (iid) si:\nDefinición (Convergencia en Probabilidad) Una sucesión de variables aleatorias \\(Y_n\\) converge en probabilidad a \\(Y\\) si para todo \\(\\varepsilon &gt; 0\\),\n\\[\n\\lim_{n \\to \\infty} P(|Y_n - Y| &gt; \\varepsilon) = 0.\n\\]\nDefinición (Convergencia Casi Segura) \\(Y_n\\) converge casi seguramente (c.s.) a \\(Y\\) si\n\\[\nP\\left(\\lim_{n \\to \\infty} Y_n = Y\\right) = 1.\n\\]\nSea \\({X_i}_{i \\in \\mathbb{N}}\\) variables aleatorias iid con media \\(\\mu = E[X_1]\\) y varianza finita \\(\\sigma^2 = \\operatorname{Var}(X_1) &lt; \\infty\\). La media muestral es\n\\[\n\\bar{X}_n = \\frac{1}{n} \\sum_{i=1}^{n} X_i.\n\\]\nTeorema (Ley Débil de los Grandes Números) \\(\\bar{X}_n\\) converge en probabilidad a \\(\\mu\\):\n\\[\n\\bar{X}_n \\xrightarrow{p} \\mu.\n\\]\nDemostración. Por la desigualdad de Chebyshev:\n\\[\nP(|\\bar{X}_n - \\mu| &gt; \\varepsilon) \\leq \\frac{\\operatorname{Var}(\\bar{X}_n)}{\\varepsilon^2} = \\frac{\\sigma^2}{n\\varepsilon^2} \\to 0 \\text{ cuando } n \\to \\infty.\n\\]\nPor tanto, \\(\\bar{X}_n\\) converge en probabilidad a \\(\\mu\\). \\(\\quad\\blacksquare\\)\nTeorema (Ley Fuerte de los Grandes Números) \\(\\bar{X}_n\\) converge casi seguramente a \\(\\mu\\):\n\\[\nP\\left(\\lim_{n \\to \\infty} \\bar{X}_n = \\mu\\right) = 1.\n\\]\nEsbozo de Demostración. La demostración, debida a Kolmogorov, aprovecha el lema de Borel-Cantelli y las propiedades de secuencias iid con varianza finita. La convergencia casi segura es estrictamente más fuerte que la convergencia en probabilidad; véase [@Billingsley1995, §22] para una exposición detallada. \\(\\quad\\blacksquare\\)\nEjemplo Sea \\(X_i\\) el resultado del \\(i\\)-ésimo lanzamiento de una moneda equilibrada (\\(X_i = 1\\) para cara, \\(0\\) para cruz). Entonces \\(E[X_i] = 0.5\\), \\(\\operatorname{Var}(X_i) = 0.25\\). Por la Ley Fuerte de los Grandes Números,\n\\[\nP\\left(\\lim_{n \\to \\infty} \\bar{X}_n = 0.5\\right) = 1,\n\\]\ndonde \\(\\bar{X}_n\\) es la fracción de caras en \\(n\\) lanzamientos.",
@@ -540,8 +540,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250421.html#ley-de-los-grandes-números",
-    "href": "psg01m47/es/20250421.html#ley-de-los-grandes-números",
+    "objectID": "_chapters/es/20250421.html#ley-de-los-grandes-números",
+    "href": "_chapters/es/20250421.html#ley-de-los-grandes-números",
     "title": "7  Ley de los Grandes Números y Teorema Central del Límite",
     "section": "",
     "text": "Cada \\(X_i\\) es una variable aleatoria definida en el mismo espacio de probabilidad \\((\\Omega, \\mathcal{F}, P)\\).\n\\(P(X_i \\leq x) = F(x)\\) para todo \\(i\\) y todo \\(x \\in \\mathbb{R}\\) (distribución idéntica).\nPara cualquier subconjunto finito \\({i_1,\\dots,i_k}\\), las variables \\(X_{i_1},\\dots,X_{i_k}\\) son independientes.\n\n\n\n\n\n\n\n\n\n\n\n\\(E[\\bar{X}_n] = \\mu\\)\n\\(\\operatorname{Var}(\\bar{X}_n) = \\frac{\\sigma^2}{n}\\) Así, para \\(\\varepsilon &gt; 0\\),",
@@ -550,8 +550,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250421.html#teorema-central-del-límite",
-    "href": "psg01m47/es/20250421.html#teorema-central-del-límite",
+    "objectID": "_chapters/es/20250421.html#teorema-central-del-límite",
+    "href": "_chapters/es/20250421.html#teorema-central-del-límite",
     "title": "7  Ley de los Grandes Números y Teorema Central del Límite",
     "section": "7.2 Teorema Central del Límite",
     "text": "7.2 Teorema Central del Límite\nEl Teorema Central del Límite (TCL) describe la emergencia universal de la distribución normal en sumas de variables aleatorias iid, independientemente de la distribución original (bajo condiciones suaves).\nDefinición (Estandarización) Dadas variables aleatorias iid \\({X_i}_{i \\in \\mathbb{N}}\\) con media \\(\\mu\\) y varianza \\(\\sigma^2 &gt; 0\\), definimos\n\\[\nZ_n = \\frac{\\sum_{i=1}^n X_i - n\\mu}{\\sigma \\sqrt{n}}.\n\\]\nTeorema (Teorema Central del Límite) Cuando \\(n \\to \\infty\\), \\(Z_n\\) converge en distribución a una variable aleatoria normal estándar:\n\\[\nZ_n \\xrightarrow{d} N(0,1),\n\\]\nes decir,\n\\[\n\\lim_{n \\to \\infty} P(Z_n \\leq z) = \\Phi(z),\n\\]\ndonde \\(\\Phi(z)\\) es la función de distribución acumulada de \\(N(0,1)\\).\nDemostración (Enfoque de Función Característica). Sea \\(\\varphi_{X}(t) = E[e^{itX}]\\) la función característica de \\(X_i\\). La función característica de \\(Z_n\\) es\n\\[\n\\varphi_{Z_n}(t) = \\left[\\varphi_X\\left(\\frac{t}{\\sigma \\sqrt{n}}\\right)\\right]^n e^{-it\\frac{n\\mu}{\\sigma \\sqrt{n}}}.\n\\]\nUna expansión de Taylor y la independencia producen\n\\[\n\\lim_{n \\to \\infty} \\varphi_{Z_n}(t) = e^{-t^2/2},\n\\]\nque es la función característica de \\(N(0,1)\\). Así, por el teorema de continuidad de Lévy, \\(Z_n \\xrightarrow{d} N(0,1)\\). Para una demostración completa, véase [@Durrett2019, §2.5]. \\(\\quad\\blacksquare\\)\nEjemplo Supongamos que \\(X_i\\) son iid con \\(E[X_i]=2\\), \\(\\operatorname{Var}(X_i)=9\\). Para \\(n=100\\),\n\\[\nZ_{100} = \\frac{\\sum_{i=1}^{100} X_i - 200}{30}.\n\\]\nSegún el TCL, \\(Z_{100}\\) está aproximadamente distribuida como \\(N(0,1)\\), incluso si las \\(X_i\\) no son normales. Una simulación con \\(X_i\\) no normales (por ejemplo, Bernoulli o Poisson) mostrará empíricamente la convergencia a la curva de campana a medida que \\(n\\) aumenta.",
@@ -560,8 +560,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250421.html#aproximaciones-del-teorema-central-del-límite",
-    "href": "psg01m47/es/20250421.html#aproximaciones-del-teorema-central-del-límite",
+    "objectID": "_chapters/es/20250421.html#aproximaciones-del-teorema-central-del-límite",
+    "href": "_chapters/es/20250421.html#aproximaciones-del-teorema-central-del-límite",
     "title": "7  Ley de los Grandes Números y Teorema Central del Límite",
     "section": "7.3 Aproximaciones del Teorema Central del Límite",
     "text": "7.3 Aproximaciones del Teorema Central del Límite\nEl TCL proporciona justificación rigurosa para aproximaciones normales a distribuciones discretas bajo regímenes de parámetros apropiados. Los siguientes resultados se usan ampliamente en inferencia estadística y probabilidad combinatoria.\nAproximación Binomial-a-Normal Sea \\(X \\sim \\operatorname{Bin}(n, p)\\). Si \\(n\\) es grande, \\(np &gt; 5\\), y \\(n(1-p) &gt; 5\\):\n\\[\nX \\approx N\\left(np, np(1-p)\\right).\n\\]\nJustificación: Estos criterios aseguran que la asimetría es suficientemente pequeña y que la distribución discreta está bien aproximada por la normal continua [@Feller1968, §7.1].\nAproximación Poisson-a-Normal Si \\(X \\sim \\operatorname{Poisson}(\\lambda)\\), entonces para \\(\\lambda\\) grande (por ejemplo, \\(\\lambda &gt; 10\\)),\n\\[\nX \\approx N(\\lambda, \\lambda).\n\\]\nJustificación: A medida que \\(\\lambda\\) aumenta, la distribución de Poisson se vuelve cada vez más simétrica y similar a la normal [@Durrett2019, §2.7].\nEjercicio\n\nAproximación Normal: Sea \\(X \\sim \\operatorname{Bin}(200, 0.1)\\).\n\nUse el TCL para aproximar \\(P(15 \\leq X \\leq 25)\\).\nCompare el resultado con la probabilidad binomial exacta.",
@@ -570,8 +570,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html",
-    "href": "psg01m47/es/20250425.html",
+    "objectID": "_chapters/es/20250425.html",
+    "href": "_chapters/es/20250425.html",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "",
     "text": "8.1 Definición Formal de Procesos Estocásticos\nSea \\((\\Omega, \\mathcal{F}, P)\\) un espacio de probabilidad, donde \\(\\Omega\\) es el espacio muestral, \\(\\mathcal{F}\\) es una \\(\\sigma\\)-álgebra de eventos, y \\(P\\) es una medida de probabilidad. Un proceso estocástico es una colección \\({X_t : t \\in T}\\) de variables aleatorias \\(X_t: \\Omega \\to S\\), indexadas por un conjunto \\(T\\) (frecuentemente \\(\\mathbb{N}\\) o \\(\\mathbb{R}_+\\)), donde \\(S\\) es un espacio medible. Para cada \\(t \\in T\\) fijo, \\(X_t\\) es una función medible, y para cada \\(\\omega \\in \\Omega\\) fijo, el mapeo \\(t \\mapsto X_t(\\omega)\\) se llama una trayectoria muestral o trayectoria del proceso [@Billingsley1995; @Durrett2019].",
@@ -580,8 +580,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html#el-proceso-de-bernoulli",
-    "href": "psg01m47/es/20250425.html#el-proceso-de-bernoulli",
+    "objectID": "_chapters/es/20250425.html#el-proceso-de-bernoulli",
+    "href": "_chapters/es/20250425.html#el-proceso-de-bernoulli",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "8.2 El Proceso de Bernoulli",
     "text": "8.2 El Proceso de Bernoulli\nUn proceso de Bernoulli es un proceso estocástico prototípico de tiempo discreto que modela secuencias de ensayos binarios independientes (éxito/fracaso).\n\n8.2.1 Construcción Rigurosa\nSea \\((\\Omega, \\mathcal{F}, P)\\) un espacio de probabilidad. Un proceso de Bernoulli con parámetro \\(p \\in (0,1)\\) es una secuencia infinita de variables aleatorias independientes e idénticamente distribuidas \\({X_n}_{n \\in \\mathbb{N}}\\), donde para cada \\(n\\),\n\\[\nP(X_n = 1) = p, \\qquad P(X_n = 0) = 1-p,\n\\]\ny todas las \\(X_n\\) son independientes.\n\nEspacio muestral: \\(\\Omega = {0,1}^{\\mathbb{N}}\\), cada \\(\\omega \\in \\Omega\\) es una secuencia binaria infinita.\nSigma-álgebra: \\(\\mathcal{F}\\) es la \\(\\sigma\\)-álgebra producto en \\(\\Omega\\).\nMedida de probabilidad: \\(P\\) es la medida producto que asigna \\(P(X_n=1)=p\\), \\(P(X_n=0)=1-p\\) independientemente para todo \\(n\\).\n\n\n\n8.2.2 Distribución Conjunta\nPara cualquier \\(n\\in\\mathbb{N}\\) y cualquier \\((x_1,\\ldots,x_n)\\in{0,1}^n\\),\n\\[\nP(X_1=x_1,\\ldots,X_n=x_n) = p^{\\sum_{i=1}^n x_i}(1-p)^{n-\\sum_{i=1}^n x_i}.\n\\]\nDemostración: Por independencia y distribución idéntica, \\(P(X_i = x_i) = p\\) si \\(x_i=1\\), \\(1-p\\) si \\(x_i=0\\); el producto sobre \\(i\\) produce el resultado [@Durrett2019].",
@@ -590,8 +590,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html#variables-aleatorias-asociadas",
-    "href": "psg01m47/es/20250425.html#variables-aleatorias-asociadas",
+    "objectID": "_chapters/es/20250425.html#variables-aleatorias-asociadas",
+    "href": "_chapters/es/20250425.html#variables-aleatorias-asociadas",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "8.3 Variables Aleatorias Asociadas",
     "text": "8.3 Variables Aleatorias Asociadas\n\n8.3.1 Número Total de Éxitos en \\(n\\) Ensayos\nDefinamos\n\\[\nS_n = \\sum_{i=1}^n X_i.\n\\]\nEntonces \\(S_n\\) es el número total de éxitos en los primeros \\(n\\) ensayos.\nTeorema: \\(S_n \\sim \\operatorname{Binomial}(n,p)\\).\nDemostración: \\(S_n\\) es la suma de \\(n\\) variables aleatorias Bernoulli\\((p)\\) independientes. Para \\(k=0,1,\\ldots,n\\),\n\\[\nP(S_n = k) = \\binom{n}{k} p^k (1-p)^{n-k}.\n\\]\nEsto se sigue de la enumeración combinatoria de secuencias con \\(k\\) éxitos y \\(n-k\\) fracasos [@Billingsley1995].\n\n\n8.3.2 Tiempo de Espera para el Primer Éxito\nSea\n\\[\nT = \\min \\{ n \\geq 1 : X_n = 1 \\}\n\\]\nel tiempo de espera hasta el primer éxito.\nProposición: \\(T\\) es una variable aleatoria geométrica con parámetro \\(p\\):\n\\[\nP(T = n) = (1-p)^{n-1}p, \\quad n=1,2,\\ldots\n\\]\nDemostración: Los primeros \\(n-1\\) ensayos son fracasos (\\(X_1=0,\\ldots,X_{n-1}=0\\)), el \\(n\\)-ésimo ensayo es un éxito (\\(X_n=1\\)). Por independencia,\n\\[\nP(T = n) = (1-p)^{n-1}p.\n\\]\n[@Durrett2019]\nPropiedad de Falta de Memoria: Para \\(m, n \\in \\mathbb{N}\\),\n\\[\nP(T &gt; m + n \\mid T &gt; n) = P(T &gt; m).\n\\]\nDemostración: Por la definición de independencia,\n\\[\nP(T &gt; n) = (1-p)^n.\n\\]\nPor tanto,\n\\[\nP(T &gt; m + n \\mid T &gt; n) = \\frac{P(T &gt; m + n)}{P(T &gt; n)} = \\frac{(1-p)^{m+n}}{(1-p)^n} = (1-p)^m = P(T &gt; m).\n\\]\n\n\n8.3.3 Tiempo de Espera para el \\(k\\)-ésimo Éxito\nSea \\(T_k\\) el ensayo en el que ocurre el \\(k\\)-ésimo éxito.\nTeorema: \\(T_k\\) sigue la distribución binomial negativa:\n\\[\nP(T_k = t) = \\binom{t-1}{k-1} p^k (1-p)^{t-k}, \\quad t = k, k+1, \\ldots\n\\]\nDemostración: Esta es la probabilidad de que en \\(t-1\\) ensayos, haya exactamente \\(k-1\\) éxitos (en cualquier orden), y el \\(t\\)-ésimo ensayo sea un éxito. Ver [@Billingsley1995].\nAdemás, \\(T_k\\) es la suma de \\(k\\) variables aleatorias geométrica\\((p)\\) independientes [@Durrett2019].",
@@ -600,8 +600,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html#propiedades-clave",
-    "href": "psg01m47/es/20250425.html#propiedades-clave",
+    "objectID": "_chapters/es/20250425.html#propiedades-clave",
+    "href": "_chapters/es/20250425.html#propiedades-clave",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "8.4 Propiedades Clave",
     "text": "8.4 Propiedades Clave\n\nIndependencia: La secuencia \\({X_n}\\) es independiente por construcción.\nEstacionaridad del Proceso: Los incrementos \\(S_{n+m} - S_n\\) son binomiales con parámetros \\((m,p)\\) y son independientes de \\(S_n\\), reflejando la falta de memoria en el proceso.\nPropiedad de Falta de Memoria: El tiempo de espera geométrico \\(T\\) para el primer éxito satisface \\(P(T &gt; m + n \\mid T &gt; n) = P(T &gt; m)\\).\nTerminología Estándar: La propiedad se llama universalmente la propiedad de falta de memoria, no “memoria corta” [@Durrett2019].",
@@ -610,8 +610,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html#conexiones-con-otras-distribuciones",
-    "href": "psg01m47/es/20250425.html#conexiones-con-otras-distribuciones",
+    "objectID": "_chapters/es/20250425.html#conexiones-con-otras-distribuciones",
+    "href": "_chapters/es/20250425.html#conexiones-con-otras-distribuciones",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "8.5 Conexiones con Otras Distribuciones",
     "text": "8.5 Conexiones con Otras Distribuciones\n\n8.5.1 Aproximación de Poisson a la Binomial\nCuando \\(n\\) es grande y \\(p\\) es pequeño con \\(\\lambda = np\\) fijo, la distribución binomial se aproxima a la distribución de Poisson:\n\\[\n\\lim_{n \\to \\infty,\\,p \\to 0,\\,np=\\lambda} \\binom{n}{k} p^k (1-p)^{n-k} = \\frac{e^{-\\lambda} \\lambda^k}{k!}.\n\\]\nEsta es la ley de eventos raros [@Billingsley1995, §19].\nNota: Las cotas de error y tasas de convergencia se pueden encontrar en [@LeCam1960].\n\n\n8.5.2 Generalización Multinomial\nSi cada ensayo admite \\(r&gt;2\\) resultados posibles con probabilidades constantes \\(p_1, \\ldots, p_r\\), el vector \\((N_1,\\ldots,N_r)\\), donde \\(N_i\\) cuenta las ocurrencias del resultado \\(i\\) en \\(n\\) ensayos, sigue la distribución multinomial:\n\\[\nP(N_1 = n_1, \\ldots, N_r = n_r) = \\frac{n!}{n_1! \\cdots n_r!} p_1^{n_1} \\cdots p_r^{n_r}, \\qquad \\sum_{i=1}^r n_i = n.\n\\]\nEsta es una generalización directa del modelo binomial [@Durrett2019].\nEjemplo: Supongamos que una línea de producción produce artículos con probabilidad de defecto independiente \\(p=0.02\\). Si se verifican \\(n=100\\) artículos:\n\nLa probabilidad de exactamente \\(k=3\\) artículos defectuosos es\n\\[\nP(S_{100} = 3) = \\binom{100}{3} (0.02)^3 (0.98)^{97} \\approx 0.180.\n\\]\nLa probabilidad de que el primer defecto aparezca en el artículo 15:\n\\[\nP(T = 15) = (0.98)^{14} (0.02) \\approx 0.0148.\n\\]",
@@ -620,8 +620,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250425.html#ejercicios",
-    "href": "psg01m47/es/20250425.html#ejercicios",
+    "objectID": "_chapters/es/20250425.html#ejercicios",
+    "href": "_chapters/es/20250425.html#ejercicios",
     "title": "8  El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones",
     "section": "8.6 Ejercicios",
     "text": "8.6 Ejercicios\n\n(Construcción Rigurosa) Construir explícitamente un espacio de probabilidad y definir las variables aleatorias coordenadas para modelar un proceso de Bernoulli con parámetro \\(p\\).\n(Binomial Negativa) Demostrar que la suma de \\(k\\) variables aleatorias geométrica\\((p)\\) independientes tiene la distribución binomial negativa con parámetros \\((k, p)\\).\n(Aproximación de Poisson) Para \\(n=500\\), \\(p=0.006\\), calcular \\(P(S_{n}=3)\\) exactamente y aproximar con Poisson; discutir la precisión.",
@@ -630,8 +630,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html",
-    "href": "psg01m47/es/20250428.html",
+    "objectID": "_chapters/es/20250428.html",
+    "href": "_chapters/es/20250428.html",
     "title": "9  Procesos de Poisson",
     "section": "",
     "text": "9.1 Definición y Propiedades Fundamentales\nUn proceso de Poisson \\({N(t): t \\geq 0}\\) con tasa \\(\\lambda &gt; 0\\) es un proceso estocástico con valores en \\(\\mathbb{Z}_{\\geq 0}\\) que satisface los siguientes axiomas [@Kingman1993; @Ross2019]:\nObservación. Estas condiciones implican que para todo \\(t \\geq 0\\),\n\\[\nP(N(t) = n) = \\frac{(\\lambda t)^n}{n!} e^{-\\lambda t}, \\quad n = 0, 1, 2, \\ldots\n\\]\ny que \\(N(t)\\) tiene incrementos estacionarios e independientes.",
@@ -640,8 +640,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#definición-y-propiedades-fundamentales",
-    "href": "psg01m47/es/20250428.html#definición-y-propiedades-fundamentales",
+    "objectID": "_chapters/es/20250428.html#definición-y-propiedades-fundamentales",
+    "href": "_chapters/es/20250428.html#definición-y-propiedades-fundamentales",
     "title": "9  Procesos de Poisson",
     "section": "",
     "text": "Valor inicial: \\(N(0) = 0\\).\nIncrementos independientes: Para cualquier \\(0 \\leq t_0 &lt; t_1 &lt; \\cdots &lt; t_k\\), las variables aleatorias \\(N(t_1) - N(t_0), \\ldots, N(t_k) - N(t_{k-1})\\) son independientes.\nIncrementos estacionarios: Para todo \\(s, t \\geq 0\\), la distribución de \\(N(t+s) - N(s)\\) depende solo de \\(t\\).\nDistribución de incrementos: Para \\(h &gt; 0\\) pequeño,\n\\[\nP(N(h) = 1) = \\lambda h + o(h), \\quad P(N(h) \\geq 2) = o(h)\n\\]\ndonde \\(o(h)/h \\to 0\\) cuando \\(h \\to 0\\).\n\n\n\n\n\n9.1.1 Demostración Formal de la Ley de Distribución de Poisson\nEsbozo: Sea \\(N(0) = 0\\), y dividamos \\([0, t]\\) en \\(n\\) subintervalos de longitud \\(h = t/n\\). La probabilidad de que cada subintervalo contenga a lo más un evento y que \\(k\\) intervalos contengan exactamente un evento puede mostrarse (usando el límite cuando \\(n \\to \\infty\\) y las propiedades anteriores) que converge a la ley de Poisson. Ver [@Billingsley1995, Ch. 6] para una demostración completa.\n\n\n9.1.2 Valores Enteros\nPor construcción, \\(N(t)\\) cuenta el número de eventos hasta el tiempo \\(t\\) y es siempre un entero no negativo.",
@@ -650,8 +650,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#tiempos-entre-llegadas-y-la-ley-exponencial",
-    "href": "psg01m47/es/20250428.html#tiempos-entre-llegadas-y-la-ley-exponencial",
+    "objectID": "_chapters/es/20250428.html#tiempos-entre-llegadas-y-la-ley-exponencial",
+    "href": "_chapters/es/20250428.html#tiempos-entre-llegadas-y-la-ley-exponencial",
     "title": "9  Procesos de Poisson",
     "section": "9.2 Tiempos entre Llegadas y la Ley Exponencial",
     "text": "9.2 Tiempos entre Llegadas y la Ley Exponencial\nSea \\(T_1\\) el tiempo hasta el primer evento. Para \\(t \\geq 0\\):\n\\[\nP(T_1 &gt; t) = P(N(t) = 0) = e^{-\\lambda t}.\n\\]\nPor tanto, el tiempo de espera \\(T_1\\) está distribuido exponencialmente con parámetro \\(\\lambda\\):\n\\[\nf_{T_1}(t) = \\lambda e^{-\\lambda t}, \\quad t \\geq 0.\n\\]\nEsta propiedad se extiende a todos los tiempos entre llegadas \\(T_{k+1} - T_k\\), que son variables aleatorias exponenciales independientes e idénticamente distribuidas con media \\(1/\\lambda\\).\n\n9.2.1 Demostración de la Propiedad de Falta de Memoria\nPara \\(s, t \\geq 0\\),\n\\[\nP(T_1 &gt; s + t \\mid T_1 &gt; s) = \\frac{P(T_1 &gt; s + t)}{P(T_1 &gt; s)} = \\frac{e^{-\\lambda(s+t)}}{e^{-\\lambda s}} = e^{-\\lambda t} = P(T_1 &gt; t),\n\\]\ndemostrando que la distribución exponencial carece de memoria [@Durrett2019].",
@@ -660,8 +660,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#proceso-de-poisson-compuesto",
-    "href": "psg01m47/es/20250428.html#proceso-de-poisson-compuesto",
+    "objectID": "_chapters/es/20250428.html#proceso-de-poisson-compuesto",
+    "href": "_chapters/es/20250428.html#proceso-de-poisson-compuesto",
     "title": "9  Procesos de Poisson",
     "section": "9.3 Proceso de Poisson Compuesto",
     "text": "9.3 Proceso de Poisson Compuesto\nSea \\({Y_i}_{i=1}^\\infty\\) una secuencia de variables aleatorias independientes e idénticamente distribuidas, independiente del proceso de Poisson \\({N(t)}\\). El proceso de Poisson compuesto se define por\n\\[\nX(t) = \\sum_{i=1}^{N(t)} Y_i, \\quad t \\geq 0.\n\\]\nSupuestos:\n\n\\(E|Y_1| &lt; \\infty\\) para cálculos de media/varianza.\n\nPropiedades:\n\n\\(E[X(t)] = \\lambda t \\, E[Y_1]\\)\n\\(\\operatorname{Var}(X(t)) = \\lambda t \\, E[Y_1^2]\\)\n\nSoporte: Para demostraciones y propiedades adicionales, ver [@Kingman1993], [@Billingsley1995, Sec. 22].",
@@ -670,8 +670,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#aplicaciones",
-    "href": "psg01m47/es/20250428.html#aplicaciones",
+    "objectID": "_chapters/es/20250428.html#aplicaciones",
+    "href": "_chapters/es/20250428.html#aplicaciones",
     "title": "9  Procesos de Poisson",
     "section": "9.4 Aplicaciones",
     "text": "9.4 Aplicaciones\n\n9.4.1 Teoría de Colas\nEn la cola M/M/1, las llegadas se modelan como un proceso de Poisson con tasa \\(\\lambda\\) y los tiempos de servicio están distribuidos exponencialmente. El proceso modela los conteos de llegadas \\(N(t)\\), el tiempo de espera para el próximo cliente, y las probabilidades de estado del sistema. Ver [@GrossHarris1998].\nEjemplo: Supongamos que las llegadas ocurren a tasa \\(\\lambda = 3\\) por minuto. La probabilidad de que exactamente \\(n\\) llegadas ocurran en \\(t = 2\\) minutos es\n\\[\nP(N(2) = n) = \\frac{(6)^n}{n!}e^{-6}.\n\\]\nEjemplo: Distribución del Tiempo de Espera. Sea \\(S_n\\) el tiempo de espera hasta la \\(n\\)-ésima llegada. La suma de \\(n\\) variables aleatorias exponenciales i.i.d. está distribuida gamma:\n\\[\nP(S_n \\leq t) = 1 - \\sum_{k=0}^{n-1} \\frac{(\\lambda t)^k}{k!} e^{-\\lambda t}, \\quad t \\geq 0.\n\\]\n\n\n9.4.2 Teoría de Confiabilidad\nPara procesos de Poisson homogéneos, las fallas de componentes independientes en sistemas complejos se modelan como eventos de Poisson. Los procesos de Poisson no homogéneos, con función de tasa \\(\\lambda(t)\\), se requieren para tasas de falla dependientes de la edad [@Ross2019, Ch. 5].\n\n\n9.4.3 Seguros y Riesgo\nEn matemáticas de seguros, las llegadas de reclamos se modelan como un proceso de Poisson; el tamaño total de reclamos sobre \\([0,t]\\) es una variable aleatoria de Poisson compuesta.",
@@ -680,8 +680,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#propiedades-avanzadas",
-    "href": "psg01m47/es/20250428.html#propiedades-avanzadas",
+    "objectID": "_chapters/es/20250428.html#propiedades-avanzadas",
+    "href": "_chapters/es/20250428.html#propiedades-avanzadas",
     "title": "9  Procesos de Poisson",
     "section": "9.5 Propiedades Avanzadas",
     "text": "9.5 Propiedades Avanzadas\n\n9.5.1 Teorema de Superposición\nEnunciado: Si \\(N_1(t)\\) y \\(N_2(t)\\) son procesos de Poisson independientes con tasas \\(\\lambda_1\\) y \\(\\lambda_2\\), entonces \\(N(t) = N_1(t) + N_2(t)\\) es un proceso de Poisson con tasa \\(\\lambda_1 + \\lambda_2\\) [@Kingman1993].\nDemostración: Se sigue de la convolución de distribuciones de Poisson independientes y la preservación de independencia y estacionaridad.\n\n\n9.5.2 Teorema de Adelgazamiento\nEnunciado: Si cada evento de un proceso de Poisson de tasa \\(\\lambda\\) se retiene independientemente con probabilidad \\(p\\) (es decir, cada evento se asigna una marca Bernoulli\\((p)\\) independiente), los eventos retenidos forman un proceso de Poisson con tasa \\(\\lambda p\\).\nDemostración: Para \\(h \\to 0\\), la probabilidad de que un evento ocurra y sea retenido en \\((t, t+h]\\) es \\(\\lambda h \\cdot p + o(h)\\); todas las propiedades del proceso de Poisson se preservan. Ver [@Kingman1993, Sec. 2.3].\nEjemplo: Confiabilidad del Sistema. Supongamos que las fallas de componentes de un sistema siguen un proceso de Poisson con tasa \\(\\lambda = 0.1\\) fallas/hora.\n\nProbabilidad de 2 fallas en 24 horas:\n\\[\nP(N(24) = 2) = \\frac{(0.1 \\times 24)^2}{2!} e^{-0.1 \\times 24} = \\frac{2.4^2}{2} e^{-2.4} \\approx 0.261\n\\]\nTiempo esperado hasta la primera falla:\n\\[\nE[T_1] = 1/\\lambda = 10 \\text{ horas}\n\\]\nEjemplo de Poisson Compuesto: Si el costo \\(Y_i\\) de cada falla es i.i.d. con $E[Y_1] = \\(500\\), el costo total esperado en \\(t = 24\\) horas es:\n\\[\nE[X(24)] = E[N(24)] \\, E[Y_1] = (0.1 \\times 24) \\times 500 = USD\\ 1,200\n\\]",
@@ -690,8 +690,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250428.html#ejercicios",
-    "href": "psg01m47/es/20250428.html#ejercicios",
+    "objectID": "_chapters/es/20250428.html#ejercicios",
+    "href": "_chapters/es/20250428.html#ejercicios",
     "title": "9  Procesos de Poisson",
     "section": "9.6 Ejercicios",
     "text": "9.6 Ejercicios\n\nDerivación de la Ley de Poisson: Demostrar que el único proceso de valores enteros con incrementos estacionarios e independientes, y \\(P(N(h) = 1) = \\lambda h + o(h)\\) cuando \\(h \\to 0\\), es el proceso de Poisson homogéneo.\nSimulación de Superposición: Simular dos procesos de Poisson independientes y verificar empíricamente el teorema de superposición.\nVarianza de Poisson Compuesto: Mostrar que \\(\\operatorname{Var}(X(t)) = \\lambda t \\, E[Y_1^2]\\) para un proceso de Poisson compuesto.",
@@ -700,8 +700,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html",
-    "href": "psg01m47/es/20250512.html",
+    "objectID": "_chapters/es/20250512.html",
+    "href": "_chapters/es/20250512.html",
     "title": "10  Procesos de Markov",
     "section": "",
     "text": "10.1 Introducción Conceptual\nUn proceso estocástico \\({X_t}_{t \\geq 0}\\) es una colección de variables aleatorias indexadas por tiempo \\(t\\) y definidas en un espacio de probabilidad común \\((\\Omega, \\mathcal{F}, P)\\). El proceso de Markov se distingue por la propiedad de Markov, que formaliza el concepto de falta de memoria: la evolución futura del proceso depende solo del estado presente, no de la trayectoria tomada para llegar allí.\nDefinición (Propiedad de Markov): Un proceso \\({X_t}_{t \\geq 0}\\) con espacio de estados \\(S\\) es un proceso de Markov si, para todos los tiempos \\(0 \\leq t_1 &lt; t_2 &lt; \\cdots &lt; t_n &lt; t\\) y estados \\(i_1, \\dots, i_n, i, j \\in S\\),\n\\[\nP(X_{t+s} = j \\mid X_t = i, X_{t_n} = i_n, \\dots, X_{t_1} = i_1) = P(X_{t+s} = j \\mid X_t = i).\n\\]\nUn proceso de Markov homogéneo (o cadena de Markov homogénea en el tiempo si el espacio de estados es discreto) es aquel donde las probabilidades de transición dependen solo del tiempo transcurrido, no del tiempo absoluto:\n\\[\np_{ij}(s) = P(X_{t+s} = j \\mid X_t = i), \\qquad \\forall t \\geq 0.\n\\]",
@@ -710,8 +710,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#matrices-de-transición",
-    "href": "psg01m47/es/20250512.html#matrices-de-transición",
+    "objectID": "_chapters/es/20250512.html#matrices-de-transición",
+    "href": "_chapters/es/20250512.html#matrices-de-transición",
     "title": "10  Procesos de Markov",
     "section": "10.2 Matrices de Transición",
     "text": "10.2 Matrices de Transición\nPara un espacio de estados finito \\(S = {1, 2, \\ldots, m}\\), el comportamiento de transición se describe por una matriz de transición \\(P(s) = (p_{ij}(s))\\) donde\n\\[\np_{ij}(s) = P(X_{t+s} = j \\mid X_t = i).\n\\]\nConvenciones comunes:\n\n\\(P\\) típicamente denota la matriz de transición de un paso: \\(P = P(1)\\).\n\\(P^n\\) denota la matriz de transición de \\(n\\) pasos, donde \\((P^n)_{ij} = P(X_{n} = j \\mid X_0 = i)\\).\n\nPropiedades:\n\nNo negatividad: \\(p_{ij}(s) \\geq 0\\) para todo \\(i,j,s\\).\nSumas de fila: \\(\\sum_{j=1}^m p_{ij}(s) = 1\\) para todo \\(i\\).\nDistribución inicial: Para una distribución inicial dada \\(\\mu\\) sobre \\(S\\), la distribución en el paso \\(n\\) es \\(\\mu P^n\\).",
@@ -720,8 +720,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#clasificación-de-estados-y-recurrencia",
-    "href": "psg01m47/es/20250512.html#clasificación-de-estados-y-recurrencia",
+    "objectID": "_chapters/es/20250512.html#clasificación-de-estados-y-recurrencia",
+    "href": "_chapters/es/20250512.html#clasificación-de-estados-y-recurrencia",
     "title": "10  Procesos de Markov",
     "section": "10.3 Clasificación de Estados y Recurrencia",
     "text": "10.3 Clasificación de Estados y Recurrencia\nLos estados de una cadena de Markov pueden clasificarse como:\n\nEstado recurrente: El estado \\(i\\) es recurrente si, partiendo de \\(i\\), el proceso regresa a \\(i\\) con probabilidad uno. Formalmente, sea \\(f_{ii} = P(\\text{regresar alguna vez a } i \\mid X_0 = i)\\); \\(i\\) es recurrente si \\(f_{ii} = 1\\).\nEstado transitorio: El estado \\(i\\) es transitorio si \\(f_{ii} &lt; 1\\); es decir, hay una probabilidad positiva de nunca regresar a \\(i\\).\nEstado absorbente: El estado \\(i\\) es absorbente si \\(p_{ii} = 1\\) y \\(p_{ij} = 0\\) para \\(j \\neq i\\); una vez ingresado, el proceso permanece en \\(i\\) para siempre.\n\nDefinición (Recurrencia Positiva): Un estado recurrente \\(i\\) es positivamente recurrente si el tiempo esperado de retorno \\(m_i = \\mathbb{E}[\\text{primer tiempo de retorno a } i \\mid X_0 = i]\\) es finito.\n\nLa existencia de una distribución estacionaria está íntimamente conectada con la presencia de estados positivamente recurrentes [@Durrett2019].",
@@ -730,8 +730,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#irreducibilidad-y-periodicidad",
-    "href": "psg01m47/es/20250512.html#irreducibilidad-y-periodicidad",
+    "objectID": "_chapters/es/20250512.html#irreducibilidad-y-periodicidad",
+    "href": "_chapters/es/20250512.html#irreducibilidad-y-periodicidad",
     "title": "10  Procesos de Markov",
     "section": "10.4 Irreducibilidad y Periodicidad",
     "text": "10.4 Irreducibilidad y Periodicidad\nDefinición (Irreducibilidad): Una cadena de Markov es irreducible si, para cualquier par de estados \\(i,j \\in S\\), existe \\(n\\) tal que \\(p_{ij}(n) &gt; 0\\). Es decir, cada estado es accesible desde cualquier otro estado en un número finito de pasos.\nDefinición (Periodicidad): Un estado \\(i\\) tiene período \\(d\\) si \\(d\\) es el máximo común divisor de todos los \\(n \\geq 1\\) tales que \\(p_{ii}(n) &gt; 0\\). La cadena es aperiódica si cada estado tiene período 1.",
@@ -740,8 +740,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#distribuciones-estacionarias",
-    "href": "psg01m47/es/20250512.html#distribuciones-estacionarias",
+    "objectID": "_chapters/es/20250512.html#distribuciones-estacionarias",
+    "href": "_chapters/es/20250512.html#distribuciones-estacionarias",
     "title": "10  Procesos de Markov",
     "section": "10.5 Distribuciones Estacionarias",
     "text": "10.5 Distribuciones Estacionarias\nUna distribución estacionaria (o medida invariante) \\(\\pi = (\\pi_1, \\ldots, \\pi_m)\\) es un vector de probabilidad que satisface\n\\[\n\\pi P = \\pi,\n\\]\ndonde \\(\\pi_j \\geq 0\\) y \\(\\sum_j \\pi_j = 1\\). Intuitivamente, si la distribución inicial es \\(\\pi\\), entonces la distribución permanece sin cambios en todos los tiempos futuros.\n\n10.5.1 Teorema de Existencia y Unicidad\nTeorema (Perron–Frobenius; Estacionaridad y Recurrencia Positiva): Para una cadena de Markov irreducible con espacio de estados finito:\n\nExiste una distribución estacionaria única \\(\\pi\\) si y solo si todos los estados son positivamente recurrentes.\nLa distribución estacionaria satisface \\(\\pi_j = \\frac{1}{\\mathbb{E}[\\text{tiempo de retorno a } j \\mid X_0 = j]}\\).\n\nEsbozo de demostración: Ver [@Durrett2019, Ch. 1]; la demostración se basa en irreducibilidad, clasificación de recurrencia, y propiedades de valores propios de matrices estocásticas.",
@@ -750,8 +750,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#ergodicidad-y-convergencia",
-    "href": "psg01m47/es/20250512.html#ergodicidad-y-convergencia",
+    "objectID": "_chapters/es/20250512.html#ergodicidad-y-convergencia",
+    "href": "_chapters/es/20250512.html#ergodicidad-y-convergencia",
     "title": "10  Procesos de Markov",
     "section": "10.6 Ergodicidad y Convergencia",
     "text": "10.6 Ergodicidad y Convergencia\nDefinición (Ergodicidad): Una cadena de Markov es ergódica si es irreducible, aperiódica y positivamente recurrente. En este caso, para todo \\(i,j \\in S\\),\n\\[\n\\lim_{n \\to \\infty} p_{ij}(n) = \\pi_j,\n\\]\ndonde \\(\\pi\\) es la distribución estacionaria única [@Billingsley1995].",
@@ -760,8 +760,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#ecuación-de-chapmankolmogorov",
-    "href": "psg01m47/es/20250512.html#ecuación-de-chapmankolmogorov",
+    "objectID": "_chapters/es/20250512.html#ecuación-de-chapmankolmogorov",
+    "href": "_chapters/es/20250512.html#ecuación-de-chapmankolmogorov",
     "title": "10  Procesos de Markov",
     "section": "10.7 Ecuación de Chapman–Kolmogorov",
     "text": "10.7 Ecuación de Chapman–Kolmogorov\nTeorema (Ecuación de Chapman–Kolmogorov): Para todo \\(m, n \\geq 0\\) y \\(i,j \\in S\\),\n\\[\np_{ij}(m+n) = \\sum_{k \\in S} p_{ik}(m) p_{kj}(n).\n\\]\nDemostración: Por la ley de probabilidad total y la propiedad de Markov,\n\\[\np_{ij}(m+n) = P(X_{m+n} = j \\mid X_0 = i) = \\sum_{k \\in S} P(X_{m+n} = j, X_m = k \\mid X_0 = i) = \\sum_{k \\in S} p_{ik}(m) p_{kj}(n).\n\\]",
@@ -770,8 +770,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#reversibilidad",
-    "href": "psg01m47/es/20250512.html#reversibilidad",
+    "objectID": "_chapters/es/20250512.html#reversibilidad",
+    "href": "_chapters/es/20250512.html#reversibilidad",
     "title": "10  Procesos de Markov",
     "section": "10.8 Reversibilidad",
     "text": "10.8 Reversibilidad\nUna distribución \\(\\nu\\) es reversible para una cadena de Markov con matriz de transición \\(P\\) si satisface las ecuaciones de balance detallado:\n\\[\n\\nu_i p_{ij} = \\nu_j p_{ji}, \\quad \\forall i,j \\in S.\n\\]\nSi tal \\(\\nu\\) existe, es estacionaria, pero no toda distribución estacionaria es reversible.\nObservación: Para verificar reversibilidad, resolver las ecuaciones de balance detallado. Para métodos generales, ver [@LevinPeres2017].\nEjemplo Avanzado\nEjemplo: Considerar una cadena de Markov con espacio de estados \\(S = {1,2,3,4}\\) y matriz de transición\n\\[\nP = \\begin{pmatrix}\n0.1 & 0.3 & 0.4 & 0.2 \\\\\n0.3 & 0.2 & 0.4 & 0.1 \\\\\n0.2 & 0.3 & 0.4 & 0.1 \\\\\n0 & 0 & 0 & 1\n\\end{pmatrix}.\n\\]\n\nEl estado 4 es absorbente.\n¿Es la cadena irreducible? No; el estado 4 no puede abandonarse, por lo que la cadena no es irreducible.\n\nProbabilidad de Absorción en Tres Pasos: Calcular \\(P(X_3 = 4 \\mid X_0 = 1)\\).\nPrimero, calcular \\(P^3 = P \\cdot P \\cdot P\\) y extraer la entrada \\((1,4)\\):\n\n\\(P^1 = P\\).\n\\(P^2 = P \\cdot P\\).\n\\(P^3 = P^2 \\cdot P\\).\n\nAlternativamente, enumerar todas las trayectorias de tres pasos de 1 a 4:\nSea \\(A = {1,2,3}\\) (estados no absorbentes).\n\nTrayectoria 1: \\(1 \\rightarrow i \\rightarrow j \\rightarrow 4\\), \\(i,j \\in A\\).\n\\(P(X_3=4 \\mid X_0=1) = \\sum_{i \\in A} p_{1i} \\sum_{j \\in A} p_{ij} p_{j4}\\).\n\nExplícitamente,\n\\[\n\\begin{aligned}\nP(X_3=4 \\mid X_0=1) &= \\sum_{i=1}^3 p_{1i} \\sum_{j=1}^3 p_{ij} p_{j4} \\\\\n&= p_{11} \\left( \\sum_{j=1}^3 p_{1j} p_{j4} \\right) + p_{12} \\left( \\sum_{j=1}^3 p_{2j} p_{j4} \\right) + p_{13} \\left( \\sum_{j=1}^3 p_{3j} p_{j4} \\right) \\\\\n&= 0.1 \\cdot (0.2 \\cdot 1 + 0.3 \\cdot 0.1 + 0.4 \\cdot 0.1) \\\\\n&\\quad + 0.3 \\cdot (0.4 \\cdot 0.1 + 0.2 \\cdot 0.1 + 0.4 \\cdot 0.1) \\\\\n&\\quad + 0.4 \\cdot (0.3 \\cdot 0.1 + 0.4 \\cdot 0.1 + 0.3 \\cdot 0.1) \\\\\n&= 0.1 \\cdot (0.2 + 0.03 + 0.04) + 0.3 \\cdot (0.04 + 0.02 + 0.04) + 0.4 \\cdot (0.03 + 0.04 + 0.03) \\\\\n&= 0.1 \\cdot 0.27 + 0.3 \\cdot 0.10 + 0.4 \\cdot 0.10 \\\\\n&= 0.027 + 0.03 + 0.04 \\\\\n&= 0.097.\n\\end{aligned}\n\\]\nPor tanto, la probabilidad es \\(0.097\\).",
@@ -780,8 +780,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250512.html#ejercicios",
-    "href": "psg01m47/es/20250512.html#ejercicios",
+    "objectID": "_chapters/es/20250512.html#ejercicios",
+    "href": "_chapters/es/20250512.html#ejercicios",
     "title": "10  Procesos de Markov",
     "section": "10.9 Ejercicios",
     "text": "10.9 Ejercicios\n\nDemostración: Mostrar que para una cadena de Markov finita e irreducible, la recurrencia positiva de un estado implica que todos los estados son positivamente recurrentes.\nCálculo: Para el ejemplo anterior, calcular la distribución estacionaria para la cadena restringida a los estados no absorbentes \\({1,2,3}\\).\nClasificación: Para una cadena de Markov finita dada, determinar los períodos de todos los estados y clasificar cada uno como recurrente, transitorio o absorbente.",
@@ -790,8 +790,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250519.html",
-    "href": "psg01m47/es/20250519.html",
+    "objectID": "_chapters/es/20250519.html",
+    "href": "_chapters/es/20250519.html",
     "title": "11  Procesos de Poisson Compuestos",
     "section": "",
     "text": "11.1 Introducción Conceptual\nEn aplicaciones avanzadas de probabilidad—como ciencias actuariales, matemáticas financieras, ingeniería de confiabilidad, y gestión cuantitativa de riesgos—es frecuentemente necesario modelar no solo el número de eventos aleatorios a lo largo del tiempo, sino también la magnitud aleatoria asociada con cada evento. Por ejemplo, en matemáticas de seguros, cada reclamo se caracteriza por su tamaño aleatorio de reclamo (o severidad), y en confiabilidad, cada evento de falla incurre un costo de reparación aleatorio. Para capturar esta doble aleatoriedad, el proceso de Poisson compuesto es fundamental.\nUn proceso de Poisson compuesto combina dos fuentes de incertidumbre: el número de eventos dentro de un intervalo de tiempo, modelado por un proceso de Poisson, y el tamaño o severidad aleatoria de cada evento, modelado por una secuencia independiente de variables aleatorias idénticamente distribuidas.",
@@ -800,8 +800,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250519.html#definición-formal-y-propiedades-fundamentales",
-    "href": "psg01m47/es/20250519.html#definición-formal-y-propiedades-fundamentales",
+    "objectID": "_chapters/es/20250519.html#definición-formal-y-propiedades-fundamentales",
+    "href": "_chapters/es/20250519.html#definición-formal-y-propiedades-fundamentales",
     "title": "11  Procesos de Poisson Compuestos",
     "section": "11.2 Definición Formal y Propiedades Fundamentales",
     "text": "11.2 Definición Formal y Propiedades Fundamentales\nSea \\((\\Omega, \\mathcal{F}, \\mathbb{P})\\) un espacio de probabilidad. Definamos los siguientes objetos:\n\nSea \\({N(t) : t \\geq 0}\\) un proceso de Poisson de tasa \\(\\lambda &gt; 0\\), es decir, \\(N(t)\\) cuenta el número de eventos que ocurren en \\([0,t]\\) con \\(N(0) = 0\\), incrementos estacionarios e independientes, y \\(N(t) - N(s) \\sim \\mathrm{Poisson}(\\lambda (t-s))\\) para \\(0 \\leq s &lt; t\\) [@Billingsley1995].\nSea \\({Y_i}_{i=1}^{\\infty}\\) una secuencia de variables aleatorias independientes e idénticamente distribuidas (i.i.d.), independiente de \\(N(t)\\), con \\(E[|Y_1|] &lt; \\infty\\) y \\(E[Y_1^2] &lt; \\infty\\).\n\nEl proceso de Poisson compuesto \\({X(t) : t \\geq 0}\\) se define por\n\\[\nX(t) = \\sum_{i=1}^{N(t)} Y_i, \\quad t \\geq 0,\n\\]\ncon la convención \\(X(t) = 0\\) si \\(N(t) = 0\\). Aquí,\n\n\\(N(t)\\) es el número de eventos hasta el tiempo \\(t\\),\n\\(Y_i\\) es el tamaño del reclamo (o severidad del evento) para el \\(i\\)-ésimo evento.\n\n\n11.2.1 Incrementos Independientes y Estacionaridad\nProposición: Para cualquier \\(0 \\leq s &lt; t\\), el incremento \\(X(t) - X(s)\\) es independiente del pasado \\({X(u) : u \\leq s}\\), y está distribuido como un proceso de Poisson compuesto con parámetros \\(\\lambda (t-s)\\) y la misma distribución \\(Y_i\\).\nDemostración: Sea \\(M = N(t) - N(s)\\), que es independiente de \\(N(s)\\) y \\(M \\sim \\mathrm{Poisson}(\\lambda (t-s))\\). La colección \\({Y_{N(s)+1},\\dots, Y_{N(t)}}\\) son independientes tanto de \\(N(s)\\) como de todas las \\(Y_i\\) anteriores, debido a la independencia. Por tanto,\n\\[\nX(t) - X(s) = \\sum_{i=N(s)+1}^{N(t)} Y_i\n\\]\nes una suma de \\(M\\) variables i.i.d., independiente del proceso antes de \\(s\\), satisfaciendo la estructura de Poisson compuesto [@Sato1999]. \\(\\quad\\blacksquare\\)",
@@ -810,8 +810,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250519.html#momentos-del-proceso-de-poisson-compuesto",
-    "href": "psg01m47/es/20250519.html#momentos-del-proceso-de-poisson-compuesto",
+    "objectID": "_chapters/es/20250519.html#momentos-del-proceso-de-poisson-compuesto",
+    "href": "_chapters/es/20250519.html#momentos-del-proceso-de-poisson-compuesto",
     "title": "11  Procesos de Poisson Compuestos",
     "section": "11.3 Momentos del Proceso de Poisson Compuesto",
     "text": "11.3 Momentos del Proceso de Poisson Compuesto\n\n11.3.1 Esperanza\nEl valor esperado de \\(X(t)\\) se sigue por linealidad de la esperanza e independencia:\n\\[\nE[X(t)] = E\\left( \\sum_{i=1}^{N(t)} Y_i \\right ) = E[N(t)] E[Y_1] = \\lambda t \\cdot E[Y_1]\n\\]\npuesto que \\(N(t) \\sim \\mathrm{Poisson}(\\lambda t)\\) y las \\(Y_i\\) son i.i.d. [@Durrett2019].\n\n\n11.3.2 Varianza\nAplicando la ley de varianza total y la segunda identidad de Wald:\n\\[\n\\mathrm{Var}(X(t)) = E[\\mathrm{Var}(X(t)\\mid N(t))] + \\mathrm{Var}(E[X(t)\\mid N(t)]).\n\\]\nDado \\(N(t)=n\\), \\(X(t) \\mid N(t) = n\\) es una suma de \\(n\\) \\(Y_i\\) i.i.d., por lo que\n\\[\nE[X(t)\\mid N(t)=n] = n E[Y_1], \\quad \\mathrm{Var}(X(t)\\mid N(t)=n) = n \\mathrm{Var}(Y_1).\n\\]\nPor tanto, \\[\\begin{align*}\nE[\\mathrm{Var}(X(t)\\mid N(t))] &= E[N(t)] \\cdot \\mathrm{Var}(Y_1) = \\lambda t \\cdot \\mathrm{Var}(Y_1), \\\\\n\\mathrm{Var}(E[X(t)\\mid N(t)]) &= \\mathrm{Var}(N(t) \\cdot E[Y_1]) = \\mathrm{Var}(N(t)) \\cdot (E[Y_1])^2 = \\lambda t (E[Y_1])^2.\n\\end{align*}\\] Por lo tanto,\n\\[\n\\mathrm{Var}(X(t)) = \\lambda t \\left( \\mathrm{Var}(Y_1) + (E[Y_1])^2 \\right ) = \\lambda t E[Y_1^2].\n\\]\ndonde \\(E[Y_1^2] = \\mathrm{Var}(Y_1) + (E[Y_1])^2\\).",
@@ -820,8 +820,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250519.html#representación-distribucional-y-métodos-de-transformadas",
-    "href": "psg01m47/es/20250519.html#representación-distribucional-y-métodos-de-transformadas",
+    "objectID": "_chapters/es/20250519.html#representación-distribucional-y-métodos-de-transformadas",
+    "href": "_chapters/es/20250519.html#representación-distribucional-y-métodos-de-transformadas",
     "title": "11  Procesos de Poisson Compuestos",
     "section": "11.4 Representación Distribucional y Métodos de Transformadas",
     "text": "11.4 Representación Distribucional y Métodos de Transformadas\nLa ley de probabilidad de \\(X(t)\\) es la de una suma aleatoria:\n\\[\nX(t) = \\sum_{i=1}^{N(t)} Y_i\n\\]\ncon \\(N(t) \\sim \\mathrm{Poisson}(\\lambda t)\\). La función de distribución es\n\\[\nP(X(t) \\leq x) = \\sum_{n=0}^\\infty P(N(t) = n) \\cdot P\\left( \\sum_{i=1}^n Y_i \\leq x \\right ),\n\\]\ndonde el término \\(n=0\\) se interpreta como \\(P(0 \\leq x) = 1\\) si \\(x \\geq 0\\), 0 en caso contrario.\nEl cálculo directo es intratable para \\(Y_i\\) general, pero herramientas analíticas están disponibles:\n\nLa función característica (transformada de Fourier) de \\(X(t)\\) es\n\n\\[\n\\phi_{X(t)}(u) = E[e^{iu X(t)}] = \\exp\\left( \\lambda t ( \\phi_Y(u) - 1 ) \\right ),\n\\]\ndonde \\(\\phi_Y(u) = E[e^{iu Y_1}]\\) es la función característica de \\(Y_1\\).\n\nSimilarmente, la transformada de Laplace es\n\n\\[\nE[e^{-s X(t)}] = \\exp\\left( \\lambda t ( E[e^{-s Y_1}] - 1 ) \\right ),\n\\]\nque permite métodos de inversión numérica y aproximación de punto de silla [@Sato1999; @Asmussen2000]. La simulación Monte Carlo también se usa frecuentemente para \\(Y_i\\) complejas.\nEjemplo: Supongamos que los reclamos llegan a una aseguradora como un proceso de Poisson de tasa \\(\\lambda = 3\\) por semana. Los tamaños de reclamos \\({Y_i}\\) son i.i.d. con distribución de Pareto: para \\(y \\geq y_m &gt; 0\\),\n\\[\nF_{Y}(y) = 1 - \\left( \\frac{y_m}{y} \\right )^{\\alpha}, \\quad \\alpha &gt; 1.\n\\]\nSea \\(y_m = 1000\\), \\(\\alpha = 2\\). Calcular la media y varianza de reclamos agregados en una semana, y comentar sobre el impacto de colas pesadas.\n\nLa media es\n\n\\[\nE[Y_1] = \\frac{\\alpha y_m}{\\alpha - 1} = \\frac{2 \\times 1000}{2-1} = 2000.\n\\]\n\nEl segundo momento es\n\n\\[\nE[Y_1^2] =\n\\begin{cases}\n\\frac{\\alpha y_m^2}{\\alpha - 2}, & \\alpha &gt; 2 \\\\\n\\infty, & 1 &lt; \\alpha \\leq 2\n\\end{cases}\n\\]\nPuesto que \\(\\alpha=2\\), \\(E[Y_1^2] = \\infty\\); por tanto, el agregado semanal tiene media finita \\(E[X(1)] = 6000\\), pero varianza infinita. Esto demuestra el impacto de reclamos de cola pesada: la media permanece bien definida, pero medidas de riesgo como la varianza no lo están.",
@@ -830,8 +830,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250519.html#ejercicios",
-    "href": "psg01m47/es/20250519.html#ejercicios",
+    "objectID": "_chapters/es/20250519.html#ejercicios",
+    "href": "_chapters/es/20250519.html#ejercicios",
     "title": "11  Procesos de Poisson Compuestos",
     "section": "11.5 Ejercicios",
     "text": "11.5 Ejercicios\n\nSimulación y Análisis de Poisson Compuesto: Sea \\(\\lambda = 2\\) eventos por hora, y \\(Y_i \\sim \\mathrm{Exp}(1/500)\\) independientemente.\n\nSimular \\(X(1)\\) (reclamos agregados en una hora) 10,000 veces y estimar la media y varianza.\nComparar sus estimaciones empíricas con las fórmulas analíticas.\nDiscutir cómo cambiarían los resultados si las \\(Y_i\\) tuvieran cola pesada.",
@@ -840,8 +840,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html",
-    "href": "psg01m47/es/20250523.html",
+    "objectID": "_chapters/es/20250523.html",
+    "href": "_chapters/es/20250523.html",
     "title": "12  Series de Tiempo",
     "section": "",
     "text": "12.1 Definiciones Fundamentales\nUna serie de tiempo es una colección de variables aleatorias \\({Y_t : t \\in T}\\), donde \\(T \\subseteq \\mathbb{Z}\\), representando observaciones secuenciales indexadas por tiempo discreto. Formalmente, estas variables están definidas en un espacio de probabilidad \\((\\Omega, \\mathcal{F}, P)\\), con cada \\(Y_t : \\Omega \\rightarrow \\mathbb{R}\\) medible. El objetivo central del análisis de series de tiempo es modelar, inferir y predecir la estructura temporal y dinámica incrustada en tales procesos estocásticos, aprovechando la dependencia temporal típicamente ausente en contextos estadísticos clásicos [@Hamilton1994].",
@@ -850,8 +850,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#descomposición-de-series-de-tiempo",
-    "href": "psg01m47/es/20250523.html#descomposición-de-series-de-tiempo",
+    "objectID": "_chapters/es/20250523.html#descomposición-de-series-de-tiempo",
+    "href": "_chapters/es/20250523.html#descomposición-de-series-de-tiempo",
     "title": "12  Series de Tiempo",
     "section": "12.2 Descomposición de Series de Tiempo",
     "text": "12.2 Descomposición de Series de Tiempo\nUn paso fundamental en el modelado de series de tiempo es la descomposición del proceso observado en componentes interpretables, cada uno capturando diferentes fuentes de variación. El valor observado \\(Y_t\\) se expresa típicamente como una combinación de:\n\nTendencia (\\(T_t\\)): Un componente estocástico o determinístico que representa la progresión a largo plazo del proceso. \\(T_t\\) puede modelarse como una función determinística (ej., lineal, cuadrática) o como un proceso aleatorio para capturar cambios persistentes.\nEstacionalidad (\\(S_t\\)): Captura efectos cíclicos o periódicos con frecuencias conocidas y fijas (ej., anual o semanal), que también pueden modelarse como procesos determinísticos o estocásticos.\nComponente Irregular (\\(I_t\\)): Representa fluctuaciones aleatorias impredecibles no explicadas por la tendencia o estacionalidad, modelado como un proceso estocástico.\n\nFormalmente, se usan dos esquemas de descomposición estándar [@Hyndman2021]:\n\nModelo aditivo: \\(Y_t = T_t + S_t + I_t\\)\nModelo multiplicativo: \\(Y_t = T_t \\times S_t \\times I_t\\)\n\nLa forma aditiva es apropiada cuando la varianza de \\(Y_t\\) es aproximadamente constante en el tiempo, mientras que la forma multiplicativa es preferible cuando la varianza aumenta con el nivel. Técnicas avanzadas de descomposición como STL (descomposición Estacional-Tendencia usando Loess) y X-13ARIMA-SEATS se emplean comúnmente en la práctica [@Cleveland1990].",
@@ -860,8 +860,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#estacionaridad",
-    "href": "psg01m47/es/20250523.html#estacionaridad",
+    "objectID": "_chapters/es/20250523.html#estacionaridad",
+    "href": "_chapters/es/20250523.html#estacionaridad",
     "title": "12  Series de Tiempo",
     "section": "12.3 Estacionaridad",
     "text": "12.3 Estacionaridad\nLa estacionaridad es una propiedad central en la teoría y aplicación de series de tiempo. Hay dos formas principales:\n\nEstacionaridad estricta (fuerte): Un proceso \\({Y_t}\\) es estrictamente estacionario si la distribución conjunta de cualquier conjunto finito \\((Y_{t_1}, \\ldots, Y_{t_n})\\) es invariante a desplazamientos en el tiempo. Es decir, para todo \\(n\\), \\(t_1,\\dots,t_n\\), y \\(h\\),\n\\[\nF_{Y_{t_1},\\ldots,Y_{t_n}}(y_1,\\ldots,y_n) = F_{Y_{t_1+h},\\ldots,Y_{t_n+h}}(y_1,\\ldots,y_n).\n\\]\nEstacionaridad débil (de segundo orden): \\({Y_t}\\) es débilmente estacionario si:\n\n\\(E[Y_t]=\\mu\\) es constante para todo \\(t\\),\n\\(Var(Y_t) = \\sigma^2\\) es constante para todo \\(t\\),\n\\(Cov(Y_t, Y_{t+h}) = \\gamma(h)\\) depende solo del rezago \\(h\\), no de \\(t\\).\n\n\nEn la práctica, la estacionaridad débil es mucho más fácil de verificar y es suficiente para la mayoría de enfoques de modelado lineal. La ergodicidad, que asegura que los promedios temporales converjan a promedios de ensamble, es una condición más estricta pero no se requiere para la mayoría de inferencias estadísticas [@Billingsley1995].\nEjemplo: Estacionaridad Estricta vs. Débil.\nSea \\({Y_t}\\) una secuencia donde \\(Y_t = Z\\) para todo \\(t\\) y \\(Z \\sim \\mathcal{N}(0,1)\\). Este proceso es estrictamente estacionario puesto que todas las distribuciones de dimensión finita son invariantes bajo desplazamiento temporal. En contraste, un proceso con \\(Y_t = e^{i\\omega t}X\\) para \\(X\\) aleatorio y \\(\\omega\\) fijo es débilmente estacionario (media constante, autocovarianza depende solo de \\(h\\)), pero su distribución conjunta varía con \\(t\\), por lo que no es estrictamente estacionario [@Durrett2019].",
@@ -870,8 +870,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#ruido-blanco",
-    "href": "psg01m47/es/20250523.html#ruido-blanco",
+    "objectID": "_chapters/es/20250523.html#ruido-blanco",
+    "href": "_chapters/es/20250523.html#ruido-blanco",
     "title": "12  Series de Tiempo",
     "section": "12.4 Ruido Blanco",
     "text": "12.4 Ruido Blanco\nUn proceso de ruido blanco \\({e_t}\\) es una secuencia de variables aleatorias independientes e idénticamente distribuidas (iid) con media cero y varianza constante, típicamente asumidas gaussianas:\n\\[\nE[e_t] = 0, \\quad Var(e_t) = \\sigma^2, \\quad Cov(e_t, e_s) = 0 \\;\\; \\text{para } t \\neq s.\n\\]\nEl ruido blanco es estrictamente estacionario (puesto que todas las distribuciones de dimensión finita son invariantes bajo desplazamiento temporal), y trivialmente débilmente estacionario [@BoxJenkins1970]. Para secuencias iid no gaussianas, el ruido blanco sigue siendo estrictamente estacionario, pero algunos autores reservan “ruido blanco” para el caso gaussiano.\n\n12.4.1 Demostración: El Ruido Blanco es Débilmente Estacionario\nDado \\({e_t}\\) iid con \\(E[e_t]=0\\) y \\(Var(e_t)=\\sigma^2\\):\n\n\\(E[e_t]=0\\) para todo \\(t\\),\n\\(Var(e_t)=\\sigma^2\\) para todo \\(t\\),\n\\(Cov(e_t,e_{t+h}) = 0\\) para todo \\(h \\ne 0\\). Por tanto, todas las condiciones para estacionaridad débil se satisfacen.",
@@ -880,8 +880,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#métodos-de-preprocesamiento",
-    "href": "psg01m47/es/20250523.html#métodos-de-preprocesamiento",
+    "objectID": "_chapters/es/20250523.html#métodos-de-preprocesamiento",
+    "href": "_chapters/es/20250523.html#métodos-de-preprocesamiento",
     "title": "12  Series de Tiempo",
     "section": "12.5 Métodos de Preprocesamiento",
     "text": "12.5 Métodos de Preprocesamiento\nTransformar una serie de tiempo no estacionaria en una estacionaria es frecuentemente un prerrequisito para modelado efectivo. Dos métodos centrales son:\n\nPromedios Móviles: Suavizan fluctuaciones a corto plazo vía\n\\[\nT_t = \\frac{1}{2k+1} \\sum_{j=-k}^k Y_{t+j}.\n\\]\nEsta operación ayuda a aislar tendencias a más largo plazo y periodicidad [@Hyndman2021].\nDiferenciación: El operador de diferencia \\(\\nabla\\) o \\(\\Delta\\) se usa para remover tendencias:\n\\[\n\\Delta Y_t = Y_t - Y_{t-1}, \\quad \\Delta^p Y_t = Y_t - Y_{t-p}.\n\\]\nDiferencias de orden superior pueden remover tendencias polinomiales de grado creciente. El operador de retroceso general \\(B\\) se define por \\(B Y_t = Y_{t-1}\\), por lo que \\(\\Delta = 1 - B\\). Transformaciones estabilizadoras de varianza, como la transformada de Box-Cox, también se usan comúnmente [@BoxCox1964].\n\nEjemplo: Diferenciando una Caminata Aleatoria. Sea \\(Y_t = Y_{t-1} + e_t\\) con \\(Y_0=0\\) y \\(e_t \\sim \\text{iid}(0,\\sigma^2)\\). La diferenciación produce \\(\\Delta Y_t = Y_t - Y_{t-1} = e_t\\), que es ruido blanco estacionario.",
@@ -890,8 +890,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#caminata-aleatoria",
-    "href": "psg01m47/es/20250523.html#caminata-aleatoria",
+    "objectID": "_chapters/es/20250523.html#caminata-aleatoria",
+    "href": "_chapters/es/20250523.html#caminata-aleatoria",
     "title": "12  Series de Tiempo",
     "section": "12.6 Caminata Aleatoria",
     "text": "12.6 Caminata Aleatoria\nUna caminata aleatoria se define por \\(Y_t = Y_{t-1} + e_t\\) para \\(e_t \\sim \\text{iid}(0,\\sigma^2)\\). Su media es constante, pero su varianza crece linealmente con \\(t\\):\n\\[\nVar(Y_t) = t \\sigma^2.\n\\]\nPor tanto, el proceso es no estacionario, con memoria infinita—cada innovación \\(e_t\\) afecta permanentemente todos los valores futuros, haciendo la predicción a largo plazo altamente incierta [@Hamilton1994].",
@@ -900,8 +900,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#modelos-arima",
-    "href": "psg01m47/es/20250523.html#modelos-arima",
+    "objectID": "_chapters/es/20250523.html#modelos-arima",
+    "href": "_chapters/es/20250523.html#modelos-arima",
     "title": "12  Series de Tiempo",
     "section": "12.7 Modelos ARIMA",
     "text": "12.7 Modelos ARIMA\nUn modelo ARIMA\\((p,d,q)\\) (Autoregresivo Integrado de Promedio Móvil) generaliza tanto procesos autoregresivos como de promedio móvil, acomodando no estacionaridad vía diferenciación [@BoxJenkins1970]. El modelo general se escribe como:\n\\[\n\\Phi(B)\\nabla^d Y_t = \\Theta(B) e_t, \\quad e_t \\sim \\text{iid}(0,\\sigma^2)\n\\]\ndonde\n\n\\(B\\) es el operador de retroceso (\\(B Y_t = Y_{t-1}\\)),\n\\(\\nabla^d = (1 - B)^d\\) es el operador de diferencia \\(d\\)-ésima,\n\\(\\Phi(B) = 1 - \\phi_1 B - \\ldots - \\phi_p B^p\\),\n\\(\\Theta(B) = 1 + \\theta_1 B + \\ldots + \\theta_q B^q\\).\n\nAquí, \\(p\\) es el orden autoregresivo, \\(d\\) es el número de diferencias para estacionaridad, y \\(q\\) es el orden de promedio móvil. La identificación del modelo típicamente se basa en análisis de la función de autocorrelación (ACF), función de autocorrelación parcial (PACF), y criterios de información como AIC y BIC [@Hyndman2021].",
@@ -910,8 +910,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#proceso-autoregresivo-ar",
-    "href": "psg01m47/es/20250523.html#proceso-autoregresivo-ar",
+    "objectID": "_chapters/es/20250523.html#proceso-autoregresivo-ar",
+    "href": "_chapters/es/20250523.html#proceso-autoregresivo-ar",
     "title": "12  Series de Tiempo",
     "section": "12.8 Proceso Autoregresivo (AR)",
     "text": "12.8 Proceso Autoregresivo (AR)\nUn proceso autoregresivo de orden \\(p\\) (AR(\\(p\\))) se define por:\n\\[\nY_t = \\mu + \\sum_{i=1}^p \\phi_i Y_{t-i} + e_t, \\quad e_t \\sim \\text{iid}(0,\\sigma^2).\n\\]\nEl proceso es estacionario si y solo si las raíces del polinomio característico \\(\\Phi(z) = 1 - \\phi_1 z - \\ldots - \\phi_p z^p\\) yacen fuera del círculo unitario (\\(|z|&gt;1\\)).\n\n12.8.1 Demostración: Condición de Estacionaridad\nEl proceso AR(\\(p\\)) puede escribirse como \\(\\Phi(B)Y_t = e_t\\). La estacionaridad requiere que las soluciones de la ecuación en diferencias homogénea decaigan a cero, lo que ocurre si y solo si todas las raíces de \\(\\Phi(z)=0\\) tienen módulo mayor que uno [@Hamilton1994].\nEjemplo: Modelo AR(2) Considerar \\(Y_t = 0.5 Y_{t-1} - 0.3 Y_{t-2} + e_t\\), \\(e_t \\sim \\mathcal{N}(0,1)\\). Datos simulados de este modelo tendrán una ACF que se corta después del rezago 2 y una PACF que se desvanece, característico del comportamiento AR(2) [@Hyndman2021].",
@@ -920,8 +920,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#proceso-de-promedio-móvil-ma",
-    "href": "psg01m47/es/20250523.html#proceso-de-promedio-móvil-ma",
+    "objectID": "_chapters/es/20250523.html#proceso-de-promedio-móvil-ma",
+    "href": "_chapters/es/20250523.html#proceso-de-promedio-móvil-ma",
     "title": "12  Series de Tiempo",
     "section": "12.9 Proceso de Promedio Móvil (MA)",
     "text": "12.9 Proceso de Promedio Móvil (MA)\nUn proceso de promedio móvil de orden \\(q\\) (MA(\\(q\\))) se define como:\n\\[\nY_t = \\mu + \\sum_{i=1}^q \\theta_i e_{t-i} + e_t, \\quad e_t \\sim \\text{iid}(0,\\sigma^2).\n\\]\nLa invertibilidad se cumple si las raíces del polinomio \\(\\Theta(z) = 1 + \\theta_1 z + \\ldots + \\theta_q z^q\\) yacen dentro del círculo unitario (\\(|z|&lt;1\\)). Los procesos MA(\\(q\\)) son siempre estacionarios por construcción.\n\n12.9.1 Demostración: Autocovarianza de MA(\\(q\\))\nLa función de autocovarianza es:\n\\[\n\\gamma(h) = \\begin{cases}\n\\sigma^2 \\left(1 + \\sum_{i=1}^q \\theta_i^2\\right), & h = 0 \\\\\n\\sigma^2 \\sum_{i=1}^{q-h} \\theta_i \\theta_{i+h}, & 1 \\leq h \\leq q \\\\\n0, & h &gt; q\n\\end{cases}\n\\]\n\n\n12.9.2 Ejemplo: Ajuste de Modelo MA(1)\nSuponer \\(Y_t = e_t + 0.6 e_{t-1}\\), \\(e_t \\sim \\mathcal{N}(0,1)\\). Ajustar este modelo a datos reales (ej., retornos diarios de un índice financiero) produce una ACF que cae a cero después del rezago 1, indicando la apropiabilidad de la especificación MA(1).",
@@ -930,8 +930,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#extensiones-de-modelos-arima",
-    "href": "psg01m47/es/20250523.html#extensiones-de-modelos-arima",
+    "objectID": "_chapters/es/20250523.html#extensiones-de-modelos-arima",
+    "href": "_chapters/es/20250523.html#extensiones-de-modelos-arima",
     "title": "12  Series de Tiempo",
     "section": "12.10 Extensiones de Modelos ARIMA",
     "text": "12.10 Extensiones de Modelos ARIMA\nVarias extensiones avanzadas de modelos ARIMA abordan fenómenos específicos:\n\nSARIMA: Incorpora términos autoregresivos y de promedio móvil estacionales para modelar periodicidades.\nARFIMA: Permite diferenciación fraccionaria (\\(d\\) no entero) para capturar procesos de memoria larga [@Beran1994].\nARIMAX: Añade covariables exógenas para explicar variación no explicada por la estructura autoregresiva/promedio móvil [@Hyndman2021].",
@@ -940,8 +940,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250523.html#ejercicios",
-    "href": "psg01m47/es/20250523.html#ejercicios",
+    "objectID": "_chapters/es/20250523.html#ejercicios",
+    "href": "_chapters/es/20250523.html#ejercicios",
     "title": "12  Series de Tiempo",
     "section": "12.11 Ejercicios",
     "text": "12.11 Ejercicios\n\nDescomposición: Dada una serie mensual con fuerte estacionalidad, describir la descomposición STL y calcular los componentes de tendencia, estacional e irregular.\nEstacionaridad: Demostrar que la primera diferencia de una caminata aleatoria produce un proceso estacionario.\nIdentificación AR: Simular un proceso AR(2), graficar su ACF y PACF, y verificar la condición de estacionaridad.\nModelo MA: Para un proceso MA(1), derivar y graficar la función de autocorrelación.\nSelección de Modelo: Dados gráficos empíricos de ACF/PACF, seleccionar y justificar un modelo ARIMA\\((p,d,q)\\) apropiado.",
@@ -950,8 +950,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html",
-    "href": "psg01m47/es/20250530.html",
+    "objectID": "_chapters/es/20250530.html",
+    "href": "_chapters/es/20250530.html",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "",
     "text": "13.1 Estacionaridad\nUn proceso estocástico \\({X_t}_{t\\in\\mathbb{Z}}\\) es estrictamente estacionario si para cada \\(n \\in \\mathbb{N}\\) y cada conjunto de índices temporales \\(t_1, \\ldots, t_n\\) y \\(k \\in \\mathbb{Z}\\), la distribución conjunta de \\((X_{t_1}, \\ldots, X_{t_n})\\) es igual a la de \\((X_{t_1+k}, \\ldots, X_{t_n+k})\\) [@Billingsley1995].\nEstacionaridad débil (de covarianza) requiere que:\nEjemplo: Considerar el proceso \\(X_t = \\epsilon_t\\) con \\(\\epsilon_t \\sim \\mathcal{N}(0,1)\\) i.i.d. Este proceso es estricta y débilmente estacionario. En contraste, \\(Y_t = t + \\epsilon_t\\) es no estacionario en ambos sentidos, ya que su media depende de \\(t\\).\nEjercicio: Sea \\(Z_t = 0.5 Z_{t-1} + \\epsilon_t\\) con \\(Z_0=0\\) y \\(\\epsilon_t \\sim \\mathcal{N}(0,1)\\) i.i.d. ¿Es \\({Z_t}\\) débilmente estacionario? Justificar analíticamente.",
@@ -960,8 +960,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#estacionaridad",
-    "href": "psg01m47/es/20250530.html#estacionaridad",
+    "objectID": "_chapters/es/20250530.html#estacionaridad",
+    "href": "_chapters/es/20250530.html#estacionaridad",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "",
     "text": "\\(\\mathrm{E}[X_t]=\\mu\\) (media constante para todo \\(t\\)),\n\\(\\mathrm{Var}[X_t]=\\sigma^2 &lt; \\infty\\) (varianza constante para todo \\(t\\)),\n\\(\\mathrm{Cov}(X_t, X_{t+h}) = \\gamma(h)\\) (autocovarianza depende solo del rezago \\(h\\)).",
@@ -970,8 +970,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#ruido-blanco",
-    "href": "psg01m47/es/20250530.html#ruido-blanco",
+    "objectID": "_chapters/es/20250530.html#ruido-blanco",
+    "href": "_chapters/es/20250530.html#ruido-blanco",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.2 Ruido Blanco",
     "text": "13.2 Ruido Blanco\nUn proceso de ruido blanco \\({e_t}\\) es una secuencia de variables aleatorias no correlacionadas que satisface:\n\n\\(\\mathrm{E}[e_t]=0\\),\n\\(\\mathrm{Var}[e_t]=\\sigma^2_e\\),\n\\(\\mathrm{Cov}(e_t, e_s)=0\\) para todo \\(t \\neq s\\).\n\nSi \\(e_t \\sim \\mathcal{N}(0,\\sigma^2_e)\\) i.i.d., se llama ruido blanco gaussiano.\nDemostración: Un proceso de ruido blanco con innovaciones i.i.d. es estrictamente estacionario: Para cualquier colección \\((e_{t_1},...,e_{t_n})\\), su distribución conjunta es invariante a desplazamientos temporales, puesto que todas las \\(e_t\\) son i.i.d. [@Durrett2019].\nEjemplo: Simular \\(e_t \\sim \\mathcal{N}(0,1)\\) para \\(t=1,...,100\\). La secuencia es ruido blanco; las autocorrelaciones empíricas son aproximadamente cero para \\(h\\ne0\\).\nEjercicio: Dada una secuencia de residuos de un modelo ARIMA ajustado, proponer y justificar una prueba estadística para ruido blanco.",
@@ -980,8 +980,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#caminatas-aleatorias-y-raíces-unitarias",
-    "href": "psg01m47/es/20250530.html#caminatas-aleatorias-y-raíces-unitarias",
+    "objectID": "_chapters/es/20250530.html#caminatas-aleatorias-y-raíces-unitarias",
+    "href": "_chapters/es/20250530.html#caminatas-aleatorias-y-raíces-unitarias",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.3 Caminatas Aleatorias y Raíces Unitarias",
     "text": "13.3 Caminatas Aleatorias y Raíces Unitarias\nUna caminata aleatoria \\({Y_t}\\) se define por \\(Y_t = Y_{t-1} + e_t\\), con \\(e_t\\) como ruido blanco. Su varianza crece sin límite:\n\\[\n\\mathrm{Var}(Y_t) = t \\cdot \\sigma^2_e,\n\\]\nque es una característica distintiva de la no estacionaridad.\nLa presencia de una raíz unitaria (la raíz en \\(z=1\\) en el polinomio AR) significa que se requiere diferenciación para estacionaridad.\nEjemplo: Sea \\(Y_0=0\\), \\(e_t \\sim \\mathcal{N}(0,1)\\). Simular \\(Y_t\\) para \\(t=1,\\ldots,100\\); \\(\\mathrm{Var}(Y_{100}) = 100\\).\nEjercicio: Dado \\(W_t = W_{t-1} + \\epsilon_t\\) con \\(W_0=0\\), calcular \\(\\mathrm{Cov}(W_t, W_s)\\) y discutir estacionaridad.",
@@ -990,8 +990,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#preprocesamiento-y-suavizado",
-    "href": "psg01m47/es/20250530.html#preprocesamiento-y-suavizado",
+    "objectID": "_chapters/es/20250530.html#preprocesamiento-y-suavizado",
+    "href": "_chapters/es/20250530.html#preprocesamiento-y-suavizado",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.4 Preprocesamiento y Suavizado",
     "text": "13.4 Preprocesamiento y Suavizado\nSea \\({y_t}_{t=1}^N\\) una serie de tiempo.\nPromedio Móvil Simple (PMS):\n\\[\nS_t = \\frac{1}{2k+1} \\sum_{j=-k}^{k} y_{t+j}, \\quad k \\in \\mathbb{N},\\; k &lt; t \\leq N-k\n\\]\nMediana Móvil:\n\\[\nM_t = \\operatorname{mediana}(y_{t-k}, \\ldots, y_{t+k})\n\\]\nLa mediana móvil es robusta a valores atípicos, mientras que el PMS no lo es.\nNota de Coherencia: Usar notación consistente \\(y_t\\) para la serie de tiempo observada.\nEjemplo: Supongamos que \\(y_t\\) es temperatura diaria. El suavizado con \\(k=3\\) produce \\(S_t\\) y \\(M_t\\) que reducen fluctuaciones a corto plazo. A continuación se presenta una demostración con \\(y_t = 20 + \\sin(2\\pi t/30) + \\epsilon_t\\) simulado, \\(\\epsilon_t \\sim \\mathcal{N}(0,1)\\).\nEjercicio: Aplicar tanto PMS como mediana móvil a un conjunto de datos ruidoso. Comparar e interpretar los resultados.",
@@ -1000,8 +1000,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#diferenciación-para-estacionaridad",
-    "href": "psg01m47/es/20250530.html#diferenciación-para-estacionaridad",
+    "objectID": "_chapters/es/20250530.html#diferenciación-para-estacionaridad",
+    "href": "_chapters/es/20250530.html#diferenciación-para-estacionaridad",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.5 Diferenciación para Estacionaridad",
     "text": "13.5 Diferenciación para Estacionaridad\nEl operador de primera diferencia se define como\n\\[\n\\Delta y_t = y_t - y_{t-1}\n\\]\nLa diferencia estacional (para período \\(p\\)) es\n\\[\n\\Delta_p y_t = y_t - y_{t-p}\n\\]\nDemostración: Para una caminata aleatoria \\(Y_t = Y_{t-1} + e_t\\),\n\\[\n\\Delta Y_t = Y_t - Y_{t-1} = e_t\n\\]\nDado que \\({e_t}\\) es ruido blanco (estacionario), diferenciar la caminata aleatoria produce un proceso estacionario.",
@@ -1010,8 +1010,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#descomposición-aditiva-y-multiplicativa",
-    "href": "psg01m47/es/20250530.html#descomposición-aditiva-y-multiplicativa",
+    "objectID": "_chapters/es/20250530.html#descomposición-aditiva-y-multiplicativa",
+    "href": "_chapters/es/20250530.html#descomposición-aditiva-y-multiplicativa",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.6 Descomposición Aditiva y Multiplicativa",
     "text": "13.6 Descomposición Aditiva y Multiplicativa\nUna serie de tiempo puede descomponerse como:\nModelo Aditivo: \\(y_t = T_t + S_t + I_t\\)\nModelo Multiplicativo: \\(y_t = T_t \\cdot S_t \\cdot I_t\\)\nDonde \\(T_t\\) es tendencia, \\(S_t\\) es estacional, \\(I_t\\) es irregular.\nCriterios: Usar el modelo aditivo cuando las fluctuaciones estacionales son aproximadamente constantes; usar el modelo multiplicativo si la variación estacional crece con la tendencia [@Hyndman2021]. Una transformación logarítmica puede convertir multiplicativo a aditivo.\nEjemplo: Dadas ventas mensuales con una clara tendencia ascendente y amplitud estacional creciente, el modelo multiplicativo es apropiado. Descomponer un \\(y_t = (10 + 0.5t) \\times (1 + 0.2\\sin(2\\pi t/12)) + \\epsilon_t\\) simulado.\nEjercicio: Descomponer una serie de tiempo proporcionada usando enfoques tanto aditivos como multiplicativos. Justificar el modelo apropiado.",
@@ -1020,8 +1020,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#el-modelo-arima-definición-y-propiedades",
-    "href": "psg01m47/es/20250530.html#el-modelo-arima-definición-y-propiedades",
+    "objectID": "_chapters/es/20250530.html#el-modelo-arima-definición-y-propiedades",
+    "href": "_chapters/es/20250530.html#el-modelo-arima-definición-y-propiedades",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.7 El Modelo ARIMA: Definición y Propiedades",
     "text": "13.7 El Modelo ARIMA: Definición y Propiedades\nSea \\(B\\) el operador de retroceso: \\(By_t = y_{t-1}\\), \\(B^k y_t = y_{t-k}\\).\nUn modelo ARIMA(\\(p,d,q\\)) está dado por\n\\[\n\\Phi(B)(1-B)^d y_t = \\mu + \\Theta(B) e_t,\n\\]\ndonde\n\n\\(\\Phi(B) = 1 - \\phi_1 B - \\cdots - \\phi_p B^p\\) es el polinomio autoregresivo (AR),\n\\((1-B)^d\\) es el operador de diferencia de orden \\(d\\),\n\\(\\Theta(B) = 1 + \\theta_1 B + \\cdots + \\theta_q B^q\\) es el polinomio de promedio móvil (MA),\n\\(\\mu\\) es una constante, y\n\\(e_t\\) es ruido blanco.\n\nIdentificación y Estimación del Modelo El procedimiento estándar sigue la metodología de Box-Jenkins:\n\nIdentificación del modelo vía ACF/PACF y pruebas de raíz unitaria (ej., Dickey-Fuller Aumentado, Phillips-Perron) [@Hamilton1994].\nEstimación de parámetros, típicamente vía máxima verosimilitud.\nDiagnóstico del modelo (análisis de residuos).\n\nEstacionaridad e Invertibilidad:\n\nEstacionaridad: Todas las raíces de \\(\\Phi(B)\\) deben yacer fuera del círculo unitario en el plano complejo [@Durrett2019].\nInvertibilidad: Todas las raíces de \\(\\Theta(B)\\) también deben yacer fuera del círculo unitario.",
@@ -1030,8 +1030,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#modelos-autoregresivos-ar",
-    "href": "psg01m47/es/20250530.html#modelos-autoregresivos-ar",
+    "objectID": "_chapters/es/20250530.html#modelos-autoregresivos-ar",
+    "href": "_chapters/es/20250530.html#modelos-autoregresivos-ar",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.8 Modelos Autoregresivos (AR)",
     "text": "13.8 Modelos Autoregresivos (AR)\nUn proceso AR(\\(p\\)) satisface\n\\[\ny_t = \\mu + \\sum_{i=1}^{p} \\phi_i y_{t-i} + e_t\n\\]\nDemostración de las Ecuaciones de Yule-Walker: Sea \\(\\gamma(h)\\) la autocovarianza en el rezago \\(h\\).\n\\[\n\\gamma(h) = \\sum_{i=1}^{p} \\phi_i \\gamma(h-i) + \\sigma^2_e \\delta_{h,0}\n\\]\npara \\(h \\ge 0\\), donde \\(\\delta_{h,0}\\) es la delta de Kronecker.\nEjemplo: Simular AR(2): \\(y_t = 0.5 y_{t-1} - 0.3 y_{t-2} + e_t\\). Analizar la ACF y PACF muestrales.\nEjercicio: Estimar parámetros para un proceso AR(2) dado una muestra. Probar la condición de estacionaridad.",
@@ -1040,8 +1040,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#modelos-de-media-móvil-ma",
-    "href": "psg01m47/es/20250530.html#modelos-de-media-móvil-ma",
+    "objectID": "_chapters/es/20250530.html#modelos-de-media-móvil-ma",
+    "href": "_chapters/es/20250530.html#modelos-de-media-móvil-ma",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.9 Modelos de Media Móvil (MA)",
     "text": "13.9 Modelos de Media Móvil (MA)\nUn proceso MA(\\(q\\)) es\n\\[\ny_t = \\mu + e_t + \\sum_{j=1}^{q} \\theta_j e_{t-j}\n\\]\nInvertibilidad: Las raíces de \\(\\Theta(B)\\) deben yacer fuera del círculo unitario para garantizar una representación única en términos de \\(y_t\\)’s pasados [@Hamilton1994].\nDemostración de la Estructura de Autocorrelación: La \\(\\mathrm{ACF}\\) de MA(\\(q\\)) es cero más allá del rezago \\(q\\).\nEjercicio: Dada una muestra de un proceso MA(1), estimar \\(\\theta_1\\) y probar la invertibilidad.",
@@ -1050,8 +1050,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#procesos-integrados",
-    "href": "psg01m47/es/20250530.html#procesos-integrados",
+    "objectID": "_chapters/es/20250530.html#procesos-integrados",
+    "href": "_chapters/es/20250530.html#procesos-integrados",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.10 Procesos Integrados",
     "text": "13.10 Procesos Integrados\nUna serie es integrada de orden \\(d\\) (\\(I(d)\\)) si \\((1-B)^d y_t\\) es estacionaria pero \\((1-B)^{d-1} y_t\\) no lo es.\nPruebas ADF/PP: Las pruebas de Dickey-Fuller Aumentado y Phillips-Perron se usan para determinar el número mínimo de diferencias requeridas para estacionaridad [@Hamilton1994].\nNota de Terminología: Usar “diferencias” o “diferenciación”—no “diferenciaciones”—para series de tiempo discretas.",
@@ -1060,8 +1060,8 @@
     ]
   },
   {
-    "objectID": "psg01m47/es/20250530.html#ejercicios",
-    "href": "psg01m47/es/20250530.html#ejercicios",
+    "objectID": "_chapters/es/20250530.html#ejercicios",
+    "href": "_chapters/es/20250530.html#ejercicios",
     "title": "13  Modelos ARIMA: Fundamentos, Teoría y Aplicación",
     "section": "13.11 Ejercicios",
     "text": "13.11 Ejercicios\n\nDemostrar que diferenciar una caminata aleatoria produce un proceso estacionario.\nDados datos de series de tiempo, probar la presencia de raíces unitarias y determinar el orden de integración usando la prueba ADF.\nSimular y graficar un proceso AR(2) y MA(1). Analizar la ACF y PACF muestrales.\nPara una serie de residuos dada, realizar una prueba de Ljung-Box para ruido blanco.",
