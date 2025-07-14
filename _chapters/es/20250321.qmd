@@ -1,9 +1,5 @@
 # Técnicas de Conteo en Probabilidad y Combinatoria
 
-## Introducción
-
-Las técnicas de conteo son herramientas fundamentales en la teoría de probabilidad y combinatoria, proporcionando métodos rigurosos para enumerar el número de formas en que pueden ocurrir eventos. Este capítulo desarrolla principios clave—reglas de producto, permutaciones (incluyendo elementos repetidos), $k$-permutaciones y combinaciones—enfatizando definiciones precisas, demostraciones formales y los fundamentos combinatorios de las distribuciones básicas de probabilidad. Toda la notación se introduce según sea necesario, y la terminología sigue convenciones matemáticas internacionales.
-
 ## Regla del Producto
 
 ### Definición Formal

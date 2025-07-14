@@ -1,6 +1,6 @@
 # Procesos de Markov
 
-## Introducción Conceptual
+## Introducción
 
 Un **proceso estocástico** ${X_t}_{t \geq 0}$ es una colección de variables aleatorias indexadas por tiempo $t$ y definidas en un espacio de probabilidad común $(\Omega, \mathcal{F}, P)$. El **proceso de Markov** se distingue por la **propiedad de Markov**, que formaliza el concepto de falta de memoria: la evolución futura del proceso depende solo del estado presente, no de la trayectoria tomada para llegar allí.
 

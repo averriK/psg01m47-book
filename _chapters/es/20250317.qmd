@@ -1,10 +1,6 @@
 # Espacios de Probabilidad
 
-## Introducción
-
-Un espacio de probabilidad proporciona la base matemática formal para modelar fenómenos aleatorios. Esta estructura permite el razonamiento riguroso sobre la incertidumbre al definir un marco consistente para eventos, resultados y sus probabilidades asociadas. Este capítulo presenta definiciones formales, propiedades esenciales y resultados fundamentales que subyacen a la teoría de probabilidades moderna.
-
-## Sigma-Álgebras y Preliminares de Teoría de la Medida
+## Sigma-Álgebras
 
 Sea $\Omega$ un conjunto no vacío llamado **espacio muestral**, que representa todos los posibles resultados de un experimento aleatorio. Una **sigma-álgebra** $\mathcal{F}$ en $\Omega$ es una colección de subconjuntos de $\Omega$ (llamados **eventos**) que satisface:
 
@@ -14,7 +10,7 @@ Sea $\Omega$ un conjunto no vacío llamado **espacio muestral**, que representa 
 
 La clausura bajo intersecciones numerables se sigue de las leyes de De Morgan y las propiedades 2–3.
 
-## Espacio de Probabilidad (Definición Formal)
+## Espacio de Probabilidad
 
 Un **espacio de probabilidad** es una terna $(\Omega, \mathcal{F}, P)$, donde:
 
