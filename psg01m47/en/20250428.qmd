@@ -1,0 +1,158 @@
+# Poisson Processes
+
+## Definition and Fundamental Properties
+
+A **Poisson process** ${N(t): t \geq 0}$ with rate $\lambda > 0$ is a stochastic process with values in $\mathbb{Z}_{\geq 0}$ satisfying the following axioms [@Kingman1993; @Ross2019]:
+
+1. **Initial value**: $N(0) = 0$.
+2. **Independent increments**: For any $0 \leq t_0 < t_1 < \cdots < t_k$, the random variables $N(t_1) - N(t_0), \ldots, N(t_k) - N(t_{k-1})$ are independent.
+3. **Stationary increments**: For all $s, t \geq 0$, the distribution of $N(t+s) - N(s)$ depends only on $t$.
+4. **Increment distribution**: For small $h > 0$,
+
+   $$
+   P(N(h) = 1) = \lambda h + o(h), \quad P(N(h) \geq 2) = o(h)
+   $$
+
+   where $o(h)/h \to 0$ as $h \to 0$.
+
+**Remark.** These conditions imply that for all $t \geq 0$,
+
+$$
+P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n = 0, 1, 2, \ldots
+$$
+
+and that $N(t)$ has stationary and independent increments.
+
+### Formal Proof of the Poisson Distribution Law
+
+**Sketch:**
+Let $N(0) = 0$, and divide $[0, t]$ into $n$ subintervals of length $h = t/n$. The probability that each subinterval contains at most one event and that $k$ intervals contain exactly one event can be shown (using the limit as $n \to \infty$ and properties above) to converge to the Poisson law. See [@Billingsley1995, Ch. 6] for a full proof.
+
+### Integer-Valuedness
+
+By construction, $N(t)$ counts the number of events up to time $t$ and is always a non-negative integer.
+
+## Inter-Arrival Times and the Exponential Law
+
+Let $T_1$ be the time until the first event. For $t \geq 0$:
+
+$$
+P(T_1 > t) = P(N(t) = 0) = e^{-\lambda t}.
+$$
+
+Thus, the waiting time $T_1$ is exponentially distributed with parameter $\lambda$:
+
+$$
+f_{T_1}(t) = \lambda e^{-\lambda t}, \quad t \geq 0.
+$$
+
+This property extends to all inter-arrival times $T_{k+1} - T_k$, which are independent and identically distributed exponential random variables with mean $1/\lambda$.
+
+### Proof of the Memoryless Property
+
+For $s, t \geq 0$,
+
+$$
+P(T_1 > s + t \mid T_1 > s) = \frac{P(T_1 > s + t)}{P(T_1 > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(T_1 > t),
+$$
+
+demonstrating that the exponential distribution is memoryless [@Durrett2019].
+
+## Compound Poisson Process
+
+Let ${Y_i}_{i=1}^\infty$ be a sequence of independent, identically distributed random variables, independent of the Poisson process ${N(t)}$. The **compound Poisson process** is defined by
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0.
+$$
+
+**Assumptions:**
+
+* $E|Y_1| < \infty$ for mean/variance calculations.
+
+**Properties:**
+
+* $E[X(t)] = \lambda t, E[Y_1]$
+* $\operatorname{Var}(X(t)) = \lambda t, E[Y_1^2]$
+
+**Support:**
+For proofs and further properties, see [@Kingman1993], [@Billingsley1995, Sec. 22].
+
+## Applications
+
+### Queueing Theory
+
+In the **M/M/1 queue**, arrivals are modeled as a Poisson process with rate $\lambda$ and service times are exponentially distributed. The process models arrival counts $N(t)$, the waiting time for the next customer, and the system's state probabilities. See [@GrossHarris1998].
+
+**Example:**
+Suppose arrivals occur at rate $\lambda = 3$ per minute. The probability that exactly $n$ arrivals occur in $t = 2$ minutes is
+
+$$
+P(N(2) = n) = \frac{(6)^n}{n!}e^{-6}.
+$$
+
+**Example:** Waiting-Time Distribution. Let $S_n$ denote the waiting time until the $n$th arrival. The sum of $n$ i.i.d. exponential random variables is gamma distributed:
+
+$$
+P(S_n \leq t) = 1 - \sum_{k=0}^{n-1} \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad t \geq 0.
+$$
+
+### Reliability Theory
+
+For **homogeneous Poisson processes**, failures of independent components in complex systems are modeled as Poisson events. Non-homogeneous Poisson processes, with rate function $\lambda(t)$, are required for age-dependent failure rates [@Ross2019, Ch. 5].
+
+### Insurance and Risk
+
+In insurance mathematics, **claim arrivals** are modeled as a Poisson process; total claim size over $[0,t]$ is a compound Poisson random variable.
+
+## Advanced Properties
+
+### Superposition Theorem
+
+**Statement:**
+If $N_1(t)$ and $N_2(t)$ are independent Poisson processes with rates $\lambda_1$ and $\lambda_2$, then $N(t) = N_1(t) + N_2(t)$ is a Poisson process with rate $\lambda_1 + \lambda_2$ [@Kingman1993].
+
+**Proof:**
+Follows from the convolution of independent Poisson distributions and preservation of independence and stationarity.
+
+### Thinning Theorem
+
+**Statement:**
+If each event of a Poisson process of rate $\lambda$ is independently retained with probability $p$ (i.e., each event is assigned an independent Bernoulli$(p)$ mark), the retained events form a Poisson process with rate $\lambda p$.
+
+**Proof:**
+For $h \to 0$, the probability that an event occurs and is retained in $(t, t+h]$ is $\lambda h \cdot p + o(h)$; all Poisson process properties are preserved. See [@Kingman1993, Sec. 2.3].
+
+## System Reliability Example
+
+Suppose a system's component failures follow a Poisson process with rate $\lambda = 0.1$ failures/hour.
+
+1. **Probability of 2 failures in 24 hours:**
+
+   $$
+   P(N(24) = 2) = \frac{(0.1 \times 24)^2}{2!} e^{-0.1 \times 24} = \frac{2.4^2}{2} e^{-2.4} \approx 0.261
+   $$
+
+2. **Expected time until first failure:**
+
+   $$
+   E[T_1] = 1/\lambda = 10 \text{ hours}
+   $$
+
+3. **Compound Poisson Example:**
+   If the cost $Y_i$ of each failure is i.i.d. with $E[Y_1] = $500$, the expected total cost in $t = 24$ hours is:
+
+   $$
+   E[X(24)] = E[N(24)] \, E[Y_1] = (0.1 \times 24) \times 500 = USD\ 1,200
+   $$
+
+## Exercises
+
+1. **Poisson Law Derivation:**
+   Prove that the only integer-valued process with stationary and independent increments, and $P(N(h) = 1) = \lambda h + o(h)$ as $h \to 0$, is the homogeneous Poisson process.
+
+2. **Superposition Simulation:**
+   Simulate two independent Poisson processes and empirically verify the superposition theorem.
+
+3. **Compound Poisson Variance:**
+   Show that $\operatorname{Var}(X(t)) = \lambda t, E[Y_1^2]$ for a compound Poisson process.

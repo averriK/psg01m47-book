@@ -1,0 +1,156 @@
+# Procesos de Poisson
+
+## Definición y Propiedades Fundamentales
+
+Un **proceso de Poisson** ${N(t): t \geq 0}$ con tasa $\lambda > 0$ es un proceso estocástico con valores en $\mathbb{Z}_{\geq 0}$ que satisface los siguientes axiomas [@Kingman1993; @Ross2019]:
+
+1. **Valor inicial**: $N(0) = 0$.
+2. **Incrementos independientes**: Para cualquier $0 \leq t_0 < t_1 < \cdots < t_k$, las variables aleatorias $N(t_1) - N(t_0), \ldots, N(t_k) - N(t_{k-1})$ son independientes.
+3. **Incrementos estacionarios**: Para todo $s, t \geq 0$, la distribución de $N(t+s) - N(s)$ depende solo de $t$.
+4. **Distribución de incrementos**: Para $h > 0$ pequeño,
+
+   $$
+   P(N(h) = 1) = \lambda h + o(h), \quad P(N(h) \geq 2) = o(h)
+   $$
+
+   donde $o(h)/h \to 0$ cuando $h \to 0$.
+
+**Observación.** Estas condiciones implican que para todo $t \geq 0$,
+
+$$
+P(N(t) = n) = \frac{(\lambda t)^n}{n!} e^{-\lambda t}, \quad n = 0, 1, 2, \ldots
+$$
+
+y que $N(t)$ tiene incrementos estacionarios e independientes.
+
+### Demostración Formal de la Ley de Distribución de Poisson
+
+**Esbozo:**
+Sea $N(0) = 0$, y dividamos $[0, t]$ en $n$ subintervalos de longitud $h = t/n$. La probabilidad de que cada subintervalo contenga a lo más un evento y que $k$ intervalos contengan exactamente un evento puede mostrarse (usando el límite cuando $n \to \infty$ y las propiedades anteriores) que converge a la ley de Poisson. Ver [@Billingsley1995, Ch. 6] para una demostración completa.
+
+### Valores Enteros
+
+Por construcción, $N(t)$ cuenta el número de eventos hasta el tiempo $t$ y es siempre un entero no negativo.
+
+## Tiempos entre Llegadas y la Ley Exponencial
+
+Sea $T_1$ el tiempo hasta el primer evento. Para $t \geq 0$:
+
+$$
+P(T_1 > t) = P(N(t) = 0) = e^{-\lambda t}.
+$$
+
+Por tanto, el tiempo de espera $T_1$ está distribuido exponencialmente con parámetro $\lambda$:
+
+$$
+f_{T_1}(t) = \lambda e^{-\lambda t}, \quad t \geq 0.
+$$
+
+Esta propiedad se extiende a todos los tiempos entre llegadas $T_{k+1} - T_k$, que son variables aleatorias exponenciales independientes e idénticamente distribuidas con media $1/\lambda$.
+
+### Demostración de la Propiedad de Falta de Memoria
+
+Para $s, t \geq 0$,
+
+$$
+P(T_1 > s + t \mid T_1 > s) = \frac{P(T_1 > s + t)}{P(T_1 > s)} = \frac{e^{-\lambda(s+t)}}{e^{-\lambda s}} = e^{-\lambda t} = P(T_1 > t),
+$$
+
+demostrando que la distribución exponencial carece de memoria [@Durrett2019].
+
+## Proceso de Poisson Compuesto
+
+Sea ${Y_i}_{i=1}^\infty$ una secuencia de variables aleatorias independientes e idénticamente distribuidas, independiente del proceso de Poisson ${N(t)}$. El **proceso de Poisson compuesto** se define por
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0.
+$$
+
+**Supuestos:**
+
+* $E|Y_1| < \infty$ para cálculos de media/varianza.
+
+**Propiedades:**
+
+* $E[X(t)] = \lambda t \, E[Y_1]$
+* $\operatorname{Var}(X(t)) = \lambda t \, E[Y_1^2]$
+
+**Soporte:**
+Para demostraciones y propiedades adicionales, ver [@Kingman1993], [@Billingsley1995, Sec. 22].
+
+## Aplicaciones
+
+### Teoría de Colas
+
+En la **cola M/M/1**, las llegadas se modelan como un proceso de Poisson con tasa $\lambda$ y los tiempos de servicio están distribuidos exponencialmente. El proceso modela los conteos de llegadas $N(t)$, el tiempo de espera para el próximo cliente, y las probabilidades de estado del sistema. Ver [@GrossHarris1998].
+
+**Ejemplo:**
+Supongamos que las llegadas ocurren a tasa $\lambda = 3$ por minuto. La probabilidad de que exactamente $n$ llegadas ocurran en $t = 2$ minutos es
+
+$$
+P(N(2) = n) = \frac{(6)^n}{n!}e^{-6}.
+$$
+
+**Ejemplo: Distribución del Tiempo de Espera**. Sea $S_n$ el tiempo de espera hasta la $n$-ésima llegada. La suma de $n$ variables aleatorias exponenciales i.i.d. está distribuida gamma:
+
+$$
+P(S_n \leq t) = 1 - \sum_{k=0}^{n-1} \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad t \geq 0.
+$$
+
+### Teoría de Confiabilidad
+
+Para **procesos de Poisson homogéneos**, las fallas de componentes independientes en sistemas complejos se modelan como eventos de Poisson. Los procesos de Poisson no homogéneos, con función de tasa $\lambda(t)$, se requieren para tasas de falla dependientes de la edad [@Ross2019, Ch. 5].
+
+### Seguros y Riesgo
+
+En matemáticas de seguros, las **llegadas de reclamos** se modelan como un proceso de Poisson; el tamaño total de reclamos sobre $[0,t]$ es una variable aleatoria de Poisson compuesta.
+
+## Propiedades Avanzadas
+
+### Teorema de Superposición
+
+**Enunciado:**
+Si $N_1(t)$ y $N_2(t)$ son procesos de Poisson independientes con tasas $\lambda_1$ y $\lambda_2$, entonces $N(t) = N_1(t) + N_2(t)$ es un proceso de Poisson con tasa $\lambda_1 + \lambda_2$ [@Kingman1993].
+
+**Demostración:**
+Se sigue de la convolución de distribuciones de Poisson independientes y la preservación de independencia y estacionaridad.
+
+### Teorema de Adelgazamiento
+
+**Enunciado:**
+Si cada evento de un proceso de Poisson de tasa $\lambda$ se retiene independientemente con probabilidad $p$ (es decir, cada evento se asigna una marca Bernoulli$(p)$ independiente), los eventos retenidos forman un proceso de Poisson con tasa $\lambda p$.
+
+**Demostración:**
+Para $h \to 0$, la probabilidad de que un evento ocurra y sea retenido en $(t, t+h]$ es $\lambda h \cdot p + o(h)$; todas las propiedades del proceso de Poisson se preservan. Ver [@Kingman1993, Sec. 2.3].
+
+**Ejemplo: Confiabilidad del Sistema.** Supongamos que las fallas de componentes de un sistema siguen un proceso de Poisson con tasa $\lambda = 0.1$ fallas/hora.
+
+1. **Probabilidad de 2 fallas en 24 horas:**
+
+   $$
+   P(N(24) = 2) = \frac{(0.1 \times 24)^2}{2!} e^{-0.1 \times 24} = \frac{2.4^2}{2} e^{-2.4} \approx 0.261
+   $$
+
+2. **Tiempo esperado hasta la primera falla:**
+
+   $$
+   E[T_1] = 1/\lambda = 10 \text{ horas}
+   $$
+
+3. **Ejemplo de Poisson Compuesto:**
+   Si el costo $Y_i$ de cada falla es i.i.d. con $E[Y_1] = $500$, el costo total esperado en $t = 24$ horas es:
+
+   $$
+   E[X(24)] = E[N(24)] \, E[Y_1] = (0.1 \times 24) \times 500 = USD\ 1,200
+   $$
+
+## Ejercicios
+
+1. **Derivación de la Ley de Poisson:**
+   Demostrar que el único proceso de valores enteros con incrementos estacionarios e independientes, y $P(N(h) = 1) = \lambda h + o(h)$ cuando $h \to 0$, es el proceso de Poisson homogéneo.
+
+2. **Simulación de Superposición:**
+   Simular dos procesos de Poisson independientes y verificar empíricamente el teorema de superposición.
+
+3. **Varianza de Poisson Compuesto:**
+   Mostrar que $\operatorname{Var}(X(t)) = \lambda t \, E[Y_1^2]$ para un proceso de Poisson compuesto.

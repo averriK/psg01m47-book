@@ -1,0 +1,146 @@
+# Procesos de Poisson Compuestos
+
+## Introducción Conceptual
+
+En aplicaciones avanzadas de probabilidad—como ciencias actuariales, matemáticas financieras, ingeniería de confiabilidad, y gestión cuantitativa de riesgos—es frecuentemente necesario modelar no solo el número de eventos aleatorios a lo largo del tiempo, sino también la magnitud aleatoria asociada con cada evento. Por ejemplo, en matemáticas de seguros, cada reclamo se caracteriza por su tamaño aleatorio de reclamo (o severidad), y en confiabilidad, cada evento de falla incurre un costo de reparación aleatorio. Para capturar esta doble aleatoriedad, el **proceso de Poisson compuesto** es fundamental.
+
+Un proceso de Poisson compuesto combina dos fuentes de incertidumbre: el número de eventos dentro de un intervalo de tiempo, modelado por un proceso de Poisson, y el tamaño o severidad aleatoria de cada evento, modelado por una secuencia independiente de variables aleatorias idénticamente distribuidas.
+
+## Definición Formal y Propiedades Fundamentales
+
+Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Definamos los siguientes objetos:
+
+* Sea ${N(t) : t \geq 0}$ un proceso de Poisson de tasa $\lambda > 0$, es decir, $N(t)$ cuenta el número de eventos que ocurren en $[0,t]$ con $N(0) = 0$, incrementos estacionarios e independientes, y $N(t) - N(s) \sim \mathrm{Poisson}(\lambda (t-s))$ para $0 \leq s < t$ [@Billingsley1995].
+* Sea ${Y_i}_{i=1}^{\infty}$ una secuencia de variables aleatorias independientes e idénticamente distribuidas (i.i.d.), independiente de $N(t)$, con $E[|Y_1|] < \infty$ y $E[Y_1^2] < \infty$.
+
+El **proceso de Poisson compuesto** ${X(t) : t \geq 0}$ se define por
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0,
+$$
+
+con la convención $X(t) = 0$ si $N(t) = 0$. Aquí,
+
+* $N(t)$ es el número de eventos hasta el tiempo $t$,
+* $Y_i$ es el tamaño del reclamo (o severidad del evento) para el $i$-ésimo evento.
+
+### Incrementos Independientes y Estacionaridad
+
+**Proposición:** Para cualquier $0 \leq s < t$, el incremento $X(t) - X(s)$ es independiente del pasado ${X(u) : u \leq s}$, y está distribuido como un proceso de Poisson compuesto con parámetros $\lambda (t-s)$ y la misma distribución $Y_i$.
+
+**Demostración:**
+Sea $M = N(t) - N(s)$, que es independiente de $N(s)$ y $M \sim \mathrm{Poisson}(\lambda (t-s))$. La colección ${Y_{N(s)+1},\dots, Y_{N(t)}}$ son independientes tanto de $N(s)$ como de todas las $Y_i$ anteriores, debido a la independencia. Por tanto,
+
+$$
+X(t) - X(s) = \sum_{i=N(s)+1}^{N(t)} Y_i
+$$
+
+es una suma de $M$ variables i.i.d., independiente del proceso antes de $s$, satisfaciendo la estructura de Poisson compuesto [@Sato1999].
+$\quad\blacksquare$
+
+## Momentos del Proceso de Poisson Compuesto
+
+### Esperanza
+
+El valor esperado de $X(t)$ se sigue por linealidad de la esperanza e independencia:
+
+$$
+E[X(t)] = E\left( \sum_{i=1}^{N(t)} Y_i \right ) = E[N(t)] E[Y_1] = \lambda t \cdot E[Y_1]
+$$
+
+puesto que $N(t) \sim \mathrm{Poisson}(\lambda t)$ y las $Y_i$ son i.i.d. [@Durrett2019].
+
+### Varianza
+
+Aplicando la ley de varianza total y la segunda identidad de Wald:
+
+$$
+\mathrm{Var}(X(t)) = E[\mathrm{Var}(X(t)\mid N(t))] + \mathrm{Var}(E[X(t)\mid N(t)]).
+$$
+
+Dado $N(t)=n$, $X(t) \mid N(t) = n$ es una suma de $n$ $Y_i$ i.i.d., por lo que
+
+$$
+E[X(t)\mid N(t)=n] = n E[Y_1], \quad \mathrm{Var}(X(t)\mid N(t)=n) = n \mathrm{Var}(Y_1).
+$$
+
+Por tanto,
+\begin{align*}
+E[\mathrm{Var}(X(t)\mid N(t))] &= E[N(t)] \cdot \mathrm{Var}(Y_1) = \lambda t \cdot \mathrm{Var}(Y_1), \\
+\mathrm{Var}(E[X(t)\mid N(t)]) &= \mathrm{Var}(N(t) \cdot E[Y_1]) = \mathrm{Var}(N(t)) \cdot (E[Y_1])^2 = \lambda t (E[Y_1])^2.
+\end{align*}
+Por lo tanto,
+
+$$
+\mathrm{Var}(X(t)) = \lambda t \left( \mathrm{Var}(Y_1) + (E[Y_1])^2 \right ) = \lambda t E[Y_1^2].
+$$
+
+donde $E[Y_1^2] = \mathrm{Var}(Y_1) + (E[Y_1])^2$.
+
+## Representación Distribucional y Métodos de Transformadas
+
+La ley de probabilidad de $X(t)$ es la de una suma aleatoria:
+
+$$
+X(t) = \sum_{i=1}^{N(t)} Y_i
+$$
+
+con $N(t) \sim \mathrm{Poisson}(\lambda t)$. La función de distribución es
+
+$$
+P(X(t) \leq x) = \sum_{n=0}^\infty P(N(t) = n) \cdot P\left( \sum_{i=1}^n Y_i \leq x \right ),
+$$
+
+donde el término $n=0$ se interpreta como $P(0 \leq x) = 1$ si $x \geq 0$, 0 en caso contrario.
+
+El cálculo directo es intratable para $Y_i$ general, pero herramientas analíticas están disponibles:
+
+* La **función característica** (transformada de Fourier) de $X(t)$ es
+
+$$
+\phi_{X(t)}(u) = E[e^{iu X(t)}] = \exp\left( \lambda t ( \phi_Y(u) - 1 ) \right ),
+$$
+
+donde $\phi_Y(u) = E[e^{iu Y_1}]$ es la función característica de $Y_1$.
+
+* Similarmente, la **transformada de Laplace** es
+
+$$
+E[e^{-s X(t)}] = \exp\left( \lambda t ( E[e^{-s Y_1}] - 1 ) \right ),
+$$
+
+que permite métodos de inversión numérica y aproximación de punto de silla [@Sato1999; @Asmussen2000]. La simulación Monte Carlo también se usa frecuentemente para $Y_i$ complejas.
+
+**Ejemplo:** Supongamos que los reclamos llegan a una aseguradora como un proceso de Poisson de tasa $\lambda = 3$ por semana. Los tamaños de reclamos ${Y_i}$ son i.i.d. con distribución de Pareto: para $y \geq y_m > 0$,
+
+$$
+F_{Y}(y) = 1 - \left( \frac{y_m}{y} \right )^{\alpha}, \quad \alpha > 1.
+$$
+
+Sea $y_m = 1000$, $\alpha = 2$. Calcular la media y varianza de reclamos agregados en una semana, y comentar sobre el impacto de colas pesadas.
+
+* La media es
+
+$$
+E[Y_1] = \frac{\alpha y_m}{\alpha - 1} = \frac{2 \times 1000}{2-1} = 2000.
+$$
+
+* El segundo momento es
+
+$$
+E[Y_1^2] = 
+\begin{cases}
+\frac{\alpha y_m^2}{\alpha - 2}, & \alpha > 2 \\
+\infty, & 1 < \alpha \leq 2
+\end{cases}
+$$
+
+Puesto que $\alpha=2$, $E[Y_1^2] = \infty$; por tanto, el agregado semanal tiene media finita $E[X(1)] = 6000$, pero **varianza infinita**. Esto demuestra el impacto de reclamos de cola pesada: la media permanece bien definida, pero medidas de riesgo como la varianza no lo están.
+
+## Ejercicios
+
+1. **Simulación y Análisis de Poisson Compuesto:**
+   Sea $\lambda = 2$ eventos por hora, y $Y_i \sim \mathrm{Exp}(1/500)$ independientemente.
+   (a) Simular $X(1)$ (reclamos agregados en una hora) 10,000 veces y estimar la media y varianza.
+   (b) Comparar sus estimaciones empíricas con las fórmulas analíticas.
+   (c) Discutir cómo cambiarían los resultados si las $Y_i$ tuvieran cola pesada.

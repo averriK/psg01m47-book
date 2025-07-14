@@ -1,0 +1,177 @@
+# Markov Processes
+
+## Conceptual Introduction
+
+A **stochastic process** ${X_t}_{t \geq 0}$ is a collection of random variables indexed by time $t$ and defined on a common probability space $(\Omega, \mathcal{F}, P)$. The **Markov process** is distinguished by the **Markov property**, which formalizes the concept of memorylessness: the future evolution of the process depends only on the present state, not on the path taken to arrive there.
+
+**Definition (Markov Property):**
+A process ${X_t}_{t \geq 0}$ with state space $S$ is a Markov process if, for all times $0 \leq t_1 < t_2 < \cdots < t_n < t$ and states $i_1, \dots, i_n, i, j \in S$,
+
+$$
+P(X_{t+s} = j \mid X_t = i, X_{t_n} = i_n, \dots, X_{t_1} = i_1) = P(X_{t+s} = j \mid X_t = i).
+$$
+
+A **homogeneous Markov process** (or **time-homogeneous Markov chain** if the state space is discrete) is one where the transition probabilities depend only on the elapsed time, not on the absolute time:
+
+$$
+p_{ij}(s) = P(X_{t+s} = j \mid X_t = i), \qquad \forall t \geq 0.
+$$
+
+## Transition Matrices
+
+For a finite state space $S = {1, 2, \ldots, m}$, the transition behavior is described by a **transition matrix** $P(s) = (p_{ij}(s))$ where
+
+$$
+p_{ij}(s) = P(X_{t+s} = j \mid X_t = i).
+$$
+
+Common conventions:
+
+* $P$ typically denotes the one-step transition matrix: $P = P(1)$.
+* $P^n$ denotes the $n$-step transition matrix, where $(P^n)*{ij} = P(X*{n} = j \mid X_0 = i)$.
+
+**Properties:**
+
+* **Non-negativity:** $p_{ij}(s) \geq 0$ for all $i,j,s$.
+* **Row sums:** $\sum_{j=1}^m p_{ij}(s) = 1$ for all $i$.
+* **Initial distribution:** For a given initial distribution $\mu$ over $S$, the distribution at step $n$ is $\mu P^n$.
+
+**Coherence Note:**
+Care must be taken to distinguish $p_{ij}$ (one-step), $p_{ij}(s)$ (lag $s$), and $p_{ij}^{(n)}$ ($n$-step) transition probabilities. This chapter consistently uses $p_{ij}(n)$ for $n$-step transitions.
+
+## State Classification and Recurrence
+
+States of a Markov chain can be classified as follows:
+
+* **Recurrent state:** State $i$ is recurrent if, starting from $i$, the process returns to $i$ with probability one. Formally, let $f_{ii} = P(\text{ever return to } i \mid X_0 = i)$; $i$ is recurrent if $f_{ii} = 1$.
+* **Transient state:** State $i$ is transient if $f_{ii} < 1$; that is, there is a positive probability of never returning to $i$.
+* **Absorbing state:** State $i$ is absorbing if $p_{ii} = 1$ and $p_{ij} = 0$ for $j \neq i$; once entered, the process remains in $i$ forever.
+
+**Definition (Positive Recurrence):**
+A recurrent state $i$ is **positive recurrent** if the expected return time $m_i = \mathbb{E}[\text{first return time to } i \mid X_0 = i]$ is finite.
+
+* The existence of a stationary distribution is intimately connected with the presence of positive recurrent states [@Durrett2019].
+
+## Irreducibility and Periodicity
+
+**Definition (Irreducibility):**
+A Markov chain is **irreducible** if, for any pair of states $i,j \in S$, there exists $n$ such that $p_{ij}(n) > 0$. That is, every state is accessible from every other state in a finite number of steps.
+
+**Definition (Periodicity):**
+A state $i$ has period $d$ if $d$ is the greatest common divisor of all $n \geq 1$ such that $p_{ii}(n) > 0$. The chain is **aperiodic** if every state has period 1.
+
+## Stationary Distributions
+
+A **stationary distribution** (or invariant measure) $\pi = (\pi_1, \ldots, \pi_m)$ is a probability vector satisfying
+
+$$
+\pi P = \pi,
+$$
+
+where $\pi_j \geq 0$ and $\sum_j \pi_j = 1$. Intuitively, if the initial distribution is $\pi$, then the distribution remains unchanged at all future times.
+
+### Existence and Uniqueness Theorem
+
+**Theorem (Perron–Frobenius; Stationarity and Positive Recurrence):**
+For an irreducible Markov chain with finite state space:
+
+* There exists a unique stationary distribution $\pi$ if and only if all states are positive recurrent.
+* The stationary distribution satisfies $\pi_j = \frac{1}{\mathbb{E}[\text{return time to } j \mid X_0 = j]}$.
+
+*Proof Sketch:* See [@Durrett2019, Ch. 1]; proof relies on irreducibility, recurrence classification, and eigenvalue properties of stochastic matrices.
+
+## Ergodicity and Convergence
+
+**Definition (Ergodicity):**
+A Markov chain is **ergodic** if it is irreducible, aperiodic, and positive recurrent. In this case, for all $i,j \in S$,
+
+$$
+\lim_{n \to \infty} p_{ij}(n) = \pi_j,
+$$
+
+where $\pi$ is the unique stationary distribution [@Billingsley1995].
+
+## Chapman–Kolmogorov Equation
+
+**Theorem (Chapman–Kolmogorov Equation):**
+For all $m, n \geq 0$ and $i,j \in S$,
+
+$$
+p_{ij}(m+n) = \sum_{k \in S} p_{ik}(m) p_{kj}(n).
+$$
+
+*Proof:*
+By the law of total probability and the Markov property,
+
+$$
+p_{ij}(m+n) = P(X_{m+n} = j \mid X_0 = i) = \sum_{k \in S} P(X_{m+n} = j, X_m = k \mid X_0 = i) = \sum_{k \in S} p_{ik}(m) p_{kj}(n).
+$$
+
+## Reversibility
+
+A distribution $\nu$ is **reversible** for a Markov chain with transition matrix $P$ if it satisfies the **detailed balance equations**:
+
+$$
+\nu_i p_{ij} = \nu_j p_{ji}, \quad \forall i,j \in S.
+$$
+
+If such a $\nu$ exists, it is stationary, but not every stationary distribution is reversible.
+
+**Remark:**
+To verify reversibility, solve the detailed balance equations. For general methods, see [@LevinPeres2017].
+
+**Example:** Consider a Markov chain with state space $S = {1,2,3,4}$ and transition matrix
+
+$$
+P = \begin{pmatrix}
+0.1 & 0.3 & 0.4 & 0.2 \\
+0.3 & 0.2 & 0.4 & 0.1 \\
+0.2 & 0.3 & 0.4 & 0.1 \\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+$$
+
+* State 4 is absorbing.
+* Is the chain irreducible?
+  No; state 4 cannot be left, so the chain is not irreducible.
+
+**Three-Step Absorption Probability:**
+Compute $P(X_3 = 4 \mid X_0 = 1)$.
+
+First, compute $P^3 = P \cdot P \cdot P$ and extract entry $(1,4)$:
+
+1. $P^1 = P$.
+2. $P^2 = P \cdot P$.
+3. $P^3 = P^2 \cdot P$.
+
+Alternatively, enumerate all three-step paths from 1 to 4:
+
+Let $A = {1,2,3}$ (non-absorbing states).
+
+* Path 1: $1 \rightarrow i \rightarrow j \rightarrow 4$, $i,j \in A$.
+* $P(X_3=4 \mid X_0=1) = \sum_{i \in A} p_{1i} \sum_{j \in A} p_{ij} p_{j4}$.
+
+Explicitly,
+
+$$
+\begin{aligned}
+P(X_3=4 \mid X_0=1) &= \sum_{i=1}^3 p_{1i} \sum_{j=1}^3 p_{ij} p_{j4} \\
+&= p_{11} \left( \sum_{j=1}^3 p_{1j} p_{j4} \right) + p_{12} \left( \sum_{j=1}^3 p_{2j} p_{j4} \right) + p_{13} \left( \sum_{j=1}^3 p_{3j} p_{j4} \right) \\
+&= 0.1 \cdot (0.2 \cdot 1 + 0.3 \cdot 0.1 + 0.4 \cdot 0.1) \\
+&\quad + 0.3 \cdot (0.4 \cdot 0.1 + 0.2 \cdot 0.1 + 0.4 \cdot 0.1) \\
+&\quad + 0.4 \cdot (0.3 \cdot 0.1 + 0.4 \cdot 0.1 + 0.3 \cdot 0.1) \\
+&= 0.1 \cdot (0.2 + 0.03 + 0.04) + 0.3 \cdot (0.04 + 0.02 + 0.04) + 0.4 \cdot (0.03 + 0.04 + 0.03) \\
+&= 0.1 \cdot 0.27 + 0.3 \cdot 0.10 + 0.4 \cdot 0.10 \\
+&= 0.027 + 0.03 + 0.04 \\
+&= 0.097.
+\end{aligned}
+$$
+
+Thus, the probability is $0.097$.
+
+## Exercises
+
+1. **Proof:** Show that for a finite irreducible Markov chain, positive recurrence of one state implies all states are positive recurrent.
+2. **Calculation:** For the example above, compute the stationary distribution for the chain restricted to the non-absorbing states ${1,2,3}$.
+3. **Classification:** For a given finite Markov chain, determine the periods of all states and classify each as recurrent, transient, or absorbing.
+

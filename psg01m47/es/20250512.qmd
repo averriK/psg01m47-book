@@ -1,0 +1,176 @@
+# Procesos de Markov
+
+## Introducción Conceptual
+
+Un **proceso estocástico** ${X_t}_{t \geq 0}$ es una colección de variables aleatorias indexadas por tiempo $t$ y definidas en un espacio de probabilidad común $(\Omega, \mathcal{F}, P)$. El **proceso de Markov** se distingue por la **propiedad de Markov**, que formaliza el concepto de falta de memoria: la evolución futura del proceso depende solo del estado presente, no de la trayectoria tomada para llegar allí.
+
+**Definición (Propiedad de Markov):**
+Un proceso ${X_t}_{t \geq 0}$ con espacio de estados $S$ es un proceso de Markov si, para todos los tiempos $0 \leq t_1 < t_2 < \cdots < t_n < t$ y estados $i_1, \dots, i_n, i, j \in S$,
+
+$$
+P(X_{t+s} = j \mid X_t = i, X_{t_n} = i_n, \dots, X_{t_1} = i_1) = P(X_{t+s} = j \mid X_t = i).
+$$
+
+Un **proceso de Markov homogéneo** (o **cadena de Markov homogénea en el tiempo** si el espacio de estados es discreto) es aquel donde las probabilidades de transición dependen solo del tiempo transcurrido, no del tiempo absoluto:
+
+$$
+p_{ij}(s) = P(X_{t+s} = j \mid X_t = i), \qquad \forall t \geq 0.
+$$
+
+## Matrices de Transición
+
+Para un espacio de estados finito $S = {1, 2, \ldots, m}$, el comportamiento de transición se describe por una **matriz de transición** $P(s) = (p_{ij}(s))$ donde
+
+$$
+p_{ij}(s) = P(X_{t+s} = j \mid X_t = i).
+$$
+
+Convenciones comunes:
+
+* $P$ típicamente denota la matriz de transición de un paso: $P = P(1)$.
+* $P^n$ denota la matriz de transición de $n$ pasos, donde $(P^n)_{ij} = P(X_{n} = j \mid X_0 = i)$.
+
+**Propiedades:**
+
+* **No negatividad:** $p_{ij}(s) \geq 0$ para todo $i,j,s$.
+* **Sumas de fila:** $\sum_{j=1}^m p_{ij}(s) = 1$ para todo $i$.
+* **Distribución inicial:** Para una distribución inicial dada $\mu$ sobre $S$, la distribución en el paso $n$ es $\mu P^n$.
+
+## Clasificación de Estados y Recurrencia
+
+Los estados de una cadena de Markov pueden clasificarse como:
+
+* **Estado recurrente:** El estado $i$ es recurrente si, partiendo de $i$, el proceso regresa a $i$ con probabilidad uno. Formalmente, sea $f_{ii} = P(\text{regresar alguna vez a } i \mid X_0 = i)$; $i$ es recurrente si $f_{ii} = 1$.
+* **Estado transitorio:** El estado $i$ es transitorio si $f_{ii} < 1$; es decir, hay una probabilidad positiva de nunca regresar a $i$.
+* **Estado absorbente:** El estado $i$ es absorbente si $p_{ii} = 1$ y $p_{ij} = 0$ para $j \neq i$; una vez ingresado, el proceso permanece en $i$ para siempre.
+
+**Definición (Recurrencia Positiva):**
+Un estado recurrente $i$ es **positivamente recurrente** si el tiempo esperado de retorno $m_i = \mathbb{E}[\text{primer tiempo de retorno a } i \mid X_0 = i]$ es finito.
+
+* La existencia de una distribución estacionaria está íntimamente conectada con la presencia de estados positivamente recurrentes [@Durrett2019].
+
+## Irreducibilidad y Periodicidad
+
+**Definición (Irreducibilidad):**
+Una cadena de Markov es **irreducible** si, para cualquier par de estados $i,j \in S$, existe $n$ tal que $p_{ij}(n) > 0$. Es decir, cada estado es accesible desde cualquier otro estado en un número finito de pasos.
+
+**Definición (Periodicidad):**
+Un estado $i$ tiene período $d$ si $d$ es el máximo común divisor de todos los $n \geq 1$ tales que $p_{ii}(n) > 0$. La cadena es **aperiódica** si cada estado tiene período 1.
+
+## Distribuciones Estacionarias
+
+Una **distribución estacionaria** (o medida invariante) $\pi = (\pi_1, \ldots, \pi_m)$ es un vector de probabilidad que satisface
+
+$$
+\pi P = \pi,
+$$
+
+donde $\pi_j \geq 0$ y $\sum_j \pi_j = 1$. Intuitivamente, si la distribución inicial es $\pi$, entonces la distribución permanece sin cambios en todos los tiempos futuros.
+
+### Teorema de Existencia y Unicidad
+
+**Teorema (Perron–Frobenius; Estacionaridad y Recurrencia Positiva):**
+Para una cadena de Markov irreducible con espacio de estados finito:
+
+* Existe una distribución estacionaria única $\pi$ si y solo si todos los estados son positivamente recurrentes.
+* La distribución estacionaria satisface $\pi_j = \frac{1}{\mathbb{E}[\text{tiempo de retorno a } j \mid X_0 = j]}$.
+
+*Esbozo de demostración:* Ver [@Durrett2019, Ch. 1]; la demostración se basa en irreducibilidad, clasificación de recurrencia, y propiedades de valores propios de matrices estocásticas.
+
+## Ergodicidad y Convergencia
+
+**Definición (Ergodicidad):**
+Una cadena de Markov es **ergódica** si es irreducible, aperiódica y positivamente recurrente. En este caso, para todo $i,j \in S$,
+
+$$
+\lim_{n \to \infty} p_{ij}(n) = \pi_j,
+$$
+
+donde $\pi$ es la distribución estacionaria única [@Billingsley1995].
+
+## Ecuación de Chapman–Kolmogorov
+
+**Teorema (Ecuación de Chapman–Kolmogorov):**
+Para todo $m, n \geq 0$ y $i,j \in S$,
+
+$$
+p_{ij}(m+n) = \sum_{k \in S} p_{ik}(m) p_{kj}(n).
+$$
+
+*Demostración:*
+Por la ley de probabilidad total y la propiedad de Markov,
+
+$$
+p_{ij}(m+n) = P(X_{m+n} = j \mid X_0 = i) = \sum_{k \in S} P(X_{m+n} = j, X_m = k \mid X_0 = i) = \sum_{k \in S} p_{ik}(m) p_{kj}(n).
+$$
+
+## Reversibilidad
+
+Una distribución $\nu$ es **reversible** para una cadena de Markov con matriz de transición $P$ si satisface las **ecuaciones de balance detallado**:
+
+$$
+\nu_i p_{ij} = \nu_j p_{ji}, \quad \forall i,j \in S.
+$$
+
+Si tal $\nu$ existe, es estacionaria, pero no toda distribución estacionaria es reversible.
+
+**Observación:**
+Para verificar reversibilidad, resolver las ecuaciones de balance detallado. Para métodos generales, ver [@LevinPeres2017].
+
+**Ejemplo Avanzado**
+
+**Ejemplo:**
+Considerar una cadena de Markov con espacio de estados $S = {1,2,3,4}$ y matriz de transición
+
+$$
+P = \begin{pmatrix}
+0.1 & 0.3 & 0.4 & 0.2 \\
+0.3 & 0.2 & 0.4 & 0.1 \\
+0.2 & 0.3 & 0.4 & 0.1 \\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+$$
+
+* El estado 4 es absorbente.
+* ¿Es la cadena irreducible?
+  No; el estado 4 no puede abandonarse, por lo que la cadena no es irreducible.
+
+**Probabilidad de Absorción en Tres Pasos:**
+Calcular $P(X_3 = 4 \mid X_0 = 1)$.
+
+Primero, calcular $P^3 = P \cdot P \cdot P$ y extraer la entrada $(1,4)$:
+
+1. $P^1 = P$.
+2. $P^2 = P \cdot P$.
+3. $P^3 = P^2 \cdot P$.
+
+Alternativamente, enumerar todas las trayectorias de tres pasos de 1 a 4:
+
+Sea $A = {1,2,3}$ (estados no absorbentes).
+
+* Trayectoria 1: $1 \rightarrow i \rightarrow j \rightarrow 4$, $i,j \in A$.
+* $P(X_3=4 \mid X_0=1) = \sum_{i \in A} p_{1i} \sum_{j \in A} p_{ij} p_{j4}$.
+
+Explícitamente,
+
+$$
+\begin{aligned}
+P(X_3=4 \mid X_0=1) &= \sum_{i=1}^3 p_{1i} \sum_{j=1}^3 p_{ij} p_{j4} \\
+&= p_{11} \left( \sum_{j=1}^3 p_{1j} p_{j4} \right) + p_{12} \left( \sum_{j=1}^3 p_{2j} p_{j4} \right) + p_{13} \left( \sum_{j=1}^3 p_{3j} p_{j4} \right) \\
+&= 0.1 \cdot (0.2 \cdot 1 + 0.3 \cdot 0.1 + 0.4 \cdot 0.1) \\
+&\quad + 0.3 \cdot (0.4 \cdot 0.1 + 0.2 \cdot 0.1 + 0.4 \cdot 0.1) \\
+&\quad + 0.4 \cdot (0.3 \cdot 0.1 + 0.4 \cdot 0.1 + 0.3 \cdot 0.1) \\
+&= 0.1 \cdot (0.2 + 0.03 + 0.04) + 0.3 \cdot (0.04 + 0.02 + 0.04) + 0.4 \cdot (0.03 + 0.04 + 0.03) \\
+&= 0.1 \cdot 0.27 + 0.3 \cdot 0.10 + 0.4 \cdot 0.10 \\
+&= 0.027 + 0.03 + 0.04 \\
+&= 0.097.
+\end{aligned}
+$$
+
+Por tanto, la probabilidad es $0.097$.
+
+## Ejercicios
+
+1. **Demostración:** Mostrar que para una cadena de Markov finita e irreducible, la recurrencia positiva de un estado implica que todos los estados son positivamente recurrentes.
+2. **Cálculo:** Para el ejemplo anterior, calcular la distribución estacionaria para la cadena restringida a los estados no absorbentes ${1,2,3}$.
+3. **Clasificación:** Para una cadena de Markov finita dada, determinar los períodos de todos los estados y clasificar cada uno como recurrente, transitorio o absorbente.

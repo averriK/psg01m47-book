@@ -1,0 +1,272 @@
+# Variables Aleatorias y Vectores: Transformaciones y Aplicaciones
+
+## Distribuciones de Mezcla
+
+Una **distribución de mezcla** describe la ley de probabilidad de una variable aleatoria $X$ que depende de cuál evento ocurre entre una partición ${A_1, A_2, \dots, A_n}$ del espacio de probabilidad subyacente $(\Omega, \mathcal{A}, P)$ [@Billingsley1995]. Para cada $i$, sea $F_{X|A_i}(x)$ la función de distribución acumulativa (CDF) condicional de $X$ dado $A_i$, y $P(A_i)$ la probabilidad de $A_i$. La ley de probabilidad total produce:
+
+$$
+F_X(x) = \sum_{i=1}^{n} F_{X|A_i}(x) P(A_i).
+$$
+
+**Demostración**.
+Sea $F_X(x) = P(X \leq x)$. Puesto que los $A_i$ son mutuamente exclusivos y exhaustivos,
+
+$$
+P(X \leq x) = \sum_{i=1}^n P(X \leq x, A_i) = \sum_{i=1}^n P(X \leq x | A_i)P(A_i).
+$$
+
+Por definición, $P(X \leq x | A_i) = F_{X|A_i}(x)$. $\quad\blacksquare$
+
+**Ejemplo Avanzado**.
+Supongamos que $X$ es una **mezcla gaussiana finita**:
+
+* Con probabilidad $p_1$, $X \sim N(\mu_1, \sigma_1^2)$
+* Con probabilidad $p_2=1-p_1$, $X \sim N(\mu_2, \sigma_2^2)$
+
+Entonces
+
+$$
+f_X(x) = p_1 \frac{1}{\sqrt{2\pi}\sigma_1} e^{-\frac{(x-\mu_1)^2}{2\sigma_1^2}}
++ p_2 \frac{1}{\sqrt{2\pi}\sigma_2} e^{-\frac{(x-\mu_2)^2}{2\sigma_2^2}}.
+$$
+
+## Transformaciones de Variables Aleatorias
+
+Sea $X$ una variable aleatoria de valor real con densidad $f_X(x)$, y $h:\mathbb{R}\to\mathbb{R}$ una **biyección diferenciable** (es decir, $h$ es invertible y $h^{-1}$ es diferenciable). Definamos $Y = h(X)$. La distribución de $Y$ se determina como sigue.
+
+**Definición (Fórmula de Cambio de Variable).**
+Si $h$ es estrictamente monótona y diferenciable, entonces para $y$ en el rango de $h$,
+
+$$
+f_Y(y) = f_X(h^{-1}(y)) \left|\frac{d}{dy} h^{-1}(y)\right|.
+$$
+
+**Demostración.**
+Sea $h$ estrictamente creciente. La CDF de $Y$ es $F_Y(y) = P(Y \leq y) = P(X \leq h^{-1}(y)) = F_X(h^{-1}(y))$. Diferenciando ambos lados da
+
+$$
+f_Y(y) = f_X(h^{-1}(y)) \frac{d}{dy} h^{-1}(y).
+$$
+
+Si $h$ es decreciente, $\frac{d}{dy} h^{-1}(y)$ es negativo; por tanto, usamos el valor absoluto [@CasellaBerger2002].
+
+**Soporte para Casos No Monótonos.**
+Si $h$ no es monótona, $h^{-1}(y)$ es multivaluada. Entonces,
+
+$$
+f_Y(y) = \sum_{x\in h^{-1}(y)} \frac{f_X(x)}{|h'(x)|}.
+$$
+
+**Ejemplo.**
+Sea $Z \sim N(0,1)$. Encontrar la distribución de $X = Z^2$.
+
+* $h(z) = z^2$, por lo que $X$ tiene soporte en $x>0$.
+* $h^{-1}(x) = \pm \sqrt{x}$.
+* $f_Z(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$.
+
+Por tanto,
+
+$$
+f_X(x) = \frac{f_Z(\sqrt{x})}{|2\sqrt{x}|} + \frac{f_Z(-\sqrt{x})}{|2\sqrt{x}|}
+= \frac{1}{\sqrt{2\pi}} \frac{e^{-x/2}}{2\sqrt{x}}, \quad x>0.
+$$
+
+$X$ sigue una distribución chi-cuadrada con 1 grado de libertad.
+
+### Teorema de Transformación
+
+**Teorema.**
+Sea $X$ con CDF $F_X$ e $Y = h(X)$, donde $h$ es estrictamente creciente y continuamente diferenciable. Entonces,
+
+$$
+F_Y(y) = F_X(h^{-1}(y)), \qquad
+f_Y(y) = f_X(h^{-1}(y)) \frac{1}{h'(h^{-1}(y))}, \quad \text{para } y \in h(\mathbb{R}).
+$$
+
+**Demostración.**
+Inmediato por la regla de la cadena y argumentos de cambio de variable anteriores [@Durrett2019].
+
+**Nota Terminológica.**
+Usar "transformación diferenciable" (no "transformación continua") según la terminología estándar.
+
+## Simulación vía Transformación Inversa
+
+Supongamos que $F$ es la CDF de $X$, estrictamente creciente y continua. Si $U \sim \text{Uniforme}(0,1)$, entonces
+
+$$
+X = F^{-1}(U)
+$$
+
+tiene CDF $F$ [@Devroye1986].
+
+**Soporte y Advertencias**:
+
+* $F$ debe ser invertible; para $F$ discreta o no invertible, este método requiere adaptación.
+* En la práctica, $F^{-1}$ puede calcularse numéricamente; se requiere cuidado para la precisión.
+
+## Vectores Aleatorios
+
+Un **vector aleatorio** $\bar{X} = (X_1,\dots,X_k)$ es una función medible de $(\Omega, \mathcal{A}, P)$ a $(\mathbb{R}^k, \mathcal{B}^k)$, donde $\mathcal{B}^k$ es la $\sigma$-álgebra de Borel en $\mathbb{R}^k$. Su CDF conjunta es:
+
+$$
+F_{\bar{X}}(\bar{x}) = P(X_1 \leq x_1, \dots, X_k \leq x_k).
+$$
+
+**Caso Discreto y Continuo.**
+Si $(X,Y)$ es discreto:
+
+$$
+p_{X,Y}(x,y) = P(X=x, Y=y).
+$$
+
+Marginales: $p_X(x) = \sum_y p_{X,Y}(x,y)$, $p_Y(y) = \sum_x p_{X,Y}(x,y)$.
+
+Si continuo:
+
+$$
+f_{X,Y}(x,y) = \frac{\partial^2}{\partial x \partial y} F_{X,Y}(x,y).
+$$
+
+**Coherencia**.
+La función indicadora $\mathbf{1}_{{\cdot}}$ denota $1$ si su argumento es verdadero, $0$ en caso contrario. La función $\Phi(x)$ es la CDF normal estándar.
+
+## Independencia
+
+**Definición.**
+Las variables aleatorias $X$ e $Y$ son independientes si para todo $x, y$,
+
+$$
+P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y).
+$$
+
+Equivalentemente, su densidad conjunta (si existe) se factoriza:
+
+$$
+f_{X,Y}(x,y) = f_X(x)f_Y(y).
+$$
+
+## Transformaciones de Vectores Aleatorios
+
+### Transformaciones Lineales
+
+Sea $\bar{X} = (X_1,\dots,X_n)^T$ con vector de medias $\mu$ y matriz de covarianza $\Sigma$. Para $A \in \mathbb{R}^{m \times n}$, definamos $\bar{Y} = A\bar{X}$.
+
+**Teorema.**
+
+* $\mathbb{E}[\bar{Y}] = A \mathbb{E}[\bar{X}]$
+* $\text{Cov}(\bar{Y}) = A \, \text{Cov}(\bar{X}) \, A^T$
+
+**Demostración.**
+Por la linealidad de la esperanza,
+$\mathbb{E}[\bar{Y}] = \mathbb{E}[A\bar{X}] = A\mathbb{E}[\bar{X}]$.
+
+Para la covarianza,
+
+$$
+\text{Cov}(\bar{Y}) = \mathbb{E}[(\bar{Y} - \mathbb{E}[\bar{Y}])(\bar{Y} - \mathbb{E}[\bar{Y}])^T]
+= A\mathbb{E}[(\bar{X} - \mu)(\bar{X} - \mu)^T]A^T = A\Sigma A^T.
+$$
+
+**Ejemplo.**
+Sea $\bar{X} \sim N_2(\mu, \Sigma)$ y
+
+$$
+\bar{Y} = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \bar{X}.
+$$
+
+Si $\mu = (\mu_1, \mu_2)^T$, y $\Sigma = \begin{pmatrix} \sigma_1^2 & \rho \sigma_1 \sigma_2 \\ \rho \sigma_1 \sigma_2 & \sigma_2^2 \end{pmatrix}$, entonces
+
+$$
+\mathbb{E}[\bar{Y}] = \begin{pmatrix} \mu_1 + \mu_2 \\ \mu_1 - \mu_2 \end{pmatrix},
+$$
+
+$$
+\text{Cov}(\bar{Y}) = \begin{pmatrix} \sigma_1^2 + \sigma_2^2 + 2\rho \sigma_1 \sigma_2 & \sigma_1^2 - \sigma_2^2 \\ \sigma_1^2 - \sigma_2^2 & \sigma_1^2 + \sigma_2^2 - 2\rho \sigma_1 \sigma_2 \end{pmatrix}.
+$$
+
+### Transformaciones No Lineales
+
+Supongamos que $\bar{Y} = h(\bar{X})$ es una biyección diferenciable de $\mathbb{R}^n$ a $\mathbb{R}^n$. Sea $J = \det \left( \frac{\partial h}{\partial \bar{x}} \right)$ el determinante jacobiano.
+
+**Teorema (Cambio de Variables Multivariado).**
+Sea $f_{\bar{X}}$ la densidad de $\bar{X}$, y supongamos que $h$ y $h^{-1}$ son diferenciables, con $J$ no cero en todas partes. Entonces la densidad de $\bar{Y}$ es
+
+$$
+f_{\bar{Y}}(\bar{y}) = f_{\bar{X}}(h^{-1}(\bar{y})) \left| \det D h^{-1}(\bar{y}) \right|,
+$$
+
+donde $D h^{-1}$ es el jacobiano de $h^{-1}$ [@Billingsley1995].
+
+**Demostración.**
+Ver [@Billingsley1995, §16] para justificación rigurosa. La fórmula surge de la regla de sustitución en integrales multidimensionales.
+
+**Ejemplo (Avanzado).**
+Sean $X_1, X_2$ independientes, cada una $\sim \text{Exp}(\lambda)$. Definamos:
+
+$$
+Y_1 = X_1 + X_2, \qquad Y_2 = \frac{X_1}{X_1 + X_2}.
+$$
+
+Calcular la densidad conjunta $f_{Y_1, Y_2}(y_1, y_2)$.
+
+* La transformación inversa:
+
+  * $X_1 = y_1 y_2$
+  * $X_2 = y_1 (1 - y_2)$
+* Determinante jacobiano:
+
+  $$
+  J = \begin{vmatrix}
+  \frac{\partial X_1}{\partial y_1} & \frac{\partial X_1}{\partial y_2} \\
+  \frac{\partial X_2}{\partial y_1} & \frac{\partial X_2}{\partial y_2}
+  \end{vmatrix}
+  = \begin{vmatrix}
+  y_2 & y_1 \\
+  1 - y_2 & -y_1
+  \end{vmatrix} = -y_1
+  $$
+* La densidad conjunta:
+
+  $$
+  f_{Y_1, Y_2}(y_1, y_2) = f_{X_1, X_2}(y_1 y_2, y_1 (1 - y_2)) \cdot |J| = \lambda^2 y_1 e^{-\lambda y_1} \mathbf{1}_{{y_1 > 0, 0 < y_2 < 1}}.
+  $$
+
+**Ejemplo Avanzado.**
+Considerar el mapeo de coordenadas polares a cartesianas: $X = R \cos \Theta$, $Y = R \sin \Theta$, con $R, \Theta$ independientes, $R>0$, $\Theta \in (0,2\pi)$. El jacobiano es $r$, dando la densidad conjunta $f_{X,Y}(x,y) = f_{R,\Theta}(\sqrt{x^2 + y^2}, \arctan(y/x)) \cdot \frac{1}{\sqrt{x^2 + y^2}}$.
+
+## Aplicaciones en Análisis Multivariado
+
+### Análisis de Componentes Principales (PCA)
+
+PCA transforma variables aleatorias correlacionadas en componentes no correlacionados mediante una transformación lineal ortogonal [@Jolliffe2016].
+Sea $\bar{X}$ con matriz de covarianza $\Sigma$. El primer componente principal es la combinación lineal que maximiza la varianza, es decir, maximizar $\text{Var}(a^T\bar{X})$ bajo $||a||=1$. Los vectores propios de $\Sigma$ proporcionan la transformación; los valores propios correspondientes cuantifican la varianza explicada.
+
+**Ejemplo Numérico.**
+Sea $\Sigma = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+Valores propios: $3, 1$.
+Primer componente principal: $a_1 = (1/\sqrt{2}, 1/\sqrt{2})$, varianza $3$.
+
+### Análisis de Correlación Canónica
+
+Dados dos vectores aleatorios $(\bar{X}, \bar{Y})$, CCA busca combinaciones lineales que maximizan la correlación [@MardiaKentBibby1979].
+Sean $a, b$ que maximizan $\text{corr}(a^T\bar{X}, b^T\bar{Y})$. Esto requiere tanto matrices de covarianza como de covarianza cruzada.
+
+### Análisis Factorial
+
+El análisis factorial modela la matriz de covarianza $\Sigma$ como $\Sigma = \Lambda \Lambda^T + \Psi$, donde $\Lambda$ captura factores comunes y $\Psi$ es diagonal (varianza específica). Asume normalidad e independencia de factores [@MardiaKentBibby1979].
+
+## Ejercicios
+
+1. **Distribución de Mezcla.**
+   Sea $X$ con distribución de mezcla: con probabilidad $p$, $X\sim N(0,1)$; con $1-p$, $X\sim N(\mu,1)$.
+   (a) Escribir la FDP y CDF de $X$.
+   (b) Mostrar todos los pasos.
+
+2. **Demostración de Transformación.**
+   Sea $X$ con FDP $f_X(x)$, $h$ estrictamente creciente y diferenciable. Demostrar la fórmula para $f_Y(y)$.
+
+3. **Cambio de Variables Multivariado.**
+   Sean $X_1, X_2$ independientes, $\sim \text{Exp}(1)$. Encontrar la densidad conjunta de $(Y_1, Y_2) = (X_1 + X_2, X_1/X_2)$.
+
+4. **Cálculo de PCA.**
+   Dada $\Sigma = \begin{pmatrix} 4 & 2 \\ 2 & 3 \end{pmatrix}$, encontrar los componentes principales y la proporción de varianza total explicada.

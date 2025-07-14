@@ -1,0 +1,213 @@
+# Modelos ARIMA: Fundamentos, Teoría y Aplicación
+
+## Estacionaridad
+
+Un proceso estocástico ${X_t}_{t\in\mathbb{Z}}$ es **estrictamente estacionario** si para cada $n \in \mathbb{N}$ y cada conjunto de índices temporales $t_1, \ldots, t_n$ y $k \in \mathbb{Z}$, la distribución conjunta de $(X_{t_1}, \ldots, X_{t_n})$ es igual a la de $(X_{t_1+k}, \ldots, X_{t_n+k})$ [@Billingsley1995].
+
+**Estacionaridad débil (de covarianza)** requiere que:
+
+* $\mathrm{E}[X_t]=\mu$ (media constante para todo $t$),
+* $\mathrm{Var}[X_t]=\sigma^2 < \infty$ (varianza constante para todo $t$),
+* $\mathrm{Cov}(X_t, X_{t+h}) = \gamma(h)$ (autocovarianza depende solo del rezago $h$).
+
+**Ejemplo:**
+Considerar el proceso $X_t = \epsilon_t$ con $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. Este proceso es estricta y débilmente estacionario.
+En contraste, $Y_t = t + \epsilon_t$ es no estacionario en ambos sentidos, ya que su media depende de $t$.
+
+**Ejercicio:**
+Sea $Z_t = 0.5 Z_{t-1} + \epsilon_t$ con $Z_0=0$ y $\epsilon_t \sim \mathcal{N}(0,1)$ i.i.d. ¿Es ${Z_t}$ débilmente estacionario? Justificar analíticamente.
+
+## Ruido Blanco
+
+Un proceso de **ruido blanco** ${e_t}$ es una secuencia de variables aleatorias no correlacionadas que satisface:
+
+* $\mathrm{E}[e_t]=0$,
+* $\mathrm{Var}[e_t]=\sigma^2_e$,
+* $\mathrm{Cov}(e_t, e_s)=0$ para todo $t \neq s$.
+
+Si $e_t \sim \mathcal{N}(0,\sigma^2_e)$ i.i.d., se llama **ruido blanco gaussiano**.
+
+**Demostración:**
+Un proceso de ruido blanco con innovaciones i.i.d. es estrictamente estacionario:
+Para cualquier colección $(e_{t_1},...,e_{t_n})$, su distribución conjunta es invariante a desplazamientos temporales, puesto que todas las $e_t$ son i.i.d. [@Durrett2019].
+
+**Ejemplo:**
+Simular $e_t \sim \mathcal{N}(0,1)$ para $t=1,...,100$. La secuencia es ruido blanco; las autocorrelaciones empíricas son aproximadamente cero para $h\ne0$.
+
+**Ejercicio:**
+Dada una secuencia de residuos de un modelo ARIMA ajustado, proponer y justificar una prueba estadística para ruido blanco.
+
+## Caminatas Aleatorias y Raíces Unitarias
+
+Una **caminata aleatoria** ${Y_t}$ se define por $Y_t = Y_{t-1} + e_t$, con $e_t$ como ruido blanco. Su varianza crece sin límite:
+
+$$
+\mathrm{Var}(Y_t) = t \cdot \sigma^2_e,
+$$
+
+que es una característica distintiva de la no estacionaridad.
+
+La presencia de una **raíz unitaria** (la raíz en $z=1$ en el polinomio AR) significa que se requiere diferenciación para estacionaridad.
+
+**Ejemplo:**
+Sea $Y_0=0$, $e_t \sim \mathcal{N}(0,1)$. Simular $Y_t$ para $t=1,\ldots,100$; $\mathrm{Var}(Y_{100}) = 100$.
+
+**Ejercicio:**
+Dado $W_t = W_{t-1} + \epsilon_t$ con $W_0=0$, calcular $\mathrm{Cov}(W_t, W_s)$ y discutir estacionaridad.
+
+## Preprocesamiento y Suavizado
+
+Sea ${y_t}_{t=1}^N$ una serie de tiempo.
+
+**Promedio Móvil Simple (PMS):**
+
+$$
+S_t = \frac{1}{2k+1} \sum_{j=-k}^{k} y_{t+j}, \quad k \in \mathbb{N},\; k < t \leq N-k
+$$
+
+**Mediana Móvil:**
+
+$$
+M_t = \operatorname{mediana}(y_{t-k}, \ldots, y_{t+k})
+$$
+
+La mediana móvil es robusta a valores atípicos, mientras que el PMS no lo es.
+
+**Nota de Coherencia:**
+Usar notación consistente $y_t$ para la serie de tiempo observada.
+
+**Ejemplo:**
+Supongamos que $y_t$ es temperatura diaria. El suavizado con $k=3$ produce $S_t$ y $M_t$ que reducen fluctuaciones a corto plazo.
+A continuación se presenta una demostración con $y_t = 20 + \sin(2\pi t/30) + \epsilon_t$ simulado, $\epsilon_t \sim \mathcal{N}(0,1)$.
+
+**Ejercicio:**
+Aplicar tanto PMS como mediana móvil a un conjunto de datos ruidoso. Comparar e interpretar los resultados.
+
+## Diferenciación para Estacionaridad
+
+El operador de **primera diferencia** se define como
+
+$$
+\Delta y_t = y_t - y_{t-1}
+$$
+
+La **diferencia estacional** (para período $p$) es
+
+$$
+\Delta_p y_t = y_t - y_{t-p}
+$$
+
+**Demostración:**
+Para una caminata aleatoria $Y_t = Y_{t-1} + e_t$,
+
+$$
+\Delta Y_t = Y_t - Y_{t-1} = e_t
+$$
+
+Dado que ${e_t}$ es ruido blanco (estacionario), diferenciar la caminata aleatoria produce un proceso estacionario.
+
+## Descomposición Aditiva y Multiplicativa
+
+Una serie de tiempo puede descomponerse como:
+
+**Modelo Aditivo:** $y_t = T_t + S_t + I_t$
+
+**Modelo Multiplicativo:** $y_t = T_t \cdot S_t \cdot I_t$
+
+Donde $T_t$ es tendencia, $S_t$ es estacional, $I_t$ es irregular.
+
+**Criterios:**
+Usar el modelo aditivo cuando las fluctuaciones estacionales son aproximadamente constantes; usar el modelo multiplicativo si la variación estacional crece con la tendencia [@Hyndman2021]. Una transformación logarítmica puede convertir multiplicativo a aditivo.
+
+**Ejemplo:**
+Dadas ventas mensuales con una clara tendencia ascendente y amplitud estacional creciente, el modelo multiplicativo es apropiado. Descomponer un $y_t = (10 + 0.5t) \times (1 + 0.2\sin(2\pi t/12)) + \epsilon_t$ simulado.
+
+**Ejercicio:**
+Descomponer una serie de tiempo proporcionada usando enfoques tanto aditivos como multiplicativos. Justificar el modelo apropiado.
+
+## El Modelo ARIMA: Definición y Propiedades
+
+Sea $B$ el **operador de retroceso**: $By_t = y_{t-1}$, $B^k y_t = y_{t-k}$.
+
+Un modelo **ARIMA($p,d,q$)** está dado por
+
+$$
+\Phi(B)(1-B)^d y_t = \mu + \Theta(B) e_t,
+$$
+
+donde
+
+* $\Phi(B) = 1 - \phi_1 B - \cdots - \phi_p B^p$ es el polinomio autoregresivo (AR),
+* $(1-B)^d$ es el operador de diferencia de orden $d$,
+* $\Theta(B) = 1 + \theta_1 B + \cdots + \theta_q B^q$ es el polinomio de promedio móvil (MA),
+* $\mu$ es una constante, y
+* $e_t$ es ruido blanco.
+
+**Identificación y Estimación del Modelo**
+El procedimiento estándar sigue la metodología de Box-Jenkins:
+
+1. Identificación del modelo vía ACF/PACF y pruebas de raíz unitaria (ej., Dickey-Fuller Aumentado, Phillips-Perron) [@Hamilton1994].
+2. Estimación de parámetros, típicamente vía máxima verosimilitud.
+3. Diagnóstico del modelo (análisis de residuos).
+
+**Estacionaridad e Invertibilidad:**
+
+* **Estacionaridad**: Todas las raíces de $\Phi(B)$ deben yacer fuera del círculo unitario en el plano complejo [@Durrett2019].
+* **Invertibilidad**: Todas las raíces de $\Theta(B)$ también deben yacer fuera del círculo unitario.
+
+## Modelos Autoregresivos (AR)
+
+Un proceso **AR($p$)** satisface
+
+$$
+y_t = \mu + \sum_{i=1}^{p} \phi_i y_{t-i} + e_t
+$$
+
+**Demostración de las Ecuaciones de Yule-Walker:**
+Sea $\gamma(h)$ la autocovarianza en el rezago $h$.
+
+$$
+\gamma(h) = \sum_{i=1}^{p} \phi_i \gamma(h-i) + \sigma^2_e \delta_{h,0}
+$$
+
+para $h \ge 0$, donde $\delta_{h,0}$ es la delta de Kronecker.
+
+**Ejemplo:**
+Simular AR(2): $y_t = 0.5 y_{t-1} - 0.3 y_{t-2} + e_t$. Analizar la ACF y PACF muestrales.
+
+**Ejercicio:**
+Estimar parámetros para un proceso AR(2) dado una muestra. Probar la condición de estacionaridad.
+
+## Modelos de Media Móvil (MA)
+
+Un proceso **MA($q$)** es
+
+$$
+y_t = \mu + e_t + \sum_{j=1}^{q} \theta_j e_{t-j}
+$$
+
+**Invertibilidad:**
+Las raíces de $\Theta(B)$ deben yacer fuera del círculo unitario para garantizar una representación única en términos de $y_t$'s pasados [@Hamilton1994].
+
+**Demostración de la Estructura de Autocorrelación:**
+La $\mathrm{ACF}$ de MA($q$) es cero más allá del rezago $q$.
+
+**Ejercicio:**
+Dada una muestra de un proceso MA(1), estimar $\theta_1$ y probar la invertibilidad.
+
+## Procesos Integrados
+
+Una serie es **integrada de orden $d$** ($I(d)$) si $(1-B)^d y_t$ es estacionaria pero $(1-B)^{d-1} y_t$ no lo es.
+
+**Pruebas ADF/PP:**
+Las pruebas de Dickey-Fuller Aumentado y Phillips-Perron se usan para determinar el número mínimo de diferencias requeridas para estacionaridad [@Hamilton1994].
+
+**Nota de Terminología:**
+Usar "diferencias" o "diferenciación"—no "diferenciaciones"—para series de tiempo discretas.
+
+## Ejercicios
+
+1. Demostrar que diferenciar una caminata aleatoria produce un proceso estacionario.
+2. Dados datos de series de tiempo, probar la presencia de raíces unitarias y determinar el orden de integración usando la prueba ADF.
+3. Simular y graficar un proceso AR(2) y MA(1). Analizar la ACF y PACF muestrales.
+4. Para una serie de residuos dada, realizar una prueba de Ljung-Box para ruido blanco.

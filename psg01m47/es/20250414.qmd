@@ -1,0 +1,137 @@
+# Distribuciones Condicionales y Predicción
+
+## Distribuciones Condicionales
+
+Sea $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad. Consideremos un vector aleatorio $(X, Y)$ definido en este espacio, donde $X : \Omega \to \mathbb{R}$ e $Y : \Omega \to \mathbb{R}$ son variables aleatorias. La **distribución condicional** de $Y$ dado $X$ es una familia de medidas de probabilidad ${P_{Y|X=x} : x \in \mathbb{R}}$ tal que, para cualquier conjunto de Borel $B \subseteq \mathbb{R}$,
+
+$$
+P_{Y|X=x}(B) = P(Y \in B \mid X = x), \quad \text{siempre que } P(X = x) > 0.
+$$
+
+Más generalmente, para variables aleatorias arbitrarias y $\sigma$-álgebras, la distribución condicional se define vía la derivada de Radon–Nikodym como la versión regular única (salvo conjuntos $P$-nulos) $P_{Y|X}(\cdot \mid X)$ [@Billingsley1995].
+
+Para variables aleatorias **discretas**,
+
+$$
+P(Y = y \mid X = x) = \frac{P(X = x, Y = y)}{P(X = x)}, \quad \text{siempre que } P(X = x) > 0.
+$$
+
+Para variables aleatorias **absolutamente continuas**, con densidad conjunta $f_{X,Y}$ y marginal $f_X$,
+
+$$
+f_{Y|X}(y|x) = \frac{f_{X,Y}(x, y)}{f_X(x)}, \quad \text{donde } f_X(x) > 0.
+$$
+
+### Propiedades
+
+* **Propiedad de Torre:** $\mathbb{E}\left[\,\mathbb{E}[Y \mid X]\,\right] = \mathbb{E}[Y]$.
+* **Desigualdad de Jensen:** Para cualquier función convexa $\varphi$, $\varphi(\mathbb{E}[Y|X]) \leq \mathbb{E}[\varphi(Y)|X]$ [@Durrett2019].
+
+**Ejemplo.**
+
+Sea $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$ un vector aleatorio normal bivariado, donde $|\rho| < 1$. La distribución condicional de $Y$ dado $X = x$ es normal:
+
+$$
+Y|X = x \sim N\left(\mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(x - \mu_X),\; \sigma_Y^2(1 - \rho^2)\right).
+$$
+
+**Demostración:**
+Sea $\Sigma = \begin{pmatrix} \sigma_X^2 & \rho \sigma_X \sigma_Y \\ \rho \sigma_X \sigma_Y & \sigma_Y^2 \end{pmatrix}$. Las propiedades estándar de la normal multivariada producen la media y varianza condicional como arriba; ver [@Billingsley1995, p. 186].
+
+## Teoría de Predicción
+
+Sea $(X, Y)$ como arriba. Supongamos que se busca una función $g(X)$ para predecir $Y$ tal que el **error cuadrático medio** $\mathbb{E}[(Y - g(X))^2]$ se minimice. El predictor óptimo en este sentido es la **esperanza condicional**:
+
+$$
+\hat{Y} = \mathbb{E}[Y \mid X].
+$$
+
+### Propiedades
+
+Sea $\mathcal{G} = \sigma(X)$. Entonces:
+
+1. **Insesgadez:** $\mathbb{E}[\hat{Y}] = \mathbb{E}[Y]$.
+
+2. **Ortogonalidad:** $\mathbb{E}[(Y - \hat{Y}) h(X)] = 0$ para cualquier función integrable $h$ medible con respecto a $\mathcal{G}$.
+
+3. **Varianza Mínima:** Para cualquier otro predictor $g(X)$,
+
+   $$
+   \mathbb{E}[(Y - \hat{Y})^2] \leq \mathbb{E}[(Y - g(X))^2].
+   $$
+
+**Demostraciones:**
+
+* *Insesgadez*: Por la propiedad de torre, $\mathbb{E}[\mathbb{E}[Y|X]] = \mathbb{E}[Y]$.
+* *Ortogonalidad*: Para cualquier $h$ medible, $\mathbb{E}[(Y - \mathbb{E}[Y|X])h(X)] = 0$ [@Durrett2019, Theorem 5.5.3].
+* *Varianza Mínima*: Para cualquier $g(X)$,
+
+  $$
+  \mathbb{E}\left[(Y - g(X))^2\right] = \mathbb{E}\left[(Y - \mathbb{E}[Y|X])^2\right] + \mathbb{E}\left[(\mathbb{E}[Y|X] - g(X))^2\right],
+  $$
+
+  por lo que el mínimo se alcanza en $g = \mathbb{E}[Y|X]$.
+
+## Predicción Lineal
+
+Supongamos que restringimos la atención a **predictores lineales** de la forma $g(X) = a + b X$. Los coeficientes $a, b$ que minimizan el error cuadrático medio son:
+
+$$
+b^* = \frac{\text{Cov}(X, Y)}{\text{Var}(X)}, \quad a^* = \mathbb{E}[Y] - b^* \mathbb{E}[X],
+$$
+
+siempre que $\text{Var}(X) > 0$. Por tanto, el **mejor predictor lineal** es
+
+$$
+\hat{Y}_L = \mathbb{E}[Y] + \frac{\text{Cov}(X, Y)}{\text{Var}(X)} (X - \mathbb{E}[X]).
+$$
+
+**Demostración:**
+Sea $g(X) = a + bX$; expandir $\mathbb{E}[(Y - (a + bX))^2]$, establecer las derivadas con respecto a $a$ y $b$ igual a cero, y resolver para los $a$ y $b$ que minimizan.
+
+### Caso Especial: Normal Bivariado
+
+Si $(X, Y) \sim N_2(\mu_X, \mu_Y, \sigma_X^2, \sigma_Y^2, \rho)$, entonces $\mathbb{E}[Y|X]$ es afín en $X$, por lo que el mejor predictor lineal iguala la esperanza condicional:
+
+$$
+\mathbb{E}[Y|X] = \mu_Y + \rho \frac{\sigma_Y}{\sigma_X}(X - \mu_X).
+$$
+
+Por tanto, el mejor predictor lineal y el mejor predictor general (sin restricciones) coinciden para la normal bivariada [@LehmannCasella1998].
+
+## Aplicaciones
+
+### Análisis de Regresión
+
+La regresión estudia la relación entre una variable dependiente $Y$ y variables independientes $X$, con la esperanza condicional $\mathbb{E}[Y|X]$ como objetivo de estimación.
+**Ejemplo:**
+Supongamos $Y = \beta_0 + \beta_1 X + \varepsilon$ con $\varepsilon \sim N(0, \sigma^2)$, independiente de $X$. Dadas las observaciones $(X_1, Y_1), \ldots, (X_n, Y_n)$, el estimador de mínimos cuadrados ordinarios $\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i$ proporciona predicciones para $Y$ dado $X$. Los intervalos de predicción se siguen de la distribución normal condicional [@Hamilton1994].
+
+### Pronóstico de Series de Tiempo
+
+Para una serie de tiempo estacionaria ${X_t}$, la predicción de $X_{t+h}$ dado $\mathcal{F}_t = \sigma(X_1, \ldots, X_t)$ es $\mathbb{E}[X_{t+h} | \mathcal{F}_t]$.
+**Ejemplo:**
+En el modelo AR(1), $X_{t+1} = \phi X_t + \varepsilon_{t+1}$ con $\varepsilon_{t+1} \sim N(0, \sigma^2)$,
+
+$$
+\mathbb{E}[X_{t+1}|X_t] = \phi X_t.
+$$
+
+La varianza del error de pronóstico es $\text{Var}(X_{t+1} - \phi X_t) = \sigma^2$. Los intervalos de predicción se derivan de la distribución normal condicional [@Hamilton1994].
+
+### Aprendizaje Automático
+
+En aprendizaje supervisado, los algoritmos buscan aproximar $\mathbb{E}[Y|X]$ usando datos.
+**Ejemplo:**
+Una red neuronal de alimentación hacia adelante $f_\theta(X)$ se entrena minimizando el error cuadrático medio empírico sobre muestras $(X_i, Y_i)$. Después del entrenamiento, $f_\theta(X)$ aproxima la esperanza condicional $\mathbb{E}[Y|X]$. Los métodos de ensamble, como los bosques aleatorios, combinan múltiples predictores para mejorar la precisión de estimación [@HastieTibshiraniFriedman2009].
+
+## Ejercicios
+
+1. **Esperanza Condicional (Demostración):**
+   Demostrar que $\mathbb{E}[(Y - \mathbb{E}[Y|X]) h(X)] = 0$ para cualquier función integrable $h(X)$.
+2. **Predictor Lineal (Cálculo):**
+   Sean $X$ e $Y$ con distribución conjunta: $\mathbb{E}[X] = 2$, $\mathbb{E}[Y] = 5$, $\text{Cov}(X, Y) = 3$, $\text{Var}(X) = 4$. Calcular el mejor predictor lineal de $Y$ dado $X$.
+3. **Series de Tiempo (Aplicación):**
+   Para el modelo AR(1) $X_{t+1} = 0.7 X_t + \varepsilon_{t+1}$, $\varepsilon_{t+1} \sim N(0, 1)$, calcular $\mathbb{E}[X_{t+2} | X_t]$.
+4. **Aprendizaje Automático (Interpretación):**
+   Supongamos que una red neuronal produce $\hat{Y} = f_\theta(X)$. Explicar bajo qué condiciones $f_\theta(X)$ aproxima $\mathbb{E}[Y|X]$ y cómo esto se relaciona con la optimalidad de predicción.

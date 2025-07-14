@@ -1,55 +1,79 @@
 project:
-  type: default
+  type: book
   output-dir: _publish
-engine: knitr
-jupyter: python3
-bibliography: ./_bib/references.bib
-link-citations: true
-colorlinks: true
-fontsize: 12pt
-citation: false
-appendix-cite-as: display
-google-scholar: false
-execute:
-  eval: true
-  echo: false
-  include: false
-  keep-md: false
-  freeze: false
+  # render:
+  #   - "*.qmd"
+  #   - "!scratch/**"
+
+book:
+  title: "Introducción a los Modelos Probabilísticos (PSG-01M47)"
+  subtitle: "Apuntes de Clase"
+  author:
+  - name: Alejandro Verri Kozlowski
+    orcid: 0000-0002-8535-1170
+    email: averri@fi.uba.ar
+    attributes:
+      corresponding: true
+    affiliations:
+      id: LABDIN/FIUBA
+      name: Laboratorio de Dinámica de Estructuras
+      department: Facultad de Ingeniería. Universidad de Buenos Aires (FIUBA)
+      address: Las Heras 2214
+      city: Ciudad de Buenos Aires
+      country: Argentina
+      postal_code: 1127
+  language: es
+  chapters:
+    - index.qmd
+    - psg01m47/es/20250317.qmd
+    - psg01m47/es/20250321.qmd
+    - psg01m47/es/20250328.qmd
+    - psg01m47/es/20250331.qmd
+    - psg01m47/es/20250404.qmd
+    - psg01m47/es/20250414.qmd
+    - psg01m47/es/20250421.qmd
+    - psg01m47/es/20250425.qmd
+    - psg01m47/es/20250428.qmd
+    - psg01m47/es/20250512.qmd
+    - psg01m47/es/20250519.qmd
+    - psg01m47/es/20250523.qmd
+    - psg01m47/es/20250530.qmd
+  # appendices:
+  #   - references.qmd
+
 format:
   html:
-    output-file: index.html
-    self-contained: false
+    theme:
+      light: cosmo
+      dark: darkly
+    highlight-style: a11y
     toc: true
-    toc-depth: 3
     toc-location: left
-    link-citations: true
+    toc-title: "TOC"
+    toc-depth: 3
+    number-sections: true
+    search: true
+    page-navigation: true
+    link-external-newwindow: true
+    anchor-sections: true
+    page-footer:
+      left: |
+        <span style="font-size:0.9em">© 2025 Alejandro Verri Kozlowski</span>
+      right: |
+        <span style="font-size:0.9em">Powered by <a href="https://quarto.org" target="_blank">Quarto</a></span>
     code-fold: true
-    code-summary: Show code
+    code-summary: "Source"
     code-line-numbers: false
-    code-copy: true
+    code-tools:
+      source: true
+      toggle: true
     code-overflow: scroll
-    fig-width: 7
-    fig-height: 5
-    math: true
-    math-output: mathjax
-    page-layout: article
-    margin-header: 1em
-    margin-footer: 1em
-    margin-left: 1em
-    margin-right: 1em
+    self-contained: false
     css: _build/styles.css
-toc-title: Table of Contents
-crossref:
-  fig-title: Fig.
-  tbl-title: Table
-  eq-title: Equation
-  eq-prefix: eq.
-  tbl-prefix: tbl.
-  fig-prefix: fig.
-params:
-  background: white
-  render: none
-  ext: png
-  lang: EN
+    math: mathjax
 
+  pdf:
+    documentclass: scrreprt
+    classoption: [oneside]
+    geometry: ["margin=1.1in"]
+    number-sections: true

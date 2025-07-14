@@ -1,0 +1,205 @@
+# Espacios de Probabilidad
+
+## Introducción
+
+Un espacio de probabilidad proporciona la base matemática formal para modelar fenómenos aleatorios. Esta estructura permite el razonamiento riguroso sobre la incertidumbre al definir un marco consistente para eventos, resultados y sus probabilidades asociadas. Este capítulo presenta definiciones formales, propiedades esenciales y resultados fundamentales que subyacen a la teoría de probabilidades moderna.
+
+## Sigma-Álgebras y Preliminares de Teoría de la Medida
+
+Sea $\Omega$ un conjunto no vacío llamado **espacio muestral**, que representa todos los posibles resultados de un experimento aleatorio. Una **sigma-álgebra** $\mathcal{F}$ en $\Omega$ es una colección de subconjuntos de $\Omega$ (llamados **eventos**) que satisface:
+
+1. $\Omega \in \mathcal{F}$,
+2. Si $A \in \mathcal{F}$, entonces $A^{c} \in \mathcal{F}$,
+3. Si ${A_n}*{n=1}^\infty \subset \mathcal{F}$, entonces $\bigcup*{n=1}^\infty A_n \in \mathcal{F}$.
+
+La clausura bajo intersecciones numerables se sigue de las leyes de De Morgan y las propiedades 2–3.
+
+## Espacio de Probabilidad (Definición Formal)
+
+Un **espacio de probabilidad** es una terna $(\Omega, \mathcal{F}, P)$, donde:
+
+* $\Omega$ es el espacio muestral,
+* $\mathcal{F}$ es una sigma-álgebra de subconjuntos de $\Omega$,
+* $P: \mathcal{F} \to [0, 1]$ es una **medida de probabilidad**, que satisface:
+
+  1. $P(\Omega) = 1$,
+  2. $P(\emptyset) = 0$,
+  3. $P(A) \geq 0$ para todo $A \in \mathcal{F}$,
+  4. Para cualquier sucesión numerable de eventos disjuntos por pares ${A_n}_{n=1}^{\infty} \subset \mathcal{F}$,
+
+  $$
+  P\left(\bigcup_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty} P(A_n).
+  $$
+
+Este sistema axiomático es fundamental y generaliza las asignaciones intuitivas de probabilidad a espacios complejos, posiblemente no numerables [@Billingsley1995].
+
+## Variables Aleatorias
+
+Una **variable aleatoria** es una función medible $X: (\Omega, \mathcal{F}) \to (\mathbb{R}, \mathcal{B}(\mathbb{R}))$, donde $\mathcal{B}(\mathbb{R})$ denota la sigma-álgebra de Borel de $\mathbb{R}$. Es decir, para todo conjunto de Borel $B \subseteq \mathbb{R}$,
+
+$$
+X^{-1}(B) \in \mathcal{F}.
+$$
+
+Esta propiedad (medibilidad) asegura que la probabilidad de cualquier evento concerniente a $X$ esté bien definida [@Durrett2019].
+
+### Medibilidad e Imagen Inversa
+
+Una función $X$ es **medible** si, para todo conjunto de Borel $B$, la imagen inversa $X^{-1}(B) = {\omega \in \Omega : X(\omega) \in B}$ pertenece a $\mathcal{F}$.
+
+## Distribuciones de Probabilidad de Variables Aleatorias
+
+La **distribución** de una variable aleatoria $X$ se define como la medida imagen $P_X(B) = P(X^{-1}(B))$ para $B \in \mathcal{B}(\mathbb{R})$.
+
+### Función de Distribución Acumulada (CDF)
+
+La **función de distribución acumulada** de $X$ es
+
+$$
+F_X(x) = P(X \leq x), \quad x \in \mathbb{R}.
+$$
+
+### Distribuciones Discretas y Continuas
+
+* **Discreta:** Si $X$ toma a lo sumo valores numerables, definimos la **función de masa de probabilidad (pmf)**
+
+  $$
+  p_X(x) = P(X = x), \quad \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1.
+  $$
+* **Continua:** Si existe una función $f_X$ tal que
+
+  $$
+  P(X \in B) = \int_B f_X(x)\,dx
+  $$
+
+  para todos los conjuntos de Borel $B$, entonces $f_X$ es la **función de densidad de probabilidad (pdf)** de $X$. Debe satisfacer $f_X(x) \geq 0$ y
+
+  $$
+  \int_{-\infty}^{\infty} f_X(x)\,dx = 1.
+  $$
+
+### Distribuciones Mixtas
+
+Las variables aleatorias también pueden tener **distribuciones mixtas** que no son ni puramente discretas ni puramente continuas. Tales casos surgen, por ejemplo, en distribuciones con átomos y una componente absolutamente continua [@Billingsley1995].
+
+## Esperanza Matemática
+
+Sea $X$ una variable aleatoria en $(\Omega, \mathcal{F}, P)$.
+
+* La **esperanza matemática** (valor esperado) se define como
+
+  $$
+  E[X] =
+  \begin{cases}
+  \sum_{x \in \operatorname{Range}(X)} x\,p_X(x), & \text{si $X$ es discreta,} \\
+  \int_{-\infty}^{\infty} x\,f_X(x)\,dx, & \text{si $X$ es continua.}
+  \end{cases}
+  $$
+
+  siempre que $E[|X|] < \infty$.
+
+### Linealidad y Convergencia Monótona
+
+La esperanza es lineal: Para $X, Y$ integrables y constantes $a, b$,
+
+$$
+E[aX + bY] = a E[X] + b E[Y].
+$$
+
+Si $0 \leq X_n \uparrow X$, entonces $E[X_n] \uparrow E[X]$ (Teorema de Convergencia Monótona) [@Durrett2019].
+
+## Varianza y Desviación Estándar
+
+La **varianza** de $X$ (con $E[X^2] < \infty$) es
+
+$$
+\operatorname{Var}(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2.
+$$
+
+La **desviación estándar** es $\sigma_X = \sqrt{\operatorname{Var}(X)}$.
+
+## Probabilidad Condicional
+
+Para $A, B \in \mathcal{F}$ con $P(B) > 0$, la **probabilidad condicional** de $A$ dado $B$ es
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}.
+$$
+
+## Teoremas Fundamentales
+
+### Ley de Probabilidad Total
+
+Sea ${A_i}_{i=1}^{n}$ una partición finita o numerable de $\Omega$ con $P(A_i) > 0$ para todo $i$. Para cualquier $B \in \mathcal{F}$,
+
+$$
+P(B) = \sum_{i} P(B|A_i)P(A_i).
+$$
+
+**Demostración.**
+Como los $A_i$ son disjuntos y $\bigcup_{i} A_i = \Omega$,
+
+$$
+P(B) = P\left(B \cap \Omega\right) = P\left(B \cap \bigcup_{i} A_i\right) = \sum_{i} P(B \cap A_i) = \sum_{i} P(B|A_i)P(A_i).
+$$
+
+### Teorema de Bayes
+
+Para eventos $A, B \in \mathcal{F}$ con $P(B) > 0$,
+
+$$
+P(A|B) = \frac{P(B|A)P(A)}{P(B)}.
+$$
+
+**Demostración.**
+Por la definición de probabilidad condicional,
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}.
+$$
+
+**Ejemplo Discreto: Suma de Dos Dados**
+
+Sea $\Omega = {(i,j) : i, j \in {1,\ldots,6}}$ y definamos $X(i,j) = i + j$. Entonces $\operatorname{Range}(X) = {2,3,\ldots,12}$.
+
+Para $x \in \operatorname{Range}(X)$,
+
+$$
+p_X(x) = P(X = x) = \frac{\#\text{ de pares con suma } x}{36}.
+$$
+
+Para $x = 7$, hay 6 pares; así $p_X(7) = 6/36 = 1/6$.
+
+Calcular la esperanza:
+
+$$
+E[X] = \sum_{x=2}^{12} x \cdot p_X(x) = 7.
+$$
+
+Calcular la varianza:
+
+$$
+\operatorname{Var}(X) = \sum_{x=2}^{12} (x-7)^2 p_X(x) = \frac{35}{6}.
+$$
+
+**Ejemplo Continuo: Distribución Exponencial**
+
+Sea $X$ con pdf $f_X(x) = \lambda e^{-\lambda x}$ para $x \geq 0$ ($\lambda > 0$).
+
+* $F_X(x) = 1 - e^{-\lambda x}$ para $x \geq 0$,
+* $E[X] = \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = 1/\lambda$,
+* $\operatorname{Var}(X) = \int_{0}^{\infty} (x - 1/\lambda)^2 \lambda e^{-\lambda x} dx = 1/\lambda^2$.
+
+## Ejercicios
+
+1. **Construcción de Espacio de Probabilidad:**
+   Dado $\Omega = [0,1]$, sea $\mathcal{F}$ la sigma-álgebra de Borel, y defina $P$ como la medida de Lebesgue. Demuestre que $(\Omega, \mathcal{F}, P)$ es un espacio de probabilidad.
+
+2. **Verificación de Sigma-Álgebra:**
+   Demuestre que la intersección de una colección numerable de sigma-álgebras en $\Omega$ es en sí misma una sigma-álgebra.
+
+3. **Aplicación del Teorema:**
+   Para $A_1, A_2, \ldots, A_n$ mutuamente excluyentes con $\sum_{i=1}^{n} P(A_i) = 1$ y un evento $B$ con $P(B) > 0$, derive $P(A_j|B)$ usando el teorema de Bayes.
+
+4. **Cálculo Avanzado:**
+   Sea $X \sim \text{Exp}(\lambda)$. Demuestre que $E[X^k] = k!/\lambda^k$ para entero $k \geq 1$.

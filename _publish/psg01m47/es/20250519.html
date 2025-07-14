@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Procesos de Poisson Compuestos – Introducción a los Modelos Probabilísticos (PSG-01M47)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../psg01m47/es/20250523.html" rel="next">
+<link href="../../psg01m47/es/20250512.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fced259a1985fd972ecb57c7cd45153f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-732fb9ccd080a018ca85ca5d15770f52.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fced259a1985fd972ecb57c7cd45153f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-9ad2f6784ef7740f8923865819855fc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-667bf6aa307230ea1d03c4f3ea1eecdd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9ad2f6784ef7740f8923865819855fc8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../_build/styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../psg01m47/es/20250519.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesos de Poisson Compuestos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Introducción a los Modelos Probabilísticos (PSG-01M47)</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><em>Resumen</em></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250317.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Espacios de Probabilidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250321.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Técnicas de Conteo en Probabilidad y Combinatoria</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250328.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probabilidad Condicional e Independencia</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250331.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Variables Aleatorias</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250404.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Variables Aleatorias y Vectores: Transformaciones y Aplicaciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250414.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones Condicionales y Predicción</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250421.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Ley de los Grandes Números y Teorema Central del Límite</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250425.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El Proceso de Bernoulli: Definición, Propiedades y Aplicaciones</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250428.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Procesos de Poisson</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250512.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesos de Markov</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250519.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesos de Poisson Compuestos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250523.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series de Tiempo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../psg01m47/es/20250530.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Modelos ARIMA: Fundamentos, Teoría y Aplicación</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">TOC</h2>
+   
+  <ul>
+  <li><a href="#introducción-conceptual" id="toc-introducción-conceptual" class="nav-link active" data-scroll-target="#introducción-conceptual"><span class="header-section-number">11.1</span> Introducción Conceptual</a></li>
+  <li><a href="#definición-formal-y-propiedades-fundamentales" id="toc-definición-formal-y-propiedades-fundamentales" class="nav-link" data-scroll-target="#definición-formal-y-propiedades-fundamentales"><span class="header-section-number">11.2</span> Definición Formal y Propiedades Fundamentales</a>
+  <ul class="collapse">
+  <li><a href="#incrementos-independientes-y-estacionaridad" id="toc-incrementos-independientes-y-estacionaridad" class="nav-link" data-scroll-target="#incrementos-independientes-y-estacionaridad"><span class="header-section-number">11.2.1</span> Incrementos Independientes y Estacionaridad</a></li>
+  </ul></li>
+  <li><a href="#momentos-del-proceso-de-poisson-compuesto" id="toc-momentos-del-proceso-de-poisson-compuesto" class="nav-link" data-scroll-target="#momentos-del-proceso-de-poisson-compuesto"><span class="header-section-number">11.3</span> Momentos del Proceso de Poisson Compuesto</a>
+  <ul class="collapse">
+  <li><a href="#esperanza" id="toc-esperanza" class="nav-link" data-scroll-target="#esperanza"><span class="header-section-number">11.3.1</span> Esperanza</a></li>
+  <li><a href="#varianza" id="toc-varianza" class="nav-link" data-scroll-target="#varianza"><span class="header-section-number">11.3.2</span> Varianza</a></li>
+  </ul></li>
+  <li><a href="#representación-distribucional-y-métodos-de-transformadas" id="toc-representación-distribucional-y-métodos-de-transformadas" class="nav-link" data-scroll-target="#representación-distribucional-y-métodos-de-transformadas"><span class="header-section-number">11.4</span> Representación Distribucional y Métodos de Transformadas</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">11.5</span> Ejercicios</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Procesos de Poisson Compuestos</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción-conceptual" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="introducción-conceptual"><span class="header-section-number">11.1</span> Introducción Conceptual</h2>
+<p>En aplicaciones avanzadas de probabilidad—como ciencias actuariales, matemáticas financieras, ingeniería de confiabilidad, y gestión cuantitativa de riesgos—es frecuentemente necesario modelar no solo el número de eventos aleatorios a lo largo del tiempo, sino también la magnitud aleatoria asociada con cada evento. Por ejemplo, en matemáticas de seguros, cada reclamo se caracteriza por su tamaño aleatorio de reclamo (o severidad), y en confiabilidad, cada evento de falla incurre un costo de reparación aleatorio. Para capturar esta doble aleatoriedad, el <strong>proceso de Poisson compuesto</strong> es fundamental.</p>
+<p>Un proceso de Poisson compuesto combina dos fuentes de incertidumbre: el número de eventos dentro de un intervalo de tiempo, modelado por un proceso de Poisson, y el tamaño o severidad aleatoria de cada evento, modelado por una secuencia independiente de variables aleatorias idénticamente distribuidas.</p>
+</section>
+<section id="definición-formal-y-propiedades-fundamentales" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="definición-formal-y-propiedades-fundamentales"><span class="header-section-number">11.2</span> Definición Formal y Propiedades Fundamentales</h2>
+<p>Sea <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> un espacio de probabilidad. Definamos los siguientes objetos:</p>
+<ul>
+<li>Sea <span class="math inline">\({N(t) : t \geq 0}\)</span> un proceso de Poisson de tasa <span class="math inline">\(\lambda &gt; 0\)</span>, es decir, <span class="math inline">\(N(t)\)</span> cuenta el número de eventos que ocurren en <span class="math inline">\([0,t]\)</span> con <span class="math inline">\(N(0) = 0\)</span>, incrementos estacionarios e independientes, y <span class="math inline">\(N(t) - N(s) \sim \mathrm{Poisson}(\lambda (t-s))\)</span> para <span class="math inline">\(0 \leq s &lt; t\)</span> <span class="citation" data-cites="Billingsley1995">[@Billingsley1995]</span>.</li>
+<li>Sea <span class="math inline">\({Y_i}_{i=1}^{\infty}\)</span> una secuencia de variables aleatorias independientes e idénticamente distribuidas (i.i.d.), independiente de <span class="math inline">\(N(t)\)</span>, con <span class="math inline">\(E[|Y_1|] &lt; \infty\)</span> y <span class="math inline">\(E[Y_1^2] &lt; \infty\)</span>.</li>
+</ul>
+<p>El <strong>proceso de Poisson compuesto</strong> <span class="math inline">\({X(t) : t \geq 0}\)</span> se define por</p>
+<p><span class="math display">\[
+X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0,
+\]</span></p>
+<p>con la convención <span class="math inline">\(X(t) = 0\)</span> si <span class="math inline">\(N(t) = 0\)</span>. Aquí,</p>
+<ul>
+<li><span class="math inline">\(N(t)\)</span> es el número de eventos hasta el tiempo <span class="math inline">\(t\)</span>,</li>
+<li><span class="math inline">\(Y_i\)</span> es el tamaño del reclamo (o severidad del evento) para el <span class="math inline">\(i\)</span>-ésimo evento.</li>
+</ul>
+<section id="incrementos-independientes-y-estacionaridad" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="incrementos-independientes-y-estacionaridad"><span class="header-section-number">11.2.1</span> Incrementos Independientes y Estacionaridad</h3>
+<p><strong>Proposición:</strong> Para cualquier <span class="math inline">\(0 \leq s &lt; t\)</span>, el incremento <span class="math inline">\(X(t) - X(s)\)</span> es independiente del pasado <span class="math inline">\({X(u) : u \leq s}\)</span>, y está distribuido como un proceso de Poisson compuesto con parámetros <span class="math inline">\(\lambda (t-s)\)</span> y la misma distribución <span class="math inline">\(Y_i\)</span>.</p>
+<p><strong>Demostración:</strong> Sea <span class="math inline">\(M = N(t) - N(s)\)</span>, que es independiente de <span class="math inline">\(N(s)\)</span> y <span class="math inline">\(M \sim \mathrm{Poisson}(\lambda (t-s))\)</span>. La colección <span class="math inline">\({Y_{N(s)+1},\dots, Y_{N(t)}}\)</span> son independientes tanto de <span class="math inline">\(N(s)\)</span> como de todas las <span class="math inline">\(Y_i\)</span> anteriores, debido a la independencia. Por tanto,</p>
+<p><span class="math display">\[
+X(t) - X(s) = \sum_{i=N(s)+1}^{N(t)} Y_i
+\]</span></p>
+<p>es una suma de <span class="math inline">\(M\)</span> variables i.i.d., independiente del proceso antes de <span class="math inline">\(s\)</span>, satisfaciendo la estructura de Poisson compuesto <span class="citation" data-cites="Sato1999">[@Sato1999]</span>. <span class="math inline">\(\quad\blacksquare\)</span></p>
+</section>
+</section>
+<section id="momentos-del-proceso-de-poisson-compuesto" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="momentos-del-proceso-de-poisson-compuesto"><span class="header-section-number">11.3</span> Momentos del Proceso de Poisson Compuesto</h2>
+<section id="esperanza" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="esperanza"><span class="header-section-number">11.3.1</span> Esperanza</h3>
+<p>El valor esperado de <span class="math inline">\(X(t)\)</span> se sigue por linealidad de la esperanza e independencia:</p>
+<p><span class="math display">\[
+E[X(t)] = E\left( \sum_{i=1}^{N(t)} Y_i \right ) = E[N(t)] E[Y_1] = \lambda t \cdot E[Y_1]
+\]</span></p>
+<p>puesto que <span class="math inline">\(N(t) \sim \mathrm{Poisson}(\lambda t)\)</span> y las <span class="math inline">\(Y_i\)</span> son i.i.d. <span class="citation" data-cites="Durrett2019">[@Durrett2019]</span>.</p>
+</section>
+<section id="varianza" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="varianza"><span class="header-section-number">11.3.2</span> Varianza</h3>
+<p>Aplicando la ley de varianza total y la segunda identidad de Wald:</p>
+<p><span class="math display">\[
+\mathrm{Var}(X(t)) = E[\mathrm{Var}(X(t)\mid N(t))] + \mathrm{Var}(E[X(t)\mid N(t)]).
+\]</span></p>
+<p>Dado <span class="math inline">\(N(t)=n\)</span>, <span class="math inline">\(X(t) \mid N(t) = n\)</span> es una suma de <span class="math inline">\(n\)</span> <span class="math inline">\(Y_i\)</span> i.i.d., por lo que</p>
+<p><span class="math display">\[
+E[X(t)\mid N(t)=n] = n E[Y_1], \quad \mathrm{Var}(X(t)\mid N(t)=n) = n \mathrm{Var}(Y_1).
+\]</span></p>
+<p>Por tanto, <span class="math display">\[\begin{align*}
+E[\mathrm{Var}(X(t)\mid N(t))] &amp;= E[N(t)] \cdot \mathrm{Var}(Y_1) = \lambda t \cdot \mathrm{Var}(Y_1), \\
+\mathrm{Var}(E[X(t)\mid N(t)]) &amp;= \mathrm{Var}(N(t) \cdot E[Y_1]) = \mathrm{Var}(N(t)) \cdot (E[Y_1])^2 = \lambda t (E[Y_1])^2.
+\end{align*}\]</span> Por lo tanto,</p>
+<p><span class="math display">\[
+\mathrm{Var}(X(t)) = \lambda t \left( \mathrm{Var}(Y_1) + (E[Y_1])^2 \right ) = \lambda t E[Y_1^2].
+\]</span></p>
+<p>donde <span class="math inline">\(E[Y_1^2] = \mathrm{Var}(Y_1) + (E[Y_1])^2\)</span>.</p>
+</section>
+</section>
+<section id="representación-distribucional-y-métodos-de-transformadas" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="representación-distribucional-y-métodos-de-transformadas"><span class="header-section-number">11.4</span> Representación Distribucional y Métodos de Transformadas</h2>
+<p>La ley de probabilidad de <span class="math inline">\(X(t)\)</span> es la de una suma aleatoria:</p>
+<p><span class="math display">\[
+X(t) = \sum_{i=1}^{N(t)} Y_i
+\]</span></p>
+<p>con <span class="math inline">\(N(t) \sim \mathrm{Poisson}(\lambda t)\)</span>. La función de distribución es</p>
+<p><span class="math display">\[
+P(X(t) \leq x) = \sum_{n=0}^\infty P(N(t) = n) \cdot P\left( \sum_{i=1}^n Y_i \leq x \right ),
+\]</span></p>
+<p>donde el término <span class="math inline">\(n=0\)</span> se interpreta como <span class="math inline">\(P(0 \leq x) = 1\)</span> si <span class="math inline">\(x \geq 0\)</span>, 0 en caso contrario.</p>
+<p>El cálculo directo es intratable para <span class="math inline">\(Y_i\)</span> general, pero herramientas analíticas están disponibles:</p>
+<ul>
+<li>La <strong>función característica</strong> (transformada de Fourier) de <span class="math inline">\(X(t)\)</span> es</li>
+</ul>
+<p><span class="math display">\[
+\phi_{X(t)}(u) = E[e^{iu X(t)}] = \exp\left( \lambda t ( \phi_Y(u) - 1 ) \right ),
+\]</span></p>
+<p>donde <span class="math inline">\(\phi_Y(u) = E[e^{iu Y_1}]\)</span> es la función característica de <span class="math inline">\(Y_1\)</span>.</p>
+<ul>
+<li>Similarmente, la <strong>transformada de Laplace</strong> es</li>
+</ul>
+<p><span class="math display">\[
+E[e^{-s X(t)}] = \exp\left( \lambda t ( E[e^{-s Y_1}] - 1 ) \right ),
+\]</span></p>
+<p>que permite métodos de inversión numérica y aproximación de punto de silla <span class="citation" data-cites="Sato1999 Asmussen2000">[@Sato1999; @Asmussen2000]</span>. La simulación Monte Carlo también se usa frecuentemente para <span class="math inline">\(Y_i\)</span> complejas.</p>
+<p><strong>Ejemplo:</strong> Supongamos que los reclamos llegan a una aseguradora como un proceso de Poisson de tasa <span class="math inline">\(\lambda = 3\)</span> por semana. Los tamaños de reclamos <span class="math inline">\({Y_i}\)</span> son i.i.d. con distribución de Pareto: para <span class="math inline">\(y \geq y_m &gt; 0\)</span>,</p>
+<p><span class="math display">\[
+F_{Y}(y) = 1 - \left( \frac{y_m}{y} \right )^{\alpha}, \quad \alpha &gt; 1.
+\]</span></p>
+<p>Sea <span class="math inline">\(y_m = 1000\)</span>, <span class="math inline">\(\alpha = 2\)</span>. Calcular la media y varianza de reclamos agregados en una semana, y comentar sobre el impacto de colas pesadas.</p>
+<ul>
+<li>La media es</li>
+</ul>
+<p><span class="math display">\[
+E[Y_1] = \frac{\alpha y_m}{\alpha - 1} = \frac{2 \times 1000}{2-1} = 2000.
+\]</span></p>
+<ul>
+<li>El segundo momento es</li>
+</ul>
+<p><span class="math display">\[
+E[Y_1^2] =
+\begin{cases}
+\frac{\alpha y_m^2}{\alpha - 2}, &amp; \alpha &gt; 2 \\
+\infty, &amp; 1 &lt; \alpha \leq 2
+\end{cases}
+\]</span></p>
+<p>Puesto que <span class="math inline">\(\alpha=2\)</span>, <span class="math inline">\(E[Y_1^2] = \infty\)</span>; por tanto, el agregado semanal tiene media finita <span class="math inline">\(E[X(1)] = 6000\)</span>, pero <strong>varianza infinita</strong>. Esto demuestra el impacto de reclamos de cola pesada: la media permanece bien definida, pero medidas de riesgo como la varianza no lo están.</p>
+</section>
+<section id="ejercicios" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">11.5</span> Ejercicios</h2>
+<ol type="1">
+<li><strong>Simulación y Análisis de Poisson Compuesto:</strong> Sea <span class="math inline">\(\lambda = 2\)</span> eventos por hora, y <span class="math inline">\(Y_i \sim \mathrm{Exp}(1/500)\)</span> independientemente.
+<ol type="a">
+<li>Simular <span class="math inline">\(X(1)\)</span> (reclamos agregados en una hora) 10,000 veces y estimar la media y varianza.</li>
+<li>Comparar sus estimaciones empíricas con las fórmulas analíticas.</li>
+<li>Discutir cómo cambiarían los resultados si las <span class="math inline">\(Y_i\)</span> tuvieran cola pesada.</li>
+</ol></li>
+</ol>
+
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../psg01m47/es/20250512.html" class="pagination-link" aria-label="Procesos de Markov">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Procesos de Markov</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../psg01m47/es/20250523.html" class="pagination-link" aria-label="Series de Tiempo">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Series de Tiempo</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Procesos de Poisson Compuestos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introducción Conceptual</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>En aplicaciones avanzadas de probabilidad—como ciencias actuariales, matemáticas financieras, ingeniería de confiabilidad, y gestión cuantitativa de riesgos—es frecuentemente necesario modelar no solo el número de eventos aleatorios a lo largo del tiempo, sino también la magnitud aleatoria asociada con cada evento. Por ejemplo, en matemáticas de seguros, cada reclamo se caracteriza por su tamaño aleatorio de reclamo (o severidad), y en confiabilidad, cada evento de falla incurre un costo de reparación aleatorio. Para capturar esta doble aleatoriedad, el **proceso de Poisson compuesto** es fundamental.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Un proceso de Poisson compuesto combina dos fuentes de incertidumbre: el número de eventos dentro de un intervalo de tiempo, modelado por un proceso de Poisson, y el tamaño o severidad aleatoria de cada evento, modelado por una secuencia independiente de variables aleatorias idénticamente distribuidas.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definición Formal y Propiedades Fundamentales</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Definamos los siguientes objetos:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Sea ${N(t) : t \geq 0}$ un proceso de Poisson de tasa $\lambda &gt; 0$, es decir, $N(t)$ cuenta el número de eventos que ocurren en $<span class="co">[</span><span class="ot">0,t</span><span class="co">]</span>$ con $N(0) = 0$, incrementos estacionarios e independientes, y $N(t) - N(s) \sim \mathrm{Poisson}(\lambda (t-s))$ para $0 \leq s &lt; t$ <span class="co">[</span><span class="ot">@Billingsley1995</span><span class="co">]</span>.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Sea ${Y_i}_{i=1}^{\infty}$ una secuencia de variables aleatorias independientes e idénticamente distribuidas (i.i.d.), independiente de $N(t)$, con $E<span class="co">[</span><span class="ot">|Y_1|</span><span class="co">]</span> &lt; \infty$ y $E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span> &lt; \infty$.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>El **proceso de Poisson compuesto** ${X(t) : t \geq 0}$ se define por</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>X(t) = \sum_{i=1}^{N(t)} Y_i, \quad t \geq 0,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>con la convención $X(t) = 0$ si $N(t) = 0$. Aquí,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$N(t)$ es el número de eventos hasta el tiempo $t$,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$Y_i$ es el tamaño del reclamo (o severidad del evento) para el $i$-ésimo evento.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Incrementos Independientes y Estacionaridad</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**Proposición:** Para cualquier $0 \leq s &lt; t$, el incremento $X(t) - X(s)$ es independiente del pasado ${X(u) : u \leq s}$, y está distribuido como un proceso de Poisson compuesto con parámetros $\lambda (t-s)$ y la misma distribución $Y_i$.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>**Demostración:**</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Sea $M = N(t) - N(s)$, que es independiente de $N(s)$ y $M \sim \mathrm{Poisson}(\lambda (t-s))$. La colección ${Y_{N(s)+1},\dots, Y_{N(t)}}$ son independientes tanto de $N(s)$ como de todas las $Y_i$ anteriores, debido a la independencia. Por tanto,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>X(t) - X(s) = \sum_{i=N(s)+1}^{N(t)} Y_i</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>es una suma de $M$ variables i.i.d., independiente del proceso antes de $s$, satisfaciendo la estructura de Poisson compuesto <span class="co">[</span><span class="ot">@Sato1999</span><span class="co">]</span>.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$\quad\blacksquare$</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Momentos del Proceso de Poisson Compuesto</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### Esperanza</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>El valor esperado de $X(t)$ se sigue por linealidad de la esperanza e independencia:</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">X(t)</span><span class="co">]</span> = E\left( \sum_{i=1}^{N(t)} Y_i \right ) = E<span class="co">[</span><span class="ot">N(t)</span><span class="co">]</span> E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span> = \lambda t \cdot E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>puesto que $N(t) \sim \mathrm{Poisson}(\lambda t)$ y las $Y_i$ son i.i.d. <span class="co">[</span><span class="ot">@Durrett2019</span><span class="co">]</span>.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Varianza</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Aplicando la ley de varianza total y la segunda identidad de Wald:</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>\mathrm{Var}(X(t)) = E<span class="co">[</span><span class="ot">\mathrm{Var}(X(t)\mid N(t))</span><span class="co">]</span> + \mathrm{Var}(E<span class="co">[</span><span class="ot">X(t)\mid N(t)</span><span class="co">]</span>).</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Dado $N(t)=n$, $X(t) \mid N(t) = n$ es una suma de $n$ $Y_i$ i.i.d., por lo que</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">X(t)\mid N(t)=n</span><span class="co">]</span> = n E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>, \quad \mathrm{Var}(X(t)\mid N(t)=n) = n \mathrm{Var}(Y_1).</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Por tanto,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">\mathrm{Var}(X(t)\mid N(t))</span><span class="co">]</span> &amp;= E<span class="co">[</span><span class="ot">N(t)</span><span class="co">]</span> \cdot \mathrm{Var}(Y_1) = \lambda t \cdot \mathrm{Var}(Y_1), <span class="sc">\\</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\mathrm{Var}(E<span class="co">[</span><span class="ot">X(t)\mid N(t)</span><span class="co">]</span>) &amp;= \mathrm{Var}(N(t) \cdot E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>) = \mathrm{Var}(N(t)) \cdot (E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>)^2 = \lambda t (E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>)^2.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Por lo tanto,</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>\mathrm{Var}(X(t)) = \lambda t \left( \mathrm{Var}(Y_1) + (E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>)^2 \right ) = \lambda t E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span>.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>donde $E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span> = \mathrm{Var}(Y_1) + (E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span>)^2$.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Representación Distribucional y Métodos de Transformadas</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>La ley de probabilidad de $X(t)$ es la de una suma aleatoria:</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>X(t) = \sum_{i=1}^{N(t)} Y_i</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>con $N(t) \sim \mathrm{Poisson}(\lambda t)$. La función de distribución es</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>P(X(t) \leq x) = \sum_{n=0}^\infty P(N(t) = n) \cdot P\left( \sum_{i=1}^n Y_i \leq x \right ),</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>donde el término $n=0$ se interpreta como $P(0 \leq x) = 1$ si $x \geq 0$, 0 en caso contrario.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>El cálculo directo es intratable para $Y_i$ general, pero herramientas analíticas están disponibles:</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>La **función característica** (transformada de Fourier) de $X(t)$ es</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\phi_{X(t)}(u) = E<span class="co">[</span><span class="ot">e^{iu X(t)}</span><span class="co">]</span> = \exp\left( \lambda t ( \phi_Y(u) - 1 ) \right ),</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>donde $\phi_Y(u) = E<span class="co">[</span><span class="ot">e^{iu Y_1}</span><span class="co">]</span>$ es la función característica de $Y_1$.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Similarmente, la **transformada de Laplace** es</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">e^{-s X(t)}</span><span class="co">]</span> = \exp\left( \lambda t ( E<span class="co">[</span><span class="ot">e^{-s Y_1}</span><span class="co">]</span> - 1 ) \right ),</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>que permite métodos de inversión numérica y aproximación de punto de silla <span class="co">[</span><span class="ot">@Sato1999; @Asmussen2000</span><span class="co">]</span>. La simulación Monte Carlo también se usa frecuentemente para $Y_i$ complejas.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>**Ejemplo:** Supongamos que los reclamos llegan a una aseguradora como un proceso de Poisson de tasa $\lambda = 3$ por semana. Los tamaños de reclamos ${Y_i}$ son i.i.d. con distribución de Pareto: para $y \geq y_m &gt; 0$,</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>F_{Y}(y) = 1 - \left( \frac{y_m}{y} \right )^{\alpha}, \quad \alpha &gt; 1.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Sea $y_m = 1000$, $\alpha = 2$. Calcular la media y varianza de reclamos agregados en una semana, y comentar sobre el impacto de colas pesadas.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>La media es</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">Y_1</span><span class="co">]</span> = \frac{\alpha y_m}{\alpha - 1} = \frac{2 \times 1000}{2-1} = 2000.</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>El segundo momento es</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span> = </span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>\begin{cases}</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>\frac{\alpha y_m^2}{\alpha - 2}, &amp; \alpha &gt; 2 <span class="sc">\\</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>\infty, &amp; 1 &lt; \alpha \leq 2</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>\end{cases}</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>Puesto que $\alpha=2$, $E<span class="co">[</span><span class="ot">Y_1^2</span><span class="co">]</span> = \infty$; por tanto, el agregado semanal tiene media finita $E<span class="co">[</span><span class="ot">X(1)</span><span class="co">]</span> = 6000$, pero **varianza infinita**. Esto demuestra el impacto de reclamos de cola pesada: la media permanece bien definida, pero medidas de riesgo como la varianza no lo están.</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Simulación y Análisis de Poisson Compuesto:**</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>   Sea $\lambda = 2$ eventos por hora, y $Y_i \sim \mathrm{Exp}(1/500)$ independientemente.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>   (a) Simular $X(1)$ (reclamos agregados en una hora) 10,000 veces y estimar la media y varianza.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>   (b) Comparar sus estimaciones empíricas con las fórmulas analíticas.</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>   (c) Discutir cómo cambiarían los resultados si las $Y_i$ tuvieran cola pesada.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
